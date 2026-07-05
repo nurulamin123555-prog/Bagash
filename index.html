@@ -1,116 +1,265 @@
-from pathlib import Path
-
-html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bagash Ultimate Pro Max</title>
+<title>Bagash Heritage Premium</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f5fff5;color:#222}
-header{position:sticky;top:0;background:linear-gradient(90deg,#d62828,#198754);padding:15px;color:#fff;display:flex;justify-content:space-between}
-nav a{color:#fff;text-decoration:none;margin-left:15px}
-.hero{height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('IMG_3973.webp');background-size:cover}
-.btn{background:#ffd700;border:none;padding:12px 20px;border-radius:10px;cursor:pointer}
-.section{padding:30px 5%}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card-body{padding:15px;text-align:center}
-.footer{background:#111;color:#fff;text-align:center;padding:30px}
-input,select{padding:10px;width:100%;margin:5px 0}
-.hidden{display:none}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia,serif;
+}
+
+body{
+background:#faf8f3;
+color:#2d2d2d;
+}
+
+header{
+background:#fff;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #e5e5e5;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:#1f6b3a;
+letter-spacing:2px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+margin-left:22px;
+}
+
+.hero{
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('IMG_3973.webp');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero h1{
+font-size:64px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+.btn{
+background:#1f6b3a;
+color:white;
+padding:12px 24px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.section{
+padding:60px 8%;
+}
+
+.title{
+text-align:center;
+margin-bottom:35px;
+font-size:38px;
+color:#1f6b3a;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.card-body{
+padding:18px;
+}
+
+.price{
+font-size:24px;
+color:#a52a2a;
+font-weight:bold;
+}
+
+.story{
+background:#efe7db;
+text-align:center;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+
+.owner-box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.owner-box h3{
+color:#1f6b3a;
+margin-bottom:15px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:24px;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h2>Bagash Ultimate Pro Max</h2>
+<div class="logo">BAGASH</div>
+
 <nav>
-<a href="#products">Products</a>
-<a href="#wishlist">Wishlist</a>
-<a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+<a href="#">New Arrivals</a>
+<a href="#">Men</a>
+<a href="#">Women</a>
+<a href="#">Lifestyle</a>
+<a href="#">Craft Collection</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Bagash Premium</h1>
-<p>All-in-One E‑Commerce Demo</p><br>
-<button class="btn" onclick="toggleDark()">Dark Mode</button>
+<h1>Bagash Heritage Collection</h1>
+<p>Bangladeshi Craftsmanship • Modern Lifestyle</p>
+<br>
+<button class="btn">Explore Collection</button>
 </section>
 
-<div class="section">
-<h2>Login / Signup</h2>
-<input placeholder="Email">
-<input type="password" placeholder="Password">
-<button class="btn">Login</button>
-<button class="btn">Signup</button>
-</div>
+<section class="section story">
+<h2 class="title">The Bagash Story</h2>
+<p>Inspired by local craftsmanship, natural materials, and timeless design.</p>
+</section>
 
-<div class="section">
-<h2>Search Products</h2>
-<input id="search" onkeyup="searchProducts()" placeholder="Search...">
-</div>
+<section class="section">
+<h2 class="title">Featured Collection</h2>
 
-<div class="section">
-<h2 id="products">Products</h2>
 <div class="grid">
-<div class="card"><img src="IMG_3973.webp"><div class="card-body"><h3>Jute Wallet</h3><p>৳950</p><button class="btn" onclick="addCart('Jute Wallet')">Cart</button> <button class="btn" onclick="addWish('Jute Wallet')">♥</button></div></div>
-<div class="card"><img src="IMG_3973.webp"><div class="card-body"><h3>Jute Bag</h3><p>৳950</p><button class="btn" onclick="addCart('Jute Bag')">Cart</button> <button class="btn" onclick="addWish('Jute Bag')">♥</button></div></div>
-<div class="card"><img src="IMG_3973.webp"><div class="card-body"><h3>T-Shirt</h3><p>৳950</p><button class="btn" onclick="addCart('T-Shirt')">Cart</button> <button class="btn" onclick="addWish('T-Shirt')">♥</button></div></div>
+
+<div class="card">
+<img src="IMG_3973.webp">
+<div class="card-body">
+<h3>Premium Jute Wallet</h3>
+<p class="price">৳950</p>
 </div>
 </div>
 
-<div class="section" id="wishlist">
-<h2>Wishlist</h2>
-<div id="wishItems"></div>
+<div class="card">
+<img src="IMG_3973.webp">
+<div class="card-body">
+<h3>Heritage Jute Bag</h3>
+<p class="price">৳950</p>
+</div>
 </div>
 
-<div class="section" id="cart">
-<h2>Shopping Cart</h2>
-<div id="cartItems"></div>
+<div class="card">
+<img src="IMG_3973.webp">
+<div class="card-body">
+<h3>Classic Fashion Wear</h3>
+<p class="price">৳950</p>
+</div>
 </div>
 
-<div class="section">
-<h2>Checkout Form</h2>
-<input placeholder="Full Name">
-<input placeholder="Phone Number">
-<input placeholder="Address">
-<select>
-<option>bKash</option>
-<option>Nagad</option>
-<option>Cash on Delivery</option>
-</select>
-<button class="btn">Place Order</button>
 </div>
+</section>
 
-<div class="section">
-<h2>Customer Reviews</h2>
-<p>⭐⭐⭐⭐⭐ Excellent Quality</p>
-<p>⭐⭐⭐⭐⭐ Premium Design</p>
+<section class="section">
+<h2 class="title">Why Bagash</h2>
+
+<div class="features">
+<div class="feature">🌿 Eco-Friendly Materials</div>
+<div class="feature">🧵 Handmade Inspiration</div>
+<div class="feature">⭐ Premium Quality</div>
+<div class="feature">🚚 Nationwide Delivery</div>
 </div>
+</section>
 
-<div class="footer">
-<h2>Bagash Premium</h2>
-<p>WhatsApp: 01792453834</p>
+<section class="section">
+<div class="owner-box">
+<h3>Owner Information</h3>
+
+<p><strong>Name:</strong> Nurul Amin</p>
+<br>
+
+<p><strong>Phone:</strong> 01792453834</p>
+<br>
+
+<p><strong>Email:</strong> ah4948591@gmail.com</p>
+</div>
+</section>
+
+<footer>
+<h2>BAGASH</h2>
+<p>Craft • Heritage • Lifestyle</p>
+<br>
+<p>Owner: Nurul Amin</p>
+<p>Phone: 01792453834</p>
 <p>Email: ah4948591@gmail.com</p>
-</div>
+</footer>
 
-<script>
-let cart=[],wish=[];
-function addCart(n){cart.push(n);document.getElementById('cartCount').innerText=cart.length;document.getElementById('cartItems').innerHTML=cart.join('<br>');}
-function addWish(n){wish.push(n);document.getElementById('wishItems').innerHTML=wish.join('<br>');}
-function toggleDark(){document.body.style.background=document.body.style.background=='black'?'#f5fff5':'black';document.body.style.color=document.body.style.color=='white'?'#222':'white';}
-function searchProducts(){
-let q=document.getElementById('search').value.toLowerCase();
-document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none');
-}
-</script>
+<a class="whatsapp" href="https://wa.me/8801792453834">💬</a>
 
 </body>
-</html>"""
-
-path = "/mnt/data/Bagash_All_Features_Edition.html"
-Path(path).write_text(html, encoding="utf-8")
-print(path)
+</html>

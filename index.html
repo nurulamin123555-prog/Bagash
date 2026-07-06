@@ -810,3 +810,270 @@ card.style.display="none";
 }
 
 </script>
+<!-- CUSTOMER REVIEWS -->
+
+<section class="reviews-section">
+
+<h2 class="section-title">
+Customer Reviews
+</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+⭐⭐⭐⭐⭐
+<h3>Excellent Quality</h3>
+<p>Premium quality and beautiful design.</p>
+</div>
+
+<div class="review-card">
+⭐⭐⭐⭐⭐
+<h3>Fast Service</h3>
+<p>Easy ordering process and good support.</p>
+</div>
+
+<div class="review-card">
+⭐⭐⭐⭐⭐
+<h3>Highly Recommended</h3>
+<p>Very satisfied with Bagash products.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="faq-section">
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+<div class="faq-box">
+
+<h3>How can I order?</h3>
+<p>Add products to cart and complete checkout.</p>
+
+<br>
+
+<h3>What payment methods are available?</h3>
+<p>bKash and Cash On Delivery.</p>
+
+<br>
+
+<h3>How long does delivery take?</h3>
+<p>Delivery time depends on location.</p>
+
+</div>
+
+</section>
+
+<!-- CHECKOUT -->
+
+<section class="checkout-section">
+
+<h2 class="section-title">
+Checkout
+</h2>
+
+<div class="checkout-box">
+
+<input type="text" placeholder="Full Name" class="checkout-input">
+
+<input type="text" placeholder="Phone Number" class="checkout-input">
+
+<input type="text" placeholder="Address" class="checkout-input">
+
+<select class="checkout-input">
+<option>bKash Payment</option>
+<option>Cash On Delivery</option>
+</select>
+
+<button class="place-order-btn">
+Place Order
+</button>
+
+</div>
+
+</section>
+
+<!-- AI BUTTON -->
+
+<div id="aiButton" class="ai-btn">
+🤖
+</div>
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/8801792453834"
+class="whatsapp-btn">
+💬
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>BAGASH</h2>
+
+<p>Premium Fashion • Heritage Lifestyle</p>
+
+<br>
+
+<p>Owner: Nurul Amin</p>
+<p>Phone: 01792453834</p>
+<p>Email: ah4948591@gmail.com</p>
+
+<br>
+
+<p>bKash: 01736255527</p>
+<p>Cash On Delivery Available</p>
+
+<br>
+
+<p>© 2026 BAGASH. All Rights Reserved.</p>
+
+</footer>
+
+<style>
+
+/* Reviews */
+
+.reviews-section,
+.faq-section,
+.checkout-section{
+padding:80px 5%;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review-card{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* FAQ */
+
+.faq-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Checkout */
+
+.checkout-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.checkout-input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.place-order-btn{
+width:100%;
+padding:15px;
+background:#1f6b3a;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* AI */
+
+.ai-btn{
+position:fixed;
+right:20px;
+bottom:95px;
+width:60px;
+height:60px;
+background:#1f6b3a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:28px;
+cursor:pointer;
+z-index:999;
+}
+
+/* WhatsApp */
+
+.whatsapp-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+border-radius:50%;
+font-size:28px;
+z-index:999;
+}
+
+/* Footer */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+</style>
+
+<script>
+
+/* Bagash AI */
+
+document.getElementById("aiButton")
+.onclick = function(){
+
+let question = prompt(
+"Welcome to BAGASH. How can I help you?"
+);
+
+if(question){
+
+alert(
+"Bagash AI received: " +
+question +
+"\nOur team will assist you soon."
+);
+
+}
+
+};
+
+</script>
+
+</body>
+</html>

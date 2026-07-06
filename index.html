@@ -427,3 +427,386 @@ Payment & Service
 </div>
 
 </section>
+<!-- FEATURED PRODUCTS -->
+
+<section class="products-section">
+
+<h2 class="section-title">
+Featured Products
+</h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Products..."
+onkeyup="searchProducts()">
+
+</div>
+
+<div class="products-grid">
+
+<!-- Product 1 -->
+
+<div class="product-card">
+
+<img src="wallet.webp" alt="Wallet">
+
+<div class="product-content">
+
+<h3>Premium Jute Wallet</h3>
+
+<p class="product-price">৳950</p>
+
+<button
+class="cart-btn"
+onclick="addToCart('Premium Jute Wallet',950)">
+Add To Cart
+</button>
+
+<button
+class="wish-btn"
+onclick="addWishlist('Premium Jute Wallet')">
+❤️ Wishlist
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 2 -->
+
+<div class="product-card">
+
+<img src="bag.webp" alt="Bag">
+
+<div class="product-content">
+
+<h3>Heritage Jute Bag</h3>
+
+<p class="product-price">৳950</p>
+
+<button
+class="cart-btn"
+onclick="addToCart('Heritage Jute Bag',950)">
+Add To Cart
+</button>
+
+<button
+class="wish-btn"
+onclick="addWishlist('Heritage Jute Bag')">
+❤️ Wishlist
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 3 -->
+
+<div class="product-card">
+
+<img src="tshirt.webp" alt="T-Shirt">
+
+<div class="product-content">
+
+<h3>BAGA MAN Premium T-Shirt</h3>
+
+<p class="product-price">৳950</p>
+
+<button
+class="cart-btn"
+onclick="addToCart('BAGA MAN Premium T-Shirt',950)">
+Add To Cart
+</button>
+
+<button
+class="wish-btn"
+onclick="addWishlist('BAGA MAN Premium T-Shirt')">
+❤️ Wishlist
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 4 -->
+
+<div class="product-card">
+
+<img src="shoes.webp" alt="Shoes">
+
+<div class="product-content">
+
+<h3>Premium Fashion Shoes</h3>
+
+<p class="product-price">৳950</p>
+
+<button
+class="cart-btn"
+onclick="addToCart('Premium Fashion Shoes',950)">
+Add To Cart
+</button>
+
+<button
+class="wish-btn"
+onclick="addWishlist('Premium Fashion Shoes')">
+❤️ Wishlist
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SHOPPING CART -->
+
+<section class="cart-section">
+
+<h2 class="section-title">
+Shopping Cart
+</h2>
+
+<div class="cart-box">
+
+<div id="cartItems">
+No Products Added Yet
+</div>
+
+<br>
+
+<h3>
+Total:
+৳ <span id="cartTotal">0</span>
+</h3>
+
+</div>
+
+</section>
+
+<!-- WISHLIST -->
+
+<section class="wishlist-section">
+
+<h2 class="section-title">
+Wishlist
+</h2>
+
+<div class="wishlist-box" id="wishlistItems">
+
+No Wishlist Products
+
+</div>
+
+</section>
+
+<!-- OWNER SECTION -->
+
+<section class="owner-section">
+
+<h2 class="section-title">
+Owner Information
+</h2>
+
+<div class="owner-box">
+
+<h3>Nurul Amin</h3>
+
+<p>📞 01792453834</p>
+
+<p>✉️ ah4948591@gmail.com</p>
+
+<p>💳 bKash: 01736255527</p>
+
+</div>
+
+</section>
+
+<style>
+
+/* Products */
+
+.products-section{
+padding:80px 5%;
+}
+
+.search-box{
+text-align:center;
+margin-bottom:30px;
+}
+
+.search-box input{
+width:380px;
+max-width:90%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.products-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.product-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.product-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.product-content{
+padding:20px;
+text-align:center;
+}
+
+.product-price{
+font-size:28px;
+font-weight:700;
+color:#a91b0d;
+margin:10px 0;
+}
+
+.cart-btn,
+.wish-btn{
+padding:12px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+font-weight:600;
+}
+
+.cart-btn{
+background:#1f6b3a;
+color:white;
+}
+
+.wish-btn{
+background:#a91b0d;
+color:white;
+}
+
+/* Cart */
+
+.cart-section,
+.wishlist-section,
+.owner-section{
+padding:80px 5%;
+}
+
+.cart-box,
+.wishlist-box,
+.owner-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.owner-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.owner-box h3{
+color:#1f6b3a;
+margin-bottom:15px;
+font-size:30px;
+}
+
+.owner-box p{
+margin:10px 0;
+}
+
+</style>
+
+<script>
+
+let cart = [];
+let wishlist = [];
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+renderCart();
+
+}
+
+function renderCart(){
+
+let html = "";
+let total = 0;
+
+cart.forEach(item=>{
+
+total += item.price;
+
+html +=
+`<p>${item.name} - ৳${item.price}</p>`;
+
+});
+
+if(html===""){
+html="No Products Added Yet";
+}
+
+document.getElementById("cartItems").innerHTML = html;
+document.getElementById("cartTotal").innerText = total;
+
+}
+
+function addWishlist(name){
+
+wishlist.push(name);
+
+document.getElementById("wishlistItems")
+.innerHTML = wishlist.map(item=>
+`<p>${item}</p>`
+).join("");
+
+}
+
+function searchProducts(){
+
+let value =
+document.getElementById("searchInput")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".product-card");
+
+cards.forEach(card=>{
+
+if(
+card.innerText.toLowerCase()
+.includes(value)
+){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>

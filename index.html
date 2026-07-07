@@ -1,20 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Premium Fashion & Lifestyle</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>
+BAGASH | Premium Fashion & Lifestyle
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
+.flash-sale{
+margin-top:85px;
+background:#a91b0d;
+color:white;
+text-align:center;
+padding:14px;
+font-weight:600;
+}
 
+.hero{
+height:90vh;
+background:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.45)
+),
+url("hero-banner.png");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+color:white;
+}
+
+.hero-content h1{
+font-size:80px;
+font-weight:800;
+}
+
+.hero-content p{
+font-size:24px;
+margin-top:15px;
+}
+
+.hero-btns{
+margin-top:30px;
+}
+
+.btn{
+padding:14px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:700;
+}
+
+.btn-green{
+background:#1f6b3a;
+color:white;
+}
+
+.btn-gold{
+background:#d4af37;
+color:black;
+}
+
+.categories,
+.premium-collections{
+padding:80px 5%;
+}
+
+.section-title{
+text-align:center;
+font-size:46px;
+color:#1f6b3a;
+margin-bottom:40px;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.category-card{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.category-card:hover{
+transform:translateY(-10px);
+}
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 :root{
@@ -31,14 +133,41 @@ color:#222;
 overflow-x:hidden;
 }
 
-/* Header */
+.loading-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:45px;
+font-weight:800;
+color:#1f6b3a;
+z-index:99999;
+}
+
+.dark-mode{
+background:#111;
+color:white;
+}
+
+.dark-mode header,
+.dark-mode .category-card,
+.dark-mode .product-card,
+.dark-mode .service-box{
+background:#222;
+color:white;
+}
 
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:#fff;
+background:white;
 box-shadow:0 4px 20px rgba(0,0,0,.08);
 z-index:999;
 }
@@ -65,13 +194,11 @@ height:55px;
 .logo h1{
 font-size:32px;
 font-weight:800;
-color:var(--green);
-letter-spacing:2px;
+color:#1f6b3a;
 }
 
 .menu{
 display:flex;
-align-items:center;
 gap:25px;
 }
 
@@ -88,183 +215,38 @@ font-size:22px;
 cursor:pointer;
 }
 
-/* Mega Menu */
-
-.shop-menu{
-position:relative;
-}
-
-.mega-menu{
-position:absolute;
-top:60px;
-left:-250px;
-width:950px;
-background:white;
-padding:35px;
-display:none;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.shop-menu:hover .mega-menu{
-display:grid;
-}
-
-.mega-menu h3{
-color:var(--green);
-margin-bottom:12px;
-}
-
-.mega-menu a{
-display:block;
-padding:8px 0;
-color:#555;
-}
-
-/* Flash */
-
-.flash-sale{
-margin-top:85px;
-background:var(--red);
-color:white;
-text-align:center;
-padding:14px;
-font-weight:600;
-}
-
-/* Hero */
-
-.hero{
-height:90vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("hero-banner.png");
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-}
-
-.hero-content h1{
-font-size:80px;
-font-weight:800;
-letter-spacing:3px;
-}
-
-.hero-content p{
-font-size:24px;
-margin-top:15px;
-max-width:850px;
-}
-
-.hero-btns{
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 30px;
+.back-top{
+position:fixed;
+left:20px;
+bottom:20px;
+width:60px;
+height:60px;
 border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:700;
-cursor:pointer;
-}
-
-.btn-green{
-background:var(--green);
+border-radius:50%;
+background:#1f6b3a;
 color:white;
+font-size:24px;
+cursor:pointer;
+display:none;
+z-index:999;
 }
-
-.btn-gold{
-background:var(--gold);
-color:black;
-}
-
-/* Categories */
-
-.categories{
-padding:80px 5%;
-}
-
-.section-title{
-text-align:center;
-font-size:46px;
-margin-bottom:40px;
-color:var(--green);
-}
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.category-card{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.category-card:hover{
-transform:translateY(-8px);
-}
-
-.category-card h3{
-font-size:28px;
-color:var(--green);
-margin-bottom:10px;
-}
-
-/* Services */
-
-.services{
-padding:0 5% 80px;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.service-box{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.service-box h3{
-margin-top:10px;
-color:var(--green);
-}
-
-</style>
-</head>
-
 <body>
+
+<div class="loading-screen" id="loader">
+BAGASH
+</div>
 
 <header>
 
 <div class="navbar">
 
 <div class="logo">
-<img src="bagash-logo.png" alt="Bagash Logo">
+
+<img src="bagash-logo.png"
+alt="Bagash Logo">
+
 <h1>BAGASH</h1>
+
 </div>
 
 <nav class="menu">
@@ -273,7 +255,9 @@ color:var(--green);
 
 <div class="shop-menu">
 
-<a href="#">Collections ▼</a>
+<a href="#">
+Collections ▼
+</a>
 
 <div class="mega-menu">
 
@@ -318,41 +302,60 @@ color:var(--green);
 </div>
 
 <a href="#">About</a>
+
 <a href="#">Contact</a>
 
 </nav>
 
 <div class="icons">
+
 🛒 ❤️ 👤
+
 </div>
-<button onclick="toggleDarkMode()">🌙</button>
+
+<button onclick="toggleDarkMode()">
+🌙
+</button>
+
 </div>
 
 </header>
 
 <div class="flash-sale">
-🔥 New Collection Available • bKash Payment • Cash On Delivery
+
+🔥 New Collection Available •
+bKash Payment •
+Cash On Delivery
+
 </div>
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>BAGASH</h1>
+<h1>
+BAGASH
+</h1>
 
 <p>
+
 Premium Fashion • Heritage Lifestyle • Modern Bangladesh
+
 </p>
 
 <div class="hero-btns">
 
-<a href="#products" class="btn btn-green">
+<a href="#products"
+class="btn btn-green">
+
 Shop Now
+
 </a>
 
-
 <button class="btn btn-gold">
+
 Explore Collection
+
 </button>
 
 </div>
@@ -361,267 +364,168 @@ Explore Collection
 
 </section>
 
-<section class="categories">
+<!-- NEW PREMIUM COLLECTIONS -->
+
+<section class="premium-collections">
 
 <h2 class="section-title">
-Shop By Collection
+
+Premium Collections
+
 </h2>
 
 <div class="category-grid">
 
 <div class="category-card">
-<h3>BAGA MAN</h3>
-<p>Premium Men's Fashion Collection</p>
-</div>
-
-<div class="category-card">
-<h3>BAGA WOMEN</h3>
-<p>Elegant Women's Fashion Collection</p>
-</div>
-
-<div class="category-card">
-<h3>BAGA KIDS</h3>
-<p>Stylish Kids Collection</p>
-</div>
-
-<div class="category-card">
-<h3>BAGA WEDDING</h3>
-<p>Wedding & Couple Collection</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="services">
-
-<h2 class="section-title">
-Payment & Service
-</h2>
-
-<div class="service-grid">
-
-<div class="service-box">
-💳
-<h3>bKash Payment</h3>
-<p>Fast & Secure Payment</p>
-</div>
-
-<div class="service-box">
-💵
-<h3>Cash On Delivery</h3>
-<p>Pay After Receiving</p>
-</div>
-
-<div class="service-box">
-📞
-<h3>Customer Support</h3>
-<p>01792453834</p>
-</div>
-
-<div class="service-box">
-⭐
-<h3>Premium Quality</h3>
-<p>Trusted Bagash Products</p>
-</div>
-
-</div>
-
-</section>
-<!-- FEATURED PRODUCTS -->
-
-<section class="products-section" id="products">
-
-<h2 class="section-title">
-Featured Products
-</h2>
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search Products..."
-onkeyup="searchProducts()">
-
-</div>
-
-<div class="products-grid">
-
-<!-- Product 1 -->
-
-<div class="product-card">
-
-<img src="wallet.webp" alt="Wallet">
-
-<div class="product-content">
-
-<h3>Premium Jute Wallet</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Jute Wallet',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Premium Jute Wallet')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 2 -->
-
-<div class="product-card">
-
-<img src="bag.png" alt="Bag">
-
-<div class="product-content">
-
-<h3>Heritage Jute Bag</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Heritage Jute Bag',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Heritage Jute Bag')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 3 -->
-
-<div class="product-card">
-
-<img src="tshirt.jpeg" alt="T-Shirt">
-
-<div class="product-content">
-
-<h3>BAGA MAN Premium T-Shirt</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('BAGA MAN Premium T-Shirt',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('BAGA MAN Premium T-Shirt')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 4 -->
-
-<div class="product-card">
-
-<img src="shoes.png" alt="Shoes">
-
-<div class="product-content">
-
-<h3>Premium Fashion Shoes</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Fashion Shoes',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Premium Fashion Shoes')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SHOPPING CART -->
-
-<section class="cart-section">
-
-<h2 class="section-title">
-Shopping Cart
-</h2>
-
-<div class="cart-box">
-
-<div id="cartItems">
-No Products Added Yet
-</div>
-
-<br>
 
 <h3>
-Total:
-৳ <span id="cartTotal">0</span>
+BAGA MAN EXCLUSIVE
 </h3>
 
+<p>
+Premium Shirts, Shoes &
+Luxury Fashion
+</p>
+
+</div>
+
+<div class="category-card">
+
+<h3>
+BAGA WOMEN LUXURY
+</h3>
+
+<p>
+Premium Saree,
+Handbags &
+Jewellery
+</p>
+
+</div>
+
+<div class="category-card">
+
+<h3>
+BAGA KIDS SPECIAL
+</h3>
+
+<p>
+Modern Kids Fashion &
+School Collection
+</p>
+
+</div>
+
+<div class="category-card">
+
+<h3>
+BAGA WEDDING ROYAL
+</h3>
+
+<p>
+Wedding Panjabi,
+Saree &
+Couple Collection
+</p>
+
+</div>
+
+</div>
+
+</section>
+  <!-- PREMIUM COLLECTION SHOWCASE -->
+
+<section class="premium-showcase">
+
+<h2 class="section-title">
+Premium Collections
+</h2>
+
+<div class="showcase-grid">
+
+<div class="showcase-card">
+<div class="showcase-icon">👔</div>
+<h3>BAGA MAN Elite</h3>
+<p>Luxury shirts, premium panjabi & fashion accessories.</p>
+<button class="show-btn">Explore</button>
+</div>
+
+<div class="showcase-card">
+<div class="showcase-icon">👜</div>
+<h3>BAGA WOMEN Luxury</h3>
+<p>Exclusive handbags, sarees & fashion products.</p>
+<button class="show-btn">Explore</button>
+</div>
+
+<div class="showcase-card">
+<div class="showcase-icon">👶</div>
+<h3>BAGA KIDS</h3>
+<p>Comfortable and stylish collections for children.</p>
+<button class="show-btn">Explore</button>
+</div>
+
+<div class="showcase-card">
+<div class="showcase-icon">💍</div>
+<h3>BAGA WEDDING</h3>
+<p>Wedding collections for bride, groom and couples.</p>
+<button class="show-btn">Explore</button>
+</div>
+
 </div>
 
 </section>
 
-<!-- WISHLIST -->
+<!-- STATISTICS -->
 
-<section class="wishlist-section">
+<section class="stats-section">
 
-<h2 class="section-title">
-Wishlist
-</h2>
+<div class="stats-grid">
 
-<div class="wishlist-box" id="wishlistItems">
+<div class="stat-card">
+<h2 id="count1">0</h2>
+<p>Happy Customers</p>
+</div>
 
-No Wishlist Products
+<div class="stat-card">
+<h2 id="count2">0</h2>
+<p>Products Sold</p>
+</div>
+
+<div class="stat-card">
+<h2 id="count3">0</h2>
+<p>Positive Reviews</p>
+</div>
+
+<div class="stat-card">
+<h2 id="count4">0</h2>
+<p>Collections</p>
+</div>
 
 </div>
 
 </section>
 
-<!-- OWNER SECTION -->
+<!-- NEWSLETTER -->
 
-<section class="owner-section">
+<section class="newsletter">
 
 <h2 class="section-title">
-Owner Information
+Join BAGASH Family
 </h2>
 
-<div class="owner-box">
+<p>
+Get updates about new collections and exclusive offers.
+</p>
 
-<h3>Nurul Amin</h3>
+<div class="newsletter-box">
 
-<p>📞 01792453834</p>
+<input
+type="email"
+placeholder="Enter Your Email">
 
-<p>✉️ ah4948591@gmail.com</p>
-
-<p>💳 bKash: 01736255527</p>
+<button>
+Subscribe
+</button>
 
 </div>
 
@@ -629,356 +533,658 @@ Owner Information
 
 <style>
 
-/* Products */
-
-.products-section{
-padding:80px 5%;
+.premium-showcase{
+padding:90px 5%;
+background:#fff;
 }
 
-.search-box{
+.showcase-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.showcase-card{
+background:#fafafa;
+padding:35px;
 text-align:center;
-margin-bottom:30px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.search-box input{
-width:380px;
+.showcase-card:hover{
+transform:translateY(-10px);
+}
+
+.showcase-icon{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.showcase-card h3{
+color:#1f6b3a;
+margin-bottom:12px;
+}
+
+.show-btn{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+background:#1f6b3a;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-weight:700;
+}
+
+.stats-section{
+padding:80px 5%;
+background:#1f6b3a;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat-card{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:18px;
+}
+
+.stat-card h2{
+font-size:45px;
+color:#a91b0d;
+}
+
+.newsletter{
+padding:90px 5%;
+text-align:center;
+}
+
+.newsletter p{
+margin-bottom:25px;
+}
+
+.newsletter-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.newsletter-box input{
+width:350px;
 max-width:90%;
-padding:14px;
+padding:15px;
 border:1px solid #ddd;
 border-radius:10px;
 }
 
-.products-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.product-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.product-card img{
-width:100%;
-height:280px;
-object-fit:cover;
-}
-
-.product-content{
-padding:20px;
-text-align:center;
-}
-
-.product-price{
-font-size:28px;
-font-weight:700;
-color:#a91b0d;
-margin:10px 0;
-}
-
-.cart-btn,
-.wish-btn{
-padding:12px 18px;
+.newsletter-box button{
+padding:15px 30px;
 border:none;
-border-radius:8px;
-cursor:pointer;
-margin:5px;
-font-weight:600;
-}
-
-.cart-btn{
 background:#1f6b3a;
 color:white;
-}
-
-.wish-btn{
-background:#a91b0d;
-color:white;
-}
-
-/* Cart */
-
-.cart-section,
-.wishlist-section,
-.owner-section{
-padding:80px 5%;
-}
-
-.cart-box,
-.wishlist-box,
-.owner-box{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.owner-box{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.owner-box h3{
-color:#1f6b3a;
-margin-bottom:15px;
-font-size:30px;
-}
-
-.owner-box p{
-margin:10px 0;
+font-weight:700;
+border-radius:10px;
+cursor:pointer;
 }
 
 </style>
 
 <script>
 
-let cart = [];
-let wishlist = [];
+function animateCounter(id,target){
 
-function addToCart(name,price){
+let count=0;
 
-cart.push({
-name:name,
-price:price
-});
+let speed=setInterval(()=>{
 
-renderCart();
+count+=Math.ceil(target/100);
 
-}
+if(count>=target){
 
-function renderCart(){
-
-let html = "";
-let total = 0;
-
-cart.forEach(item=>{
-
-total += item.price;
-
-html +=
-`<p>${item.name} - ৳${item.price}</p>`;
-
-});
-
-if(html===""){
-html="No Products Added Yet";
-}
-
-document.getElementById("cartItems").innerHTML = html;
-document.getElementById("cartTotal").innerText = total;
+count=target;
+clearInterval(speed);
 
 }
 
-function addWishlist(name){
+document.getElementById(id).innerText=count+"+";
 
-wishlist.push(name);
-
-document.getElementById("wishlistItems")
-.innerHTML = wishlist.map(item=>
-`<p>${item}</p>`
-).join("");
+},20);
 
 }
 
-function searchProducts(){
+window.addEventListener("load",()=>{
 
-let value =
-document.getElementById("searchInput")
-.value.toLowerCase();
-
-let cards =
-document.querySelectorAll(".product-card");
-
-cards.forEach(card=>{
-
-if(
-card.innerText.toLowerCase()
-.includes(value)
-){
-card.style.display="block";
-}
-else{
-card.style.display="none";
-}
+animateCounter("count1",5000);
+animateCounter("count2",12000);
+animateCounter("count3",4500);
+animateCounter("count4",150);
 
 });
-
-}
 
 </script>
-<!-- CUSTOMER REVIEWS -->
+<!-- ADVANCED FAQ -->
 
-<section class="reviews-section">
+<section class="advanced-faq">
 
 <h2 class="section-title">
-Customer Reviews
+Support Center
 </h2>
 
-<div class="review-grid">
+<div class="faq-item">
 
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Excellent Quality</h3>
-<p>Premium quality and beautiful design.</p>
+<button class="faq-question">
+How do I place an order?
++
+</button>
+
+<div class="faq-answer">
+Add your products to cart and complete checkout.
 </div>
 
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Fast Service</h3>
-<p>Easy ordering process and good support.</p>
 </div>
 
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Highly Recommended</h3>
-<p>Very satisfied with Bagash products.</p>
+<div class="faq-item">
+
+<button class="faq-question">
+What payment methods are available?
++
+</button>
+
+<div class="faq-answer">
+bKash and Cash On Delivery are available.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+How long does delivery take?
++
+</button>
+
+<div class="faq-answer">
+Delivery time depends on your location.
 </div>
 
 </div>
 
 </section>
 
-<!-- FAQ -->
+<!-- ORDER TRACKER -->
 
-<section class="faq-section">
+<section class="tracker-section">
 
 <h2 class="section-title">
-Frequently Asked Questions
+Track Your Order
 </h2>
 
-<div class="faq-box">
+<div class="tracker-box">
 
-<h3>How can I order?</h3>
-<p>Add products to cart and complete checkout.</p>
+<input
+type="text"
+id="orderId"
+placeholder="Enter Order ID">
 
-<br>
+<button onclick="trackOrder()">
+Track Order
+</button>
 
-<h3>What payment methods are available?</h3>
-<p>bKash and Cash On Delivery.</p>
-
-<br>
-
-<h3>How long does delivery take?</h3>
-<p>Delivery time depends on location.</p>
+<p id="trackResult"></p>
 
 </div>
 
 </section>
 
-<!-- CHECKOUT -->
+<!-- COUNTDOWN OFFER -->
 
-<section class="checkout-section">
+<section class="offer-section">
 
 <h2 class="section-title">
-Checkout
+Special Offer Ends In
 </h2>
 
-<div class="checkout-box">
+<div id="countdown">
 
-<input type="text" placeholder="Full Name" class="checkout-input">
+00d : 00h : 00m : 00s
 
-<input type="text" placeholder="Phone Number" class="checkout-input">
+</div>
 
-<input type="text" placeholder="Address" class="checkout-input">
+</section>
 
-<select class="checkout-input">
-<option>bKash Payment</option>
-<option>Cash On Delivery</option>
-</select>
+<!-- LIVE VISITOR -->
 
-<button class="place-order-btn">
-Place Order
+<section class="visitor-section">
+
+<h2 class="section-title">
+Store Statistics
+</h2>
+
+<div class="visitor-box">
+
+<h3>
+👥 Live Visitors:
+<span id="visitorCount">150</span>
+</h3>
+
+</div>
+
+</section>
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+↑
+</button>
+
+<style>
+
+/* FAQ */
+
+.advanced-faq{
+padding:90px 5%;
+background:#fff;
+}
+
+.faq-item{
+background:white;
+margin-bottom:15px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-question{
+width:100%;
+padding:20px;
+border:none;
+background:#1f6b3a;
+color:white;
+font-size:18px;
+font-weight:700;
+text-align:left;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+padding:20px;
+background:#fafafa;
+}
+
+/* Tracker */
+
+.tracker-section{
+padding:90px 5%;
+}
+
+.tracker-box{
+max-width:600px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.tracker-box input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.tracker-box button{
+padding:14px 30px;
+background:#1f6b3a;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* Offer */
+
+.offer-section{
+padding:90px 5%;
+background:#1f6b3a;
+color:white;
+text-align:center;
+}
+
+#countdown{
+font-size:40px;
+font-weight:800;
+margin-top:20px;
+}
+
+/* Visitor */
+
+.visitor-section{
+padding:90px 5%;
+}
+
+.visitor-box{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Top Button */
+
+#topBtn{
+position:fixed;
+left:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border:none;
+background:#a91b0d;
+color:white;
+font-size:24px;
+border-radius:50%;
+cursor:pointer;
+display:none;
+z-index:999;
+}
+
+</style>
+
+<script>
+
+/* FAQ */
+
+document.querySelectorAll(".faq-question")
+.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+let answer =
+btn.nextElementSibling;
+
+answer.style.display =
+answer.style.display==="block"
+? "none"
+: "block";
+
+});
+
+});
+
+/* Order Tracking */
+
+function trackOrder(){
+
+let id =
+document.getElementById("orderId").value;
+
+let result =
+document.getElementById("trackResult");
+
+if(id===""){
+
+result.innerHTML =
+"Please enter Order ID";
+
+}else{
+
+result.innerHTML =
+"Order #"+id+
+" is currently being processed.";
+
+}
+
+}
+
+/* Countdown */
+
+let countDate =
+new Date().getTime() + 7*24*60*60*1000;
+
+setInterval(()=>{
+
+let now=new Date().getTime();
+
+let gap=countDate-now;
+
+let d=Math.floor(
+gap/(1000*60*60*24));
+
+let h=Math.floor(
+(gap%(1000*60*60*24))
+/
+(1000*60*60));
+
+let m=Math.floor(
+(gap%(1000*60*60))
+/
+(1000*60));
+
+let s=Math.floor(
+(gap%(1000*60))
+/
+1000);
+
+document.getElementById(
+"countdown"
+).innerHTML=
+d+"d : "+
+h+"h : "+
+m+"m : "+
+s+"s";
+
+},1000);
+
+/* Visitor Counter */
+
+setInterval(()=>{
+
+let visitor =
+document.getElementById(
+"visitorCount"
+);
+
+visitor.innerText =
+parseInt(visitor.innerText)
++
+Math.floor(Math.random()*3);
+
+},5000);
+
+/* Back To Top */
+
+window.onscroll=function(){
+
+let btn=
+document.getElementById("topBtn");
+
+if(
+document.documentElement.scrollTop
+>300
+){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+
+};
+
+document.getElementById("topBtn")
+.onclick=function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+</script>
+<!-- BRAND PARTNERS -->
+
+<section class="brands-section">
+
+<h2 class="section-title">
+Trusted Partners
+</h2>
+
+<div class="brands-grid">
+
+<div class="brand-box">BAGASH</div>
+<div class="brand-box">Fashion Partner</div>
+<div class="brand-box">Lifestyle Partner</div>
+<div class="brand-box">Premium Collection</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<h2 class="section-title">
+Gallery Showcase
+</h2>
+
+<div class="gallery-grid">
+
+<img src="wallet.webp" alt="">
+<img src="bag.png" alt="">
+<img src="tshirt.jpeg" alt="">
+<img src="shoes.png" alt="">
+
+</div>
+
+</section>
+
+<!-- CONTACT FORM -->
+
+<section class="contact-section">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<div class="contact-box">
+
+<input type="text"
+placeholder="Your Name">
+
+<input type="email"
+placeholder="Your Email">
+
+<textarea
+placeholder="Your Message">
+</textarea>
+
+<button>
+Send Message
 </button>
 
 </div>
 
 </section>
 
-<!-- AI BUTTON -->
+<!-- LOCATION -->
 
-<div id="aiButton" class="ai-btn">
-🤖
+<section class="location-section">
+
+<h2 class="section-title">
+Store Location
+</h2>
+
+<div class="location-box">
+
+<p>
+📍 BAGASH Bangladesh
+</p>
+
+<iframe
+src="https://maps.google.com/maps?q=Bangladesh&t=&z=6&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="400"
+style="border:0;border-radius:15px;">
+</iframe>
+
 </div>
 
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/8801792453834"
-class="whatsapp-btn">
-💬
-</a>
-<a href="https://facebook.com/YourPage"
-target="_blank"
-class="facebook-btn">
-📘
-</a>
-<!-- FOOTER -->
-
-<footer>
-
-<h2>BAGASH</h2>
-
-<p>Premium Fashion • Heritage Lifestyle</p>
-
-<br>
-
-<p>Owner: Nurul Amin</p>
-<p>Phone: 01792453834</p>
-<p>Email: ah4948591@gmail.com</p>
-
-<br>
-
-<p>bKash: 01736255527</p>
-<p>Cash On Delivery Available</p>
-
-<br>
-
-<p>© 2026 BAGASH. All Rights Reserved.</p>
-
-</footer>
+</section>
 
 <style>
 
-/* Reviews */
+/* Brands */
 
-.reviews-section,
-.faq-section,
-.checkout-section{
-padding:80px 5%;
+.brands-section{
+padding:90px 5%;
+background:#fafafa;
 }
 
-.review-grid{
+.brands-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.brand-box{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+font-weight:700;
+font-size:22px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Gallery */
+
+.gallery-section{
+padding:90px 5%;
+}
+
+.gallery-grid{
 display:grid;
 grid-template-columns:
 repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.review-card{
-background:white;
-padding:25px;
+.gallery-grid img{
+width:100%;
+height:280px;
+object-fit:cover;
 border-radius:15px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-/* FAQ */
-
-.faq-box{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+.gallery-grid img:hover{
+transform:scale(1.05);
 }
 
-/* Checkout */
+/* Contact */
 
-.checkout-box{
+.contact-section{
+padding:90px 5%;
+background:#fafafa;
+}
+
+.contact-box{
 max-width:700px;
 margin:auto;
 background:white;
@@ -987,15 +1193,21 @@ border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.checkout-input{
+.contact-box input,
+.contact-box textarea{
 width:100%;
-padding:14px;
+padding:15px;
 margin-bottom:15px;
 border:1px solid #ddd;
 border-radius:10px;
 }
 
-.place-order-btn{
+.contact-box textarea{
+height:150px;
+resize:none;
+}
+
+.contact-box button{
 width:100%;
 padding:15px;
 background:#1f6b3a;
@@ -1006,94 +1218,100 @@ font-weight:700;
 cursor:pointer;
 }
 
-/* AI */
+/* Location */
 
-.ai-btn{
-position:fixed;
-right:20px;
-bottom:95px;
-width:60px;
-height:60px;
-background:#1f6b3a;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:28px;
-cursor:pointer;
-z-index:999;
+.location-section{
+padding:90px 5%;
 }
 
-/* WhatsApp */
-
-.whatsapp-btn{ 
-position:fixed;
-right:20px;
-bottom:20px;
-width:60px;
-height:60px;
-background:#25D366;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-text-decoration:none;
-border-radius:50%;
-font-size:28px;
-z-index:999;
+.location-box{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
-.facebook-btn{
-position:fixed;
-right:20px;
-bottom:170px;
-width:60px;
-height:60px;
-background:#1877F2;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-text-decoration:none;
-border-radius:50%;
-font-size:28px;
-z-index:999;
-}
-/* Footer */
 
-footer{
+/* Dark Mode */
+
+.dark-mode{
 background:#111;
 color:white;
-text-align:center;
-padding:60px 20px;
+}
+
+.dark-mode section{
+background:#111 !important;
+color:white;
+}
+
+.dark-mode .category-card,
+.dark-mode .service-box,
+.dark-mode .product-card,
+.dark-mode .review-card,
+.dark-mode .faq-box,
+.dark-mode .cart-box,
+.dark-mode .wishlist-box,
+.dark-mode .owner-box,
+.dark-mode .brand-box,
+.dark-mode .contact-box,
+.dark-mode .location-box,
+.dark-mode .tracker-box,
+.dark-mode .stat-card{
+background:#1c1c1c;
+color:white;
+}
+
+.dark-mode header{
+background:#1a1a1a;
+}
+
+.dark-mode .menu a{
+color:white;
 }
 
 </style>
 
 <script>
 
-/* Bagash AI */
+/* Dark Mode */
 
-document.getElementById("aiButton")
-.onclick = function(){
+function toggleDarkMode(){
 
-let question = prompt(
-"Welcome to BAGASH. How can I help you?"
-);
-
-if(question){
-
-alert(
-"Bagash AI received: " +
-question +
-"\nOur team will assist you soon."
+document.body.classList.toggle(
+"dark-mode"
 );
 
 }
 
+/* Contact Button */
+
+document.querySelectorAll(
+".contact-box button"
+).forEach(btn=>{
+
+btn.onclick=function(){
+
+alert(
+"Thank you for contacting BAGASH."
+);
+
 };
 
-</script>
+});
 
-</body>
-</html>
+/* Checkout Button */
+
+document.querySelectorAll(
+".place-order-btn"
+).forEach(btn=>{
+
+btn.onclick=function(){
+
+alert(
+"Your order has been placed successfully!"
+);
+
+};
+
+});
+
+</script>

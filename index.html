@@ -1,13 +1,20 @@
+<!-- ========================================= -->
+<!-- PART 1 - BAGASH PREMIUM v11.0 -->
+<!-- Header + Aarong Style Side Menu -->
+<!-- Deep Green Luxury Hero -->
+<!-- ========================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Heritage Premium</title>
+<title>BAGASH Premium v11.0</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,45 +27,63 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:#fff;
-color:#111;
 overflow-x:hidden;
+}
+
+/* TOP BAR */
+
+.topbar{
+background:#0f5d3d;
+color:#fff;
+text-align:center;
+padding:10px;
+font-size:13px;
+font-weight:500;
 }
 
 /* HEADER */
 
 .header{
-height:70px;
+height:82px;
+background:#fff;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 20px;
-border-bottom:1px solid #e5e5e5;
-background:#fff;
+padding:0 18px;
+border-bottom:1px solid #eee;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
+.left-area{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
 .menu-btn{
-font-size:24px;
+font-size:28px;
 cursor:pointer;
+color:#222;
 }
 
 .logo img{
-height:42px;
+height:58px;
 display:block;
 }
 
-.header-right{
+.right-area{
 display:flex;
-gap:18px;
 align-items:center;
+gap:20px;
 }
 
-.header-right a{
+.right-area a{
 text-decoration:none;
 color:#111;
-font-size:14px;
+font-size:15px;
+font-weight:500;
 }
 
 /* SIDE MENU */
@@ -67,13 +92,12 @@ font-size:14px;
 position:fixed;
 top:0;
 left:-100%;
-width:340px;
-height:100%;
+width:85%;
+height:100vh;
 background:#fff;
-overflow-y:auto;
 z-index:9999;
+overflow-y:auto;
 transition:.4s;
-box-shadow:0 0 20px rgba(0,0,0,.15);
 }
 
 .side-menu.active{
@@ -81,113 +105,233 @@ left:0;
 }
 
 .menu-top{
+height:75px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:20px;
-font-size:18px;
-font-weight:600;
+justify-content:space-between;
+padding:0 20px;
 border-bottom:1px solid #eee;
 }
 
-.close-btn{
-cursor:pointer;
+.menu-top h3{
 font-size:22px;
 }
 
-details{
+.close-btn{
+font-size:28px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.menu-item{
+padding:22px;
 border-bottom:1px solid #eee;
-}
-
-summary{
-padding:18px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 cursor:pointer;
-font-size:15px;
-font-weight:500;
-list-style:none;
+font-size:18px;
 }
 
-details ul{
-list-style:none;
-padding:0 20px 15px;
+.menu-item span{
+font-size:30px;
+font-weight:300;
+color:#777;
 }
 
-details ul li{
-padding:8px 0;
-font-size:14px;
-color:#555;
+.menu-footer{
+background:#111;
+color:#fff;
+margin-top:20px;
 }
 
-details ul li:hover{
-color:#000;
-cursor:pointer;
+.menu-footer div{
+padding:20px;
+border-bottom:1px solid rgba(255,255,255,.15);
+font-size:16px;
 }
 
 /* HERO */
 
 .hero{
+
 position:relative;
+
+min-height:88vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#03281c,
+#0b4d38,
+#0f6f52
+);
+
 }
 
-.hero img{
-width:100%;
-height:520px;
-object-fit:cover;
-display:block;
+/* GLOW */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.15),
+transparent 70%
+);
+
+animation:glow 8s infinite alternate;
+
+}
+
+@keyframes glow{
+
+0%{
+transform:scale(1);
+opacity:.4;
+}
+
+100%{
+transform:scale(1.4);
+opacity:.9;
+}
+
 }
 
 .hero-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-color:#fff;
-width:90%;
+position:relative;
+z-index:5;
+max-width:900px;
+padding:20px;
 }
 
-.hero-content h1{
-font-size:48px;
-font-weight:600;
-margin-bottom:10px;
-}
+.hero-logo{
 
-.hero-content p{
-font-size:16px;
+width:230px;
 margin-bottom:20px;
+
+animation:fadeUp 1s ease;
+
 }
 
-.hero-content a{
-display:inline-block;
-padding:12px 30px;
-background:#000;
+.hero h1{
+
+font-size:72px;
+font-weight:800;
+letter-spacing:4px;
+
 color:#fff;
-text-decoration:none;
-font-size:14px;
+
+margin-bottom:10px;
+
+animation:fadeUp 1.2s ease;
+
 }
 
-/* MOBILE */
+.hero p{
+
+font-size:22px;
+
+color:#ecfff7;
+
+margin-bottom:35px;
+
+animation:fadeUp 1.4s ease;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:15px 45px;
+
+background:#fff;
+
+color:#0f5d3d;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+animation:fadeUp 1.6s ease;
+
+}
+
+.hero-btn:hover{
+
+background:#e9f8f1;
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
-.side-menu{
-width:90%;
-}
-
-.hero img{
-height:300px;
-}
-
-.hero-content h1{
-font-size:28px;
-}
-
-.hero-content p{
-font-size:13px;
-}
-
 .logo img{
-height:36px;
+height:50px;
+}
+
+.hero{
+min-height:80vh;
+}
+
+.hero-logo{
+width:170px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-btn{
+padding:12px 30px;
+}
+
+.right-area{
+gap:12px;
+}
+
+.right-area a{
+font-size:14px;
 }
 
 }
@@ -198,7 +342,17 @@ height:36px;
 
 <body>
 
+<!-- TOP BAR -->
+
+<div class="topbar">
+Nationwide Delivery | bKash & Cash On Delivery Available
+</div>
+
+<!-- HEADER -->
+
 <header class="header">
+
+<div class="left-area">
 
 <div class="menu-btn" onclick="openMenu()">
 ☰
@@ -208,183 +362,93 @@ height:36px;
 <img src="bagash-logo.png" alt="BAGASH">
 </div>
 
-<div class="header-right">
+</div>
+
+<div class="right-area">
+
 <a href="#">Search</a>
+
 <a href="#">Account</a>
+
 </div>
 
 </header>
 
-<div class="side-menu" id="menu">
+<!-- SIDE MENU -->
+
+<div id="sideMenu" class="side-menu">
 
 <div class="menu-top">
-<span>MENU</span>
-<span class="close-btn" onclick="closeMenu()">✕</span>
-</div>
-<!-- WOMEN -->
 
-<details>
+<h3>BAGASH</h3>
 
-<summary>WOMEN</summary>
-
-<ul>
-<li>New Arrivals</li>
-<li>Saree</li>
-<li>Shalwar Kameez</li>
-<li>Kurta</li>
-<li>Tops</li>
-<li>Coats & Jackets</li>
-<li>Skirts</li>
-<li>Pants</li>
-<li>Nightwear</li>
-<li>Shawls</li>
-<li>Shoes</li>
-<li>Accessories</li>
-<li>BAGA WOMEN</li>
-</ul>
-
-</details>
-
-<!-- MEN -->
-
-<details>
-
-<summary>MEN</summary>
-
-<ul>
-<li>New Arrivals</li>
-<li>Panjabi</li>
-<li>Panjabi Pajama Sets</li>
-<li>Pajama</li>
-<li>Short Kurta</li>
-<li>Jackets</li>
-<li>Trousers</li>
-<li>Shirts</li>
-<li>Fatua</li>
-<li>Lungi</li>
-<li>Shawls</li>
-<li>T-Shirts</li>
-<li>Polos</li>
-<li>Sleeping Suits</li>
-<li>Shoes</li>
-<li>Accessories</li>
-<li>Tupi</li>
-<li>BAGA MAN</li>
-</ul>
-
-</details>
-
-<!-- KIDS -->
-
-<details>
-
-<summary>KIDS</summary>
-
-<ul>
-<li>Kids New Arrivals</li>
-<li>Kids Partywear</li>
-<li>Junior Girls (2Y-9Y)</li>
-<li>Junior Boys (2Y-7Y)</li>
-<li>Girls (8Y-15Y)</li>
-<li>Boys (8Y-15Y)</li>
-<li>Newborn Girls (0-1.5Y)</li>
-<li>Newborn Boys (0-1.5Y)</li>
-<li>Shoes</li>
-<li>Toys & Books</li>
-</ul>
-
-</details>
-<!-- HOME DECOR -->
-
-<details>
-
-<summary>HOME DÉCOR</summary>
-
-<ul>
-<li>Living</li>
-<li>Dining</li>
-<li>Décor</li>
-<li>Kids Home</li>
-<li>Stationery & Gift Cards</li>
-<li>Lawn & Gardening</li>
-</ul>
-
-</details>
-
-<!-- JEWELLERY -->
-
-<details>
-
-<summary>JEWELLERY</summary>
-
-<ul>
-<li>Earrings</li>
-<li>Necklaces</li>
-<li>Necklace Sets</li>
-<li>Bracelets & Bangles</li>
-<li>Rings</li>
-<li>Nose Pins</li>
-<li>Anklets</li>
-<li>Lockets & Pendants</li>
-<li>Hair Accessories</li>
-<li>Jewellery Box</li>
-</ul>
-
-</details>
-
-<!-- SKIN & HAIR -->
-
-<details>
-
-<summary>SKIN & HAIR</summary>
-
-<ul>
-<li>Summer Glow</li>
-<li>New Arrivals</li>
-<li>Gift Baskets</li>
-<li>Handmade Soaps</li>
-<li>Body Washes</li>
-<li>Body Care</li>
-<li>Face Washes</li>
-<li>Toners</li>
-<li>Lip Balms</li>
-<li>Body Lotion</li>
-<li>Face Packs</li>
-<li>Hair Packs</li>
-<li>Hair & Body Oils</li>
-</ul>
-
-</details>
-
-<!-- WEDDING -->
-
-<details>
-
-<summary>WEDDING</summary>
-
-<ul>
-<li>Women</li>
-<li>Men</li>
-<li>Home Décor</li>
-<li>Jewellery</li>
-<li>Skin & Hair</li>
-<li>Under BDT 1000</li>
-<li>BDT 1001–3000</li>
-<li>BDT 3001–5000</li>
-<li>Above BDT 5000</li>
-</ul>
-
-</details>
+<button class="close-btn" onclick="closeMenu()">×</button>
 
 </div>
 
-<!-- HERO SECTION -->
+<div class="menu-item">
+WOMEN <span>+</span>
+</div>
+
+<div class="menu-item">
+MEN <span>+</span>
+</div>
+
+<div class="menu-item">
+KIDS' <span>+</span>
+</div>
+
+<div class="menu-item">
+HOME DÉCOR <span>+</span>
+</div>
+
+<div class="menu-item">
+JEWELLERY <span>+</span>
+</div>
+
+<div class="menu-item">
+SKIN & HAIR <span>+</span>
+</div>
+
+<div class="menu-item">
+GIFTS & CRAFTS <span>+</span>
+</div>
+
+<div class="menu-item">
+WEDDING <span>+</span>
+</div>
+
+<div class="menu-item">
+BAGA WOMEN <span>+</span>
+</div>
+
+<div class="menu-item">
+BAGA MAN <span>+</span>
+</div>
+
+<div class="menu-footer">
+
+<div>Find A Store</div>
+
+<div>Customer Service</div>
+
+<div>My Rewards</div>
+
+<div>Owner: Nurul Amin</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<img src="hero-banner.png" alt="BAGASH">
-
 <div class="hero-content">
+
+<img src="bagash-logo.png"
+class="hero-logo"
+alt="Bagash">
 
 <h1>BAGASH</h1>
 
@@ -392,340 +456,1050 @@ height:36px;
 Heritage • Fashion • Lifestyle
 </p>
 
-<a href="#">
+<a href="#" class="hero-btn">
 SHOP NOW
 </a>
 
 </div>
 
 </section>
-<!-- SHOP BY CATEGORY -->
 
-<section class="categories">
+<script>
 
-<div class="section-title">
-<h2>SHOP BY CATEGORY</h2>
-</div>
+function openMenu(){
+document.getElementById("sideMenu")
+.classList.add("active");
+}
 
-<div class="category-grid">
+function closeMenu(){
+document.getElementById("sideMenu")
+.classList.remove("active");
+}
 
-<div class="category-card">
-<img src="women.jpeg" alt="Women">
-<h3>Women</h3>
-</div>
-
-<div class="category-card">
-<img src="men.jpeg" alt="Men">
-<h3>Men</h3>
-</div>
-
-<div class="category-card">
-<img src="kids.jpeg" alt="Kids">
-<h3>Kids</h3>
-</div>
-
-<div class="category-card">
-<img src="homedecor.jpeg" alt="Home Decor">
-<h3>Home Décor</h3>
-</div>
-
-<div class="category-card">
-<img src="jewellery.jpeg" alt="Jewellery">
-<h3>Jewellery</h3>
-</div>
-
-<div class="category-card">
-<img src="skinhair.jpeg" alt="Skin Hair">
-<h3>Skin & Hair</h3>
-</div>
-
-<div class="category-card">
-<img src="wedding.jpeg" alt="Wedding">
-<h3>Wedding</h3>
-</div>
-
-<div class="category-card">
-<img src="giftcraft.jpeg" alt="Gift Sets">
-<h3>Gift Sets</h3>
-</div>
-
-</div>
-
-</section>
+</script>
+<!-- ========================================= -->
+<!-- PART 2 -->
+<!-- WOMEN MEGA MENU (AARONG STYLE) -->
+<!-- ========================================= -->
 
 <style>
 
-.categories{
+/* WOMEN SUB MENU */
+
+.submenu{
+display:none;
+background:#fafafa;
+padding:10px 0;
+}
+
+.submenu a{
+display:block;
+padding:10px 35px;
+text-decoration:none;
+color:#444;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+.submenu a:hover{
+background:#f0f0f0;
+}
+
+.submenu-title{
+padding:12px 25px;
+font-size:15px;
+font-weight:600;
+background:#f7f7f7;
+color:#111;
+}
+
+</style>
+
+<!-- WOMEN -->
+
+<div class="menu-item" onclick="toggleWomen()">
+WOMEN <span id="womenIcon">+</span>
+</div>
+
+<div class="submenu" id="womenMenu">
+
+<div class="submenu-title">SAREE</div>
+
+<a href="#">Cotton</a>
+<a href="#">Muslin</a>
+<a href="#">Silk</a>
+<a href="#">Katan</a>
+<a href="#">Nakshi Kantha</a>
+<a href="#">Jamdani</a>
+<a href="#">Brac Silk</a>
+
+<div class="submenu-title">SHALWAR KAMEEZ</div>
+
+<a href="#">Cotton & Blends</a>
+<a href="#">Silk</a>
+<a href="#">Muslin</a>
+
+<div class="submenu-title">FASHION</div>
+
+<a href="#">Kurta</a>
+<a href="#">Tops</a>
+<a href="#">Coats & Jackets</a>
+<a href="#">Skirts</a>
+<a href="#">Pants</a>
+<a href="#">Nightwear</a>
+<a href="#">Shawls</a>
+
+<div class="submenu-title">SHOES</div>
+
+<a href="#">Sandals</a>
+<a href="#">Heels</a>
+<a href="#">Pumps</a>
+<a href="#">Nagras</a>
+
+<div class="submenu-title">ACCESSORIES</div>
+
+<a href="#">Bags</a>
+<a href="#">Purses</a>
+<a href="#">Wallets</a>
+<a href="#">Card Holders</a>
+<a href="#">Key Rings</a>
+
+<div class="submenu-title">BRAND</div>
+
+<a href="#">BAGA WOMEN</a>
+
+</div>
+
+<script>
+
+function toggleWomen(){
+
+var menu =
+document.getElementById("womenMenu");
+
+var icon =
+document.getElementById("womenIcon");
+
+if(menu.style.display==="block"){
+
+menu.style.display="none";
+icon.innerHTML="+";
+
+}else{
+
+menu.style.display="block";
+icon.innerHTML="−";
+
+}
+
+}
+
+</script>
+<!-- ========================================= -->
+<!-- PART 3 -->
+<!-- MEN MEGA MENU (AARONG STYLE) -->
+<!-- ========================================= -->
+
+<style>
+
+/* MEN SUB MENU */
+
+#menMenu{
+display:none;
+background:#fafafa;
+}
+
+#menMenu a{
+display:block;
+padding:10px 35px;
+text-decoration:none;
+color:#444;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+#menMenu a:hover{
+background:#f2f2f2;
+}
+
+</style>
+
+<!-- MEN -->
+
+<div class="menu-item" onclick="toggleMen()">
+MEN <span id="menIcon">+</span>
+</div>
+
+<div class="submenu" id="menMenu">
+
+<div class="submenu-title">
+NEW ARRIVALS
+</div>
+
+<a href="#">Latest Collection</a>
+
+<div class="submenu-title">
+PANJABI
+</div>
+
+<a href="#">Cotton & Blends</a>
+<a href="#">Addi</a>
+<a href="#">Endi</a>
+<a href="#">Silk</a>
+<a href="#">Muslin & Jamdani</a>
+
+<div class="submenu-title">
+PANJABI PAJAMA SETS
+</div>
+
+<a href="#">Cotton & Blends</a>
+<a href="#">Silk</a>
+
+<div class="submenu-title">
+MEN'S WEAR
+</div>
+
+<a href="#">Pajama</a>
+<a href="#">Short Kurta</a>
+<a href="#">Jackets</a>
+
+<div class="submenu-title">
+TROUSERS
+</div>
+
+<a href="#">Chinos</a>
+<a href="#">Denim</a>
+<a href="#">Lounge Wear</a>
+
+<div class="submenu-title">
+SHIRTS
+</div>
+
+<a href="#">Ethnic</a>
+<a href="#">Casual</a>
+<a href="#">Executive</a>
+
+<div class="submenu-title">
+FATUA
+</div>
+
+<a href="#">Cotton & Blends</a>
+<a href="#">Endi</a>
+<a href="#">Silk</a>
+
+<div class="submenu-title">
+MORE COLLECTIONS
+</div>
+
+<a href="#">Lungi</a>
+<a href="#">Shawls</a>
+<a href="#">T-Shirts</a>
+<a href="#">Polos</a>
+<a href="#">Sleeping Suits</a>
+
+<div class="submenu-title">
+SHOES
+</div>
+
+<a href="#">Sandals</a>
+<a href="#">Shoes</a>
+<a href="#">Nagras</a>
+
+<div class="submenu-title">
+ACCESSORIES
+</div>
+
+<a href="#">Belts</a>
+<a href="#">Wallets</a>
+<a href="#">Card Holders</a>
+<a href="#">Key Rings</a>
+<a href="#">Bags</a>
+<a href="#">Attar</a>
+
+<div class="submenu-title">
+TRADITIONAL
+</div>
+
+<a href="#">Tupi</a>
+
+<div class="submenu-title">
+BRAND
+</div>
+
+<a href="#">BAGA MAN</a>
+
+</div>
+
+<script>
+
+function toggleMen(){
+
+var menu =
+document.getElementById("menMenu");
+
+var icon =
+document.getElementById("menIcon");
+
+if(menu.style.display==="block"){
+
+menu.style.display="none";
+icon.innerHTML="+";
+
+}else{
+
+menu.style.display="block";
+icon.innerHTML="−";
+
+}
+
+}
+
+</script>
+<!-- ========================================= -->
+<!-- PART 4 -->
+<!-- KIDS + HOME DÉCOR MEGA MENU -->
+<!-- ========================================= -->
+
+<style>
+
+/* KIDS & HOME MENU */
+
+#kidsMenu,
+#homeMenu{
+display:none;
+background:#fafafa;
+}
+
+#kidsMenu a,
+#homeMenu a{
+display:block;
+padding:10px 35px;
+text-decoration:none;
+color:#444;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+#kidsMenu a:hover,
+#homeMenu a:hover{
+background:#f2f2f2;
+}
+
+</style>
+
+<!-- ========================= -->
+<!-- KIDS -->
+<!-- ========================= -->
+
+<div class="menu-item" onclick="toggleKids()">
+KIDS' <span id="kidsIcon">+</span>
+</div>
+
+<div class="submenu" id="kidsMenu">
+
+<div class="submenu-title">
+VIEW ALL CATEGORIES
+</div>
+
+<a href="#">Kids New Arrivals</a>
+<a href="#">Kids Partywear</a>
+
+<div class="submenu-title">
+JUNIOR GIRLS (2Y-9Y)
+</div>
+
+<a href="#">Frocks</a>
+<a href="#">Skirt Tops</a>
+<a href="#">Pant Tops</a>
+<a href="#">T-Shirts</a>
+<a href="#">Shalwar Kameez</a>
+<a href="#">Ghagra Choli</a>
+<a href="#">Saree</a>
+<a href="#">Sweaters & Jackets</a>
+<a href="#">Shawls</a>
+<a href="#">Pants</a>
+<a href="#">Party Wear</a>
+
+<div class="submenu-title">
+JUNIOR BOYS (2Y-7Y)
+</div>
+
+<a href="#">Shirts</a>
+<a href="#">Fatua</a>
+<a href="#">T-Shirts & Polos</a>
+<a href="#">Shirt Pant Sets</a>
+<a href="#">Pants</a>
+<a href="#">Panjabi</a>
+<a href="#">Panjabi Pajama Sets</a>
+<a href="#">Pajama</a>
+<a href="#">Tupi</a>
+<a href="#">Waistcoats & Hoodies</a>
+<a href="#">Sleeping Suits</a>
+<a href="#">Party Wear</a>
+
+<div class="submenu-title">
+GIRLS (8Y-15Y)
+</div>
+
+<a href="#">Frocks</a>
+<a href="#">Tops</a>
+<a href="#">Skirts</a>
+<a href="#">Pants</a>
+<a href="#">Shalwar Kameez</a>
+<a href="#">Ghagra Choli</a>
+<a href="#">Sweaters & Jackets</a>
+<a href="#">Shawls</a>
+<a href="#">T-Shirts</a>
+
+<div class="submenu-title">
+BOYS (8Y-15Y)
+</div>
+
+<a href="#">Shirts</a>
+<a href="#">Fatua</a>
+<a href="#">T-Shirts & Polos</a>
+<a href="#">Shirt Pant Sets</a>
+<a href="#">Pants</a>
+<a href="#">Panjabi</a>
+<a href="#">Pajama</a>
+<a href="#">Panjabi Pajama Sets</a>
+<a href="#">Waistcoats & Hoodies</a>
+<a href="#">Party Wear</a>
+<a href="#">Sleeping Suits</a>
+
+<div class="submenu-title">
+NEWBORN GIRLS (0-1.5Y)
+</div>
+
+<a href="#">Nima</a>
+<a href="#">Frocks</a>
+<a href="#">Skirt Tops</a>
+<a href="#">Pant Tops</a>
+<a href="#">Shalwar Kameez</a>
+<a href="#">Ghagra Choli</a>
+<a href="#">Shawls</a>
+<a href="#">Nappy & Pants</a>
+<a href="#">Bibs</a>
+<a href="#">Feeder Covers</a>
+
+<div class="submenu-title">
+NEWBORN BOYS (0-1.5Y)
+</div>
+
+<a href="#">Nima</a>
+<a href="#">Shirt Pant Sets</a>
+<a href="#">Panjabi</a>
+<a href="#">Panjabi Pajama Sets</a>
+<a href="#">Nappy & Pants</a>
+<a href="#">T-Shirts</a>
+<a href="#">Bibs</a>
+<a href="#">Feeder Covers</a>
+<a href="#">Pajama</a>
+<a href="#">Sweater Sets</a>
+
+<div class="submenu-title">
+SHOES
+</div>
+
+<a href="#">Newborn (0.3Y-1.5Y)</a>
+<a href="#">Toddler (1Y-3Y)</a>
+<a href="#">Junior Girls (4Y-6Y)</a>
+<a href="#">Junior Boys (4Y-6Y)</a>
+<a href="#">Girls (7Y-14Y)</a>
+<a href="#">Boys (7Y-14Y)</a>
+
+<div class="submenu-title">
+TOYS & BOOKS
+</div>
+
+<a href="#">Books</a>
+<a href="#">Learning & Education</a>
+<a href="#">Stuffed & Plush Toys</a>
+<a href="#">Wooden Toys</a>
+<a href="#">Traditional Toys & Dolls</a>
+<a href="#">Musical Instruments</a>
+
+</div>
+
+<!-- ========================= -->
+<!-- HOME DECOR -->
+<!-- ========================= -->
+
+<div class="menu-item" onclick="toggleHome()">
+HOME DÉCOR <span id="homeIcon">+</span>
+</div>
+
+<div class="submenu" id="homeMenu">
+
+<div class="submenu-title">
+LIVING
+</div>
+
+<a href="#">Bedcovers</a>
+<a href="#">Kantha & Quilt</a>
+<a href="#">Cushion Covers</a>
+<a href="#">Curtains</a>
+<a href="#">Pillows & Cushions</a>
+<a href="#">Pillow Covers</a>
+<a href="#">Sofa Throw</a>
+<a href="#">Table Covers & Sofa Backs</a>
+<a href="#">Rugs & Carpets</a>
+
+<div class="submenu-title">
+DINING
+</div>
+
+<a href="#">Dinnerware Sets</a>
+<a href="#">Plates & Platters</a>
+<a href="#">Bowls</a>
+<a href="#">Cups Mugs & Jugs</a>
+<a href="#">Kitchen Accessories</a>
+<a href="#">Cutlery & Utensils</a>
+<a href="#">Trays</a>
+<a href="#">Tablecloths</a>
+<a href="#">Runners</a>
+<a href="#">Placemats & Napkins</a>
+<a href="#">Napkin Holders</a>
+<a href="#">Coasters</a>
+
+<div class="submenu-title">
+DÉCOR
+</div>
+
+<a href="#">Wall Hangings</a>
+<a href="#">Photo Frames</a>
+<a href="#">Brass Novelties</a>
+<a href="#">Cast Iron Novelties</a>
+<a href="#">Vases</a>
+<a href="#">Lamps & Shades</a>
+<a href="#">Candles</a>
+<a href="#">Lanterns & Candle Stands</a>
+<a href="#">Mirrors</a>
+<a href="#">Wooden Accents</a>
+<a href="#">Boxes</a>
+<a href="#">Dry Flowers & Potpourri</a>
+<a href="#">Decorative Items</a>
+<a href="#">Planters</a>
+
+<div class="submenu-title">
+OTHERS
+</div>
+
+<a href="#">Kids Home</a>
+<a href="#">Stationery & Gift Cards</a>
+<a href="#">Lawn & Gardening</a>
+<a href="#">Indoor Plants</a>
+<a href="#">Gardening Accessories</a>
+
+</div>
+
+<script>
+
+function toggleKids(){
+
+var menu=document.getElementById("kidsMenu");
+var icon=document.getElementById("kidsIcon");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+icon.innerHTML="+";
+}else{
+menu.style.display="block";
+icon.innerHTML="−";
+}
+
+}
+
+function toggleHome(){
+
+var menu=document.getElementById("homeMenu");
+var icon=document.getElementById("homeIcon");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+icon.innerHTML="+";
+}else{
+menu.style.display="block";
+icon.innerHTML="−";
+}
+
+}
+
+</script>
+<!-- ========================================= -->
+<!-- PART 5 -->
+<!-- JEWELLERY + SKIN & HAIR + WEDDING -->
+<!-- ========================================= -->
+
+<style>
+
+#jewelleryMenu,
+#skinMenu,
+#weddingMenu{
+display:none;
+background:#fafafa;
+}
+
+#jewelleryMenu a,
+#skinMenu a,
+#weddingMenu a{
+display:block;
+padding:10px 35px;
+text-decoration:none;
+color:#444;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+#jewelleryMenu a:hover,
+#skinMenu a:hover,
+#weddingMenu a:hover{
+background:#f2f2f2;
+}
+
+</style>
+
+<!-- ===================== -->
+<!-- JEWELLERY -->
+<!-- ===================== -->
+
+<div class="menu-item" onclick="toggleJewellery()">
+JEWELLERY <span id="jewelleryIcon">+</span>
+</div>
+
+<div class="submenu" id="jewelleryMenu">
+
+<div class="submenu-title">EARRINGS</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+<a href="#">Gold-Plated</a>
+
+<div class="submenu-title">NECKLACES</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+<a href="#">Gold-Plated</a>
+
+<div class="submenu-title">NECKLACE SETS</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+<a href="#">Gold-Plated</a>
+
+<div class="submenu-title">BRACELETS & BANGLES</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+<a href="#">Gold-Plated</a>
+
+<div class="submenu-title">RINGS</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+<a href="#">Gold-Plated</a>
+
+<div class="submenu-title">NOSE PINS</div>
+<a href="#">Silver</a>
+
+<div class="submenu-title">ANKLETS</div>
+<a href="#">Silver</a>
+<a href="#">Fashion</a>
+<a href="#">Pearl</a>
+
+<div class="submenu-title">LOCKETS & PENDANTS</div>
+<a href="#">Silver</a>
+<a href="#">Pearl</a>
+<a href="#">Fashion</a>
+
+<div class="submenu-title">OTHERS</div>
+<a href="#">Hair Accessories</a>
+<a href="#">Jewellery Box</a>
+
+</div>
+
+<!-- ===================== -->
+<!-- SKIN & HAIR -->
+<!-- ===================== -->
+
+<div class="menu-item" onclick="toggleSkin()">
+SKIN & HAIR <span id="skinIcon">+</span>
+</div>
+
+<div class="submenu" id="skinMenu">
+
+<div class="submenu-title">VIEW ALL</div>
+
+<a href="#">Summer Glow</a>
+<a href="#">New Arrivals</a>
+<a href="#">Gift Baskets</a>
+<a href="#">Handmade Soaps</a>
+<a href="#">Body Washes</a>
+<a href="#">Body Care</a>
+<a href="#">Face Washes</a>
+<a href="#">Toners</a>
+<a href="#">Lip Balms</a>
+<a href="#">Soothing Gels</a>
+<a href="#">Body Lotion</a>
+<a href="#">Face Packs</a>
+<a href="#">Hair Packs</a>
+<a href="#">Hair & Body Oils</a>
+
+</div>
+
+<!-- ===================== -->
+<!-- WEDDING -->
+<!-- ===================== -->
+
+<div class="menu-item" onclick="toggleWedding()">
+WEDDING <span id="weddingIcon">+</span>
+</div>
+
+<div class="submenu" id="weddingMenu">
+
+<div class="submenu-title">WEDDING COLLECTION</div>
+
+<a href="#">Women</a>
+<a href="#">Men</a>
+<a href="#">Home Décor</a>
+<a href="#">Jewellery</a>
+<a href="#">Skin & Hair</a>
+
+<div class="submenu-title">SHOP BY PRICE</div>
+
+<a href="#">Under BDT 1000</a>
+<a href="#">BDT 1001 – 3000</a>
+<a href="#">BDT 3001 – 5000</a>
+<a href="#">Above BDT 5000</a>
+
+<div class="submenu-title">SIGNATURE COLLECTION</div>
+
+<a href="#">BAGA</a>
+<a href="#">BAGA MAN</a>
+
+</div>
+
+<script>
+
+function toggleJewellery(){
+
+var menu=document.getElementById("jewelleryMenu");
+var icon=document.getElementById("jewelleryIcon");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+icon.innerHTML="+";
+}else{
+menu.style.display="block";
+icon.innerHTML="−";
+}
+
+}
+
+function toggleSkin(){
+
+var menu=document.getElementById("skinMenu");
+var icon=document.getElementById("skinIcon");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+icon.innerHTML="+";
+}else{
+menu.style.display="block";
+icon.innerHTML="−";
+}
+
+}
+
+function toggleWedding(){
+
+var menu=document.getElementById("weddingMenu");
+var icon=document.getElementById("weddingIcon");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+icon.innerHTML="+";
+}else{
+menu.style.display="block";
+icon.innerHTML="−";
+}
+
+}
+
+</script>
+<!-- ========================================= -->
+<!-- PART 6 -->
+<!-- BAGASH CATEGORY GRID -->
+<!-- AARONG STYLE HOMEPAGE -->
+<!-- ========================================= -->
+
+<style>
+
+.section{
 padding:70px 20px;
 background:#fff;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:40px;
-}
-
-.section-title h2{
-font-size:30px;
-font-weight:600;
-letter-spacing:1px;
+font-size:34px;
+font-weight:700;
+margin-bottom:45px;
+color:#0f5d3d;
 }
 
 .category-grid{
-max-width:1200px;
-margin:auto;
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
 gap:25px;
+
+max-width:1400px;
+margin:auto;
+
 }
 
 .category-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:#fff;
+
 cursor:pointer;
-transition:.3s;
+
+transition:.4s;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
 }
 
 .category-card:hover{
-transform:translateY(-5px);
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.12);
+
 }
 
 .category-card img{
-width:100%;
-height:320px;
-object-fit:cover;
-display:block;
-}
 
-.category-card h3{
-padding:15px 0;
-font-size:16px;
-font-weight:500;
-text-align:center;
-}
-
-@media(max-width:768px){
-
-.category-grid{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.category-card img{
-height:220px;
-}
-
-.section-title h2{
-font-size:24px;
-}
-
-}
-
-</style>
-<!-- PROMOTIONAL BANNER -->
-
-<section class="promo-banner">
-
-<div class="promo-content">
-
-<h2>Heritage Collection 2026</h2>
-
-<p>
-Discover handcrafted fashion, lifestyle and heritage products inspired by tradition.
-</p>
-
-<a href="#">Explore Collection</a>
-
-</div>
-
-</section>
-
-<!-- NEW ARRIVALS -->
-
-<section class="new-arrivals">
-
-<div class="section-title">
-<h2>NEW ARRIVALS</h2>
-</div>
-
-<div class="arrival-grid">
-
-<div class="arrival-card">
-
-<img src="women.jpeg" alt="Women Collection">
-
-<div class="arrival-info">
-<h3>Women's Collection</h3>
-<p>Starting From ৳950</p>
-</div>
-
-</div>
-
-<div class="arrival-card">
-
-<img src="men.jpeg" alt="Men Collection">
-
-<div class="arrival-info">
-<h3>Men's Collection</h3>
-<p>Starting From ৳950</p>
-</div>
-
-</div>
-
-<div class="arrival-card">
-
-<img src="kids.jpeg" alt="Kids Collection">
-
-<div class="arrival-info">
-<h3>Kids Collection</h3>
-<p>Starting From ৳950</p>
-</div>
-
-</div>
-
-<div class="arrival-card">
-
-<img src="jewellery.jpeg" alt="Jewellery">
-
-<div class="arrival-info">
-<h3>Jewellery Collection</h3>
-<p>Starting From ৳950</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.promo-banner{
-background:#f7f5f0;
-padding:90px 20px;
-text-align:center;
-}
-
-.promo-content{
-max-width:700px;
-margin:auto;
-}
-
-.promo-content h2{
-font-size:42px;
-font-weight:600;
-margin-bottom:15px;
-}
-
-.promo-content p{
-font-size:15px;
-line-height:1.8;
-margin-bottom:25px;
-color:#555;
-}
-
-.promo-content a{
-display:inline-block;
-padding:12px 30px;
-background:#111;
-color:#fff;
-text-decoration:none;
-font-size:14px;
-}
-
-.new-arrivals{
-padding:80px 20px;
-background:#fff;
-}
-
-.arrival-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-
-.arrival-card img{
 width:100%;
 height:340px;
+
 object-fit:cover;
+
 display:block;
+
+transition:.5s;
+
 }
 
-.arrival-info{
-padding:15px 0;
-text-align:center;
+.category-card:hover img{
+
+transform:scale(1.08);
+
 }
 
-.arrival-info h3{
-font-size:16px;
-font-weight:500;
+.category-overlay{
+
+position:absolute;
+
+left:0;
+right:0;
+bottom:0;
+
+padding:25px;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.85)
+);
+
+}
+
+.category-overlay h3{
+
+color:#fff;
+
+font-size:24px;
+
+font-weight:700;
+
 margin-bottom:5px;
+
 }
 
-.arrival-info p{
+.category-overlay p{
+
+color:#f1f1f1;
+
 font-size:14px;
-color:#666;
+
 }
 
 @media(max-width:768px){
 
-.promo-content h2{
-font-size:28px;
+.section{
+padding:50px 15px;
 }
 
-.arrival-grid{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+.section-title{
+font-size:26px;
 }
 
-.arrival-card img{
-height:220px;
+.category-card img{
+height:250px;
+}
+
+.category-overlay h3{
+font-size:20px;
 }
 
 }
 
 </style>
-<!-- FEATURED COLLECTIONS -->
 
-<section class="featured-section">
+<!-- CATEGORY SECTION -->
 
-<div class="section-title">
-<h2>FEATURED COLLECTIONS</h2>
-</div>
+<section class="section">
 
-<div class="featured-grid">
+<h2 class="section-title">
+Shop By Category
+</h2>
 
-<div class="featured-card">
+<div class="category-grid">
 
-<img src="women.jpeg" alt="BAGA Women">
+<!-- WOMEN -->
 
-<div class="featured-content">
+<div class="category-card">
 
-<h3>BAGA WOMEN</h3>
+<img src="women.jpg" alt="Women">
 
-<p>
-Timeless elegance inspired by heritage craftsmanship and modern fashion.
-</p>
+<div class="category-overlay">
 
-<a href="#">Explore</a>
+<h3>Women</h3>
 
-</div>
+<p>Saree • Kurta • Accessories</p>
 
 </div>
 
-<div class="featured-card">
+</div>
 
-<img src="men.jpeg" alt="BAGA Man">
+<!-- MEN -->
 
-<div class="featured-content">
+<div class="category-card">
+
+<img src="men.jpg" alt="Men">
+
+<div class="category-overlay">
+
+<h3>Men</h3>
+
+<p>Panjabi • Shirts • Footwear</p>
+
+</div>
+
+</div>
+
+<!-- KIDS -->
+
+<div class="category-card">
+
+<img src="kids.jpg" alt="Kids">
+
+<div class="category-overlay">
+
+<h3>Kids</h3>
+
+<p>Fashion • Partywear • Toys</p>
+
+</div>
+
+</div>
+
+<!-- HOME -->
+
+<div class="category-card">
+
+<img src="home.jpg" alt="Home Decor">
+
+<div class="category-overlay">
+
+<h3>Home Décor</h3>
+
+<p>Living • Dining • Décor</p>
+
+</div>
+
+</div>
+
+<!-- JEWELLERY -->
+
+<div class="category-card">
+
+<img src="jewellery.jpg" alt="Jewellery">
+
+<div class="category-overlay">
+
+<h3>Jewellery</h3>
+
+<p>Silver • Pearl • Fashion</p>
+
+</div>
+
+</div>
+
+<!-- SKIN -->
+
+<div class="category-card">
+
+<img src="skinhair.jpg" alt="Skin & Hair">
+
+<div class="category-overlay">
+
+<h3>Skin & Hair</h3>
+
+<p>Natural Care Collection</p>
+
+</div>
+
+</div>
+
+<!-- BAGA -->
+
+<div class="category-card">
+
+<img src="baga.jpg" alt="BAGA">
+
+<div class="category-overlay">
+
+<h3>BAGA</h3>
+
+<p>Signature Women's Collection</p>
+
+</div>
+
+</div>
+
+<!-- BAGA MAN -->
+
+<div class="category-card">
+
+<img src="bagaman.jpg" alt="BAGA MAN">
+
+<div class="category-overlay">
 
 <h3>BAGA MAN</h3>
 
-<p>
-Premium ethnic and contemporary wear crafted for confidence and style.
-</p>
-
-<a href="#">Explore</a>
+<p>Premium Men's Collection</p>
 
 </div>
 
@@ -735,380 +1509,529 @@ Premium ethnic and contemporary wear crafted for confidence and style.
 
 </section>
 
-<!-- PREMIUM SHOWCASE -->
+<!-- ========================================= -->
+<!-- IMAGE FILE NAMES -->
+<!-- ========================================= -->
 
-<section class="showcase">
-
-<div class="showcase-box">
-
-<img src="giftcraft.jpeg" alt="Heritage Collection">
-
-<div class="showcase-content">
-
-<h2>Heritage Craftsmanship</h2>
-
-<p>
-Every BAGASH creation reflects tradition, culture and premium quality.
-</p>
-
-<a href="#">Discover More</a>
-
-</div>
-
-</div>
-
-</section>
+<!--
+women.jpg
+men.jpg
+kids.jpg
+home.jpg
+jewellery.jpg
+skinhair.jpg
+baga.jpg
+bagaman.jpg
+-->
+  <!-- ========================================= -->
+<!-- PART 7 -->
+<!-- FEATURED COLLECTIONS -->
+<!-- NEW ARRIVALS -->
+<!-- ========================================= -->
 
 <style>
 
-.featured-section{
+.products-section{
 padding:80px 20px;
-background:#faf8f4;
+background:#f8f8f8;
 }
 
-.featured-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
-}
-
-.featured-card img{
-width:100%;
-height:500px;
-object-fit:cover;
-display:block;
-}
-
-.featured-content{
-padding:25px;
-background:#fff;
+.products-title{
 text-align:center;
-}
-
-.featured-content h3{
-font-size:24px;
-font-weight:600;
-margin-bottom:10px;
-}
-
-.featured-content p{
-font-size:14px;
-color:#666;
-margin-bottom:20px;
-line-height:1.8;
-}
-
-.featured-content a{
-text-decoration:none;
-background:#111;
-color:#fff;
-padding:10px 25px;
-display:inline-block;
-}
-
-.showcase{
-padding:90px 20px;
-background:#fff;
-}
-
-.showcase-box{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.showcase-box img{
-width:100%;
-height:500px;
-object-fit:cover;
-}
-
-.showcase-content h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.showcase-content p{
-font-size:15px;
-line-height:1.9;
-color:#666;
-margin-bottom:25px;
-}
-
-.showcase-content a{
-text-decoration:none;
-background:#111;
-color:#fff;
-padding:12px 30px;
-display:inline-block;
-}
-
-@media(max-width:768px){
-
-.featured-grid{
-grid-template-columns:1fr;
-}
-
-.showcase-box{
-grid-template-columns:1fr;
-}
-
-.featured-card img,
-.showcase-box img{
-height:320px;
-}
-
-.showcase-content h2{
-font-size:28px;
-}
-
-}
-
-</style>
-<!-- BEST SELLERS -->
-
-<section class="best-sellers">
-
-<div class="section-title">
-<h2>BEST SELLERS</h2>
-</div>
-
-<div class="products-grid">
-
-<!-- Product 1 -->
-
-<div class="product-card">
-
-<img src="women.jpeg" alt="Women's Fashion">
-
-<div class="product-info">
-
-<h3>Women's Heritage Collection</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-<!-- Product 2 -->
-
-<div class="product-card">
-
-<img src="men.jpeg" alt="Men's Fashion">
-
-<div class="product-info">
-
-<h3>Men's Premium Collection</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-<!-- Product 3 -->
-
-<div class="product-card">
-
-<img src="kids.jpeg" alt="Kids Fashion">
-
-<div class="product-info">
-
-<h3>Kids Collection</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-<!-- Product 4 -->
-
-<div class="product-card">
-
-<img src="jewellery.jpeg" alt="Jewellery">
-
-<div class="product-info">
-
-<h3>Silver Jewellery</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-<!-- Product 5 -->
-
-<div class="product-card">
-
-<img src="homedecor.jpeg" alt="Home Decor">
-
-<div class="product-info">
-
-<h3>Home Décor Collection</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-<!-- Product 6 -->
-
-<div class="product-card">
-
-<img src="giftcraft.jpeg" alt="Gift">
-
-<div class="product-info">
-
-<h3>Gift Set Collection</h3>
-
-<p class="price">৳950</p>
-
-<a href="#">Shop Now</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.best-sellers{
-padding:90px 20px;
-background:#faf8f4;
-}
-
-.products-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.product-card{
-background:#fff;
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-5px);
-}
-
-.product-card img{
-width:100%;
-height:420px;
-object-fit:cover;
-display:block;
-}
-
-.product-info{
-padding:20px;
-text-align:center;
-}
-
-.product-info h3{
-font-size:17px;
-font-weight:500;
-margin-bottom:10px;
-}
-
-.price{
-font-size:18px;
-font-weight:600;
+font-size:34px;
+font-weight:700;
+color:#0f5d3d;
 margin-bottom:15px;
 }
 
-.product-info a{
+.products-subtitle{
+text-align:center;
+font-size:15px;
+color:#666;
+margin-bottom:50px;
+}
+
+.products-grid{
+
+max-width:1400px;
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.product-card{
+
+background:#fff;
+
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.product-card img{
+
+width:100%;
+height:320px;
+object-fit:cover;
+
+}
+
+.product-info{
+padding:22px;
+}
+
+.product-category{
+
+font-size:12px;
+letter-spacing:1px;
+
+color:#777;
+
+margin-bottom:10px;
+}
+
+.product-name{
+
+font-size:22px;
+font-weight:600;
+
+margin-bottom:10px;
+
+color:#111;
+}
+
+.product-price{
+
+font-size:20px;
+font-weight:700;
+
+color:#0f5d3d;
+
+margin-bottom:18px;
+}
+
+.product-btn{
+
 display:inline-block;
-padding:10px 25px;
-background:#111;
-color:#fff;
+
+padding:12px 25px;
+
 text-decoration:none;
+
+background:#0f5d3d;
+
+color:#fff;
+
 font-size:14px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.product-btn:hover{
+
+background:#083d28;
+
 }
 
 @media(max-width:768px){
 
-.products-grid{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+.products-title{
+font-size:28px;
 }
 
 .product-card img{
-height:240px;
+height:260px;
+}
+
+.product-name{
+font-size:19px;
 }
 
 }
 
 </style>
+
+<section class="products-section">
+
+<h2 class="products-title">
+Featured Collections
+</h2>
+
+<p class="products-subtitle">
+Discover BAGASH Premium Heritage Collection
+</p>
+
+<div class="products-grid">
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card">
+
+<img src="wallet.webp" alt="Wallet">
+
+<div class="product-info">
+
+<div class="product-category">
+ACCESSORIES
+</div>
+
+<h3 class="product-name">
+Premium Jute Wallet
+</h3>
+
+<div class="product-price">
+৳950
+</div>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<img src="bag.png" alt="Bag">
+
+<div class="product-info">
+
+<div class="product-category">
+BAGS
+</div>
+
+<h3 class="product-name">
+Heritage Jute Bag
+</h3>
+
+<div class="product-price">
+৳950
+</div>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card">
+
+<img src="tshirt.jpeg" alt="T-Shirt">
+
+<div class="product-info">
+
+<div class="product-category">
+FASHION
+</div>
+
+<h3 class="product-name">
+BAGA Premium T-Shirt
+</h3>
+
+<div class="product-price">
+৳950
+</div>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card">
+
+<img src="shoes.png" alt="Shoes">
+
+<div class="product-info">
+
+<div class="product-category">
+FOOTWEAR
+</div>
+
+<h3 class="product-name">
+Classic Fashion Shoes
+</h3>
+
+<div class="product-price">
+৳950
+</div>
+
+<a href="#" class="product-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- IMAGE FILES -->
+
+<!--
+wallet.webp
+bag.png
+tshirt.jpeg
+shoes.png
+-->
+<!-- ========================================= -->
+<!-- PART 8 -->
+<!-- SERVICES + NEWSLETTER -->
+<!-- ========================================= -->
+
+<style>
+
+/* SERVICES */
+
+.services-section{
+padding:80px 20px;
+background:#ffffff;
+}
+
+.services-container{
+max-width:1400px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-box{
+
+text-align:center;
+
+padding:35px 25px;
+
+background:#f8f8f8;
+
+border:1px solid #eee;
+
+transition:.3s;
+
+}
+
+.service-box:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.service-title{
+
+font-size:20px;
+font-weight:600;
+
+color:#0f5d3d;
+
+margin-bottom:10px;
+
+}
+
+.service-text{
+
+font-size:14px;
+line-height:1.8;
+
+color:#666;
+
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+
+padding:90px 20px;
+
+background:
+linear-gradient(
+135deg,
+#0a3d2c,
+#0f5d3d
+);
+
+text-align:center;
+
+}
+
+.newsletter h2{
+
+font-size:40px;
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:15px;
+
+}
+
+.newsletter p{
+
+color:#e7f7ef;
+
+font-size:16px;
+
+max-width:650px;
+
+margin:auto auto 35px;
+
+line-height:1.8;
+
+}
+
+.news-form{
+
+max-width:650px;
+margin:auto;
+
+display:flex;
+gap:10px;
+
+}
+
+.news-form input{
+
+flex:1;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+.news-form button{
+
+padding:15px 35px;
+
+border:none;
+
+cursor:pointer;
+
+background:#fff;
+
+color:#0f5d3d;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.news-form button:hover{
+
+background:#e8f7f0;
+
+}
+
+@media(max-width:768px){
+
+.newsletter h2{
+font-size:28px;
+}
+
+.news-form{
+flex-direction:column;
+}
+
+.news-form button{
+width:100%;
+}
+
+}
+
+</style>
+
 <!-- SERVICES -->
 
-<section class="services">
+<section class="services-section">
 
-<div class="section-title">
-<h2>WHY SHOP WITH BAGASH</h2>
-</div>
-
-<div class="services-grid">
+<div class="services-container">
 
 <div class="service-box">
 
-<h3>FREE DELIVERY</h3>
+<h3 class="service-title">
+Free Delivery
+</h3>
 
-<p>
-Fast and reliable delivery across Bangladesh.
+<p class="service-text">
+Fast and reliable delivery service across Bangladesh.
 </p>
 
 </div>
 
 <div class="service-box">
 
-<h3>EASY RETURNS</h3>
+<h3 class="service-title">
+Cash On Delivery
+</h3>
 
-<p>
-Simple return and exchange process for eligible products.
+<p class="service-text">
+Pay easily with Cash On Delivery or bKash payment.
 </p>
 
 </div>
 
 <div class="service-box">
 
-<h3>SECURE PAYMENT</h3>
+<h3 class="service-title">
+Premium Quality
+</h3>
 
-<p>
-Safe payment through bKash, Nagad and Cash on Delivery.
+<p class="service-text">
+Carefully crafted heritage products with premium finishing.
 </p>
 
 </div>
 
 <div class="service-box">
 
-<h3>CUSTOMER SUPPORT</h3>
+<h3 class="service-title">
+Secure Payment
+</h3>
 
-<p>
-Dedicated support team ready to assist you.
+<p class="service-text">
+Safe and trusted payment experience for every order.
 </p>
 
 </div>
@@ -1121,168 +2044,274 @@ Dedicated support team ready to assist you.
 
 <section class="newsletter">
 
-<div class="newsletter-content">
-
-<h2>Stay Connected</h2>
+<h2>
+Stay Connected With BAGASH
+</h2>
 
 <p>
-Subscribe to receive updates about new arrivals, collections and special offers.
+Get updates about new arrivals, exclusive collections,
+seasonal offers and premium lifestyle products.
 </p>
 
-<form>
+<form class="news-form">
 
-<input type="email" placeholder="Enter your email">
+<input
+type="email"
+placeholder="Enter your email address">
 
-<button type="submit">Subscribe</button>
+<button type="submit">
+Subscribe
+</button>
 
 </form>
 
-</div>
-
 </section>
+
+<!-- END PART 8 -->
+<!-- ========================================= -->
+<!-- PART 9 -->
+<!-- ABOUT BAGASH -->
+<!-- BRAND STORY + OWNER SECTION -->
+<!-- ========================================= -->
 
 <style>
 
-.services{
+/* ABOUT SECTION */
+
+.about-section{
 padding:90px 20px;
-background:#fff;
+background:#ffffff;
 }
 
-.services-grid{
-max-width:1200px;
+.about-container{
+
+max-width:1300px;
 margin:auto;
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
 }
 
-.service-box{
-padding:40px 25px;
-border:1px solid #e5e5e5;
-text-align:center;
-transition:.3s;
-}
+.about-image img{
 
-.service-box:hover{
-transform:translateY(-5px);
-}
-
-.service-box h3{
-font-size:18px;
-margin-bottom:15px;
-font-weight:600;
-}
-
-.service-box p{
-font-size:14px;
-line-height:1.8;
-color:#666;
-}
-
-.newsletter{
-padding:90px 20px;
-background:#f7f5f0;
-text-align:center;
-}
-
-.newsletter-content{
-max-width:700px;
-margin:auto;
-}
-
-.newsletter-content h2{
-font-size:34px;
-margin-bottom:15px;
-}
-
-.newsletter-content p{
-color:#666;
-line-height:1.8;
-margin-bottom:25px;
-}
-
-.newsletter form{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.newsletter input{
-width:350px;
-padding:14px;
-border:1px solid #ddd;
-outline:none;
-}
-
-.newsletter button{
-padding:14px 30px;
-background:#111;
-color:#fff;
-border:none;
-cursor:pointer;
-}
-
-@media(max-width:768px){
-
-.services-grid{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.newsletter-content h2{
-font-size:26px;
-}
-
-.newsletter input{
 width:100%;
+height:550px;
+object-fit:cover;
+
+display:block;
+
+}
+
+.about-content h2{
+
+font-size:42px;
+font-weight:700;
+
+color:#0f5d3d;
+
+margin-bottom:20px;
+
+}
+
+.about-content p{
+
+font-size:16px;
+line-height:2;
+
+color:#555;
+
+margin-bottom:20px;
+
+}
+
+/* GALLERY */
+
+.gallery-section{
+
+padding:90px 20px;
+
+background:#f8f8f8;
+
+}
+
+.gallery-title{
+
+text-align:center;
+
+font-size:40px;
+font-weight:700;
+
+color:#0f5d3d;
+
+margin-bottom:50px;
+
+}
+
+.gallery-grid{
+
+max-width:1300px;
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+.gallery-grid img{
+
+width:100%;
+height:300px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* OWNER */
+
+.owner-section{
+
+padding:90px 20px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.owner-box{
+
+max-width:800px;
+margin:auto;
+
+padding:50px;
+
+background:#f8f8f8;
+
+border:1px solid #eee;
+
+}
+
+.owner-box h2{
+
+font-size:36px;
+
+color:#0f5d3d;
+
+margin-bottom:20px;
+
+}
+
+.owner-box h3{
+
+font-size:26px;
+
+margin-bottom:15px;
+
+color:#222;
+
+}
+
+.owner-box p{
+
+font-size:16px;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+@media(max-width:900px){
+
+.about-container{
+
+grid-template-columns:1fr;
+
+}
+
+.about-image img{
+
+height:350px;
+
+}
+
+.about-content h2{
+
+font-size:32px;
+
+}
+
+.gallery-title{
+
+font-size:30px;
+
+}
+
+.owner-box{
+
+padding:30px;
+
 }
 
 }
 
 </style>
-<!-- BRAND STORY -->
 
-<section class="brand-story">
+<!-- ABOUT BAGASH -->
 
-<div class="story-container">
+<section class="about-section">
 
-<div class="story-image">
-<img src="giftcraft.jpeg" alt="Bagash Heritage">
-</div>
+<div class="about-container">
 
-<div class="story-content">
+<div class="about-image">
 
-<h2>THE BAGASH STORY</h2>
-
-<p>
-BAGASH is inspired by heritage, craftsmanship and timeless elegance.
-Our mission is to bring premium fashion, lifestyle and handcrafted
-products to customers who value quality and tradition.
-</p>
-
-<p>
-Every collection reflects culture, creativity and modern design,
-creating a unique shopping experience.
-</p>
+<img src="IMG_3973.webp" alt="Bagash Heritage">
 
 </div>
 
-</div>
+<div class="about-content">
 
-</section>
-
-<!-- HERITAGE BANNER -->
-
-<section class="heritage-banner">
-
-<div class="heritage-overlay">
-
-<h2>Crafted With Heritage</h2>
+<h2>Our Heritage</h2>
 
 <p>
-Premium Fashion • Lifestyle • Home Décor
+
+BAGASH is inspired by Bangladesh's rich heritage,
+traditional craftsmanship and modern lifestyle.
+
 </p>
+
+<p>
+
+Our vision is to create premium fashion,
+lifestyle and handcrafted products that combine
+culture, elegance and quality.
+
+</p>
+
+<p>
+
+Every collection is designed with care,
+bringing together heritage craftsmanship
+and contemporary fashion.
+
+</p>
+
+</div>
 
 </div>
 
@@ -1292,285 +2321,362 @@ Premium Fashion • Lifestyle • Home Décor
 
 <section class="gallery-section">
 
-<div class="section-title">
-<h2>DISCOVER BAGASH</h2>
-</div>
+<h2 class="gallery-title">
+BAGASH Collections
+</h2>
 
 <div class="gallery-grid">
 
-<img src="women.jpeg" alt="">
-<img src="men.jpeg" alt="">
-<img src="kids.jpeg" alt="">
-<img src="jewellery.jpeg" alt="">
-<img src="homedecor.jpeg" alt="">
-<img src="giftcraft.jpeg" alt="">
+<img src="wallet.webp">
+
+<img src="bag.png">
+
+<img src="tshirt.jpeg">
+
+<img src="shoes.png">
 
 </div>
 
 </section>
 
+<!-- OWNER -->
+
+<section class="owner-section">
+
+<div class="owner-box">
+
+<h2>Founder & Owner</h2>
+
+<h3>Nurul Amin</h3>
+
+<p>
+
+Welcome to BAGASH.
+
+Our mission is to create a premium Bangladeshi
+fashion and lifestyle brand that celebrates
+heritage, craftsmanship and quality.
+
+Thank you for being part of the BAGASH journey.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- IMAGE FILES USED -->
+
+<!--
+
+IMG_3973.webp
+wallet.webp
+bag.png
+tshirt.jpeg
+shoes.png
+
+-->
+
+<!-- END PART 9 -->
+<!-- ========================================= -->
+<!-- PART 10 -->
+<!-- PREMIUM FOOTER -->
+<!-- ========================================= -->
+
 <style>
 
-.brand-story{
-padding:100px 20px;
-background:#fff;
-}
+.footer{
 
-.story-container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
+background:#052f21;
 
-.story-image img{
-width:100%;
-height:500px;
-object-fit:cover;
-}
-
-.story-content h2{
-font-size:38px;
-margin-bottom:20px;
-font-weight:600;
-}
-
-.story-content p{
-font-size:15px;
-line-height:1.9;
-color:#666;
-margin-bottom:15px;
-}
-
-.heritage-banner{
-height:500px;
-background:url('hero-banner.png') center center/cover;
-position:relative;
-}
-
-.heritage-overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.35);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 color:#fff;
-text-align:center;
+
+padding:80px 20px 30px;
+
 }
 
-.heritage-overlay h2{
-font-size:52px;
-font-weight:600;
-margin-bottom:15px;
-}
+.footer-container{
 
-.heritage-overlay p{
-font-size:18px;
-letter-spacing:2px;
-}
-
-.gallery-section{
-padding:100px 20px;
-background:#faf8f4;
-}
-
-.gallery-grid{
-max-width:1200px;
+max-width:1400px;
 margin:auto;
+
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:40px;
+
 }
 
-.gallery-grid img{
-width:100%;
-height:320px;
-object-fit:cover;
-display:block;
+.footer h3{
+
+font-size:22px;
+
+margin-bottom:20px;
+
+font-weight:600;
+
+}
+
+.footer p{
+
+font-size:14px;
+
+line-height:2;
+
+color:#d9e7e1;
+
+}
+
+.footer ul{
+
+list-style:none;
+
+}
+
+.footer ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer ul li a{
+
+text-decoration:none;
+
+color:#d9e7e1;
+
 transition:.3s;
+
 }
 
-.gallery-grid img:hover{
-transform:scale(1.03);
+.footer ul li a:hover{
+
+color:#ffffff;
+
+padding-left:5px;
+
+}
+
+.footer-bottom{
+
+margin-top:50px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.15);
+
+text-align:center;
+
+font-size:14px;
+
+color:#c7d7d0;
+
+}
+
+.contact-info div{
+
+margin-bottom:12px;
+
+font-size:14px;
+
+color:#d9e7e1;
+
+}
+
+.social-links{
+
+display:flex;
+
+gap:12px;
+
+margin-top:15px;
+
+}
+
+.social-links a{
+
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+width:42px;
+height:42px;
+
+border:1px solid rgba(255,255,255,.25);
+
+color:#fff;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.social-links a:hover{
+
+background:#0f5d3d;
+
+border-color:#0f5d3d;
+
 }
 
 @media(max-width:768px){
 
-.story-container{
-grid-template-columns:1fr;
+.footer{
+
+padding:60px 20px 20px;
+
 }
 
-.story-image img{
-height:320px;
-}
+.footer h3{
 
-.heritage-banner{
-height:320px;
-}
+font-size:20px;
 
-.heritage-overlay h2{
-font-size:30px;
-}
-
-.gallery-grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-.gallery-grid img{
-height:180px;
 }
 
 }
 
 </style>
+
 <!-- FOOTER -->
 
 <footer class="footer">
 
 <div class="footer-container">
 
-<div class="footer-col">
+<!-- BAGASH -->
+
+<div>
 
 <h3>BAGASH</h3>
 
 <p>
-Premium Fashion, Lifestyle and Heritage Collection inspired by Bangladeshi culture and craftsmanship.
+
+A premium Bangladeshi fashion and lifestyle brand
+inspired by heritage, craftsmanship and modern elegance.
+
 </p>
 
 </div>
 
-<div class="footer-col">
+<!-- QUICK LINKS -->
 
-<h3>SHOP</h3>
+<div>
+
+<h3>Quick Links</h3>
 
 <ul>
+
 <li><a href="#">Women</a></li>
 <li><a href="#">Men</a></li>
 <li><a href="#">Kids</a></li>
 <li><a href="#">Home Décor</a></li>
 <li><a href="#">Jewellery</a></li>
+<li><a href="#">Skin & Hair</a></li>
+
 </ul>
 
 </div>
 
-<div class="footer-col">
+<!-- CUSTOMER SERVICE -->
 
-<h3>CUSTOMER CARE</h3>
+<div>
+
+<h3>Customer Service</h3>
 
 <ul>
+
 <li><a href="#">Contact Us</a></li>
 <li><a href="#">Delivery Information</a></li>
 <li><a href="#">Return Policy</a></li>
 <li><a href="#">Privacy Policy</a></li>
 <li><a href="#">Terms & Conditions</a></li>
+
 </ul>
 
 </div>
 
-<div class="footer-col">
+<!-- CONTACT -->
 
-<h3>OWNER INFORMATION</h3>
+<div>
 
-<p><strong>Owner:</strong> Nurul Amin</p>
+<h3>Contact</h3>
 
-<p><strong>Brand:</strong> BAGASH</p>
+<div class="contact-info">
 
-<p><strong>Business Type:</strong> Premium Fashion & Lifestyle</p>
+<div>Owner: Nurul Amin</div>
 
-<p><strong>Location:</strong> Bangladesh</p>
+<div>Email: info@bagash.com</div>
+
+<div>Phone: +880 1XXXXXXXXX</div>
+
+<div>Bangladesh</div>
+
+</div>
+
+<div class="social-links">
+
+<a href="#">f</a>
+
+<a href="#">in</a>
+
+<a href="#">ig</a>
+
+<a href="#">yt</a>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- COPYRIGHT -->
 
 <div class="footer-bottom">
 
-<p>
-© 2026 BAGASH. All Rights Reserved.
-</p>
+© 2026 BAGASH Premium.
+All Rights Reserved.
+
+<br><br>
+
+Designed & Managed By
+Nurul Amin
 
 </div>
 
 </footer>
 
-<style>
-
-.footer{
-background:#111;
-color:#fff;
-padding-top:70px;
-}
-
-.footer-container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-padding:0 20px 50px;
-}
-
-.footer-col h3{
-margin-bottom:20px;
-font-size:18px;
-font-weight:600;
-}
-
-.footer-col p{
-font-size:14px;
-line-height:1.9;
-color:#ccc;
-}
-
-.footer-col ul{
-list-style:none;
-padding:0;
-}
-
-.footer-col ul li{
-margin-bottom:12px;
-}
-
-.footer-col ul li a{
-text-decoration:none;
-color:#ccc;
-font-size:14px;
-transition:.3s;
-}
-
-.footer-col ul li a:hover{
-color:#fff;
-}
-
-.footer-bottom{
-border-top:1px solid rgba(255,255,255,.1);
-text-align:center;
-padding:25px 20px;
-}
-
-.footer-bottom p{
-font-size:13px;
-color:#bbb;
-}
-
-@media(max-width:768px){
-
-.footer-container{
-grid-template-columns:1fr;
-gap:30px;
-}
-
-}
-
-</style>
-
 </body>
 </html>
+
+<!-- ========================================= -->
+<!-- IMAGE FILES NEEDED -->
+<!-- ========================================= -->
+
+<!--
+
+bagash-logo.png
+IMG_3973.webp
+
+wallet.webp
+bag.png
+tshirt.jpeg
+shoes.png
+
+women.jpg
+men.jpg
+kids.jpg
+home.jpg
+jewellery.jpg
+skinhair.jpg
+baga.jpg
+bagaman.jpg
+
+-->
+
+<!-- ========================================= -->
+<!-- BAGASH PREMIUM v11.0 COMPLETE -->
+<!-- ========================================= -->

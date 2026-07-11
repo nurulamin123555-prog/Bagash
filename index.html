@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH Premium v13.0 Ultimate</title>
+<title>BAGASH Premium v13.0</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -24,504 +23,209 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#ffffff;
+background:#fff;
 color:#222;
 overflow-x:hidden;
 }
 
-/* =========================
-   ROOT COLORS
-========================= */
+/* ===== BAGASH COLORS ===== */
 
 :root{
-
---primary:#0B4D38;
---primary-dark:#08382a;
---light:#f8faf9;
---border:#ececec;
---text:#222;
---muted:#666;
-
+--green:#0B4D38;
+--dark:#08382A;
+--light:#F8FAF9;
+--gold:#D4AF37;
 }
 
-/* =========================
-   GLOBAL
-========================= */
+/* ===== HEADER ===== */
 
-.container{
-width:92%;
-max-width:1400px;
-margin:auto;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-a{
-text-decoration:none;
-}
-
-button{
-cursor:pointer;
-border:none;
-}
-
-/* =========================
-   ENTRY ANIMATION
-========================= */
-
-.fade-up{
-
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp .9s ease forwards;
-
-}
-
-@keyframes fadeUp{
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-.fade-delay-1{
-animation-delay:.2s;
-}
-
-.fade-delay-2{
-animation-delay:.4s;
-}
-
-.fade-delay-3{
-animation-delay:.6s;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.header{
-
+header{
 position:sticky;
 top:0;
-
-height:72px;
-
+left:0;
+width:100%;
+height:75px;
 background:#fff;
-
 display:flex;
 align-items:center;
 justify-content:space-between;
-
-padding:0 24px;
-
-border-bottom:1px solid var(--border);
-
+padding:0 25px;
+border-bottom:1px solid #eee;
 z-index:9999;
-
 }
 
-.left-header{
-
+.logo{
 display:flex;
 align-items:center;
-gap:18px;
+gap:12px;
+}
 
+.logo img{
+height:42px;
+}
+
+.logo h2{
+font-size:28px;
+color:var(--green);
+font-weight:800;
 }
 
 .menu-btn{
-
-width:40px;
-height:40px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
+font-size:30px;
 cursor:pointer;
-
+color:var(--green);
 }
 
-.menu-btn svg{
-
-width:24px;
-height:24px;
-
-stroke:#222;
-stroke-width:2;
-
-}
-
-.logo img{
-
-height:42px;
-
-}
-
-.right-header{
-
+.header-right{
 display:flex;
 align-items:center;
-gap:22px;
-
+gap:20px;
 }
 
-.header-icon{
-
-width:22px;
-height:22px;
-
+.header-right span{
 cursor:pointer;
-
-}
-
-.header-icon svg{
-
-width:100%;
-height:100%;
-
-stroke:#222;
-stroke-width:1.8;
-
-fill:none;
-
-}
-
-.bag-count{
-
-position:relative;
-
-}
-
-.cart-badge{
-
-position:absolute;
-
-top:-8px;
-right:-8px;
-
-width:18px;
-height:18px;
-
-border-radius:50%;
-
-background:var(--primary);
-
-color:#fff;
-
-font-size:10px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-}
-
-/* =========================
-   SEARCH DRAWER
-========================= */
-
-.search-box{
-
-position:fixed;
-
-top:-100%;
-left:0;
-
-width:100%;
-
-background:#fff;
-
-padding:20px;
-
-border-bottom:1px solid var(--border);
-
-transition:.4s;
-
-z-index:10000;
-
-}
-
-.search-box.active{
-
-top:0;
-
-}
-
-.search-box input{
-
-width:100%;
-
-height:52px;
-
-padding:0 18px;
-
-border:1px solid var(--border);
-
-outline:none;
-
 font-size:15px;
-
+font-weight:500;
 }
 
-/* =========================
-   SIDE MENU
-========================= */
+/* ===== MEGA MENU ===== */
 
 .side-menu{
-
 position:fixed;
-
 top:0;
 left:-100%;
-
-width:88%;
-max-width:420px;
-
+width:92%;
+max-width:450px;
 height:100vh;
-
 background:#fff;
-
 overflow-y:auto;
-
 transition:.4s;
-
-z-index:10001;
-
-box-shadow:
-0 0 40px rgba(0,0,0,.12);
-
+z-index:99999;
+box-shadow:0 0 25px rgba(0,0,0,.15);
 }
 
 .side-menu.active{
-
 left:0;
-
 }
 
 .overlay{
-
 position:fixed;
-
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,.45);
-
 opacity:0;
 visibility:hidden;
-
 transition:.3s;
-
 z-index:9990;
-
 }
 
 .overlay.active{
-
 opacity:1;
 visibility:visible;
-
 }
 
 .menu-header{
-
 height:70px;
-
 display:flex;
 align-items:center;
 justify-content:space-between;
-
-padding:0 24px;
-
-border-bottom:1px solid var(--border);
-
+padding:0 20px;
+border-bottom:1px solid #eee;
 }
 
 .menu-header h3{
-
-font-size:22px;
-font-weight:700;
-color:var(--primary);
-
+color:var(--green);
+font-size:24px;
 }
 
 .close-btn{
-
-font-size:28px;
-
-background:none;
 border:none;
-
+background:none;
+font-size:30px;
+cursor:pointer;
 }
 
-.menu-item{
-
-padding:18px 24px;
-
+.level1{
+padding:18px 22px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+font-weight:700;
 display:flex;
 justify-content:space-between;
-align-items:center;
-
-border-bottom:1px solid #f5f5f5;
-
-cursor:pointer;
-
-font-size:14px;
-font-weight:600;
-
-letter-spacing:.4px;
-
 }
 
-.submenu{
-
+.level2{
 display:none;
-
 background:#fafafa;
-
 }
 
-.submenu-title{
-
-padding:12px 24px;
-
-font-size:12px;
-font-weight:700;
-
-color:var(--primary);
-
-background:#f3f3f3;
-
-}
-
-.submenu a{
-
+.level2 a{
 display:block;
-
 padding:12px 35px;
-
-font-size:14px;
-
-color:#444;
-
+text-decoration:none;
+color:#333;
 border-bottom:1px solid #eee;
-
 }
 
-/* =========================
-   HERO
-========================= */
+.level3{
+display:none;
+background:#f3f3f3;
+padding:15px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.product-box{
+background:#fff;
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+font-size:13px;
+font-weight:600;
+}
+
+/* ===== HERO ===== */
 
 .hero{
-
 height:70vh;
-min-height:520px;
-
+min-height:500px;
 background:
-linear-gradient(
-rgba(3,40,28,.55),
-rgba(3,40,28,.55)
-),
+linear-gradient(rgba(0,0,0,.4),
+rgba(0,0,0,.4)),
 url("hero-banner.png");
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 text-align:center;
-
 }
 
-.hero-content{
-
-max-width:800px;
-padding:20px;
-
-}
-
-.hero-logo{
-
-width:110px;
-margin:auto auto 20px;
-
-}
-
-.hero h1{
-
-font-size:62px;
-
-font-weight:800;
-
-letter-spacing:6px;
-
+.hero-content h1{
+font-size:60px;
 color:#fff;
-
-margin-bottom:10px;
-
+font-weight:800;
 }
 
-.hero p{
-
-font-size:16px;
-
-color:#f5f5f5;
-
-margin-bottom:28px;
-
-letter-spacing:1px;
-
+.hero-content p{
+color:#fff;
+margin:15px 0;
+font-size:18px;
 }
 
 .hero-btn{
-
 display:inline-block;
-
-padding:14px 40px;
-
+padding:14px 35px;
 background:#fff;
-
-color:var(--primary);
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-transform:translateY(-3px);
-
-}
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:38px;
-
-letter-spacing:3px;
-
-}
-
-.logo img{
-
-height:34px;
-
-}
-
+color:var(--green);
+text-decoration:none;
+font-weight:700;
 }
 
 </style>
@@ -532,103 +236,36 @@ height:34px;
 
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<div class="search-box" id="searchBox">
+<header>
 
-<input
-type="text"
-placeholder="Search products...">
+<div style="display:flex;align-items:center;gap:15px;">
 
-</div>
+<div class="menu-btn"
+onclick="openMenu()">
 
-<header class="header">
-
-<div class="left-header">
-
-<div class="menu-btn" onclick="openMenu()">
-
-<svg viewBox="0 0 24 24">
-<path d="M3 6H21"/>
-<path d="M3 12H21"/>
-<path d="M3 18H21"/>
-</svg>
+☰
 
 </div>
 
 <div class="logo">
 
-<img src="bagash-logo.png" alt="BAGASH">
+<img src="bagash-logo.png">
+
+<h2>BAGASH</h2>
 
 </div>
 
 </div>
 
-<div class="right-header">
+<div class="header-right">
 
-<div class="header-icon"
-onclick="toggleSearch()">
-
-<svg viewBox="0 0 24 24">
-<circle cx="11" cy="11" r="7"/>
-<path d="M20 20L17 17"/>
-</svg>
-
-</div>
-
-<div class="header-icon">
-
-<svg viewBox="0 0 24 24">
-<path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21"/>
-<circle cx="12" cy="7" r="4"/>
-</svg>
-
-</div>
-
-<div class="header-icon bag-count">
-
-<span class="cart-badge"
-id="cartCount">0</span>
-
-<svg viewBox="0 0 24 24">
-<path d="M6 2L3 6V20A2 2 0 0 0 5 22H19A2 2 0 0 0 21 20V6L18 2Z"/>
-<path d="M3 6H21"/>
-<path d="M16 10A4 4 0 0 1 8 10"/>
-</svg>
-
-</div>
+<span>Search</span>
+<span>Wishlist ❤️</span>
+<span>Cart 🛒</span>
 
 </div>
 
 </header>
-
-<section class="hero">
-
-<div class="hero-content fade-up">
-
-<img
-src="bagash-logo.png"
-class="hero-logo"
-alt="BAGASH">
-
-<h1>BAGASH</h1>
-
-<p>
-Heritage Fashion & Lifestyle Collection
-</p>
-
-<a href="#categories"
-class="hero-btn">
-
-Explore Collection
-
-</a>
-
-</div>
-
-</section>
-<!-- ========================================= -->
-<!-- PART 2 -->
-<!-- PREMIUM SIDE MENU -->
-<!-- ========================================= -->
 
 <div class="side-menu" id="sideMenu">
 
@@ -640,329 +277,413 @@ Explore Collection
 onclick="closeMenu()">
 
 ×
-
 </button>
 
 </div>
 
 <!-- WOMEN -->
 
-<div class="menu-item"
-onclick="toggleMenu('womenMenu','womenIcon')">
+<div class="level1"
+onclick="toggleMenu('women')">
 
-<span>WOMEN</span>
-
-<span id="womenIcon">+</span>
+WOMEN +
 
 </div>
 
-<div class="submenu"
-id="womenMenu">
+<div class="level2"
+id="women">
 
-<div class="submenu-title">
-WOMEN COLLECTION
+<a onclick="toggleMenu('saree')">
+Saree
+</a>
+
+<div class="level3"
+id="saree">
+
+<div class="product-grid">
+
+<div class="product-box">Saree 1</div>
+<div class="product-box">Saree 2</div>
+<div class="product-box">Saree 3</div>
+<div class="product-box">Saree 4</div>
+
 </div>
 
-<a href="#saree-products">Saree</a>
-<a href="#salwar-products">Salwar Kameez</a>
-<a href="#kurta-products">Kurta</a>
-<a href="#tops-products">Tops</a>
-<a href="#womenacc-products">Accessories</a>
+</div>
+
+<a onclick="toggleMenu('salwar')">
+Salwar Kameez
+</a>
+
+<div class="level3"
+id="salwar">
+
+<div class="product-grid">
+
+<div class="product-box">Salwar 1</div>
+<div class="product-box">Salwar 2</div>
+<div class="product-box">Salwar 3</div>
+<div class="product-box">Salwar 4</div>
+
+</div>
+
+</div>
+<!-- WOMEN CONTINUE -->
+
+<a onclick="toggleMenu('kurta')">
+Kurta
+</a>
+
+<div class="level3"
+id="kurta">
+
+<div class="product-grid">
+
+<div class="product-box">Kurta 1</div>
+<div class="product-box">Kurta 2</div>
+<div class="product-box">Kurta 3</div>
+<div class="product-box">Kurta 4</div>
+
+</div>
+
+</div>
+
+<a onclick="toggleMenu('tops')">
+Tops
+</a>
+
+<div class="level3"
+id="tops">
+
+<div class="product-grid">
+
+<div class="product-box">Tops 1</div>
+<div class="product-box">Tops 2</div>
+<div class="product-box">Tops 3</div>
+<div class="product-box">Tops 4</div>
+
+</div>
+
+</div>
+
+<a onclick="toggleMenu('accessories')">
+Accessories
+</a>
+
+<div class="level3"
+id="accessories">
+
+<div class="product-grid">
+
+<div class="product-box">Ass 1</div>
+<div class="product-box">Ass 2</div>
+<div class="product-box">Ass 3</div>
+<div class="product-box">Ass 4</div>
+
+</div>
+
+</div>
 
 </div>
 
 <!-- MEN -->
 
-<div class="menu-item"
-onclick="toggleMenu('menMenu','menIcon')">
+<div class="level1"
+onclick="toggleMenu('men')">
 
-<span>MEN</span>
-
-<span id="menIcon">+</span>
+MEN +
 
 </div>
 
-<div class="submenu"
-id="menMenu">
+<div class="level2"
+id="men">
 
-<div class="submenu-title">
-MEN COLLECTION
+<!-- PANJABI -->
+
+<a onclick="toggleMenu('panjabi')">
+Panjabi
+</a>
+
+<div class="level3"
+id="panjabi">
+
+<div class="product-grid">
+
+<div class="product-box">Panjabi 1</div>
+<div class="product-box">Panjabi 2</div>
+<div class="product-box">Panjabi 3</div>
+<div class="product-box">Panjabi 4</div>
+
 </div>
 
-<a href="#panjabi-products">Panjabi</a>
-<a href="#shirt-products">Shirts</a>
-<a href="#tshirt-products">T-Shirts</a>
-<a href="#pant-products">Pants</a>
-<a href="#footwear-products">Footwear</a>
+</div>
+
+<!-- SHIRTS -->
+
+<a onclick="toggleMenu('shirts')">
+Shirts
+</a>
+
+<div class="level3"
+id="shirts">
+
+<div class="product-grid">
+
+<div class="product-box">Shirts 1</div>
+<div class="product-box">Shirts 2</div>
+<div class="product-box">Shirts 3</div>
+<div class="product-box">Shirts 4</div>
 
 </div>
 
+</div>
+
+<!-- T-SHIRTS -->
+
+<a onclick="toggleMenu('tshirts')">
+T-Shirts
+</a>
+
+<div class="level3"
+id="tshirts">
+
+<div class="product-grid">
+
+<div class="product-box">T-Shirt 1</div>
+<div class="product-box">T-Shirt 2</div>
+<div class="product-box">T-Shirt 3</div>
+<div class="product-box">T-Shirt 4</div>
+
+</div>
+
+</div>
+
+<!-- PANTS -->
+
+<a onclick="toggleMenu('pants')">
+Pants
+</a>
+
+<div class="level3"
+id="pants">
+
+<div class="product-grid">
+
+<div class="product-box">Pants 1</div>
+<div class="product-box">Pants 2</div>
+<div class="product-box">Pants 3</div>
+<div class="product-box">Pants 4</div>
+
+</div>
+
+</div>
+
+<!-- FOOTWEAR -->
+
+<a onclick="toggleMenu('footwear')">
+Footwear
+</a>
+
+<div class="level3"
+id="footwear">
+
+<div class="product-grid">
+
+<div class="product-box">Footwear 1</div>
+<div class="product-box">Footwear 2</div>
+<div class="product-box">Footwear 3</div>
+<div class="product-box">Footwear 4</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- ========================= -->
 <!-- KIDS -->
+<!-- ========================= -->
 
-<div class="menu-item"
-onclick="toggleMenu('kidsMenu','kidsIcon')">
+<div class="level1"
+onclick="toggleMenu('kids')">
 
-<span>KIDS</span>
-
-<span id="kidsIcon">+</span>
-
-</div>
-
-<div class="submenu"
-id="kidsMenu">
-
-<div class="submenu-title">
-KIDS COLLECTION
-</div>
-
-<a href="#boys-products">Boys</a>
-<a href="#girls-products">Girls</a>
-<a href="#newborn-products">Newborn</a>
-<a href="#party-products">Party Wear</a>
+KIDS +
 
 </div>
 
+<div class="level2"
+id="kids">
+
+<!-- BOYS -->
+
+<a onclick="toggleMenu('boys')">
+Boys
+</a>
+
+<div class="level3"
+id="boys">
+
+<div class="product-grid">
+
+<div class="product-box">Boys 1</div>
+<div class="product-box">Boys 2</div>
+<div class="product-box">Boys 3</div>
+<div class="product-box">Boys 4</div>
+
+</div>
+
+</div>
+
+<!-- GIRLS -->
+
+<a onclick="toggleMenu('girls')">
+Girls
+</a>
+
+<div class="level3"
+id="girls">
+
+<div class="product-grid">
+
+<div class="product-box">Girls 1</div>
+<div class="product-box">Girls 2</div>
+<div class="product-box">Girls 3</div>
+<div class="product-box">Girls 4</div>
+
+</div>
+
+</div>
+
+<!-- NEWBORN -->
+
+<a onclick="toggleMenu('newborn')">
+Newborn
+</a>
+
+<div class="level3"
+id="newborn">
+
+<div class="product-grid">
+
+<div class="product-box">Newborn 1</div>
+<div class="product-box">Newborn 2</div>
+<div class="product-box">Newborn 3</div>
+<div class="product-box">Newborn 4</div>
+
+</div>
+
+</div>
+
+<!-- PARTY WEAR -->
+
+<a onclick="toggleMenu('partywear')">
+Party Wear
+</a>
+
+<div class="level3"
+id="partywear">
+
+<div class="product-grid">
+
+<div class="product-box">Party 1</div>
+<div class="product-box">Party 2</div>
+<div class="product-box">Party 3</div>
+<div class="product-box">Party 4</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
 <!-- WEDDING -->
+<!-- ========================= -->
 
-<div class="menu-item"
-onclick="toggleMenu('weddingMenu','weddingIcon')">
+<div class="level1"
+onclick="toggleMenu('wedding')">
 
-<span>WEDDING</span>
-
-<span id="weddingIcon">+</span>
-
-</div>
-
-<div class="submenu"
-id="weddingMenu">
-
-<div class="submenu-title">
-WEDDING COLLECTION
-</div>
-
-<a href="#weddingwomen-products">Women</a>
-<a href="#weddingmen-products">Men</a>
-<a href="#weddingjewel-products">Jewellery</a>
-<a href="#gift-products">Gift Items</a>
+WEDDING +
 
 </div>
 
-<!-- HOME DECOR -->
+<div class="level2"
+id="wedding">
 
-<div class="menu-item"
-onclick="toggleMenu('homeMenu','homeIcon')">
+<!-- WOMEN -->
 
-<span>HOME DÉCOR</span>
+<a onclick="toggleMenu('weddingwomen')">
+Women
+</a>
 
-<span id="homeIcon">+</span>
+<div class="level3"
+id="weddingwomen">
+
+<div class="product-grid">
+
+<div class="product-box">Women 1</div>
+<div class="product-box">Women 2</div>
+<div class="product-box">Women 3</div>
+<div class="product-box">Women 4</div>
 
 </div>
 
-<div class="submenu"
-id="homeMenu">
-
-<div class="submenu-title">
-HOME COLLECTION
 </div>
 
-<a href="#living-products">Living</a>
-<a href="#dining-products">Dining</a>
-<a href="#decor-products">Decor</a>
-<a href="#handicraft-products">Handicrafts</a>
+<!-- MEN -->
+
+<a onclick="toggleMenu('weddingmen')">
+Men
+</a>
+
+<div class="level3"
+id="weddingmen">
+
+<div class="product-grid">
+
+<div class="product-box">Men 1</div>
+<div class="product-box">Men 2</div>
+<div class="product-box">Men 3</div>
+<div class="product-box">Men 4</div>
+
+</div>
 
 </div>
 
 <!-- JEWELLERY -->
 
-<div class="menu-item"
-onclick="toggleMenu('jewelMenu','jewelIcon')">
-
-<span>JEWELLERY</span>
-
-<span id="jewelIcon">+</span>
-
-</div>
-
-<div class="submenu"
-id="jewelMenu">
-
-<div class="submenu-title">
-JEWELLERY COLLECTION
-</div>
-
-<a href="#earring-products">Earrings</a>
-<a href="#necklace-products">Necklaces</a>
-<a href="#bracelet-products">Bracelets</a>
-<a href="#ring-products">Rings</a>
-
-</div>
-
-<!-- SKIN & HAIR -->
-
-<div class="menu-item"
-onclick="toggleMenu('skinMenu','skinIcon')">
-
-<span>SKIN & HAIR</span>
-
-<span id="skinIcon">+</span>
-
-</div>
-
-<div class="submenu"
-id="skinMenu">
-
-<div class="submenu-title">
-BEAUTY COLLECTION
-</div>
-
-<a href="#face-products">Face Care</a>
-<a href="#hair-products">Hair Care</a>
-<a href="#body-products">Body Care</a>
-
-</div>
-
-<!-- BAGA WOMEN -->
-
-<div class="menu-item">
-
-<a href="#baga-women"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-BAGA WOMEN
-
+<a onclick="toggleMenu('weddingjewellery')">
+Jewellery
 </a>
 
+<div class="level3"
+id="weddingjewellery">
+
+<div class="product-grid">
+
+<div class="product-box">Jew 1</div>
+<div class="product-box">Jew 2</div>
+<div class="product-box">Jew 3</div>
+<div class="product-box">Jew 4</div>
+
 </div>
 
-<!-- BAGA MEN -->
+</div>
 
-<div class="menu-item">
+<!-- GIFT ITEMS -->
 
-<a href="#baga-men"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-BAGA MEN
-
+<a onclick="toggleMenu('giftitems')">
+Gift Items
 </a>
 
-</div>
+<div class="level3"
+id="giftitems">
 
-<!-- BAGA WEDDING -->
+<div class="product-grid">
 
-<div class="menu-item">
-
-<a href="#baga-wedding"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-BAGA WEDDING
-
-</a>
-
-</div>
-
-<!-- BAGA KIDS -->
-
-<div class="menu-item">
-
-<a href="#baga-kids"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-BAGA KIDS
-
-</a>
-
-</div>
-
-<!-- WATCHES -->
-
-<div class="menu-item">
-
-<a href="#watch-products"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-WATCHES
-
-</a>
-
-</div>
-
-<!-- JERSEYS -->
-
-<div class="menu-item">
-
-<a href="#jersey-products"
-style="
-text-decoration:none;
-color:#222;
-width:100%;
-">
-
-JERSEYS
-
-</a>
-
-</div>
-
-<!-- FOOTER MENU -->
-
-<div style="
-margin-top:25px;
-background:#0B4D38;
-color:#fff;
-">
-
-<div style="
-padding:16px 22px;
-border-bottom:1px solid rgba(255,255,255,.12);
-">
-
-Find A Store
-
-</div>
-
-<div style="
-padding:16px 22px;
-border-bottom:1px solid rgba(255,255,255,.12);
-">
-
-Customer Service
-
-</div>
-
-<div style="
-padding:16px 22px;
-border-bottom:1px solid rgba(255,255,255,.12);
-">
-
-My Orders
-
-</div>
-
-<div style="
-padding:16px 22px;
-">
-
-BAGASH Premium Collection
+<div class="product-box">Gift 1</div>
+<div class="product-box">Gift 2</div>
+<div class="product-box">Gift 3</div>
+<div class="product-box">Gift 4</div>
 
 </div>
 
@@ -970,5320 +691,1551 @@ BAGASH Premium Collection
 
 </div>
 <!-- ========================================= -->
-<!-- PART 3 -->
-<!-- CATEGORY SECTION -->
+<!-- PART 4 -->
+<!-- HERO + CATEGORY SECTION -->
 <!-- ========================================= -->
 
 <style>
 
+.hero{
+position:relative;
+height:70vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("hero-banner.png");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:60px;
+color:#fff;
+font-weight:800;
+letter-spacing:5px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+color:#fff;
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero-btn{
+background:#0B4D38;
+color:#fff;
+padding:14px 35px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+}
+
+.hero-btn:hover{
+background:#08382a;
+}
+
 .categories{
-
 padding:70px 20px;
-
 background:#fff;
-
 }
 
 .section-title{
-
 text-align:center;
-
 font-size:34px;
-
 font-weight:700;
-
 color:#0B4D38;
-
-margin-bottom:45px;
-
+margin-bottom:40px;
 }
 
 .category-grid{
-
-max-width:1400px;
-
+max-width:1200px;
 margin:auto;
-
 display:grid;
-
-grid-template-columns:
-repeat(5,1fr);
-
-gap:22px;
-
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
 .category-card{
-
 position:relative;
-
 overflow:hidden;
-
-background:#fff;
-
 cursor:pointer;
-
-transition:.4s;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.06);
-
-}
-
-.category-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-0 18px 40px rgba(0,0,0,.12);
-
 }
 
 .category-card img{
-
 width:100%;
-
-height:260px;
-
+height:320px;
 object-fit:cover;
-
-transition:.5s;
-
+display:block;
+transition:.4s;
 }
 
 .category-card:hover img{
-
 transform:scale(1.08);
-
 }
 
-.category-overlay{
-
+.category-name{
 position:absolute;
-
 left:0;
 right:0;
 bottom:0;
-
 padding:18px;
-
-background:
-linear-gradient(
-transparent,
-rgba(0,0,0,.85)
-);
-
-}
-
-.category-overlay h3{
-
-font-size:16px;
-
-font-weight:600;
-
+background:linear-gradient(transparent,rgba(0,0,0,.9));
 color:#fff;
-
-letter-spacing:1px;
-
+font-weight:700;
+font-size:18px;
 }
 
-@media(max-width:992px){
+@media(max-width:768px){
+
+.hero{
+height:55vh;
+}
+
+.hero-content h1{
+font-size:38px;
+}
 
 .category-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
+grid-template-columns:repeat(2,1fr);
 }
-
-}
-
-@media(max-width:600px){
 
 .category-card img{
-
-height:200px;
-
+height:220px;
 }
 
 }
 
 </style>
 
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="bagash-logo.png"
+style="width:120px;margin-bottom:15px;">
+
+<h1>BAGASH</h1>
+
+<p>
+Premium Fashion • Lifestyle • Heritage
+</p>
+
+<a href="#categories"
+class="hero-btn">
+SHOP NOW
+</a>
+
+</div>
+
+</section>
+
+<!-- CATEGORY -->
+
 <section class="categories"
 id="categories">
 
-<h2 class="section-title fade-up">
+<h2 class="section-title">
 
-Shop By Category
+SHOP BY CATEGORY
 
 </h2>
 
 <div class="category-grid">
 
-<!-- WOMEN -->
-
-<div class="category-card fade-up">
+<a href="women.html"
+class="category-card">
 
 <img src="women.jpeg">
 
-<div class="category-overlay">
-
-<h3>WOMEN</h3>
-
+<div class="category-name">
+WOMEN
 </div>
 
-</div>
+</a>
 
-<!-- MEN -->
-
-<div class="category-card fade-up">
+<a href="men.html"
+class="category-card">
 
 <img src="men.jpeg">
 
-<div class="category-overlay">
-
-<h3>MEN</h3>
-
+<div class="category-name">
+MEN
 </div>
 
-</div>
+</a>
 
-<!-- KIDS -->
-
-<div class="category-card fade-up">
+<a href="kids.html"
+class="category-card">
 
 <img src="kids.jpeg">
 
-<div class="category-overlay">
-
-<h3>KIDS</h3>
-
+<div class="category-name">
+KIDS
 </div>
 
-</div>
+</a>
 
-<!-- WEDDING -->
-
-<div class="category-card fade-up">
+<a href="wedding.html"
+class="category-card">
 
 <img src="wedding.jpeg">
 
-<div class="category-overlay">
-
-<h3>WEDDING</h3>
-
+<div class="category-name">
+WEDDING
 </div>
 
-</div>
+</a>
 
-<!-- HOME DECOR -->
-
-<div class="category-card fade-up">
+<a href="homedecor.html"
+class="category-card">
 
 <img src="homedecor.jpeg">
 
-<div class="category-overlay">
-
-<h3>HOME DÉCOR</h3>
-
+<div class="category-name">
+HOME DÉCOR
 </div>
 
-</div>
+</a>
 
-<!-- JEWELLERY -->
-
-<div class="category-card fade-up">
+<a href="jewellery.html"
+class="category-card">
 
 <img src="jewellery.jpeg">
 
-<div class="category-overlay">
-
-<h3>JEWELLERY</h3>
-
+<div class="category-name">
+JEWELLERY
 </div>
 
-</div>
+</a>
 
-<!-- SKIN & HAIR -->
-
-<div class="category-card fade-up">
+<a href="skinhair.html"
+class="category-card">
 
 <img src="skinhair.jpeg">
 
-<div class="category-overlay">
-
-<h3>SKIN & HAIR</h3>
-
+<div class="category-name">
+SKIN & HAIR
 </div>
 
-</div>
+</a>
 
-<!-- BAGA WOMEN -->
-
-<div class="category-card fade-up">
-
-<img src="women.jpeg">
-
-<div class="category-overlay">
-
-<h3>BAGA WOMEN</h3>
-
-</div>
-
-</div>
-
-<!-- BAGA MEN -->
-
-<div class="category-card fade-up">
-
-<img src="men.jpeg">
-
-<div class="category-overlay">
-
-<h3>BAGA MEN</h3>
-
-</div>
-
-</div>
-
-<!-- BAGA KIDS -->
-
-<div class="category-card fade-up">
-
-<img src="kids.jpeg">
-
-<div class="category-overlay">
-
-<h3>BAGA KIDS</h3>
-
-</div>
-
-</div>
-
-<!-- BAGA WEDDING -->
-
-<div class="category-card fade-up">
-
-<img src="wedding.jpeg">
-
-<div class="category-overlay">
-
-<h3>BAGA WEDDING</h3>
-
-</div>
-
-</div>
-
-<!-- WATCHES -->
-
-<div class="category-card fade-up">
+<a href="watches.html"
+class="category-card">
 
 <img src="watches.jpeg">
 
-<div class="category-overlay">
-
-<h3>WATCHES</h3>
-
+<div class="category-name">
+WATCHES
 </div>
 
-</div>
-
-<!-- JERSEYS -->
-
-<div class="category-card fade-up">
-
-<img src="jerseys.jpeg">
-
-<div class="category-overlay">
-
-<h3>JERSEYS</h3>
-
-</div>
-
-</div>
+</a>
 
 </div>
 
 </section>
 <!-- ========================================= -->
-<!-- PART 4 -->
-<!-- PRODUCT SYSTEM CSS -->
+<!-- SAREE PAGE -->
+<!-- PART 5 -->
+<!-- PASTE BELOW PART 4 -->
 <!-- ========================================= -->
+
+<section class="product-page" id="saree-page">
+
+<div class="section-header">
+<h2>Saree Collection</h2>
+<p>Premium Heritage Sarees</p>
+</div>
+
+<div class="products-grid">
+
+<!-- Saree 1 -->
+<div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="saree1.jpeg" alt="Saree 1">
+<h3>Saree 1</h3>
+<div class="price">৳2,950</div>
+
+<div class="product-actions">
+<button onclick="addToCart('Saree 1',2950)">
+🛒 Add Cart
+</button>
+
+<button onclick="openOrderModal('Saree 1',2950)">
+📦 Order
+</button>
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Saree 1"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
+</div>
+
+<!-- Saree 2 -->
+<div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="saree2.jpeg" alt="Saree 2">
+<h3>Saree 2</h3>
+<div class="price">৳2,950</div>
+
+<div class="product-actions">
+<button onclick="addToCart('Saree 2',2950)">
+🛒 Add Cart
+</button>
+
+<button onclick="openOrderModal('Saree 2',2950)">
+📦 Order
+</button>
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Saree 2"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
+</div>
+
+<!-- Saree 3 -->
+<div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="saree3.jpeg" alt="Saree 3">
+<h3>Saree 3</h3>
+<div class="price">৳2,950</div>
+
+<div class="product-actions">
+<button onclick="addToCart('Saree 3',2950)">
+🛒 Add Cart
+</button>
+
+<button onclick="openOrderModal('Saree 3',2950)">
+📦 Order
+</button>
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Saree 3"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
+</div>
+
+<!-- Saree 4 -->
+<div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="saree4.jpeg" alt="Saree 4">
+<h3>Saree 4</h3>
+<div class="price">৳2,950</div>
+
+<div class="product-actions">
+<button onclick="addToCart('Saree 4',2950)">
+🛒 Add Cart
+</button>
+
+<button onclick="openOrderModal('Saree 4',2950)">
+📦 Order
+</button>
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Saree 4"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
+</div>
+
+</div>
+
+</section>
 
 <style>
 
-.products-section{
-
-padding:80px 20px;
-
-background:#fafafa;
-
+.product-page{
+padding:70px 20px;
+background:#fff;
 }
 
-.product-section-title{
-
-font-size:32px;
-
-font-weight:700;
-
+.section-header{
 text-align:center;
-
-color:#0B4D38;
-
-margin-bottom:50px;
-
+margin-bottom:40px;
 }
 
-.product-grid{
+.section-header h2{
+font-size:34px;
+color:#0B4D38;
+font-weight:800;
+}
 
-max-width:1400px;
+.section-header p{
+color:#777;
+margin-top:10px;
+}
 
+.products-grid{
+max-width:1200px;
 margin:auto;
-
 display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
+grid-template-columns:repeat(4,1fr);
 gap:25px;
-
 }
 
 .product-card{
-
 background:#fff;
-
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 overflow:hidden;
-
 position:relative;
-
-transition:.4s;
-
-box-shadow:
-0 8px 20px rgba(0,0,0,.06);
-
+transition:.3s;
 }
 
 .product-card:hover{
-
 transform:translateY(-8px);
-
-box-shadow:
-0 18px 40px rgba(0,0,0,.12);
-
 }
 
-.product-image{
-
-overflow:hidden;
-
-}
-
-.product-image img{
-
+.product-card img{
 width:100%;
-
-height:360px;
-
+height:320px;
 object-fit:cover;
-
-display:block;
-
-transition:.6s;
-
 }
 
-.product-card:hover img{
-
-transform:scale(1.08);
-
-}
-
-.product-content{
-
-padding:18px;
-
-}
-
-.product-name{
-
-font-size:15px;
-
-font-weight:600;
-
-color:#222;
-
-line-height:1.6;
-
-min-height:50px;
-
-}
-
-.product-price{
-
-margin-top:12px;
-
-font-size:22px;
-
-font-weight:700;
-
-color:#0B4D38;
-
-}
-
-.product-buttons{
-
-display:flex;
-
-gap:10px;
-
-margin-top:18px;
-
-}
-
-.cart-btn{
-
-flex:1;
-
-height:46px;
-
-border:none;
-
-cursor:pointer;
-
-background:#0B4D38;
-
-color:#fff;
-
-font-size:13px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.cart-btn:hover{
-
-background:#083628;
-
-}
-
-.order-btn{
-
-flex:1;
-
-height:46px;
-
-border:1px solid #0B4D38;
-
-cursor:pointer;
-
-background:#fff;
-
-color:#0B4D38;
-
-font-size:13px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.order-btn:hover{
-
-background:#0B4D38;
-
-color:#fff;
-
-}
-
-/* CART */
-
-.cart-floating{
-
-position:fixed;
-
-right:25px;
-
-bottom:25px;
-
-width:60px;
-height:60px;
-
-background:#0B4D38;
-
-color:#fff;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
+.product-card h3{
+padding:15px 15px 5px;
 font-size:18px;
-
-cursor:pointer;
-
-z-index:999;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.2);
-
 }
 
-.cart-count{
+.price{
+padding:0 15px;
+font-size:22px;
+font-weight:700;
+color:#0B4D38;
+}
 
-position:absolute;
-
-top:-8px;
-right:-8px;
-
-width:25px;
-height:25px;
-
-background:#111;
-
-color:#fff;
-
-font-size:12px;
-
+.product-actions{
+padding:15px;
 display:flex;
-align-items:center;
-justify-content:center;
-
+gap:10px;
 }
 
-.fade-up{
-
-opacity:0;
-
-transform:
-translateY(40px);
-
-transition:1s;
-
-}
-
-.fade-up.show{
-
-opacity:1;
-
-transform:
-translateY(0);
-
-}
-
-@media(max-width:1200px){
-
-.product-grid{
-
-grid-template-columns:
-repeat(3,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.product-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.product-image img{
-
-height:260px;
-
-}
-
-}
-
-@media(max-width:500px){
-
-.product-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-</style>
-
-<!-- FLOATING CART -->
-
-<div class="cart-floating"
-onclick="openCart()">
-
-BAG
-
-<div class="cart-count"
-id="cartCount">
-
-0
-
-</div>
-
-</div>
-
-<!-- CART DRAWER -->
-
-<div id="cartDrawer"
-style="
-position:fixed;
-top:0;
-right:-100%;
-width:420px;
-max-width:100%;
-height:100%;
-background:#fff;
-z-index:99999;
-transition:.4s;
-overflow:auto;
-box-shadow:-10px 0 30px rgba(0,0,0,.15);
-">
-
-<div style="
-padding:20px;
-border-bottom:1px solid #eee;
-display:flex;
-justify-content:space-between;
-align-items:center;
-">
-
-<h3>Your Bag</h3>
-
-<button
-onclick="closeCart()"
-style="
+.product-actions button{
+flex:1;
 border:none;
-background:none;
-font-size:28px;
-cursor:pointer;
-">
-
-×
-
-</button>
-
-</div>
-
-<div id="cartItems"
-style="padding:20px;">
-
-Your bag is empty
-
-</div>
-
-<div style="
-padding:20px;
-border-top:1px solid #eee;
-">
-
-<button
-onclick="openCheckout()"
-style="
-width:100%;
-height:52px;
+padding:10px;
 background:#0B4D38;
 color:#fff;
-border:none;
-font-size:15px;
 cursor:pointer;
-">
-
-Proceed To Checkout
-
-</button>
-
-</div>
-
-</div>
-<!-- ========================================= -->
-<!-- PART 5 -->
-<!-- CHECKOUT SYSTEM + GOOGLE SHEET ORDER FORM -->
-<!-- ========================================= -->
-
-<style>
-
-.checkout-overlay{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:
-rgba(0,0,0,.55);
-
-display:none;
-
-align-items:center;
-justify-content:center;
-
-z-index:999999;
-
 }
 
-
-.checkout-box{
-
-width:500px;
-
-max-width:95%;
-
-background:#fff;
-
-padding:35px;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.2);
-
-}
-
-
-.checkout-box h2{
-
+.whatsapp-btn{
+display:block;
+margin:0 15px 15px;
 text-align:center;
-
-color:#0B4D38;
-
-margin-bottom:25px;
-
-font-size:28px;
-
+background:#25D366;
+color:#fff;
+padding:10px;
+text-decoration:none;
 }
 
-
-.checkout-box input,
-.checkout-box textarea,
-.checkout-box select{
-
-width:100%;
-
-padding:14px;
-
-margin-bottom:15px;
-
-border:1px solid #ddd;
-
-outline:none;
-
-font-size:14px;
-
-}
-
-
-.checkout-box textarea{
-
-height:90px;
-
-resize:none;
-
-}
-
-
-.payment-title{
-
-font-weight:600;
-
-color:#0B4D38;
-
-margin-bottom:10px;
-
-}
-
-
-.payment-option{
-
-border:1px solid #ddd;
-
-padding:12px;
-
-margin-bottom:10px;
-
+.wishlist-btn{
+position:absolute;
+top:10px;
+right:10px;
+background:#fff;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
 cursor:pointer;
-
+font-size:22px;
 }
 
-
-.payment-option:hover{
-
-border-color:#0B4D38;
-
+@media(max-width:900px){
+.products-grid{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
-
-.submit-order{
-
-width:100%;
-
-height:52px;
-
-background:#0B4D38;
-
-color:white;
-
-border:none;
-
-font-size:15px;
-
-font-weight:600;
-
-cursor:pointer;
-
+@media(max-width:600px){
+.products-grid{
+grid-template-columns:1fr;
 }
-
-
-.submit-order:hover{
-
-background:#083628;
-
-}
-
-
-.close-checkout{
-
-float:right;
-
-font-size:25px;
-
-border:none;
-
-background:none;
-
-cursor:pointer;
-
 }
 
 </style>
-
-
-<!-- CHECKOUT POPUP -->
-
-
-<div class="checkout-overlay"
-id="checkoutBox">
-
-
-<div class="checkout-box">
-
-
-<button class="close-checkout"
-onclick="closeCheckout()">
-
-×
-
-</button>
-
-
-<h2>
-
-BAGASH Checkout
-
-</h2>
-
-
-
-<input
-type="text"
-id="customerName"
-placeholder="Full Name">
-
-
-<input
-type="tel"
-id="customerPhone"
-placeholder="Phone Number">
-
-
-<textarea
-id="customerAddress"
-placeholder="Full Delivery Address"></textarea>
-
-
-
-<div class="payment-title">
-
-Payment Method
-
-</div>
-
-
-<div class="payment-option">
-
-<input 
-type="radio"
-name="payment"
-value="bKash"
-checked>
-
- bKash
-
-</div>
-
-
-<div class="payment-option">
-
-<input 
-type="radio"
-name="payment"
-value="Cash On Delivery">
-
- Cash On Delivery
-
-</div>
-
-
-
-<p style="
-font-size:14px;
-margin:15px 0;
-color:#555;
-">
-
-bKash Number:
-<strong>
-01736255527
-</strong>
-
-</p>
-
-
-
-<button
-class="submit-order"
-onclick="submitOrder()">
-
-Confirm Order
-
-</button>
-
-
-
-</div>
-
-
-</div>
-
-
-
-<script>
-
-
-let cart=[];
-
-
-// OPEN CART
-
-function openCart(){
-
-document
-.getElementById("cartDrawer")
-.style.right="0";
-
-}
-
-
-
-// CLOSE CART
-
-function closeCart(){
-
-document
-.getElementById("cartDrawer")
-.style.right="-100%";
-
-}
-
-
-
-// OPEN CHECKOUT
-
-function openCheckout(){
-
-document
-.getElementById("checkoutBox")
-.style.display="flex";
-
-}
-
-
-
-// CLOSE CHECKOUT
-
-function closeCheckout(){
-
-document
-.getElementById("checkoutBox")
-.style.display="none";
-
-}
-
-
-
-// ADD CART FUNCTION
-
-
-function addToCart(name,price,image){
-
-
-cart.push({
-
-name:name,
-
-price:price,
-
-image:image
-
-});
-
-
-document
-.getElementById("cartCount")
-.innerHTML=cart.length;
-
-
-showCart();
-
-
-}
-
-
-
-// SHOW CART
-
-
-function showCart(){
-
-
-let box=
-document.getElementById("cartItems");
-
-
-if(cart.length===0){
-
-box.innerHTML=
-"Your bag is empty";
-
-return;
-
-}
-
-
-let html="";
-
-
-let total=0;
-
-
-cart.forEach((item,index)=>{
-
-
-total += Number(item.price);
-
-
-html += `
-
-<div style="
-display:flex;
-gap:15px;
-margin-bottom:20px;
-border-bottom:1px solid #eee;
-padding-bottom:15px;
-">
-
-
-<img src="${item.image}"
-
-style="
-width:70px;
-height:70px;
-object-fit:cover;
-">
-
-
-<div>
-
-<h4>${item.name}</h4>
-
-<p>
-৳${item.price}
-</p>
-
-</div>
-
-
-</div>
-
-`;
-
-
-});
-
-
-
-html +=`
-
-<h3>
-
-Total: ৳${total}
-
-</h3>
-
-`;
-
-
-box.innerHTML=html;
-
-
-}
-
-
-
-// GOOGLE SHEET URL
-
-
-const sheetURL =
-
-"https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec";
-
-
-
-
-// SUBMIT ORDER
-
-
-
-function submitOrder(){
-
-
-let orderID=
-
-"BAGASH-"+Date.now();
-
-
-
-let name=
-
-document.getElementById("customerName").value;
-
-
-
-let phone=
-
-document.getElementById("customerPhone").value;
-
-
-
-let address=
-
-document.getElementById("customerAddress").value;
-
-
-
-let payment=
-
-document.querySelector(
-'input[name="payment"]:checked'
-).value;
-
-
-
-let products=
-cart.map(
-x=>x.name
-).join(",");
-
-
-
-let total=0;
-
-
-cart.forEach(
-x=>total+=Number(x.price)
-);
-
-
-
-let data={
-
-
-orderId:orderID,
-
-name:name,
-
-phone:phone,
-
-address:address,
-
-product:products,
-
-qty:cart.length,
-
-total:total,
-
-payment:payment
-
-
-};
-
-
-
-fetch(sheetURL,{
-
-method:"POST",
-
-body:JSON.stringify(data)
-
-})
-
-
-.then(res=>res.json())
-
-
-.then(result=>{
-
-
-alert(
-"Order Confirmed\nOrder ID: "
-+orderID
-);
-
-
-cart=[];
-
-document
-.getElementById("cartCount")
-.innerHTML="0";
-
-
-closeCheckout();
-
-
-});
-
-
-}
-
-
-
-</script>
 <!-- ========================================= -->
+<!-- SALWAR KAMEEZ PAGE -->
 <!-- PART 6 -->
-<!-- WOMEN PRODUCT COLLECTION -->
+<!-- PASTE BELOW PART 5 -->
 <!-- ========================================= -->
 
+<section class="product-page" id="salwar-page">
 
-<section class="products-section">
+<div class="section-header">
+<h2>Salwar Kameez Collection</h2>
+<p>Elegant Traditional Fashion</p>
+</div>
 
+<div class="products-grid">
 
-<h2 class="product-section-title">
-
-Women Collection
-
-</h2>
-
-
-
-<div class="product-grid">
-
-
-
-<!-- SAREE 1 -->
-
+<!-- Salwar 1 -->
 <div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="salwar1.jpeg" alt="Salwar 1">
+<h3>Salwar Kameez 1</h3>
+<div class="price">৳3,250</div>
 
-
-<div class="product-image">
-
-<img src="saree1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Heritage Premium Saree
-
-</div>
-
-
-<div class="product-price">
-
-৳3,601.35
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Heritage Premium Saree',
-3601.35,
-'saree1.jpeg'
-)">
-
-Add To Cart
-
+<div class="product-actions">
+<button onclick="addToCart('Salwar Kameez 1',3250)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Salwar Kameez 1',3250)">
+📦 Order
 </button>
-
-
 </div>
 
-
+<a href="https://wa.me/8801792453834?text=I want to order Salwar Kameez 1"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 </div>
 
-</div>
-
-
-
-
-
-<!-- SAREE 2 -->
-
-
+<!-- Salwar 2 -->
 <div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="salwar2.jpeg" alt="Salwar 2">
+<h3>Salwar Kameez 2</h3>
+<div class="price">৳3,250</div>
 
-<div class="product-image">
-
-<img src="saree2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Royal Silk Saree
-
-</div>
-
-
-<div class="product-price">
-
-৳2,593.32
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Silk Saree',
-2593.32,
-'saree2.jpeg'
-)">
-
-Add To Cart
-
+<div class="product-actions">
+<button onclick="addToCart('Salwar Kameez 2',3250)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Salwar Kameez 2',3250)">
+📦 Order
 </button>
-
-
 </div>
 
-
+<a href="https://wa.me/8801792453834?text=I want to order Salwar Kameez 2"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 </div>
 
-</div>
-
-
-
-
-
-
-<!-- SAREE 3 -->
-
-
+<!-- Salwar 3 -->
 <div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="salwar3.jpeg" alt="Salwar 3">
+<h3>Salwar Kameez 3</h3>
+<div class="price">৳3,250</div>
 
-<div class="product-image">
-
-<img src="saree3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Traditional Designer Saree
-
-</div>
-
-
-<div class="product-price">
-
-৳3,567.44
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Traditional Designer Saree',
-3567.44,
-'saree3.jpeg'
-)">
-
-Add To Cart
-
+<div class="product-actions">
+<button onclick="addToCart('Salwar Kameez 3',3250)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Salwar Kameez 3',3250)">
+📦 Order
 </button>
-
-
 </div>
 
-
+<a href="https://wa.me/8801792453834?text=I want to order Salwar Kameez 3"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 </div>
 
-</div>
-
-
-
-
-
-
-<!-- SAREE 4 -->
-
-
+<!-- Salwar 4 -->
 <div class="product-card">
+<div class="wishlist-btn">♡</div>
+<img src="salwar4.jpeg" alt="Salwar 4">
+<h3>Salwar Kameez 4</h3>
+<div class="price">৳3,250</div>
 
-
-<div class="product-image">
-
-<img src="saree4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Luxury Wedding Saree
-
-</div>
-
-
-<div class="product-price">
-
-৳4,598.56
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Wedding Saree',
-4598.56,
-'saree4.jpeg'
-)">
-
-Add To Cart
-
+<div class="product-actions">
+<button onclick="addToCart('Salwar Kameez 4',3250)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Salwar Kameez 4',3250)">
+📦 Order
 </button>
-
-
 </div>
 
-
+<a href="https://wa.me/8801792453834?text=I want to order Salwar Kameez 4"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 </div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- SALWAR KAMEEZ -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="salwar1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Elegant Salwar Kameez
-
-</div>
-
-
-<div class="product-price">
-
-৳2,507.21
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Elegant Salwar Kameez',
-2507.21,
-'salwar1.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="salwar2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Premium Salwar Kameez
-
-</div>
-
-
-<div class="product-price">
-
-৳1,956.56
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Salwar Kameez',
-1956.56,
-'salwar2.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<img src="salwar3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Classic Salwar Kameez
-
-</div>
-
-
-<div class="product-price">
-
-৳2,489.12
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Salwar Kameez',
-2489.12,
-'salwar3.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<img src="salwar4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Heritage Salwar Kameez
-
-</div>
-
-
-<div class="product-price">
-
-৳2,256.87
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Heritage Salwar Kameez',
-2256.87,
-'salwar4.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- KURTA -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="kurta1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Premium Women Kurta
-
-</div>
-
-
-<div class="product-price">
-
-৳3,256.45
-
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Women Kurta',
-3256.45,
-'kurta1.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="kurta2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Designer Kurta
-
-</div>
-
-
-<div class="product-price">
-
-৳2,566.65
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Designer Kurta',
-2566.65,
-'kurta2.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="kurta3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Classic Kurta
-
-</div>
-
-
-<div class="product-price">
-
-৳2,146.78
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Kurta',
-2146.78,
-'kurta3.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="kurta4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Luxury Kurta
-
-</div>
-
-
-<div class="product-price">
-
-৳3,342.33
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Kurta',
-3342.33,
-'kurta4.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
 
 </div>
 
 </section>
 <!-- ========================================= -->
+<!-- KURTA PAGE -->
 <!-- PART 7 -->
-<!-- WOMEN TOPS + ACCESSORIES + MEN COLLECTION -->
+<!-- PASTE BELOW PART 6 -->
 <!-- ========================================= -->
 
+<section class="product-page" id="kurta-page">
 
-<section class="products-section">
+<div class="section-header">
+<h2>Kurta Collection</h2>
+<p>Premium Heritage Kurta</p>
+</div>
 
+<div class="products-grid">
 
-<h2 class="product-section-title">
-
-Women & Men Collection
-
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<!-- ================= -->
-<!-- WOMEN TOPS -->
-<!-- ================= -->
-
+<!-- Kurta 1 -->
 
 <div class="product-card">
 
-<div class="product-image">
+<div class="wishlist-btn">♡</div>
 
-<img src="tops1.jpeg">
+<img src="kurta1.jpeg" alt="Kurta 1">
 
-</div>
+<h3>Kurta 1</h3>
 
+<div class="price">৳2,950</div>
 
-<div class="product-content">
+<div class="product-actions">
 
-<div class="product-name">
-
-Premium Women Top
-
-</div>
-
-<div class="product-price">
-
-৳2,342.33
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Women Top',
-2342.33,
-'tops1.jpeg'
-)">
-
-Add To Cart
-
+<button onclick="addToCart('Kurta 1',2950)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Kurta 1',2950)">
+📦 Order
 </button>
 
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Kurta 1"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 
 </div>
 
-</div>
-
-</div>
-
-
-
-
+<!-- Kurta 2 -->
 
 <div class="product-card">
 
-<div class="product-image">
+<div class="wishlist-btn">♡</div>
 
-<img src="tops2.jpeg">
+<img src="kurta2.jpeg" alt="Kurta 2">
 
-</div>
+<h3>Kurta 2</h3>
 
+<div class="price">৳2,950</div>
 
-<div class="product-content">
+<div class="product-actions">
 
-<div class="product-name">
-
-Elegant Fashion Top
-
-</div>
-
-
-<div class="product-price">
-
-৳1,671.16
-
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Elegant Fashion Top',
-1671.16,
-'tops2.jpeg'
-)">
-
-Add To Cart
-
+<button onclick="addToCart('Kurta 2',2950)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Kurta 2',2950)">
+📦 Order
 </button>
 
 </div>
 
-</div>
+<a href="https://wa.me/8801792453834?text=I want to order Kurta 2"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 
 </div>
 
-
-
-
+<!-- Kurta 3 -->
 
 <div class="product-card">
 
-<div class="product-image">
+<div class="wishlist-btn">♡</div>
 
-<img src="tops3.jpeg">
+<img src="kurta3.jpeg" alt="Kurta 3">
 
-</div>
+<h3>Kurta 3</h3>
 
+<div class="price">৳2,950</div>
 
-<div class="product-content">
+<div class="product-actions">
 
-<div class="product-name">
-
-Classic Women Top
-
-</div>
-
-
-<div class="product-price">
-
-৳3,332.46
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Women Top',
-3332.46,
-'tops3.jpeg'
-)">
-
-Add To Cart
-
+<button onclick="addToCart('Kurta 3',2950)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Kurta 3',2950)">
+📦 Order
 </button>
 
+</div>
+
+<a href="https://wa.me/8801792453834?text=I want to order Kurta 3"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 
 </div>
 
-</div>
-
-</div>
-
-
-
-
+<!-- Kurta 4 -->
 
 <div class="product-card">
 
-<div class="product-image">
+<div class="wishlist-btn">♡</div>
 
-<img src="tops4.jpeg">
+<img src="kurta4.jpeg" alt="Kurta 4">
 
-</div>
+<h3>Kurta 4</h3>
 
+<div class="price">৳2,950</div>
 
-<div class="product-content">
+<div class="product-actions">
 
-<div class="product-name">
-
-Luxury Designer Top
-
-</div>
-
-
-<div class="product-price">
-
-৳2,377.46
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Designer Top',
-2377.46,
-'tops4.jpeg'
-)">
-
-Add To Cart
-
+<button onclick="addToCart('Kurta 4',2950)">
+🛒 Add Cart
 </button>
 
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-<!-- ================= -->
-<!-- WOMEN ACCESSORIES -->
-<!-- ================= -->
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="womenacc1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Premium Women Accessories
-
-</div>
-
-
-<div class="product-price">
-
-৳2,321.21
-
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Women Accessories',
-2321.21,
-'womenacc1.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
+<button onclick="openOrderModal('Kurta 4',2950)">
+📦 Order
 </button>
 
 </div>
 
-</div>
+<a href="https://wa.me/8801792453834?text=I want to order Kurta 4"
+class="whatsapp-btn">
+WhatsApp Order
+</a>
 
 </div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="womenacc2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Royal Accessories
-
-</div>
-
-
-<div class="product-price">
-
-৳3,466.52
-
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Accessories',
-3466.52,
-'womenacc2.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="womenacc3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Heritage Accessories
-
-</div>
-
-
-<div class="product-price">
-
-৳3,213.52
-
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Heritage Accessories',
-3213.52,
-'womenacc3.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="womenacc4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Luxury Accessories
-
-</div>
-
-
-<div class="product-price">
-
-৳2,464.46
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Accessories',
-2464.46,
-'womenacc4.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- MEN PANJABI -->
-<!-- ================= -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="panjabi1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Premium Panjabi
-
-</div>
-
-
-<div class="product-price">
-
-৳2,324.21
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Panjabi',
-2324.21,
-'panjabi1.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="panjabi2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Royal Panjabi
-
-</div>
-
-
-<div class="product-price">
-
-৳3,267.38
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Panjabi',
-3267.38,
-'panjabi2.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="panjabi3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-Classic Panjabi
-
-</div>
-
-
-<div class="product-price">
-
-৳2,682.72
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Panjabi',
-2682.72,
-'panjabi3.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="panjabi4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-
-<div class="product-name">
-
-Wedding Panjabi
-
-</div>
-
-
-<div class="product-price">
-
-৳2,424.44
-
-</div>
-
-
-<div class="product-buttons">
-
-
-<button class="cart-btn"
-onclick="addToCart(
-'Wedding Panjabi',
-2424.44,
-'panjabi4.jpeg'
-)">
-
-Add To Cart
-
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-
-Order Now
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
 
 </div>
 
 </section>
 <!-- ========================================= -->
+<!-- MEN COLLECTION PAGE -->
 <!-- PART 8 -->
-<!-- MEN SHIRT + TSHIRT + PANTS + FOOTWEAR -->
-<!-- KIDS BOYS COLLECTION -->
+<!-- PASTE BELOW PART 7 -->
 <!-- ========================================= -->
 
+<section class="product-page" id="men-page">
 
-<section class="products-section">
+<div class="section-header">
+<h2>MEN COLLECTION</h2>
+<p>Panjabi • Shirts • T-Shirts • Pants • Footwear</p>
+</div>
 
+<div class="products-grid">
 
-<h2 class="product-section-title">
-
-Men & Kids Collection
-
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<!-- ================= -->
-<!-- MEN SHIRTS -->
-<!-- ================= -->
-
+<!-- PANJABI -->
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="shirt1.jpeg">
+<img src="panjabi1.jpeg" alt="">
+<h3>Panjabi 1</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Panjabi 1',2950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Casual Shirt
-</div>
-
-<div class="product-price">
-৳1,456.34
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Casual Shirt',
-1456.34,
-'shirt1.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="shirt2.jpeg">
+<img src="panjabi2.jpeg" alt="">
+<h3>Panjabi 2</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Panjabi 2',2950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Classic Formal Shirt
-</div>
-
-<div class="product-price">
-৳2,346.48
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Formal Shirt',
-2346.48,
-'shirt2.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="shirt3.jpeg">
+<img src="panjabi3.jpeg" alt="">
+<h3>Panjabi 3</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Panjabi 3',2950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Heritage Designer Shirt
-</div>
-
-<div class="product-price">
-৳1,552.43
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Heritage Designer Shirt',
-1552.43,
-'shirt3.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="shirt4.jpeg">
+<img src="panjabi4.jpeg" alt="">
+<h3>Panjabi 4</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Panjabi 4',2950)">Add To Cart</button>
 </div>
 
-<div class="product-content">
-
-<div class="product-name">
-Luxury Cotton Shirt
-</div>
-
-<div class="product-price">
-৳2,437.32
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Cotton Shirt',
-2437.32,
-'shirt4.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- MEN T SHIRT -->
-<!-- ================= -->
-
+<!-- SHIRTS -->
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="tshirt1.jpeg">
+<img src="shirt1.jpeg" alt="">
+<h3>Shirt 1</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Shirt 1',2450)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Premium T-Shirt
-</div>
-
-<div class="product-price">
-৳1,352.56
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium T-Shirt',
-1352.56,
-'tshirt1.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="tshirt2.jpeg">
+<img src="shirt2.jpeg" alt="">
+<h3>Shirt 2</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Shirt 2',2450)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Classic Cotton T-Shirt
-</div>
-
-<div class="product-price">
-৳1,672.27
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Cotton T-Shirt',
-1672.27,
-'tshirt2.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="tshirt3.jpeg">
+<img src="shirt3.jpeg" alt="">
+<h3>Shirt 3</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Shirt 3',2450)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Modern Style T-Shirt
-</div>
-
-<div class="product-price">
-৳1,463.32
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Modern Style T-Shirt',
-1463.32,
-'tshirt3.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="tshirt4.jpeg">
+<img src="shirt4.jpeg" alt="">
+<h3>Shirt 4</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Shirt 4',2450)">Add To Cart</button>
 </div>
 
-<div class="product-content">
-
-<div class="product-name">
-BAGASH Premium T-Shirt
-</div>
-
-<div class="product-price">
-৳1,343.42
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'BAGASH Premium T-Shirt',
-1343.42,
-'tshirt4.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- MEN PANTS -->
-<!-- ================= -->
-
+<!-- TSHIRTS -->
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="pant1.jpeg">
+<img src="tshirt1.jpeg" alt="">
+<h3>T-Shirt 1</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('T-Shirt 1',1950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Pant
-</div>
-
-<div class="product-price">
-৳2,654.45
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Pant',
-2654.45,
-'pant1.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="pant2.jpeg">
+<img src="tshirt2.jpeg" alt="">
+<h3>T-Shirt 2</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('T-Shirt 2',1950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Classic Pant
-</div>
-
-<div class="product-price">
-৳1,645.43
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Pant',
-1645.43,
-'pant2.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="pant3.jpeg">
+<img src="tshirt3.jpeg" alt="">
+<h3>T-Shirt 3</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('T-Shirt 3',1950)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Formal Designer Pant
-</div>
-
-<div class="product-price">
-৳1,864.78
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Formal Designer Pant',
-1864.78,
-'pant3.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="pant4.jpeg">
+<img src="tshirt4.jpeg" alt="">
+<h3>T-Shirt 4</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('T-Shirt 4',1950)">Add To Cart</button>
 </div>
 
-<div class="product-content">
+<!-- PANTS -->
 
-<div class="product-name">
-Luxury Pant
+<div class="product-card">
+<img src="pant1.jpeg" alt="">
+<h3>Pant 1</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Pant 1',2250)">Add To Cart</button>
 </div>
 
-<div class="product-price">
-৳1,644.42
+<div class="product-card">
+<img src="pant2.jpeg" alt="">
+<h3>Pant 2</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Pant 2',2250)">Add To Cart</button>
 </div>
 
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Pant',
-1644.42,
-'pant4.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
+<div class="product-card">
+<img src="pant3.jpeg" alt="">
+<h3>Pant 3</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Pant 3',2250)">Add To Cart</button>
 </div>
 
+<div class="product-card">
+<img src="pant4.jpeg" alt="">
+<h3>Pant 4</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Pant 4',2250)">Add To Cart</button>
 </div>
-</div>
 
-
-
-
-
-<!-- ================= -->
 <!-- FOOTWEAR -->
-<!-- ================= -->
-
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="footwear1.jpeg">
+<img src="footwear1.jpeg" alt="">
+<h3>Footwear 1</h3>
+<div class="price">৳3250</div>
+<button onclick="addToCart('Footwear 1',3250)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Footwear
-</div>
-
-<div class="product-price">
-৳3,647.56
-</div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Footwear',
-3647.56,
-'footwear1.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-
-
-
-<!-- BOYS -->
 
 <div class="product-card">
-
-<div class="product-image">
-<img src="boys1.jpeg">
+<img src="footwear2.jpeg" alt="">
+<h3>Footwear 2</h3>
+<div class="price">৳3250</div>
+<button onclick="addToCart('Footwear 2',3250)">Add To Cart</button>
 </div>
 
-<div class="product-content">
-
-<div class="product-name">
-Kids Boys Premium Wear
+<div class="product-card">
+<img src="footwear3.jpeg" alt="">
+<h3>Footwear 3</h3>
+<div class="price">৳3250</div>
+<button onclick="addToCart('Footwear 3',3250)">Add To Cart</button>
 </div>
 
-<div class="product-price">
-৳1,737.32
+<div class="product-card">
+<img src="footwear4.jpeg" alt="">
+<h3>Footwear 4</h3>
+<div class="price">৳3250</div>
+<button onclick="addToCart('Footwear 4',3250)">Add To Cart</button>
 </div>
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Kids Boys Premium Wear',
-1737.32,
-'boys1.jpeg'
-)">
-Add To Cart
-</button>
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-</div>
-
 
 </div>
 
 </section>
 <!-- ========================================= -->
 <!-- PART 9 -->
-<!-- KIDS COLLECTION + WEDDING COLLECTION -->
+<!-- KIDS + WEDDING + HOME DECOR -->
+<!-- PASTE BELOW PART 8 -->
 <!-- ========================================= -->
 
+<!-- KIDS COLLECTION -->
 
-<section class="products-section">
+<section class="product-page" id="kids-page">
 
+<div class="section-header">
+<h2>KIDS COLLECTION</h2>
+<p>Boys • Girls • Newborn • Party Wear</p>
+</div>
 
-<h2 class="product-section-title">
+<div class="products-grid">
 
-Kids & Wedding Collection
-
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<!-- ================= -->
 <!-- BOYS -->
-<!-- ================= -->
-
 
 <div class="product-card">
+<img src="boys1.jpeg">
+<h3>Boys 1</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Boys 1',1250)">Add To Cart</button>
+</div>
 
-<div class="product-image">
+<div class="product-card">
 <img src="boys2.jpeg">
+<h3>Boys 2</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Boys 2',1250)">Add To Cart</button>
 </div>
-
-<div class="product-content">
-
-<div class="product-name">
-Boys Fashion Wear
-</div>
-
-<div class="product-price">
-৳1,925.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Boys Fashion Wear',
-1925.21,
-'boys2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="boys3.jpeg">
+<h3>Boys 3</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Boys 3',1250)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Boys Premium Collection
-</div>
-
-<div class="product-price">
-৳2,322.12
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Boys Premium Collection',
-2322.12,
-'boys3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="boys4.jpeg">
+<h3>Boys 4</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Boys 4',1250)">Add To Cart</button>
 </div>
 
-
-<div class="product-content">
-
-<div class="product-name">
-Boys Heritage Wear
-</div>
-
-<div class="product-price">
-৳1,831.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Boys Heritage Wear',
-1831.21,
-'boys4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-<!-- ================= -->
 <!-- GIRLS -->
-<!-- ================= -->
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="girls1.jpeg">
+<h3>Girls 1</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Girls 1',1250)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Girls Premium Dress
-</div>
-
-<div class="product-price">
-৳2,137.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Girls Premium Dress',
-2137.21,
-'girls1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="girls2.jpeg">
+<h3>Girls 2</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Girls 2',1250)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Girls Fashion Wear
-</div>
-
-<div class="product-price">
-৳1,923.34
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Girls Fashion Wear',
-1923.34,
-'girls2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="girls3.jpeg">
+<h3>Girls 3</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Girls 3',1250)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Girls Elegant Collection
-</div>
-
-<div class="product-price">
-৳1,979.09
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Girls Elegant Collection',
-1979.09,
-'girls3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="girls4.jpeg">
+<h3>Girls 4</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Girls 4',1250)">Add To Cart</button>
 </div>
 
-
-<div class="product-content">
-
-<div class="product-name">
-Girls Luxury Wear
-</div>
-
-<div class="product-price">
-৳2,494.77
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Girls Luxury Wear',
-2494.77,
-'girls4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
 <!-- NEWBORN -->
-<!-- ================= -->
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="newborn1.jpeg">
+<h3>Newborn 1</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Newborn 1',950)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Newborn Soft Wear
-</div>
-
-<div class="product-price">
-৳360.00
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Newborn Soft Wear',
-360,
-'newborn1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="newborn2.jpeg">
+<h3>Newborn 2</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Newborn 2',950)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Newborn Comfort Dress
-</div>
-
-<div class="product-price">
-৳410.09
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Newborn Comfort Dress',
-410.09,
-'newborn2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="newborn3.jpeg">
+<h3>Newborn 3</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Newborn 3',950)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Newborn Premium Dress
-</div>
-
-<div class="product-price">
-৳398.39
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Newborn Premium Dress',
-398.39,
-'newborn3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="newborn4.jpeg">
+<h3>Newborn 4</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Newborn 4',950)">Add To Cart</button>
 </div>
 
-
-<div class="product-content">
-
-<div class="product-name">
-Newborn Luxury Wear
-</div>
-
-<div class="product-price">
-৳421.42
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Newborn Luxury Wear',
-421.42,
-'newborn4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- PARTY WEAR -->
-<!-- ================= -->
-
+<!-- PARTY -->
 
 <div class="product-card">
-
-<div class="product-image">
 <img src="kidsparty1.jpeg">
+<h3>Party Wear 1</h3>
+<div class="price">৳1450</div>
+<button onclick="addToCart('Party Wear 1',1450)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Kids Party Wear
-</div>
-
-<div class="product-price">
-৳3,168.14
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Kids Party Wear',
-3168.14,
-'kidsparty1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- WEDDING WOMEN -->
-
 
 <div class="product-card">
+<img src="kidsparty2.jpeg">
+<h3>Party Wear 2</h3>
+<div class="price">৳1450</div>
+<button onclick="addToCart('Party Wear 2',1450)">Add To Cart</button>
+</div>
 
-<div class="product-image">
+<div class="product-card">
+<img src="kidsparty3.jpeg">
+<h3>Party Wear 3</h3>
+<div class="price">৳1450</div>
+<button onclick="addToCart('Party Wear 3',1450)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="kidsparty4.jpeg">
+<h3>Party Wear 4</h3>
+<div class="price">৳1450</div>
+<button onclick="addToCart('Party Wear 4',1450)">Add To Cart</button>
+</div>
+
+</div>
+</section>
+
+<!-- WEDDING COLLECTION -->
+
+<section class="product-page" id="wedding-page">
+
+<div class="section-header">
+<h2>WEDDING COLLECTION</h2>
+<p>Women • Men • Jewellery • Gift Items</p>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
 <img src="weddingwomen1.jpeg">
+<h3>Wedding Women 1</h3>
+<div class="price">৳4950</div>
+<button onclick="addToCart('Wedding Women 1',4950)">Add To Cart</button>
 </div>
 
-
-<div class="product-content">
-
-<div class="product-name">
-Wedding Women Premium Dress
+<div class="product-card">
+<img src="weddingwomen2.jpeg">
+<h3>Wedding Women 2</h3>
+<div class="price">৳4950</div>
+<button onclick="addToCart('Wedding Women 2',4950)">Add To Cart</button>
 </div>
 
-<div class="product-price">
-৳7,478.54
+<div class="product-card">
+<img src="weddingwomen3.jpeg">
+<h3>Wedding Women 3</h3>
+<div class="price">৳4950</div>
+<button onclick="addToCart('Wedding Women 3',4950)">Add To Cart</button>
 </div>
 
+<div class="product-card">
+<img src="weddingwomen4.jpeg">
+<h3>Wedding Women 4</h3>
+<div class="price">৳4950</div>
+<button onclick="addToCart('Wedding Women 4',4950)">Add To Cart</button>
+</div>
 
-<div class="product-buttons">
+<div class="product-card">
+<img src="weddingmen1.jpeg">
+<h3>Wedding Men 1</h3>
+<div class="price">৳3950</div>
+<button onclick="addToCart('Wedding Men 1',3950)">Add To Cart</button>
+</div>
 
-<button class="cart-btn"
-onclick="addToCart(
-'Wedding Women Premium Dress',
-7478.54,
-'weddingwomen1.jpeg'
-)">
-Add To Cart
-</button>
+<div class="product-card">
+<img src="weddingmen2.jpeg">
+<h3>Wedding Men 2</h3>
+<div class="price">৳3950</div>
+<button onclick="addToCart('Wedding Men 2',3950)">Add To Cart</button>
+</div>
 
+<div class="product-card">
+<img src="weddingmen3.jpeg">
+<h3>Wedding Men 3</h3>
+<div class="price">৳3950</div>
+<button onclick="addToCart('Wedding Men 3',3950)">Add To Cart</button>
+</div>
 
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
+<div class="product-card">
+<img src="weddingmen4.jpeg">
+<h3>Wedding Men 4</h3>
+<div class="price">৳3950</div>
+<button onclick="addToCart('Wedding Men 4',3950)">Add To Cart</button>
+</div>
 
+<div class="product-card">
+<img src="weddingjewel1.jpeg">
+<h3>Wedding Jewellery 1</h3>
+<div class="price">৳5950</div>
+<button onclick="addToCart('Wedding Jewellery 1',5950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="weddingjewel2.jpeg">
+<h3>Wedding Jewellery 2</h3>
+<div class="price">৳5950</div>
+<button onclick="addToCart('Wedding Jewellery 2',5950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="gift1.jpeg">
+<h3>Gift Item 1</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('Gift Item 1',1950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="gift2.jpeg">
+<h3>Gift Item 2</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('Gift Item 2',1950)">Add To Cart</button>
 </div>
 
 </div>
+</section>
 
+<!-- HOME DECOR -->
+
+<section class="product-page" id="home-page">
+
+<div class="section-header">
+<h2>HOME DÉCOR</h2>
+<p>Living • Dining • Decor • Handicrafts</p>
 </div>
 
+<div class="products-grid">
 
+<div class="product-card">
+<img src="living1.jpeg">
+<h3>Living 1</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Living 1',2450)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="living2.jpeg">
+<h3>Living 2</h3>
+<div class="price">৳2450</div>
+<button onclick="addToCart('Living 2',2450)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="dining1.jpeg">
+<h3>Dining 1</h3>
+<div class="price">৳3450</div>
+<button onclick="addToCart('Dining 1',3450)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="dining2.jpeg">
+<h3>Dining 2</h3>
+<div class="price">৳3450</div>
+<button onclick="addToCart('Dining 2',3450)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="decor1.jpeg">
+<h3>Decor 1</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('Decor 1',1950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="decor2.jpeg">
+<h3>Decor 2</h3>
+<div class="price">৳1950</div>
+<button onclick="addToCart('Decor 2',1950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="handicraft1.jpeg">
+<h3>Handicraft 1</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Handicraft 1',2250)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="handicraft2.jpeg">
+<h3>Handicraft 2</h3>
+<div class="price">৳2250</div>
+<button onclick="addToCart('Handicraft 2',2250)">Add To Cart</button>
+</div>
 
 </div>
 
 </section>
 <!-- ========================================= -->
 <!-- PART 10 -->
-<!-- WEDDING + HOME COLLECTION -->
+<!-- FINAL SECTION -->
 <!-- ========================================= -->
 
+<!-- JEWELLERY -->
 
-<section class="products-section">
+<section class="product-page" id="jewellery-page">
 
+<div class="section-header">
+<h2>JEWELLERY COLLECTION</h2>
+<p>Earrings • Necklaces • Bracelets • Rings</p>
+</div>
 
-<h2 class="product-section-title">
-
-Wedding & Home Collection
-
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<!-- ================= -->
-<!-- WEDDING WOMEN -->
-<!-- ================= -->
-
+<div class="products-grid">
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingwomen2.jpeg">
-
+<img src="earring1.jpeg">
+<h3>Earring 1</h3>
+<div class="price">৳1850</div>
+<button onclick="addToCart('Earring 1',1850)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Royal Wedding Women Dress
-</div>
-
-<div class="product-price">
-৳4,739.27
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Wedding Women Dress',
-4739.27,
-'weddingwomen2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingwomen3.jpeg">
-
+<img src="earring2.jpeg">
+<h3>Earring 2</h3>
+<div class="price">৳1850</div>
+<button onclick="addToCart('Earring 2',1850)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Designer Wedding Women Dress
-</div>
-
-<div class="product-price">
-৳5,246.23
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Designer Wedding Women Dress',
-5246.23,
-'weddingwomen3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingwomen4.jpeg">
-
+<img src="necklace1.jpeg">
+<h3>Necklace 1</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Necklace 1',2950)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Bridal Collection
-</div>
-
-<div class="product-price">
-৳4,311.60
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Bridal Collection',
-4311.60,
-'weddingwomen4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- WEDDING MEN -->
-<!-- ================= -->
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingmen1.jpeg">
-
+<img src="bracelet1.jpeg">
+<h3>Bracelet 1</h3>
+<div class="price">৳1450</div>
+<button onclick="addToCart('Bracelet 1',1450)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Wedding Men Premium Panjabi
-</div>
-
-<div class="product-price">
-৳6,257.46
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Wedding Men Premium Panjabi',
-6257.46,
-'weddingmen1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingmen2.jpeg">
-
+<img src="ring1.jpeg">
+<h3>Ring 1</h3>
+<div class="price">৳1250</div>
+<button onclick="addToCart('Ring 1',1250)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Royal Wedding Men Wear
-</div>
-
-<div class="product-price">
-৳5,728.73
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Wedding Men Wear',
-5728.73,
-'weddingmen2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingmen3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Classic Wedding Men Dress
-</div>
-
-<div class="product-price">
-৳5,909.57
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Wedding Men Dress',
-5909.57,
-'weddingmen3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingmen4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Wedding Men Collection
-</div>
-
-<div class="product-price">
-৳4,477.39
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Wedding Men Collection',
-4477.39,
-'weddingmen4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- WEDDING JEWELLERY -->
-<!-- ================= -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingjewel1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Wedding Jewellery Set
-</div>
-
-<div class="product-price">
-৳2,630.44
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Wedding Jewellery Set',
-2630.44,
-'weddingjewel1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingjewel2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Royal Bridal Jewellery
-</div>
-
-<div class="product-price">
-৳3,257.68
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Royal Bridal Jewellery',
-3257.68,
-'weddingjewel2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingjewel3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Wedding Jewellery
-</div>
-
-<div class="product-price">
-৳2,932.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Wedding Jewellery',
-2932.21,
-'weddingjewel3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="weddingjewel4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Wedding Jewellery
-</div>
-
-<div class="product-price">
-৳3,215.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Wedding Jewellery',
-3215.21,
-'weddingjewel4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-<!-- ================= -->
-<!-- GIFT ITEMS -->
-<!-- ================= -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="gift1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Gift Item
-</div>
-
-<div class="product-price">
-৳1,132.21
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Gift Item',
-1132.21,
-'gift1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="gift2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Gift Box
-</div>
-
-<div class="product-price">
-৳1,312.23
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Gift Box',
-1312.23,
-'gift2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 </div>
 
 </section>
-<!-- ========================================= -->
-<!-- PART 11 -->
-<!-- GIFT + HOME DECOR COLLECTION -->
-<!-- ========================================= -->
 
+<!-- SKIN & HAIR -->
 
-<section class="products-section">
+<section class="product-page" id="skin-page">
 
+<div class="section-header">
+<h2>SKIN & HAIR</h2>
+<p>Face Care • Hair Care • Body Care • Natural Products</p>
+</div>
 
-<h2 class="product-section-title">
-
-Home Décor Collection
-
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<!-- GIFT ITEM 3 -->
-
+<div class="products-grid">
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="gift3.jpeg">
-
+<img src="face1.jpeg">
+<h3>Face Care 1</h3>
+<div class="price">৳650</div>
+<button onclick="addToCart('Face Care 1',650)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Gift Collection
-</div>
-
-<div class="product-price">
-৳2,437.41
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Gift Collection',
-2437.41,
-'gift3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- GIFT ITEM 4 -->
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="gift4.jpeg">
-
+<img src="hair1.jpeg">
+<h3>Hair Care 1</h3>
+<div class="price">৳750</div>
+<button onclick="addToCart('Hair Care 1',750)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Gift Item
-</div>
-
-<div class="product-price">
-৳609.00
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Gift Item',
-609,
-'gift4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- LIVING -->
-<!-- ================= -->
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="living1.jpeg">
-
+<img src="body1.jpeg">
+<h3>Body Care 1</h3>
+<div class="price">৳850</div>
+<button onclick="addToCart('Body Care 1',850)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Living Decor
-</div>
-
-<div class="product-price">
-৳3,257.98
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Living Decor',
-3257.98,
-'living1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="living2.jpeg">
-
+<img src="face2.jpeg">
+<h3>Natural Product 1</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Natural Product 1',950)">Add To Cart</button>
 </div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Modern Living Collection
-</div>
-
-<div class="product-price">
-৳3,328.99
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Modern Living Collection',
-3328.99,
-'living2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="living3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Elegant Living Decor
-</div>
-
-<div class="product-price">
-৳3,109.63
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Elegant Living Decor',
-3109.63,
-'living3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="living4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Living Style
-</div>
-
-<div class="product-price">
-৳2,926.56
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Living Style',
-2926.56,
-'living4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-<!-- ================= -->
-<!-- DINING -->
-<!-- ================= -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="dining1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Dining Set
-</div>
-
-<div class="product-price">
-৳638.97
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Dining Set',
-638.97,
-'dining1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="dining2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Dining Collection
-</div>
-
-<div class="product-price">
-৳419.48
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Dining Collection',
-419.48,
-'dining2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="dining3.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Classic Dining Product
-</div>
-
-<div class="product-price">
-৳339.82
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Classic Dining Product',
-339.82,
-'dining3.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="dining4.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Luxury Dining Style
-</div>
-
-<div class="product-price">
-৳384.95
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Luxury Dining Style',
-384.95,
-'dining4.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- ================= -->
-<!-- DECOR -->
-<!-- ================= -->
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="decor1.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Premium Home Decor
-</div>
-
-<div class="product-price">
-৳742.32
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Premium Home Decor',
-742.32,
-'decor1.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="decor2.jpeg">
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-Elegant Decor Item
-</div>
-
-<div class="product-price">
-৳671.16
-</div>
-
-
-<div class="product-buttons">
-
-<button class="cart-btn"
-onclick="addToCart(
-'Elegant Decor Item',
-671.16,
-'decor2.jpeg'
-)">
-Add To Cart
-</button>
-
-
-<button class="order-btn"
-onclick="openCheckout()">
-Order Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
 
 </div>
 
 </section>
+
+<!-- WATCHES -->
+
+<section class="product-page" id="watch-page">
+
+<div class="section-header">
+<h2>WATCHES COLLECTION</h2>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="watch1.jpeg">
+<h3>Watch 1</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Watch 1',2950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="watch2.jpeg">
+<h3>Watch 2</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Watch 2',2950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="watch3.jpeg">
+<h3>Watch 3</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Watch 3',2950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="watch4.jpeg">
+<h3>Watch 4</h3>
+<div class="price">৳2950</div>
+<button onclick="addToCart('Watch 4',2950)">Add To Cart</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- JERSEYS -->
+
+<section class="product-page" id="jersey-page">
+
+<div class="section-header">
+<h2>JERSEYS COLLECTION</h2>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="jersey1.jpeg">
+<h3>Jersey 1</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Jersey 1',950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="jersey2.jpeg">
+<h3>Jersey 2</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Jersey 2',950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="jersey3.jpeg">
+<h3>Jersey 3</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Jersey 3',950)">Add To Cart</button>
+</div>
+
+<div class="product-card">
+<img src="jersey4.jpeg">
+<h3>Jersey 4</h3>
+<div class="price">৳950</div>
+<button onclick="addToCart('Jersey 4',950)">Add To Cart</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- FLOATING BUTTONS -->
+
+<a href="https://wa.me/8801792453834"
+class="whatsapp-btn"
+target="_blank">
+💬 WhatsApp Order
+</a>
+
+<button class="cart-btn"
+onclick="openOrderModal()">
+🛒 Cart (<span id="cartCount">0</span>)
+</button>
+
+<!-- ORDER MODAL -->
+
+<div id="orderModal"
+style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:99999;
+">
+
+<div style="
+background:#fff;
+max-width:500px;
+margin:50px auto;
+padding:25px;
+">
+
+<h2>BAGASH Order</h2>
+
+<input id="customerName"
+placeholder="Your Name"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input id="customerPhone"
+placeholder="Phone Number"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<textarea id="orderProducts"
+placeholder="Products"
+style="width:100%;height:120px;padding:12px;"></textarea>
+
+<button onclick="submitOrder()"
+style="
+width:100%;
+padding:14px;
+background:#0B4D38;
+color:#fff;
+border:none;
+margin-top:15px;
+">
+
+Submit Order
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h2>BAGASH</h2>
+
+<p>
+Owner: Nurul Amin
+</p>
+
+<p>
+Phone: 01792453834
+</p>
+
+<p>
+Email: ah4948591@gmail.com
+</p>
+
+<p>
+bKash: 01736255527
+</p>
+
+<p>
+© 2026 BAGASH Premium
+</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+let cart=[];
+
+function addToCart(name,price){
+
+cart.push(name+" - ৳"+price);
+
+document.getElementById("cartCount").innerHTML=
+cart.length;
+
+alert(name+" Added To Cart");
+
+}
+
+function openOrderModal(){
+
+document.getElementById("orderModal")
+.style.display="block";
+
+document.getElementById("orderProducts")
+.value=cart.join("\n");
+
+}
+
+function submitOrder(){
+
+const name=
+document.getElementById("customerName").value;
+
+const phone=
+document.getElementById("customerPhone").value;
+
+const products=
+document.getElementById("orderProducts").value;
+
+fetch("https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec",{
+
+method:"POST",
+
+body:JSON.stringify({
+
+name:name,
+phone:phone,
+products:products
+
+})
+
+})
+
+.then(res=>res.text())
+.then(data=>{
+
+alert("Order Submitted Successfully");
+
+cart=[];
+
+document.getElementById("cartCount").innerHTML=0;
+
+document.getElementById("orderModal").style.display="none";
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

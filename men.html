@@ -1,7 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BAGASH men Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fafaf8;
+}
+
+.back-btn{
+display:inline-block;
+margin:20px;
+padding:12px 24px;
+background:#0B4D38;
+color:white;
+text-decoration:none;
+font-weight:700;
+border-radius:6px;
+}
+
+.hero{
+height:420px;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(11,77,56,.55)),
+url("men.jpeg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+letter-spacing:4px;
+}
+
+.hero p{
+font-size:18px;
+margin-top:10px;
+}
+
+.products{
+padding:60px 20px;
+}
+
+.grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.info{
+padding:20px;
+}
+
+.info h3{
+color:#0B4D38;
+margin-bottom:10px;
+}
+
+.price{
+font-size:22px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.buy-btn{
+display:block;
+text-align:center;
+padding:12px;
+background:#0B4D38;
+color:white;
+text-decoration:none;
+font-weight:700;
+border-radius:6px;
+}
+
+.buy-btn:hover{
+background:#083828;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.card img{
+height:180px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
+.owner{
+margin-top:60px;
+padding:40px 20px;
+background:#0B4D38;
+color:white;
+text-align:center;
+}
+
+.owner h2{
+margin-bottom:20px;
+}
+
+.owner p{
+line-height:2;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn">Back To Home</a>
+
+<section class="hero">
+<div>
+<h1>men Collection</h1>
+<p>Premium Fashion & Heritage Collection</p>
+</div>
+</section>
+
+<section class="products">
+
+<div class="grid">
+
 <!-- PANJABI -->
 
 <div class="product-card">
@@ -151,8 +312,47 @@
 <p>৳1,989.97</p>
 <a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Luxury%20Footwear%2004" target="_blank" class="btn">Buy Now</a>
 </div>
-  
-</script>
+    
+</div>
 
+</section>
+
+<section class="owner">
+
+<h2>Owner Information</h2>
+
+<p>Owner: Nurul Amin</p>
+
+<p>Phone: 01792453834</p>
+
+<p>WhatsApp: 01792453834</p>
+
+<p>bKash: 01736255527</p>
+
+<p>Email: ah4948591@gmail.com</p>
+
+</section>
+<script>
+function orderWhatsApp(product, price){
+
+const message =
+`🛍️ BAGASH Order
+
+Product: ${product}
+Price: ৳${price}
+
+Name:
+Phone:
+Address:
+
+Please confirm my order.`;
+
+window.open(
+`https://wa.me/8801792453834?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+</script>
 </body>
 </html>

@@ -1,15 +1,10 @@
-<!-- ========================================= -->
-<!-- BAGASH WOMEN COLLECTION PAGE -->
-<!-- FILE NAME: women.html -->
-<!-- ========================================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Women Collection</title>
+<title>BAGASH Women Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -26,219 +21,128 @@ body{
 background:#fafaf8;
 }
 
-.header{
-
-height:75px;
-background:#fff;
-
-position:sticky;
-top:0;
-z-index:999;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 20px;
-
-box-shadow:0 2px 15px rgba(0,0,0,.05);
-
-}
-
-.logo{
-
-font-size:30px;
-font-weight:800;
-color:#0B4D38;
-
-}
-
 .back-btn{
-
+display:inline-block;
+margin:20px;
+padding:12px 24px;
+background:#0B4D38;
+color:white;
 text-decoration:none;
-color:#0B4D38;
 font-weight:700;
-
+border-radius:6px;
 }
 
 .hero{
-
-height:280px;
-
+height:420px;
 background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(11,77,56,.60)
-),
+linear-gradient(rgba(0,0,0,.35),rgba(11,77,56,.55)),
 url("women.jpeg");
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-text-align:center;
-
 color:white;
-
+text-align:center;
 }
 
 .hero h1{
-
-font-size:55px;
+font-size:60px;
 font-weight:800;
-
+letter-spacing:4px;
 }
 
 .hero p{
-
+font-size:18px;
 margin-top:10px;
-font-size:16px;
-
 }
 
-.section{
-
-padding:60px 15px;
-
+.products{
+padding:60px 20px;
 }
 
 .grid{
-
-max-width:1300px;
-
+max-width:1200px;
 margin:auto;
-
 display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
+grid-template-columns:repeat(2,1fr);
 gap:20px;
-
 }
 
 .card{
-
 background:white;
-
 border-radius:10px;
-
 overflow:hidden;
-
-box-shadow:
-0 8px 20px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
+box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .card img{
-
 width:100%;
-height:250px;
-
+height:280px;
 object-fit:cover;
-
 }
 
 .info{
-
-padding:15px;
-
+padding:20px;
 }
 
 .info h3{
-
-font-size:16px;
 color:#0B4D38;
-
-margin-bottom:8px;
-
+margin-bottom:10px;
 }
 
 .price{
-
 font-size:22px;
-
 font-weight:800;
-
-color:#222;
-
-margin-bottom:12px;
-
-}
-
-.btns{
-
-display:flex;
-
-gap:10px;
-
-}
-
-.view-btn{
-
-flex:1;
-
-padding:12px;
-
-border:none;
-
-background:#eee;
-
-cursor:pointer;
-
-font-weight:700;
-
+margin-bottom:15px;
 }
 
 .buy-btn{
-
-flex:1;
-
+display:block;
+text-align:center;
 padding:12px;
-
-border:none;
-
 background:#0B4D38;
-
 color:white;
-
-cursor:pointer;
-
+text-decoration:none;
 font-weight:700;
-
+border-radius:6px;
 }
 
 .buy-btn:hover{
-
-background:#08392b;
-
+background:#083828;
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
 
-.hero h1{
-
-font-size:38px;
-
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 }
 
 .card img{
-
 height:180px;
+}
+
+.hero h1{
+font-size:34px;
+}
 
 }
 
+.owner{
+margin-top:60px;
+padding:40px 20px;
+background:#0B4D38;
+color:white;
+text-align:center;
+}
+
+.owner h2{
+margin-bottom:20px;
+}
+
+.owner p{
+line-height:2;
 }
 
 </style>
@@ -246,1129 +150,300 @@ height:180px;
 
 <body>
 
-<header class="header">
-
-<a href="index.html"
-class="back-btn">
-
-← Home
-
-</a>
-
-<div class="logo">
-
-BAGASH
-
-</div>
-
-</header>
+<a href="index.html" class="back-btn">Back To Home</a>
 
 <section class="hero">
-
 <div>
-
-<h1>
-
-Women Collection
-
-</h1>
-
-<p>
-
-Premium Fashion Collection
-
-</p>
-
+<h1>Women Collection</h1>
+<p>Premium Fashion & Heritage Collection</p>
 </div>
-
 </section>
 
-<section class="section">
+<section class="products">
 
 <div class="grid">
 
-<!-- SAREE -->
-
+<!-- Saree 1 -->
 <div class="card">
-
 <img src="saree1.jpeg">
-
 <div class="info">
-
 <h3>Saree 1</h3>
-
-<div class="price">
-
-৳3686.75
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">
-
-View
-
-</button>
-
-<button class="buy-btn">
-
+<div class="price">৳3686.75</div>
+<a class="buy-btn"
+target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
 Buy Now
-
-</button>
-
+</a>
+</div>
 </div>
 
-</div>
-
-</div>
-
+<!-- Saree 2 -->
 <div class="card">
-
 <img src="saree2.jpeg">
-
 <div class="info">
-
 <h3>Saree 2</h3>
-
-<div class="price">
-
-৳3628.01
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">
-
-View
-
-</button>
-
-<button class="buy-btn">
-
+<div class="price">৳3628.01</div>
+<a class="buy-btn"
+target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
 Buy Now
-
-</button>
-
+</a>
+</div>
 </div>
 
-</div>
-
-</div>
-
+<!-- Saree 3 -->
 <div class="card">
-
 <img src="saree3.jpeg">
-
 <div class="info">
-
 <h3>Saree 3</h3>
-
-<div class="price">
-
-৳3527.08
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">
-
-View</button>
-
-<button class="buy-btn">
-
+<div class="price">৳3527.08</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
 Buy Now
-
-</button>
-
+</a>
+</div>
 </div>
 
-</div>
-
-</div>
-
+<!-- Saree 4 -->
 <div class="card">
-
 <img src="saree4.jpeg">
-
 <div class="info">
-
 <h3>Saree 4</h3>
-
-<div class="price">
-
-৳3253.97
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">
-
-View</button>
-
-<button class="buy-btn">
-
+<div class="price">৳3253.97</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
 Buy Now
-
-</button>
-
+</a>
+</div>
 </div>
 
-</div>
-
-</div>
-
-<!-- SALWAR -->
-
+<!-- SALWAR 1 -->
 <div class="card">
-
 <img src="salwar1.jpeg">
-
 <div class="info">
-
 <h3>Salwar 1</h3>
-
-<div class="price">
-
-৳1893.07
-
+<div class="price">৳1893.07</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- SALWAR 2 -->
 <div class="card">
-
 <img src="salwar2.jpeg">
-
 <div class="info">
-
 <h3>Salwar 2</h3>
-
-<div class="price">
-
-৳1925.97
-
+<div class="price">৳1925.97</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- SALWAR 3 -->
 <div class="card">
-
 <img src="salwar3.jpeg">
-
 <div class="info">
-
 <h3>Salwar 3</h3>
-
-<div class="price">
-
-৳2132.51
-
+<div class="price">৳2132.51</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- SALWAR 4 -->
 <div class="card">
-
 <img src="salwar4.jpeg">
-
 <div class="info">
-
 <h3>Salwar 4</h3>
-
-<div class="price">
-
-৳2363.52
-
+<div class="price">৳2363.52</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
+<!-- KURTA 1 -->
+<div class="card">
+<img src="kurta1.jpeg">
+<div class="info">
+<h3>Kurta 1</h3>
+<div class="price">৳2767.72</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
+<!-- KURTA 2 -->
+<div class="card">
+<img src="kurta2.jpeg">
+<div class="info">
+<h3>Kurta 2</h3>
+<div class="price">৳2527.62</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
+<!-- KURTA 3 -->
+<div class="card">
+<img src="kurta3.jpeg">
+<div class="info">
+<h3>Kurta 3</h3>
+<div class="price">৳2852.72</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
+</div>
 </div>
 
+<!-- KURTA 4 -->
+<div class="card">
+<img src="kurta4.jpeg">
+<div class="info">
+<h3>Kurta 4</h3>
+<div class="price">৳2736.62</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-</section>
-
-</body>
-</html>
-<!-- ========================================= -->
-<!-- PART 2B -->
-<!-- TOPS + WOMEN ACCESSORIES + WEDDING WOMEN -->
-<!-- women.html এর grid এর ভিতরে add করো -->
-<!-- ========================================= -->
+</div>
 
 <!-- TOPS 1 -->
-
 <div class="card">
-
 <img src="tops1.jpeg">
-
 <div class="info">
-
 <h3>Tops 1</h3>
-
-<div class="price">
-
-৳2127.52
-
+<div class="price">৳2127.52</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- TOPS 2 -->
-
 <div class="card">
-
 <img src="tops2.jpeg">
-
 <div class="info">
-
 <h3>Tops 2</h3>
-
-<div class="price">
-
-৳1857.57
-
+<div class="price">৳1857.57</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- TOPS 3 -->
-
 <div class="card">
-
 <img src="tops3.jpeg">
-
 <div class="info">
-
 <h3>Tops 3</h3>
-
-<div class="price">
-
-৳1863.92
-
+<div class="price">৳1863.92</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- TOPS 4 -->
-
 <div class="card">
-
 <img src="tops4.jpeg">
-
 <div class="info">
-
 <h3>Tops 4</h3>
-
-<div class="price">
-
-৳1936.08
-
+<div class="price">৳1936.08</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- WOMEN ACCESSORIES 1 -->
-
 <div class="card">
-
 <img src="womenacc1.jpeg">
-
 <div class="info">
-
 <h3>Women Accessories 1</h3>
-
-<div class="price">
-
-৳2632.78
-
+<div class="price">৳2632.78</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- WOMEN ACCESSORIES 2 -->
-
 <div class="card">
-
 <img src="womenacc2.jpeg">
-
 <div class="info">
-
 <h3>Women Accessories 2</h3>
-
-<div class="price">
-
-৳3121.19
-
+<div class="price">৳3121.19</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- WOMEN ACCESSORIES 3 -->
-
 <div class="card">
-
 <img src="womenacc3.jpeg">
-
 <div class="info">
-
 <h3>Women Accessories 3</h3>
-
-<div class="price">
-
-৳2374.89
-
+<div class="price">৳2374.89</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
+</a>
 </div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- WOMEN ACCESSORIES 4 -->
-
 <div class="card">
-
 <img src="womenacc4.jpeg">
-
 <div class="info">
-
 <h3>Women Accessories 4</h3>
-
-<div class="price">
-
-৳2348.77
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WEDDING WOMEN 1 -->
-
-<div class="card">
-
-<img src="weddingwomen1.jpeg">
-
-<div class="info">
-
-<h3>Wedding Women 1</h3>
-
-<div class="price">
-
-৳6527.98
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WEDDING WOMEN 2 -->
-
-<div class="card">
-
-<img src="weddingwomen2.jpeg">
-
-<div class="info">
-
-<h3>Wedding Women 2</h3>
-
-<div class="price">
-
-৳6242.92
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WEDDING WOMEN 3 -->
-
-<div class="card">
-
-<img src="weddingwomen3.jpeg">
-
-<div class="info">
-
-<h3>Wedding Women 3</h3>
-
-<div class="price">
-
-৳5786.97
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WEDDING WOMEN 4 -->
-
-<div class="card">
-
-<img src="weddingwomen4.jpeg">
-
-<div class="info">
-
-<h3>Wedding Women 4</h3>
-
-<div class="price">
-
-৳5527.52
-
-</div>
-
-<div class="btns">
-
-<button class="view-btn">View</button>
-
-<button class="buy-btn">Buy Now</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- women.html এর grid শেষ হওয়ার আগে এগুলো paste করবে -->
-<!-- ========================================= -->
-<!-- PART 2C -->
-<!-- PRODUCT DETAILS MODAL + ORDER FORM -->
-<!-- women.html -->
-<!-- ========================================= -->
-
-<style>
-
-/* PRODUCT POPUP */
-
-.product-modal{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,.7);
-
-display:none;
-
-align-items:center;
-justify-content:center;
-
-z-index:99999;
-
-padding:20px;
-
-}
-
-.product-modal.active{
-
-display:flex;
-
-}
-
-.modal-box{
-
-width:100%;
-max-width:900px;
-
-background:white;
-
-border-radius:12px;
-
-overflow:hidden;
-
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-}
-
-.modal-image img{
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-}
-
-.modal-content{
-
-padding:30px;
-
-}
-
-.modal-content h2{
-
-font-size:30px;
-
-color:#0B4D38;
-
-margin-bottom:15px;
-
-}
-
-.modal-price{
-
-font-size:32px;
-
-font-weight:800;
-
-margin-bottom:20px;
-
-}
-
-.modal-content p{
-
-line-height:1.8;
-
-color:#555;
-
-margin-bottom:25px;
-
-}
-
-.modal-buttons{
-
-display:flex;
-
-gap:12px;
-
-flex-wrap:wrap;
-
-}
-
-.order-btn{
-
-padding:14px 30px;
-
-background:#0B4D38;
-
-color:white;
-
-border:none;
-
-cursor:pointer;
-
-font-weight:700;
-
-}
-
-.whatsapp-order{
-
-padding:14px 30px;
-
-background:#25D366;
-
-color:white;
-
-text-decoration:none;
-
-font-weight:700;
-
-}
-
-.close-modal{
-
-position:absolute;
-
-top:20px;
-right:20px;
-
-background:white;
-
-width:45px;
-height:45px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-cursor:pointer;
-
-font-size:24px;
-
-}
-
-/* ORDER FORM */
-
-.order-section{
-
-padding:70px 20px;
-
-background:#fafaf8;
-
-}
-
-.order-title{
-
-text-align:center;
-
-font-size:38px;
-
-font-weight:800;
-
-color:#0B4D38;
-
-margin-bottom:40px;
-
-}
-
-.order-form{
-
-max-width:700px;
-
-margin:auto;
-
-display:grid;
-
-gap:15px;
-
-}
-
-.order-form input,
-.order-form textarea{
-
-padding:15px;
-
-border:1px solid #ddd;
-
-outline:none;
-
-font-size:15px;
-
-}
-
-.order-form button{
-
-padding:16px;
-
-background:#0B4D38;
-
-color:white;
-
-border:none;
-
-font-weight:700;
-
-cursor:pointer;
-
-}
-
-@media(max-width:768px){
-
-.modal-box{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-</style>
-
-<!-- PRODUCT DETAILS POPUP -->
-
-<div class="product-modal"
-id="productModal">
-
-<div class="close-modal"
-onclick="closeProduct()">
-
-×
-
-</div>
-
-<div class="modal-box">
-
-<div class="modal-image">
-
-<img
-id="modalImage"
-src="saree1.jpeg">
-
-</div>
-
-<div class="modal-content">
-
-<h2 id="modalTitle">
-
-Product Name
-
-</h2>
-
-<div
-class="modal-price"
-id="modalPrice">
-
-৳0
-
-</div>
-
-<p>
-
-Premium BAGASH Collection.
-High Quality Fabric.
-Elegant Design.
-Premium Finishing.
-
-</p>
-
-<div class="modal-buttons">
-
-<button
-class="order-btn">
-
-Add To Cart
-
-</button>
-
-<a
-href="https://wa.me/8801792453834"
-target="_blank"
-class="whatsapp-order">
-
-Order WhatsApp
-
+<div class="price">৳2348.77</div>
+<a class="buy-btn" target="_blank"
+href="https://script.google.com/macros/s/AKfycbzfpva-WRFUGYg-atF7_t2vIrqnWjvUzje6ByioOfALRmUXQuRTPs7iia7gcab206g54A/exec">
+Buy Now
 </a>
-
 </div>
-
 </div>
-
+    
 </div>
-
-</div>
-
-<!-- ORDER FORM -->
-
-<section class="order-section">
-
-<h2 class="order-title">
-
-Place Your Order
-
-</h2>
-
-<form class="order-form">
-
-<input
-type="text"
-placeholder="Full Name"
-required>
-
-<input
-type="tel"
-placeholder="Phone Number"
-required>
-
-<input
-type="text"
-placeholder="District"
-required>
-
-<textarea
-rows="5"
-placeholder="Full Address">
-</textarea>
-
-<button type="submit">
-
-Confirm Order
-
-</button>
-
-</form>
 
 </section>
 
-<script>
+<section class="owner">
 
-/* PRODUCT POPUP */
+<h2>Owner Information</h2>
 
-function openProduct(
-name,
-price,
-image
-){
+<p>Owner: Nurul Amin</p>
 
-document
-.getElementById(
-"modalTitle"
-).innerHTML=name;
+<p>Phone: 01792453834</p>
 
-document
-.getElementById(
-"modalPrice"
-).innerHTML=price;
+<p>WhatsApp: 01792453834</p>
 
-document
-.getElementById(
-"modalImage"
-).src=image;
+<p>bKash: 01736255527</p>
 
-document
-.getElementById(
-"productModal"
-).classList.add("active");
+<p>Email: ah4948591@gmail.com</p>
 
-}
-
-function closeProduct(){
-
-document
-.getElementById(
-"productModal"
-).classList.remove("active");
-
-}
-
-</script>
-<!-- WOMEN ACCESSORIES -->
-
-<div class="product-card">
-<a href="womenacc1.jpeg" target="_blank">
-<img src="womenacc1.jpeg" alt="Women Accessory 1">
-</a>
-<h3>Women Accessory 1</h3>
-<p>৳2,632.78</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="womenacc2.jpeg" target="_blank">
-<img src="womenacc2.jpeg" alt="Women Accessory 2">
-</a>
-<h3>Women Accessory 2</h3>
-<p>৳3,121.19</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="womenacc3.jpeg" target="_blank">
-<img src="womenacc3.jpeg" alt="Women Accessory 3">
-</a>
-<h3>Women Accessory 3</h3>
-<p>৳2,374.89</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="womenacc4.jpeg" target="_blank">
-<img src="womenacc4.jpeg" alt="Women Accessory 4">
-</a>
-<h3>Women Accessory 4</h3>
-<p>৳2,348.77</p>
-<button>Order Now</button>
-</div>
-
-<!-- WEDDING WOMEN -->
-
-<div class="product-card">
-<a href="weddingwomen1.jpeg" target="_blank">
-<img src="weddingwomen1.jpeg" alt="Wedding Women 1">
-</a>
-<h3>Wedding Saree Premium</h3>
-<p>৳6,527.98</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="weddingwomen2.jpeg" target="_blank">
-<img src="weddingwomen2.jpeg" alt="Wedding Women 2">
-</a>
-<h3>Wedding Saree Royal</h3>
-<p>৳6,242.92</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="weddingwomen3.jpeg" target="_blank">
-<img src="weddingwomen3.jpeg" alt="Wedding Women 3">
-</a>
-<h3>Wedding Saree Luxury</h3>
-<p>৳5,786.97</p>
-<button>Order Now</button>
-</div>
-
-<div class="product-card">
-<a href="weddingwomen4.jpeg" target="_blank">
-<img src="weddingwomen4.jpeg" alt="Wedding Women 4">
-</a>
-<h3>Wedding Saree Heritage</h3>
-<p>৳5,527.52</p>
-<button>Order Now</button>
-</div>
-
-<!-- FOOTER INFO -->
-
-</div>
-
-<footer class="footer">
-    <h2>BAGASH</h2>
-
-    <p>Owner: Nurul Amin</p>
-
-    <p>Phone: 01792453834</p>
-
-    <p>bKash: 01736255527</p>
-
-    <p>WhatsApp: 01792453834</p>
-
-    <p>Email: ah4948591@gmail.com</p>
-</footer>
+</section>
 
 </body>
 </html>

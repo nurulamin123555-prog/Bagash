@@ -1,10 +1,15 @@
+<!-- ========================================= -->
+<!-- BAGASH WOMEN COLLECTION PAGE -->
+<!-- FILE NAME: women.html -->
+<!-- ========================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Premium Fashion & Lifestyle</title>
+<title>BAGASH | Women Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,240 +22,223 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-:root{
---green:#1f6b3a;
---gold:#d4af37;
---red:#a91b0d;
---light:#faf8f3;
---dark:#111;
-}
-
 body{
-background:var(--light);
-color:#222;
-overflow-x:hidden;
+background:#fafaf8;
 }
 
-/* Header */
+.header{
 
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
+height:75px;
 background:#fff;
-box-shadow:0 4px 20px rgba(0,0,0,.08);
-z-index:999;
-}
 
-.navbar{
-width:92%;
-margin:auto;
-height:85px;
+position:sticky;
+top:0;
+z-index:999;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
+
+padding:0 20px;
+
+box-shadow:0 2px 15px rgba(0,0,0,.05);
+
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
 
-.logo img{
-height:55px;
-}
-
-.logo h1{
-font-size:32px;
+font-size:30px;
 font-weight:800;
-color:var(--green);
-letter-spacing:2px;
+color:#0B4D38;
+
 }
 
-.menu{
-display:flex;
-align-items:center;
-gap:25px;
-}
+.back-btn{
 
-.menu a{
 text-decoration:none;
-color:#333;
-font-weight:600;
+color:#0B4D38;
+font-weight:700;
+
 }
-
-.icons{
-display:flex;
-gap:15px;
-font-size:22px;
-cursor:pointer;
-}
-
-/* Mega Menu */
-
-.shop-menu{
-position:relative;
-}
-
-.mega-menu{
-position:absolute;
-top:60px;
-left:-250px;
-width:950px;
-background:white;
-padding:35px;
-display:none;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.shop-menu:hover .mega-menu{
-display:grid;
-}
-
-.mega-menu h3{
-color:var(--green);
-margin-bottom:12px;
-}
-
-.mega-menu a{
-display:block;
-padding:8px 0;
-color:#555;
-}
-
-/* Flash */
-
-.flash-sale{
-margin-top:85px;
-background:var(--red);
-color:white;
-text-align:center;
-padding:14px;
-font-weight:600;
-}
-
-/* Hero */
 
 .hero{
-height:90vh;
+
+height:280px;
+
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("IMG_3973.webp");
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(11,77,56,.60)
+),
+url("women.jpeg");
+
 background-size:cover;
 background-position:center;
+
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-}
-
-.hero-content h1{
-font-size:80px;
-font-weight:800;
-letter-spacing:3px;
-}
-
-.hero-content p{
-font-size:24px;
-margin-top:15px;
-max-width:850px;
-}
-
-.hero-btns{
-margin-top:35px;
-display:flex;
 justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
 
-.btn{
-padding:14px 30px;
-border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:700;
-cursor:pointer;
-}
+text-align:center;
 
-.btn-green{
-background:var(--green);
 color:white;
+
 }
 
-.btn-gold{
-background:var(--gold);
-color:black;
+.hero h1{
+
+font-size:55px;
+font-weight:800;
+
 }
 
-/* Categories */
+.hero p{
 
-.categories{
-padding:80px 5%;
-}
-
-.section-title{
-text-align:center;
-font-size:46px;
-margin-bottom:40px;
-color:var(--green);
-}
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.category-card{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.category-card:hover{
-transform:translateY(-8px);
-}
-
-.category-card h3{
-font-size:28px;
-color:var(--green);
-margin-bottom:10px;
-}
-
-/* Services */
-
-.services{
-padding:0 5% 80px;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.service-box{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.service-box h3{
 margin-top:10px;
-color:var(--green);
+font-size:16px;
+
+}
+
+.section{
+
+padding:60px 15px;
+
+}
+
+.grid{
+
+max-width:1300px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:10px;
+
+overflow:hidden;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+height:250px;
+
+object-fit:cover;
+
+}
+
+.info{
+
+padding:15px;
+
+}
+
+.info h3{
+
+font-size:16px;
+color:#0B4D38;
+
+margin-bottom:8px;
+
+}
+
+.price{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#222;
+
+margin-bottom:12px;
+
+}
+
+.btns{
+
+display:flex;
+
+gap:10px;
+
+}
+
+.view-btn{
+
+flex:1;
+
+padding:12px;
+
+border:none;
+
+background:#eee;
+
+cursor:pointer;
+
+font-weight:700;
+
+}
+
+.buy-btn{
+
+flex:1;
+
+padding:12px;
+
+border:none;
+
+background:#0B4D38;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:700;
+
+}
+
+.buy-btn:hover{
+
+background:#08392b;
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.card img{
+
+height:180px;
+
+}
+
 }
 
 </style>
@@ -258,101 +246,284 @@ color:var(--green);
 
 <body>
 
-<header>
+<header class="header">
 
-<div class="navbar">
+<a href="index.html"
+class="back-btn">
+
+← Home
+
+</a>
 
 <div class="logo">
-<img src="bagash-logo.png" alt="Bagash Logo">
-<h1>BAGASH</h1>
-</div>
 
-<nav class="menu">
-
-<a href="#">Home</a>
-
-<div class="shop-menu">
-
-<a href="#">Collections ▼</a>
-
-<div class="mega-menu">
-
-<div>
-<h3>BAGA MAN</h3>
-<a href="#">T-Shirts</a>
-<a href="#">Shirts</a>
-<a href="#">Panjabi</a>
-<a href="#">Shoes</a>
-<a href="#">Accessories</a>
-</div>
-
-<div>
-<h3>BAGA WOMEN</h3>
-<a href="#">Saree</a>
-<a href="#">Salwar Kameez</a>
-<a href="#">Handbags</a>
-<a href="#">Jewellery</a>
-<a href="#">Lifestyle</a>
-</div>
-
-<div>
-<h3>BAGA KIDS</h3>
-<a href="#">Kids Fashion</a>
-<a href="#">Baby Collection</a>
-<a href="#">School Collection</a>
-<a href="#">Kids Shoes</a>
-<a href="#">Gift Items</a>
-</div>
-
-<div>
-<h3>BAGA WEDDING</h3>
-<a href="#">Wedding Panjabi</a>
-<a href="#">Wedding Saree</a>
-<a href="#">Couple Collection</a>
-<a href="#">Wedding Gifts</a>
-<a href="#">Premium Collection</a>
-</div>
-
-</div>
-
-</div>
-
-<a href="#">About</a>
-<a href="#">Contact</a>
-
-</nav>
-
-<div class="icons">
-🛒 ❤️ 👤
-</div>
+BAGASH
 
 </div>
 
 </header>
 
-<div class="flash-sale">
-🔥 New Collection Available • bKash Payment • Cash On Delivery
-</div>
-
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
-<h1>BAGASH</h1>
+<h1>
+
+Women Collection
+
+</h1>
 
 <p>
-Premium Fashion • Heritage Lifestyle • Modern Bangladesh
+
+Premium Fashion Collection
+
 </p>
 
-<div class="hero-btns">
+</div>
 
-<button class="btn btn-green">
-Shop Now
+</section>
+
+<section class="section">
+
+<div class="grid">
+
+<!-- SAREE -->
+
+<div class="card">
+
+<img src="saree1.jpeg">
+
+<div class="info">
+
+<h3>Saree 1</h3>
+
+<div class="price">
+
+৳3686.75
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">
+
+View
+
 </button>
 
-<button class="btn btn-gold">
-Explore Collection
+<button class="buy-btn">
+
+Buy Now
+
 </button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="saree2.jpeg">
+
+<div class="info">
+
+<h3>Saree 2</h3>
+
+<div class="price">
+
+৳3628.01
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">
+
+View
+
+</button>
+
+<button class="buy-btn">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="saree3.jpeg">
+
+<div class="info">
+
+<h3>Saree 3</h3>
+
+<div class="price">
+
+৳3527.08
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">
+
+View</button>
+
+<button class="buy-btn">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="saree4.jpeg">
+
+<div class="info">
+
+<h3>Saree 4</h3>
+
+<div class="price">
+
+৳3253.97
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">
+
+View</button>
+
+<button class="buy-btn">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SALWAR -->
+
+<div class="card">
+
+<img src="salwar1.jpeg">
+
+<div class="info">
+
+<h3>Salwar 1</h3>
+
+<div class="price">
+
+৳1893.07
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="salwar2.jpeg">
+
+<div class="info">
+
+<h3>Salwar 2</h3>
+
+<div class="price">
+
+৳1925.97
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="salwar3.jpeg">
+
+<div class="info">
+
+<h3>Salwar 3</h3>
+
+<div class="price">
+
+৳2132.51
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="salwar4.jpeg">
+
+<div class="info">
+
+<h3>Salwar 4</h3>
+
+<div class="price">
+
+৳2363.52
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -360,200 +531,35 @@ Explore Collection
 
 </section>
 
-<section class="categories">
+</body>
+</html>
+<!-- ========================================= -->
+<!-- PART 2B -->
+<!-- TOPS + WOMEN ACCESSORIES + WEDDING WOMEN -->
+<!-- women.html এর grid এর ভিতরে add করো -->
+<!-- ========================================= -->
 
-<h2 class="section-title">
-Shop By Collection
-</h2>
+<!-- TOPS 1 -->
 
-<div class="category-grid">
+<div class="card">
 
-<div class="category-card">
-<h3>BAGA MAN</h3>
-<p>Premium Men's Fashion Collection</p>
-</div>
+<img src="tops1.jpeg">
 
-<div class="category-card">
-<h3>BAGA WOMEN</h3>
-<p>Elegant Women's Fashion Collection</p>
-</div>
+<div class="info">
 
-<div class="category-card">
-<h3>BAGA KIDS</h3>
-<p>Stylish Kids Collection</p>
-</div>
+<h3>Tops 1</h3>
 
-<div class="category-card">
-<h3>BAGA WEDDING</h3>
-<p>Wedding & Couple Collection</p>
-</div>
+<div class="price">
+
+৳2127.52
 
 </div>
 
-</section>
+<div class="btns">
 
-<section class="services">
+<button class="view-btn">View</button>
 
-<h2 class="section-title">
-Payment & Service
-</h2>
-
-<div class="service-grid">
-
-<div class="service-box">
-💳
-<h3>bKash Payment</h3>
-<p>Fast & Secure Payment</p>
-</div>
-
-<div class="service-box">
-💵
-<h3>Cash On Delivery</h3>
-<p>Pay After Receiving</p>
-</div>
-
-<div class="service-box">
-📞
-<h3>Customer Support</h3>
-<p>01792453834</p>
-</div>
-
-<div class="service-box">
-⭐
-<h3>Premium Quality</h3>
-<p>Trusted Bagash Products</p>
-</div>
-
-</div>
-
-</section>
-<!-- FEATURED PRODUCTS -->
-
-<section class="products-section">
-
-<h2 class="section-title">
-Featured Products
-</h2>
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search Products..."
-onkeyup="searchProducts()">
-
-</div>
-
-<div class="products-grid">
-
-<!-- Product 1 -->
-
-<div class="product-card">
-
-<img src="wallet.webp" alt="Wallet">
-
-<div class="product-content">
-
-<h3>Premium Jute Wallet</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Jute Wallet',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Premium Jute Wallet')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 2 -->
-
-<div class="product-card">
-
-<img src="bag.webp" alt="Bag">
-
-<div class="product-content">
-
-<h3>Heritage Jute Bag</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Heritage Jute Bag',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Heritage Jute Bag')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 3 -->
-
-<div class="product-card">
-
-<img src="tshirt.webp" alt="T-Shirt">
-
-<div class="product-content">
-
-<h3>BAGA MAN Premium T-Shirt</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('BAGA MAN Premium T-Shirt',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('BAGA MAN Premium T-Shirt')">
-❤️ Wishlist
-</button>
-
-</div>
-
-</div>
-
-<!-- Product 4 -->
-
-<div class="product-card">
-
-<img src="shoes.webp" alt="Shoes">
-
-<div class="product-content">
-
-<h3>Premium Fashion Shoes</h3>
-
-<p class="product-price">৳950</p>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Fashion Shoes',950)">
-Add To Cart
-</button>
-
-<button
-class="wish-btn"
-onclick="addWishlist('Premium Fashion Shoes')">
-❤️ Wishlist
-</button>
+<button class="buy-btn">Buy Now</button>
 
 </div>
 
@@ -561,519 +567,808 @@ onclick="addWishlist('Premium Fashion Shoes')">
 
 </div>
 
-</section>
+<!-- TOPS 2 -->
 
-<!-- SHOPPING CART -->
+<div class="card">
 
-<section class="cart-section">
+<img src="tops2.jpeg">
 
-<h2 class="section-title">
-Shopping Cart
-</h2>
+<div class="info">
 
-<div class="cart-box">
+<h3>Tops 2</h3>
 
-<div id="cartItems">
-No Products Added Yet
-</div>
+<div class="price">
 
-<br>
-
-<h3>
-Total:
-৳ <span id="cartTotal">0</span>
-</h3>
+৳1857.57
 
 </div>
 
-</section>
+<div class="btns">
 
-<!-- WISHLIST -->
+<button class="view-btn">View</button>
 
-<section class="wishlist-section">
-
-<h2 class="section-title">
-Wishlist
-</h2>
-
-<div class="wishlist-box" id="wishlistItems">
-
-No Wishlist Products
+<button class="buy-btn">Buy Now</button>
 
 </div>
 
-</section>
-
-<!-- OWNER SECTION -->
-
-<section class="owner-section">
-
-<h2 class="section-title">
-Owner Information
-</h2>
-
-<div class="owner-box">
-
-<h3>Nurul Amin</h3>
-
-<p>📞 01792453834</p>
-
-<p>✉️ ah4948591@gmail.com</p>
-
-<p>💳 bKash: 01736255527</p>
+</div>
 
 </div>
 
-</section>
+<!-- TOPS 3 -->
+
+<div class="card">
+
+<img src="tops3.jpeg">
+
+<div class="info">
+
+<h3>Tops 3</h3>
+
+<div class="price">
+
+৳1863.92
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TOPS 4 -->
+
+<div class="card">
+
+<img src="tops4.jpeg">
+
+<div class="info">
+
+<h3>Tops 4</h3>
+
+<div class="price">
+
+৳1936.08
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WOMEN ACCESSORIES 1 -->
+
+<div class="card">
+
+<img src="womenacc1.jpeg">
+
+<div class="info">
+
+<h3>Women Accessories 1</h3>
+
+<div class="price">
+
+৳2632.78
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WOMEN ACCESSORIES 2 -->
+
+<div class="card">
+
+<img src="womenacc2.jpeg">
+
+<div class="info">
+
+<h3>Women Accessories 2</h3>
+
+<div class="price">
+
+৳3121.19
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WOMEN ACCESSORIES 3 -->
+
+<div class="card">
+
+<img src="womenacc3.jpeg">
+
+<div class="info">
+
+<h3>Women Accessories 3</h3>
+
+<div class="price">
+
+৳2374.89
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WOMEN ACCESSORIES 4 -->
+
+<div class="card">
+
+<img src="womenacc4.jpeg">
+
+<div class="info">
+
+<h3>Women Accessories 4</h3>
+
+<div class="price">
+
+৳2348.77
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEDDING WOMEN 1 -->
+
+<div class="card">
+
+<img src="weddingwomen1.jpeg">
+
+<div class="info">
+
+<h3>Wedding Women 1</h3>
+
+<div class="price">
+
+৳6527.98
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEDDING WOMEN 2 -->
+
+<div class="card">
+
+<img src="weddingwomen2.jpeg">
+
+<div class="info">
+
+<h3>Wedding Women 2</h3>
+
+<div class="price">
+
+৳6242.92
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEDDING WOMEN 3 -->
+
+<div class="card">
+
+<img src="weddingwomen3.jpeg">
+
+<div class="info">
+
+<h3>Wedding Women 3</h3>
+
+<div class="price">
+
+৳5786.97
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WEDDING WOMEN 4 -->
+
+<div class="card">
+
+<img src="weddingwomen4.jpeg">
+
+<div class="info">
+
+<h3>Wedding Women 4</h3>
+
+<div class="price">
+
+৳5527.52
+
+</div>
+
+<div class="btns">
+
+<button class="view-btn">View</button>
+
+<button class="buy-btn">Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- women.html এর grid শেষ হওয়ার আগে এগুলো paste করবে -->
+<!-- ========================================= -->
+<!-- PART 2C -->
+<!-- PRODUCT DETAILS MODAL + ORDER FORM -->
+<!-- women.html -->
+<!-- ========================================= -->
 
 <style>
 
-/* Products */
+/* PRODUCT POPUP */
 
-.products-section{
-padding:80px 5%;
-}
+.product-modal{
 
-.search-box{
-text-align:center;
-margin-bottom:30px;
-}
+position:fixed;
 
-.search-box input{
-width:380px;
-max-width:90%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:10px;
-}
+top:0;
+left:0;
 
-.products-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.product-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.product-card img{
 width:100%;
-height:280px;
-object-fit:cover;
-}
+height:100%;
 
-.product-content{
+background:rgba(0,0,0,.7);
+
+display:none;
+
+align-items:center;
+justify-content:center;
+
+z-index:99999;
+
 padding:20px;
-text-align:center;
+
 }
 
-.product-price{
-font-size:28px;
-font-weight:700;
-color:#a91b0d;
-margin:10px 0;
+.product-modal.active{
+
+display:flex;
+
 }
 
-.cart-btn,
-.wish-btn{
-padding:12px 18px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-margin:5px;
-font-weight:600;
-}
+.modal-box{
 
-.cart-btn{
-background:#1f6b3a;
-color:white;
-}
+width:100%;
+max-width:900px;
 
-.wish-btn{
-background:#a91b0d;
-color:white;
-}
-
-/* Cart */
-
-.cart-section,
-.wishlist-section,
-.owner-section{
-padding:80px 5%;
-}
-
-.cart-box,
-.wishlist-box,
-.owner-box{
 background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.modal-image img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+.modal-content{
+
 padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+
 }
 
-.owner-box{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
+.modal-content h2{
 
-.owner-box h3{
-color:#1f6b3a;
-margin-bottom:15px;
 font-size:30px;
+
+color:#0B4D38;
+
+margin-bottom:15px;
+
 }
 
-.owner-box p{
-margin:10px 0;
+.modal-price{
+
+font-size:32px;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+}
+
+.modal-content p{
+
+line-height:1.8;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+.modal-buttons{
+
+display:flex;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+.order-btn{
+
+padding:14px 30px;
+
+background:#0B4D38;
+
+color:white;
+
+border:none;
+
+cursor:pointer;
+
+font-weight:700;
+
+}
+
+.whatsapp-order{
+
+padding:14px 30px;
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+.close-modal{
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+background:white;
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+font-size:24px;
+
+}
+
+/* ORDER FORM */
+
+.order-section{
+
+padding:70px 20px;
+
+background:#fafaf8;
+
+}
+
+.order-title{
+
+text-align:center;
+
+font-size:38px;
+
+font-weight:800;
+
+color:#0B4D38;
+
+margin-bottom:40px;
+
+}
+
+.order-form{
+
+max-width:700px;
+
+margin:auto;
+
+display:grid;
+
+gap:15px;
+
+}
+
+.order-form input,
+.order-form textarea{
+
+padding:15px;
+
+border:1px solid #ddd;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+.order-form button{
+
+padding:16px;
+
+background:#0B4D38;
+
+color:white;
+
+border:none;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+.modal-box{
+
+grid-template-columns:1fr;
+
+}
+
 }
 
 </style>
 
-<script>
+<!-- PRODUCT DETAILS POPUP -->
 
-let cart = [];
-let wishlist = [];
+<div class="product-modal"
+id="productModal">
 
-function addToCart(name,price){
+<div class="close-modal"
+onclick="closeProduct()">
 
-cart.push({
-name:name,
-price:price
-});
+×
 
-renderCart();
+</div>
 
-}
+<div class="modal-box">
 
-function renderCart(){
+<div class="modal-image">
 
-let html = "";
-let total = 0;
+<img
+id="modalImage"
+src="saree1.jpeg">
 
-cart.forEach(item=>{
+</div>
 
-total += item.price;
+<div class="modal-content">
 
-html +=
-`<p>${item.name} - ৳${item.price}</p>`;
+<h2 id="modalTitle">
 
-});
+Product Name
 
-if(html===""){
-html="No Products Added Yet";
-}
-
-document.getElementById("cartItems").innerHTML = html;
-document.getElementById("cartTotal").innerText = total;
-
-}
-
-function addWishlist(name){
-
-wishlist.push(name);
-
-document.getElementById("wishlistItems")
-.innerHTML = wishlist.map(item=>
-`<p>${item}</p>`
-).join("");
-
-}
-
-function searchProducts(){
-
-let value =
-document.getElementById("searchInput")
-.value.toLowerCase();
-
-let cards =
-document.querySelectorAll(".product-card");
-
-cards.forEach(card=>{
-
-if(
-card.innerText.toLowerCase()
-.includes(value)
-){
-card.style.display="block";
-}
-else{
-card.style.display="none";
-}
-
-});
-
-}
-
-</script>
-<!-- CUSTOMER REVIEWS -->
-
-<section class="reviews-section">
-
-<h2 class="section-title">
-Customer Reviews
 </h2>
 
-<div class="review-grid">
+<div
+class="modal-price"
+id="modalPrice">
 
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Excellent Quality</h3>
-<p>Premium quality and beautiful design.</p>
-</div>
-
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Fast Service</h3>
-<p>Easy ordering process and good support.</p>
-</div>
-
-<div class="review-card">
-⭐⭐⭐⭐⭐
-<h3>Highly Recommended</h3>
-<p>Very satisfied with Bagash products.</p>
-</div>
+৳0
 
 </div>
 
-</section>
+<p>
 
-<!-- FAQ -->
+Premium BAGASH Collection.
+High Quality Fabric.
+Elegant Design.
+Premium Finishing.
 
-<section class="faq-section">
+</p>
 
-<h2 class="section-title">
-Frequently Asked Questions
-</h2>
+<div class="modal-buttons">
 
-<div class="faq-box">
+<button
+class="order-btn">
 
-<h3>How can I order?</h3>
-<p>Add products to cart and complete checkout.</p>
+Add To Cart
 
-<br>
-
-<h3>What payment methods are available?</h3>
-<p>bKash and Cash On Delivery.</p>
-
-<br>
-
-<h3>How long does delivery take?</h3>
-<p>Delivery time depends on location.</p>
-
-</div>
-
-</section>
-
-<!-- CHECKOUT -->
-
-<section class="checkout-section">
-
-<h2 class="section-title">
-Checkout
-</h2>
-
-<div class="checkout-box">
-
-<input type="text" placeholder="Full Name" class="checkout-input">
-
-<input type="text" placeholder="Phone Number" class="checkout-input">
-
-<input type="text" placeholder="Address" class="checkout-input">
-
-<select class="checkout-input">
-<option>bKash Payment</option>
-<option>Cash On Delivery</option>
-</select>
-
-<button class="place-order-btn">
-Place Order
 </button>
-
-</div>
-
-</section>
-
-<!-- AI BUTTON -->
-
-<div id="aiButton" class="ai-btn">
-🤖
-</div>
-
-<!-- WHATSAPP -->
 
 <a
 href="https://wa.me/8801792453834"
-class="whatsapp-btn">
-💬
+target="_blank"
+class="whatsapp-order">
+
+Order WhatsApp
+
 </a>
 
-<!-- FOOTER -->
+</div>
 
-<footer>
+</div>
 
-<h2>BAGASH</h2>
+</div>
 
-<p>Premium Fashion • Heritage Lifestyle</p>
+</div>
 
-<br>
+<!-- ORDER FORM -->
 
-<p>Owner: Nurul Amin</p>
-<p>Phone: 01792453834</p>
-<p>Email: ah4948591@gmail.com</p>
+<section class="order-section">
 
-<br>
+<h2 class="order-title">
 
-<p>bKash: 01736255527</p>
-<p>Cash On Delivery Available</p>
+Place Your Order
 
-<br>
+</h2>
 
-<p>© 2026 BAGASH. All Rights Reserved.</p>
+<form class="order-form">
 
-</footer>
+<input
+type="text"
+placeholder="Full Name"
+required>
 
-<style>
+<input
+type="tel"
+placeholder="Phone Number"
+required>
 
-/* Reviews */
+<input
+type="text"
+placeholder="District"
+required>
 
-.reviews-section,
-.faq-section,
-.checkout-section{
-padding:80px 5%;
-}
+<textarea
+rows="5"
+placeholder="Full Address">
+</textarea>
 
-.review-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+<button type="submit">
 
-.review-card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+Confirm Order
 
-/* FAQ */
+</button>
 
-.faq-box{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+</form>
 
-/* Checkout */
-
-.checkout-box{
-max-width:700px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.checkout-input{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:10px;
-}
-
-.place-order-btn{
-width:100%;
-padding:15px;
-background:#1f6b3a;
-color:white;
-border:none;
-border-radius:10px;
-font-weight:700;
-cursor:pointer;
-}
-
-/* AI */
-
-.ai-btn{
-position:fixed;
-right:20px;
-bottom:95px;
-width:60px;
-height:60px;
-background:#1f6b3a;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:28px;
-cursor:pointer;
-z-index:999;
-}
-
-/* WhatsApp */
-
-.whatsapp-btn{
-position:fixed;
-right:20px;
-bottom:20px;
-width:60px;
-height:60px;
-background:#25D366;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-text-decoration:none;
-border-radius:50%;
-font-size:28px;
-z-index:999;
-}
-
-/* Footer */
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-</style>
+</section>
 
 <script>
 
-/* Bagash AI */
+/* PRODUCT POPUP */
 
-document.getElementById("aiButton")
-.onclick = function(){
+function openProduct(
+name,
+price,
+image
+){
 
-let question = prompt(
-"Welcome to BAGASH. How can I help you?"
-);
+document
+.getElementById(
+"modalTitle"
+).innerHTML=name;
 
-if(question){
+document
+.getElementById(
+"modalPrice"
+).innerHTML=price;
 
-alert(
-"Bagash AI received: " +
-question +
-"\nOur team will assist you soon."
-);
+document
+.getElementById(
+"modalImage"
+).src=image;
+
+document
+.getElementById(
+"productModal"
+).classList.add("active");
 
 }
 
-};
+function closeProduct(){
+
+document
+.getElementById(
+"productModal"
+).classList.remove("active");
+
+}
 
 </script>
+<!-- WOMEN ACCESSORIES -->
+
+<div class="product-card">
+<a href="womenacc1.jpeg" target="_blank">
+<img src="womenacc1.jpeg" alt="Women Accessory 1">
+</a>
+<h3>Women Accessory 1</h3>
+<p>৳2,632.78</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="womenacc2.jpeg" target="_blank">
+<img src="womenacc2.jpeg" alt="Women Accessory 2">
+</a>
+<h3>Women Accessory 2</h3>
+<p>৳3,121.19</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="womenacc3.jpeg" target="_blank">
+<img src="womenacc3.jpeg" alt="Women Accessory 3">
+</a>
+<h3>Women Accessory 3</h3>
+<p>৳2,374.89</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="womenacc4.jpeg" target="_blank">
+<img src="womenacc4.jpeg" alt="Women Accessory 4">
+</a>
+<h3>Women Accessory 4</h3>
+<p>৳2,348.77</p>
+<button>Order Now</button>
+</div>
+
+<!-- WEDDING WOMEN -->
+
+<div class="product-card">
+<a href="weddingwomen1.jpeg" target="_blank">
+<img src="weddingwomen1.jpeg" alt="Wedding Women 1">
+</a>
+<h3>Wedding Saree Premium</h3>
+<p>৳6,527.98</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="weddingwomen2.jpeg" target="_blank">
+<img src="weddingwomen2.jpeg" alt="Wedding Women 2">
+</a>
+<h3>Wedding Saree Royal</h3>
+<p>৳6,242.92</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="weddingwomen3.jpeg" target="_blank">
+<img src="weddingwomen3.jpeg" alt="Wedding Women 3">
+</a>
+<h3>Wedding Saree Luxury</h3>
+<p>৳5,786.97</p>
+<button>Order Now</button>
+</div>
+
+<div class="product-card">
+<a href="weddingwomen4.jpeg" target="_blank">
+<img src="weddingwomen4.jpeg" alt="Wedding Women 4">
+</a>
+<h3>Wedding Saree Heritage</h3>
+<p>৳5,527.52</p>
+<button>Order Now</button>
+</div>
+
+<!-- FOOTER INFO -->
+
+</div>
+
+<footer class="footer">
+    <h2>BAGASH</h2>
+
+    <p>Owner: Nurul Amin</p>
+
+    <p>Phone: 01792453834</p>
+
+    <p>bKash: 01736255527</p>
+
+    <p>WhatsApp: 01792453834</p>
+
+    <p>Email: ah4948591@gmail.com</p>
+</footer>
 
 </body>
 </html>

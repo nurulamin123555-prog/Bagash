@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>BAGASH men Collection</title>
+<title>BAGASH | Men Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -18,131 +18,149 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#fafaf8;
+background:#fff;
+color:#222;
 }
 
-.back-btn{
-display:inline-block;
-margin:20px;
-padding:12px 24px;
-background:#0B4D38;
-color:white;
-text-decoration:none;
-font-weight:700;
-border-radius:6px;
+:root{
+--green:#0B4D38;
 }
+
+/* HERO */
 
 .hero{
 height:420px;
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(11,77,56,.55)),
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
 url("men.jpeg");
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
 text-align:center;
+color:#fff;
 }
 
 .hero h1{
-font-size:60px;
+font-size:55px;
 font-weight:800;
 letter-spacing:4px;
 }
 
-.hero p{
-font-size:18px;
-margin-top:10px;
+/* TOP BAR */
+
+.topbar{
+padding:15px 20px;
+background:#fff;
+border-bottom:1px solid #eee;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
-.products{
-padding:60px 20px;
+.back-btn{
+text-decoration:none;
+background:var(--green);
+color:#fff;
+padding:10px 20px;
+font-weight:700;
 }
 
-.grid{
+/* SECTION */
+
+.section{
+padding:70px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+font-weight:800;
+color:var(--green);
+margin-bottom:40px;
+}
+
+/* PRODUCT GRID */
+
+.product-grid{
 max-width:1200px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:25px;
 }
 
-.card{
-background:white;
-border-radius:10px;
+.product-card{
+background:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.card img{
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
 width:100%;
-height:280px;
+height:320px;
 object-fit:cover;
 }
 
-.info{
+.product-info{
 padding:20px;
 }
 
-.info h3{
-color:#0B4D38;
+.product-info h3{
+color:var(--green);
 margin-bottom:10px;
 }
 
 .price{
-font-size:22px;
+font-size:24px;
 font-weight:800;
 margin-bottom:15px;
 }
 
 .buy-btn{
-display:block;
-text-align:center;
-padding:12px;
-background:#0B4D38;
-color:white;
+display:inline-block;
+background:var(--green);
+color:#fff;
 text-decoration:none;
+padding:12px 25px;
 font-weight:700;
-border-radius:6px;
 }
 
-.buy-btn:hover{
-background:#083828;
+.footer{
+background:var(--green);
+color:#fff;
+padding:40px 20px;
+text-align:center;
+margin-top:80px;
+}
+
+.footer h3{
+margin-bottom:15px;
+}
+
+.footer p{
+line-height:2;
 }
 
 @media(max-width:768px){
 
-.grid{
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-
-.card img{
-height:180px;
-}
-
 .hero h1{
-font-size:34px;
+font-size:36px;
 }
 
+.product-grid{
+grid-template-columns:1fr;
 }
 
-.owner{
-margin-top:60px;
-padding:40px 20px;
-background:#0B4D38;
-color:white;
-text-align:center;
-}
-
-.owner h2{
-margin-bottom:20px;
-}
-
-.owner p{
-line-height:2;
 }
 
 </style>
@@ -150,209 +168,351 @@ line-height:2;
 
 <body>
 
-<a href="index.html" class="back-btn">Back To Home</a>
+<div class="topbar">
+
+<a href="index.html" class="back-btn">
+← Back
+</a>
+
+<h3>BAGASH MEN</h3>
+
+</div>
 
 <section class="hero">
-<div>
-<h1>men Collection</h1>
-<p>Premium Fashion & Heritage Collection</p>
-</div>
+<h1>MEN COLLECTION</h1>
 </section>
-
-<section class="products">
-
-<div class="grid">
 
 <!-- PANJABI -->
 
+<section class="section">
+
+<h2 class="section-title">
+Panjabi Collection
+</h2>
+
+<div class="product-grid">
+
 <div class="product-card">
-<img src="panjabi1.jpeg" alt="">
-<h3>Panjabi Classic 01</h3>
-<p>৳1,962.57</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Panjabi%20Classic%2001" target="_blank" class="btn">Buy Now</a>
+<img src="panjabi1.jpeg">
+<div class="product-info">
+<h3>Panjabi 1</h3>
+<div class="price">৳1,962.57</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Panjabi 1">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="panjabi2.jpeg" alt="">
-<h3>Panjabi Classic 02</h3>
-<p>৳2,152.56</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Panjabi%20Classic%2002" target="_blank" class="btn">Buy Now</a>
+<img src="panjabi2.jpeg">
+<div class="product-info">
+<h3>Panjabi 2</h3>
+<div class="price">৳2,152.56</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Panjabi 2">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="panjabi3.jpeg" alt="">
-<h3>Panjabi Classic 03</h3>
-<p>৳2,162.65</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Panjabi%20Classic%2003" target="_blank" class="btn">Buy Now</a>
+<img src="panjabi3.jpeg">
+<div class="product-info">
+<h3>Panjabi 3</h3>
+<div class="price">৳2,162.65</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Panjabi 3">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="panjabi4.jpeg" alt="">
-<h3>Panjabi Classic 04</h3>
-<p>৳1,725.97</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Panjabi%20Classic%2004" target="_blank" class="btn">Buy Now</a>
+<img src="panjabi4.jpeg">
+<div class="product-info">
+<h3>Panjabi 4</h3>
+<div class="price">৳1,725.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Panjabi 4">
+Buy Now
+</a>
 </div>
+</div>
+
+</div>
+
+</section>
 
 <!-- SHIRT -->
 
+<section class="section">
+
+<h2 class="section-title">
+Shirt Collection
+</h2>
+
+<div class="product-grid">
+
 <div class="product-card">
-<img src="shirt1.jpeg" alt="">
-<h3>Premium Shirt 01</h3>
-<p>৳2,142.75</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Shirt%2001" target="_blank" class="btn">Buy Now</a>
+<img src="shirt1.jpeg">
+<div class="product-info">
+<h3>Shirt 1</h3>
+<div class="price">৳2,142.75</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Shirt 1">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="shirt2.jpeg" alt="">
-<h3>Premium Shirt 02</h3>
-<p>৳1,673.52</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Shirt%2002" target="_blank" class="btn">Buy Now</a>
+<img src="shirt2.jpeg">
+<div class="product-info">
+<h3>Shirt 2</h3>
+<div class="price">৳1,673.52</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Shirt 2">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="shirt3.jpeg" alt="">
-<h3>Premium Shirt 03</h3>
-<p>৳2,132.65</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Shirt%2003" target="_blank" class="btn">Buy Now</a>
+<img src="shirt3.jpeg">
+<div class="product-info">
+<h3>Shirt 3</h3>
+<div class="price">৳2,132.65</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Shirt 3">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="shirt4.jpeg" alt="">
-<h3>Premium Shirt 04</h3>
-<p>৳1,525.97</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Shirt%2004" target="_blank" class="btn">Buy Now</a>
+<img src="shirt4.jpeg">
+<div class="product-info">
+<h3>Shirt 4</h3>
+<div class="price">৳1,525.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Shirt 4">
+Buy Now
+</a>
 </div>
+</div>
+
+</div>
+
+</section>
 
 <!-- TSHIRT -->
 
+<section class="section">
+<h2 class="section-title">T-Shirt Collection</h2>
+
+<div class="product-grid">
+
 <div class="product-card">
-<img src="tshirt1.jpeg" alt="">
-<h3>BAGA T-Shirt 01</h3>
-<p>৳852.72</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20BAGA%20T-Shirt%2001" target="_blank" class="btn">Buy Now</a>
+<img src="tshirt1.jpeg">
+<div class="product-info">
+<h3>T-Shirt 1</h3>
+<div class="price">৳852.72</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order T-Shirt 1">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="tshirt2.jpeg" alt="">
-<h3>BAGA T-Shirt 02</h3>
-<p>৳825.57</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20BAGA%20T-Shirt%2002" target="_blank" class="btn">Buy Now</a>
+<img src="tshirt2.jpeg">
+<div class="product-info">
+<h3>T-Shirt 2</h3>
+<div class="price">৳825.57</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order T-Shirt 2">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="tshirt3.jpeg" alt="">
-<h3>BAGA T-Shirt 03</h3>
-<p>৳862.92</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20BAGA%20T-Shirt%2003" target="_blank" class="btn">Buy Now</a>
+<img src="tshirt3.jpeg">
+<div class="product-info">
+<h3>T-Shirt 3</h3>
+<div class="price">৳862.92</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order T-Shirt 3">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="tshirt4.jpeg" alt="">
-<h3>BAGA T-Shirt 04</h3>
-<p>৳827.57</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20BAGA%20T-Shirt%2004" target="_blank" class="btn">Buy Now</a>
+<img src="tshirt4.jpeg">
+<div class="product-info">
+<h3>T-Shirt 4</h3>
+<div class="price">৳827.57</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order T-Shirt 4">
+Buy Now
+</a>
 </div>
+</div>
+<!-- PANTS COLLECTION -->
 
-<!-- PANTS -->
+<section class="section">
+
+<h2 class="section-title">
+Pants Collection
+</h2>
+
+<div class="product-grid">
 
 <div class="product-card">
-<img src="pant1.jpeg" alt="">
-<h3>Premium Pant 01</h3>
-<p>৳2,009.19</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Pant%2001" target="_blank" class="btn">Buy Now</a>
+<img src="pant1.jpeg">
+<div class="product-info">
+<h3>Pants 1</h3>
+<div class="price">৳2,009.19</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Pants 1">
+Buy Now
+</a>
 </div>
-
-<div class="product-card">
-<img src="pant2.jpeg" alt="">
-<h3>Premium Pant 02</h3>
-<p>৳1,983.79</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Pant%2002" target="_blank" class="btn">Buy Now</a>
-</div>
-
-<div class="product-card">
-<img src="pant3.jpeg" alt="">
-<h3>Premium Pant 03</h3>
-<p>৳1,266.07</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Pant%2003" target="_blank" class="btn">Buy Now</a>
-</div>
-
-<div class="product-card">
-<img src="pant4.jpeg" alt="">
-<h3>Premium Pant 04</h3>
-<p>৳1,853.87</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Premium%20Pant%2004" target="_blank" class="btn">Buy Now</a>
-</div>
-
-<!-- FOOTWEAR -->
-
-<div class="product-card">
-<img src="footwear1.jpeg" alt="">
-<h3>Luxury Footwear 01</h3>
-<p>৳3,262.86</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Luxury%20Footwear%2001" target="_blank" class="btn">Buy Now</a>
 </div>
 
 <div class="product-card">
-<img src="footwear2.jpeg" alt="">
-<h3>Luxury Footwear 02</h3>
-<p>৳2,538.97</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Luxury%20Footwear%2002" target="_blank" class="btn">Buy Now</a>
+<img src="pant2.jpeg">
+<div class="product-info">
+<h3>Pants 2</h3>
+<div class="price">৳1,983.79</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Pants 2">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="footwear3.jpeg" alt="">
-<h3>Luxury Footwear 03</h3>
-<p>৳2,216.67</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Luxury%20Footwear%2003" target="_blank" class="btn">Buy Now</a>
+<img src="pant3.jpeg">
+<div class="product-info">
+<h3>Pants 3</h3>
+<div class="price">৳1,266.07</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Pants 3">
+Buy Now
+</a>
+</div>
 </div>
 
 <div class="product-card">
-<img src="footwear4.jpeg" alt="">
-<h3>Luxury Footwear 04</h3>
-<p>৳1,989.97</p>
-<a href="https://wa.me/8801792453834?text=I%20want%20to%20order%20Luxury%20Footwear%2004" target="_blank" class="btn">Buy Now</a>
+<img src="pant4.jpeg">
+<div class="product-info">
+<h3>Pants 4</h3>
+<div class="price">৳1,853.87</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Pants 4">
+Buy Now
+</a>
 </div>
-    
+</div>
+
 </div>
 
 </section>
 
-<section class="owner">
 
-<h2>Owner Information</h2>
+<!-- FOOTWEAR COLLECTION -->
 
-<p>Owner: Nurul Amin</p>
+<section class="section">
 
-<p>Phone: 01792453834</p>
+<h2 class="section-title">
+Footwear Collection
+</h2>
 
-<p>WhatsApp: 01792453834</p>
+<div class="product-grid">
 
-<p>bKash: 01736255527</p>
+<div class="product-card">
+<img src="footwear1.jpeg">
+<div class="product-info">
+<h3>Footwear 1</h3>
+<div class="price">৳3,262.86</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Footwear 1">
+Buy Now
+</a>
+</div>
+</div>
 
-<p>Email: ah4948591@gmail.com</p>
+<div class="product-card">
+<img src="footwear2.jpeg">
+<div class="product-info">
+<h3>Footwear 2</h3>
+<div class="price">৳2,538.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Footwear 2">
+Buy Now
+</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="footwear3.jpeg">
+<div class="product-info">
+<h3>Footwear 3</h3>
+<div class="price">৳2,216.67</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Footwear 3">
+Buy Now
+</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="footwear4.jpeg">
+<div class="product-info">
+<h3>Footwear 4</h3>
+<div class="price">৳1,989.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Footwear 4">
+Buy Now
+</a>
+</div>
+</div>
+
+</div>
 
 </section>
-<script>
-function orderWhatsApp(product, price){
+</div>
 
-const message =
-`🛍️ BAGASH Order
+</section>
 
-Product: ${product}
-Price: ৳${price}
+<footer class="footer">
 
-Name:
-Phone:
-Address:
+<h3>Owner Information</h3>
 
-Please confirm my order.`;
+<p>
+Owner: Nurul Amin
+</p>
 
-window.open(
-`https://wa.me/8801792453834?text=${encodeURIComponent(message)}`,
-'_blank'
-);
+<p>
+Phone: 01792453834
+</p>
 
-}
-</script>
+<p>
+WhatsApp: 01792453834
+</p>
+
+<p>
+bKash: 01736255527
+</p>
+
+<p>
+Email: ah4948591@gmail.com
+</p>
+
+</footer>
+
 </body>
 </html>

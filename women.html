@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>BAGASH Women Collection</title>
+<title>BAGASH | Wedding Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,132 +17,156 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+:root{
+--green:#0B4D38;
+}
+
 body{
-background:#fafaf8;
+background:#fff;
+color:#222;
+}
+
+.topbar{
+padding:15px 20px;
+background:#fff;
+border-bottom:1px solid #eee;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 .back-btn{
-display:inline-block;
-margin:20px;
-padding:12px 24px;
-background:#0B4D38;
-color:white;
+background:var(--green);
+color:#fff;
 text-decoration:none;
+padding:10px 20px;
 font-weight:700;
-border-radius:6px;
 }
 
 .hero{
 height:420px;
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(11,77,56,.55)),
-url("women.jpeg");
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url("wedding.jpeg");
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
 text-align:center;
+color:#fff;
 }
 
 .hero h1{
-font-size:60px;
+font-size:55px;
 font-weight:800;
 letter-spacing:4px;
 }
 
-.hero p{
-font-size:18px;
-margin-top:10px;
+.section{
+padding:70px 20px;
 }
 
-.products{
-padding:60px 20px;
+.section-title{
+text-align:center;
+font-size:38px;
+font-weight:800;
+color:var(--green);
+margin-bottom:40px;
 }
 
-.grid{
+.product-grid{
 max-width:1200px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:25px;
 }
 
-.card{
-background:white;
-border-radius:10px;
+.product-card{
+background:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.card img{
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
 width:100%;
-height:280px;
+height:320px;
 object-fit:cover;
 }
 
-.info{
+.product-info{
 padding:20px;
 }
 
-.info h3{
-color:#0B4D38;
+.product-info h3{
+color:var(--green);
 margin-bottom:10px;
 }
 
 .price{
-font-size:22px;
+font-size:24px;
 font-weight:800;
 margin-bottom:15px;
 }
 
 .buy-btn{
-display:block;
-text-align:center;
-padding:12px;
-background:#0B4D38;
-color:white;
+display:inline-block;
+background:var(--green);
+color:#fff;
 text-decoration:none;
+padding:12px 25px;
 font-weight:700;
-border-radius:6px;
 }
 
-.buy-btn:hover{
-background:#083828;
+.footer{
+background:var(--green);
+color:#fff;
+padding:40px 20px;
+text-align:center;
+margin-top:80px;
+}
+
+.footer h3{
+margin-bottom:15px;
+}
+
+.footer p{
+line-height:2;
 }
 
 @media(max-width:768px){
 
-.grid{
+.hero h1{
+font-size:36px;
+}
+
+.product-grid{
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-.card img{
+.product-card img{
 height:180px;
 }
 
-.hero h1{
-font-size:34px;
+.price{
+font-size:16px;
 }
 
+.buy-btn{
+padding:8px 12px;
+font-size:12px;
 }
 
-.owner{
-margin-top:60px;
-padding:40px 20px;
-background:#0B4D38;
-color:white;
-text-align:center;
-}
-
-.owner h2{
-margin-bottom:20px;
-}
-
-.owner p{
-line-height:2;
 }
 
 </style>
@@ -150,319 +174,215 @@ line-height:2;
 
 <body>
 
-<a href="index.html" class="back-btn">Back To Home</a>
+<div class="topbar">
+
+<a href="index.html" class="back-btn">
+← Back
+</a>
+
+<h3>BAGASH WEDDING</h3>
+
+</div>
 
 <section class="hero">
-<div>
-<h1>Women Collection</h1>
-<p>Premium Fashion & Heritage Collection</p>
-</div>
+<h1>WEDDING COLLECTION</h1>
 </section>
 
-<section class="products">
+<!-- WEDDING WOMEN -->
 
-<div class="grid">
+<section class="section">
 
-<!-- Saree 1 -->
-<div class="card">
-<img src="saree1.jpeg">
-<div class="info">
-<h3>Saree 1</h3>
-<div class="price">৳3686.75</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<h2 class="section-title">
+Wedding Women Collection
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="weddingwomen1.jpeg">
+<div class="product-info">
+<h3>Wedding Women 1</h3>
+<div class="price">৳6,527.98</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Women 1">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- Saree 2 -->
-<div class="card">
-<img src="saree2.jpeg">
-<div class="info">
-<h3>Saree 2</h3>
-<div class="price">৳3628.01</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingwomen2.jpeg">
+<div class="product-info">
+<h3>Wedding Women 2</h3>
+<div class="price">৳6,242.92</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Women 2">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- Saree 3 -->
-<div class="card">
-<img src="saree3.jpeg">
-<div class="info">
-<h3>Saree 3</h3>
-<div class="price">৳3527.08</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingwomen3.jpeg">
+<div class="product-info">
+<h3>Wedding Women 3</h3>
+<div class="price">৳5,786.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Women 3">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- Saree 4 -->
-<div class="card">
-<img src="saree4.jpeg">
-<div class="info">
-<h3>Saree 4</h3>
-<div class="price">৳3253.97</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingwomen4.jpeg">
+<div class="product-info">
+<h3>Wedding Women 4</h3>
+<div class="price">৳5,527.52</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Women 4">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- SALWAR 1 -->
-<div class="card">
-<img src="salwar1.jpeg">
-<div class="info">
-<h3>Salwar 1</h3>
-<div class="price">৳1893.07</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+</div>
+
+</section>
+<!-- WEDDING MEN -->
+
+<section class="section">
+
+<h2 class="section-title">
+Wedding Men Collection
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="weddingmen1.jpeg">
+<div class="product-info">
+<h3>Wedding Men 1</h3>
+<div class="price">৳4,863.97</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Men 1">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- SALWAR 2 -->
-<div class="card">
-<img src="salwar2.jpeg">
-<div class="info">
-<h3>Salwar 2</h3>
-<div class="price">৳1925.97</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingmen2.jpeg">
+<div class="product-info">
+<h3>Wedding Men 2</h3>
+<div class="price">৳5,252.76</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Men 2">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- SALWAR 3 -->
-<div class="card">
-<img src="salwar3.jpeg">
-<div class="info">
-<h3>Salwar 3</h3>
-<div class="price">৳2132.51</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingmen3.jpeg">
+<div class="product-info">
+<h3>Wedding Men 3</h3>
+<div class="price">৳4,829.09</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Men 3">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- SALWAR 4 -->
-<div class="card">
-<img src="salwar4.jpeg">
-<div class="info">
-<h3>Salwar 4</h3>
-<div class="price">৳2363.52</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingmen4.jpeg">
+<div class="product-info">
+<h3>Wedding Men 4</h3>
+<div class="price">৳4,527.57</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Men 4">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- KURTA 1 -->
-<div class="card">
-<img src="kurta1.jpeg">
-<div class="info">
-<h3>Kurta 1</h3>
-<div class="price">৳2767.72</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+</div>
+
+</section>
+<!-- WEDDING JEWELLERY -->
+
+<section class="section">
+
+<h2 class="section-title">
+Wedding Jewellery Collection
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="weddingjewel1.jpeg">
+<div class="product-info">
+<h3>Wedding Jewellery 1</h3>
+<div class="price">৳1,372.56</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Jewellery 1">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- KURTA 2 -->
-<div class="card">
-<img src="kurta2.jpeg">
-<div class="info">
-<h3>Kurta 2</h3>
-<div class="price">৳2527.62</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingjewel2.jpeg">
+<div class="product-info">
+<h3>Wedding Jewellery 2</h3>
+<div class="price">৳1,357.86</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Jewellery 2">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- KURTA 3 -->
-<div class="card">
-<img src="kurta3.jpeg">
-<div class="info">
-<h3>Kurta 3</h3>
-<div class="price">৳2852.72</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingjewel3.jpeg">
+<div class="product-info">
+<h3>Wedding Jewellery 3</h3>
+<div class="price">৳1,242.57</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Jewellery 3">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- KURTA 4 -->
-<div class="card">
-<img src="kurta4.jpeg">
-<div class="info">
-<h3>Kurta 4</h3>
-<div class="price">৳2736.62</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
+<div class="product-card">
+<img src="weddingjewel4.jpeg">
+<div class="product-info">
+<h3>Wedding Jewellery 4</h3>
+<div class="price">৳1,536.75</div>
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Wedding Jewellery 4">
 Buy Now
-</button>
+</a>
 </div>
 </div>
 
-<!-- TOPS 1 -->
-<div class="card">
-<img src="tops1.jpeg">
-<div class="info">
-<h3>Tops 1</h3>
-<div class="price">৳2127.52</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- TOPS 2 -->
-<div class="card">
-<img src="tops2.jpeg">
-<div class="info">
-<h3>Tops 2</h3>
-<div class="price">৳1857.57</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- TOPS 3 -->
-<div class="card">
-<img src="tops3.jpeg">
-<div class="info">
-<h3>Tops 3</h3>
-<div class="price">৳1863.92</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- TOPS 4 -->
-<div class="card">
-<img src="tops4.jpeg">
-<div class="info">
-<h3>Tops 4</h3>
-<div class="price">৳1936.08</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- WOMEN ACCESSORIES 1 -->
-<div class="card">
-<img src="womenacc1.jpeg">
-<div class="info">
-<h3>Women Accessories 1</h3>
-<div class="price">৳2632.78</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- WOMEN ACCESSORIES 2 -->
-<div class="card">
-<img src="womenacc2.jpeg">
-<div class="info">
-<h3>Women Accessories 2</h3>
-<div class="price">৳3121.19</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- WOMEN ACCESSORIES 3 -->
-<div class="card">
-<img src="womenacc3.jpeg">
-<div class="info">
-<h3>Women Accessories 3</h3>
-<div class="price">৳2374.89</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-
-<!-- WOMEN ACCESSORIES 4 -->
-<div class="card">
-<img src="womenacc4.jpeg">
-<div class="info">
-<h3>Women Accessories 4</h3>
-<div class="price">৳2348.77</div>
-<button class="buy-btn"
-onclick="orderWhatsApp('Saree 1','3686.75')">
-Buy Now
-</button>
-</div>
-</div>
-    
 </div>
 
 </section>
 
-<section class="owner">
+<footer class="footer">
 
-<h2>Owner Information</h2>
+<h3>Owner Information</h3>
 
 <p>Owner: Nurul Amin</p>
-
 <p>Phone: 01792453834</p>
-
 <p>WhatsApp: 01792453834</p>
-
 <p>bKash: 01736255527</p>
-
 <p>Email: ah4948591@gmail.com</p>
 
-</section>
-<script>
-function orderWhatsApp(product, price){
+</footer>
 
-const message =
-`🛍️ BAGASH Order
-
-Product: ${product}
-Price: ৳${price}
-
-Name:
-Phone:
-Address:
-
-Please confirm my order.`;
-
-window.open(
-`https://wa.me/8801792453834?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-}
-</script>
 </body>
 </html>

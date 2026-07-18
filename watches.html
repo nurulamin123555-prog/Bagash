@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Watch Collection</title>
+<title>BAGASH | Luxury Watch Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -24,6 +24,7 @@ font-family:'Poppins',sans-serif;
 body{
 background:#fff;
 color:#222;
+overflow-x:hidden;
 }
 
 .topbar{
@@ -67,6 +68,59 @@ font-weight:800;
 letter-spacing:4px;
 }
 
+/* CINEMATIC SECTION */
+
+.cinematic-watch{
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+perspective:1200px;
+}
+
+.watch-scene{
+width:450px;
+max-width:90vw;
+transition:all 1.5s ease;
+filter:
+drop-shadow(0 0 60px rgba(255,255,255,.15));
+}
+
+.scene-label{
+position:absolute;
+top:40px;
+left:50%;
+transform:translateX(-50%);
+color:#fff;
+font-size:14px;
+font-weight:700;
+letter-spacing:8px;
+}
+
+.light-sweep{
+position:absolute;
+top:0;
+left:-50%;
+width:20%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+transform:skewX(-20deg);
+animation:sweep 3s linear infinite;
+}
+
+@keyframes sweep{
+0%{left:-50%;}
+100%{left:150%;}
+}
+
 .section{
 padding:70px 20px;
 }
@@ -86,16 +140,38 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:25px;
 }
-
-.product-card{
+  .product-card{
 background:#fff;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 overflow:hidden;
-transition:.3s;
+transition:.4s;
+position:relative;
 }
 
 .product-card:hover{
-transform:translateY(-8px);
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 20px 40px rgba(11,77,56,.25);
+}
+
+.product-card::after{
+content:"";
+position:absolute;
+top:0;
+left:-150%;
+width:50%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+transform:skewX(-20deg);
+transition:.8s;
+}
+
+.product-card:hover::after{
+left:180%;
 }
 
 .product-card img{
@@ -127,6 +203,7 @@ color:#fff;
 text-decoration:none;
 padding:12px 25px;
 font-weight:700;
+border-radius:4px;
 }
 
 .footer{
@@ -177,116 +254,12 @@ padding:8px 12px;
 font-size:12px;
 }
 
-}
-/* =========================
-ROLEX STYLE WATCH SHOWCASE
-========================= */
-
-.watch-showcase{
-height:100vh;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-overflow:hidden;
-}
-
-.watch-showcase img{
-width:420px;
-max-width:90%;
-animation:watchRotate 12s infinite;
-filter:
-drop-shadow(0 0 20px rgba(255,255,255,.15))
-drop-shadow(0 0 60px rgba(255,255,255,.08));
-}
-
-.light-sweep{
-position:absolute;
-top:0;
-left:-30%;
-width:20%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-transform:skewX(-20deg);
-animation:sweep 4s linear infinite;
-}
-
-.watch-title{
-position:absolute;
-bottom:60px;
-left:50%;
-transform:translateX(-50%);
-color:#fff;
-font-size:42px;
-font-weight:800;
-letter-spacing:8px;
-text-transform:uppercase;
-}
-
-@keyframes sweep{
-0%{
-left:-40%;
-}
-100%{
-left:140%;
-}
-}
-
-@keyframes watchRotate{
-
-0%{
-transform:
-scale(.8)
-rotateY(0deg);
-opacity:0;
-}
-
-25%{
-transform:
-scale(1)
-rotateY(-20deg);
-opacity:1;
-}
-
-50%{
-transform:
-scale(1.08)
-rotateY(0deg);
-}
-
-75%{
-transform:
-scale(1)
-rotateY(20deg);
-}
-
-100%{
-transform:
-scale(.8)
-rotateY(0deg);
-opacity:1;
-}
-
-}
-
-@media(max-width:768px){
-
-.watch-showcase img{
+.watch-scene{
 width:280px;
 }
 
-.watch-title{
-font-size:24px;
-letter-spacing:4px;
 }
 
-}
 </style>
 </head>
 
@@ -300,67 +273,73 @@ letter-spacing:4px;
 <section class="hero">
 <h1>WATCH COLLECTION</h1>
 </section>
-<!-- ROLEX STYLE WATCH ANIMATION -->
 
-<section class="watch-showcase">
+<section class="cinematic-watch">
 
 <div class="light-sweep"></div>
 
-<img
-id="watchAnimation"
-src="watch1.png"
-alt="Luxury Watch">
-
-<div class="watch-title">
-BAGASH WATCHES
+<div class="scene-label" id="sceneText">
+MACRO VIEW
 </div>
 
+<img
+src="watch1.png"
+id="watchAnim"
+class="watch-scene">
+
 </section>
+
 <section class="section">
 
-<h2 class="section-title">Watch Collection</h2>
+<h2 class="section-title">
+Luxury Watch Collection
+</h2>
 
 <div class="product-grid">
 
 <div class="product-card">
-<img src="watch1.png" alt="Watch 1">
+<img src="watch1.png">
 <div class="product-info">
 <h3>Watch 1</h3>
 <div class="price">৳2,487.90</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Watch 1">
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Watch 1">
 Buy Now
 </a>
 </div>
 </div>
 
 <div class="product-card">
-<img src="watch2.png" alt="Watch 2">
+<img src="watch2.png">
 <div class="product-info">
 <h3>Watch 2</h3>
 <div class="price">৳2,421.10</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Watch 2">
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Watch 2">
 Buy Now
 </a>
 </div>
 </div>
 
 <div class="product-card">
-<img src="watch3.png" alt="Watch 3">
+<img src="watch3.png">
 <div class="product-info">
 <h3>Watch 3</h3>
 <div class="price">৳2,423.76</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Watch 3">
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Watch 3">
 Buy Now
 </a>
 </div>
 </div>
 
 <div class="product-card">
-<img src="watch4.jpeg" alt="Watch 4">
+<img src="watch4.jpeg">
 <div class="product-info">
 <h3>Watch 4</h3>
 <div class="price">৳2,426.56</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Watch 4">
+<a class="buy-btn"
+href="https://wa.me/8801792453834?text=I want to order Watch 4">
 Buy Now
 </a>
 </div>
@@ -369,7 +348,6 @@ Buy Now
 </div>
 
 </section>
-
 <footer class="footer">
 
 <h3>Owner Information</h3>
@@ -381,35 +359,77 @@ Buy Now
 <p>Email: ah4948591@gmail.com</p>
 
 </footer>
+
 <script>
 
-const watchImages = [
+const watch =
+document.getElementById("watchAnim");
 
-"watch1.png",
-"watch2.png",
-"watch3.png",
-"watch4.jpeg"
+const scene =
+document.getElementById("sceneText");
+
+let currentScene = 0;
+
+const scenes = [
+
+{
+name:"MACRO VIEW",
+transform:"scale(2.2) translateY(-40px) rotate(-8deg)",
+filter:"drop-shadow(0 0 80px rgba(255,255,255,.25))"
+},
+
+{
+name:"3/4 VIEW",
+transform:"scale(1) rotateY(-25deg) rotateZ(-5deg)",
+filter:"drop-shadow(0 0 40px rgba(255,255,255,.15))"
+},
+
+{
+name:"CROWN CLOSE-UP",
+transform:"scale(1.8) translateX(180px)",
+filter:"drop-shadow(0 0 90px rgba(255,255,255,.25))"
+},
+
+{
+name:"TOP VIEW",
+transform:"scale(1) rotateX(0deg) rotateZ(0deg)",
+filter:"drop-shadow(0 0 35px rgba(255,255,255,.15))"
+}
 
 ];
 
-let currentWatch = 0;
+function playScene(){
 
-setInterval(()=>{
+watch.style.opacity = "0";
 
-currentWatch++;
+setTimeout(()=>{
 
-if(currentWatch >= watchImages.length){
+watch.style.transform =
+scenes[currentScene].transform;
 
-currentWatch = 0;
+watch.style.filter =
+scenes[currentScene].filter;
+
+scene.innerHTML =
+scenes[currentScene].name;
+
+watch.style.opacity = "1";
+
+currentScene++;
+
+if(currentScene >= scenes.length){
+currentScene = 0;
+}
+
+},500);
 
 }
 
-document.getElementById(
-"watchAnimation"
-).src = watchImages[currentWatch];
+playScene();
 
-},3000);
+setInterval(playScene,3000);
 
 </script>
+
 </body>
 </html>

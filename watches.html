@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH | Luxury Watch Collection</title>
+<title>BAGASH Luxury Watches</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -18,534 +19,306 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 :root{
 --green:#0B4D38;
---black:#000;
---gold:#d4af37;
+--black:#050505;
+--silver:#d9d9d9;
 }
 
 body{
-background:#fff;
-color:#222;
+background:#000;
+color:#fff;
 overflow-x:hidden;
 }
 
-/* =========================
-TOP BAR
-========================= */
-
 .topbar{
-padding:15px 20px;
-background:#fff;
-border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 25px;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:sticky;
-top:0;
-z-index:9999;
+z-index:999;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+letter-spacing:3px;
 }
 
 .back-btn{
-background:var(--green);
-color:#fff;
 text-decoration:none;
+color:#fff;
+background:var(--green);
 padding:10px 20px;
 font-weight:700;
-border-radius:4px;
+border-radius:5px;
 }
-
-.topbar h3{
-color:var(--green);
-}
-
-/* =========================
-HERO
-========================= */
 
 .hero{
-height:420px;
-
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.35)
-),
-url("watches.jpeg");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:60px;
-font-weight:800;
-letter-spacing:5px;
-}
-
-/* =========================
-ROLEX STYLE CINEMATIC
-========================= */
-
-.cinematic-watch{
-
 height:100vh;
-
-background:#000;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
-position:relative;
-
-overflow:hidden;
-
-perspective:1500px;
-
-}
-
-.scene-label{
-
-position:absolute;
-
-top:40px;
-left:50%;
-
-transform:translateX(-50%);
-
-color:white;
-
-font-size:14px;
-font-weight:700;
-
-letter-spacing:8px;
-
-z-index:10;
-
-}
-
-.watch-scene{
-
-width:520px;
-
-max-width:90vw;
-
-transform-style:preserve-3d;
-
-animation:
-watch3D 12s infinite ease-in-out;
-
-filter:
-
-drop-shadow(
-0 0 35px rgba(255,255,255,.25)
-)
-
-drop-shadow(
-0 0 90px rgba(255,255,255,.10)
-);
-
-transition:1s;
-
-}
-
-.light-sweep{
-
-position:absolute;
-
-top:0;
-left:-50%;
-
-width:20%;
-height:100%;
-
+text-align:center;
 background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-
-transform:skewX(-20deg);
-
-animation:sweep 3s linear infinite;
-
+radial-gradient(circle at center,
+#111 0%,
+#000 80%);
 }
 
-@keyframes sweep{
-
-0%{
-left:-50%;
+.hero-content h1{
+font-size:72px;
+font-weight:800;
+letter-spacing:6px;
 }
 
-100%{
-left:150%;
-}
-
-}
-
-@keyframes watch3D{
-
-0%{
-transform:
-rotateY(-45deg)
-rotateX(8deg)
-scale(.90);
-}
-
-25%{
-transform:
-rotateY(-15deg)
-rotateX(0deg)
-scale(1);
-}
-
-50%{
-transform:
-rotateY(0deg)
-rotateX(0deg)
-scale(1.08);
-}
-
-75%{
-transform:
-rotateY(25deg)
-rotateX(-4deg)
-scale(1);
-}
-
-100%{
-transform:
-rotateY(-45deg)
-rotateX(8deg)
-scale(.90);
-}
-
-}
-
-/* =========================
-SECTION TITLE
-========================= */
-
-.section{
-padding:80px 20px;
+.hero-content p{
+margin-top:20px;
+font-size:20px;
+opacity:.8;
 }
 
 .section-title{
-
 text-align:center;
-
 font-size:42px;
 font-weight:800;
-
-color:var(--green);
-
-margin-bottom:50px;
-
+margin-bottom:60px;
+letter-spacing:3px;
 }
 
-/* =========================
-PRODUCT GRID
-========================= */
-
-.product-grid{
-
-max-width:1200px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:25px;
-
+.luxury-viewer{
+padding:120px 20px;
+background:#000;
+perspective:2000px;
 }
 
-.product-card{
+.viewer-container{
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-background:white;
-
-overflow:hidden;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.08);
-
+.watch-3d{
 position:relative;
-
-transition:.4s;
-
-}
-  .product-card:hover{
-
-transform:
-translateY(-12px)
-scale(1.03);
-
-box-shadow:
-0 20px 45px rgba(11,77,56,.25);
-
+width:430px;
+transform-style:preserve-3d;
+transition:.2s;
 }
 
-.product-card::after{
-
-content:"";
-
+.watch-3d img{
+width:100%;
+display:block;
+filter:
+drop-shadow(0 40px 60px rgba(255,255,255,.15));
+}
+  .shine{
 position:absolute;
-
 top:0;
 left:-150%;
-
-width:50%;
+width:80%;
 height:100%;
-
 background:
 linear-gradient(
 90deg,
 transparent,
-rgba(255,255,255,.25),
+rgba(255,255,255,.45),
 transparent
 );
-
-transform:skewX(-20deg);
-
-transition:.8s;
-
+transform:skewX(-25deg);
+animation:shineMove 4s linear infinite;
+pointer-events:none;
 }
 
-.product-card:hover::after{
+@keyframes shineMove{
+0%{
+left:-150%;
+}
+100%{
+left:200%;
+}
+}
 
-left:180%;
+.product-section{
+padding:120px 20px;
+background:#050505;
+}
 
+.product-grid{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.product-card{
+background:#111;
+border:1px solid rgba(255,255,255,.08);
+overflow:hidden;
+transition:.4s;
+box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(255,255,255,.08);
 }
 
 .product-card img{
-
 width:100%;
-height:340px;
-
+height:350px;
 object-fit:cover;
-
 display:block;
-
 }
 
 .product-info{
-
 padding:20px;
-
 }
 
 .product-info h3{
-
-color:var(--green);
-
-margin-bottom:10px;
-
 font-size:22px;
-
+margin-bottom:10px;
 }
 
 .price{
-
-font-size:24px;
-
+font-size:28px;
 font-weight:800;
-
-margin-bottom:15px;
-
+color:#fff;
+margin-bottom:20px;
 }
 
 .buy-btn{
-
 display:inline-block;
-
-background:var(--green);
-
-color:white;
-
-text-decoration:none;
-
 padding:12px 25px;
-
+background:var(--green);
+color:#fff;
+text-decoration:none;
 font-weight:700;
-
 border-radius:4px;
-
 transition:.3s;
-
 }
 
 .buy-btn:hover{
-
-background:#083427;
-
+transform:scale(1.05);
 }
 
-/* =========================
-FOOTER
-========================= */
-
 .footer{
-
-background:var(--green);
-
-color:white;
-
-padding:50px 20px;
-
+padding:60px 20px;
+background:#000;
 text-align:center;
-
-margin-top:80px;
-
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 .footer h3{
-
-font-size:30px;
-
 margin-bottom:20px;
-
+font-size:26px;
 }
 
 .footer p{
-
 line-height:2;
-
-font-size:16px;
-
+opacity:.8;
 }
-
-/* =========================
-MOBILE
-========================= */
 
 @media(max-width:768px){
 
-.hero{
-height:280px;
+.hero-content h1{
+font-size:40px;
 }
 
-.hero h1{
-font-size:34px;
+.hero-content p{
+font-size:15px;
 }
 
-.watch-scene{
+.watch-3d{
 width:280px;
 }
 
 .product-grid{
-grid-template-columns:repeat(2,1fr);
-gap:12px;
+grid-template-columns:1fr;
 }
 
 .product-card img{
-height:180px;
-}
-
-.product-info{
-padding:12px;
-}
-
-.product-info h3{
-font-size:14px;
-}
-
-.price{
-font-size:16px;
-}
-
-.buy-btn{
-padding:8px 12px;
-font-size:12px;
+height:260px;
 }
 
 .section-title{
-font-size:28px;
+font-size:30px;
 }
 
 }
-
-</style>
-
-</head>
+  </head>
 
 <body>
 
 <div class="topbar">
 
-<a href="index.html" class="back-btn">
-
-← Back
-
-</a>
-
-<h3>
-
+<div class="logo">
 BAGASH WATCHES
+</div>
 
-</h3>
+<a href="index.html" class="back-btn">
+Back
+</a>
 
 </div>
 
 <section class="hero">
 
+<div class="hero-content">
+
 <h1>
-
-WATCH COLLECTION
-
+LUXURY WATCHES
 </h1>
 
-</section>
-
-<section class="cinematic-watch">
-
-<div class="light-sweep"></div>
-
-<div class="scene-label">
-
-BAGASH LUXURY WATCHES
+<p>
+Premium Collection Inspired By Timeless Elegance
+</p>
 
 </div>
 
-<img
-src="watch1.png"
-id="watchAnim"
-class="watch-scene">
+</section>
+
+<section class="luxury-viewer">
+
+<h2 class="section-title">
+360° WATCH EXPERIENCE
+</h2>
+
+<div class="viewer-container">
+
+<div class="watch-3d" id="watch3d">
+
+<img src="watch1.png" alt="Luxury Watch">
+
+<div class="shine"></div>
+
+</div>
+
+</div>
 
 </section>
 
-<section class="section">
+<section class="product-section">
 
 <h2 class="section-title">
-
-Luxury Watch Collection
-
+WATCH COLLECTION
 </h2>
 
 <div class="product-grid">
 
 <div class="product-card">
 
-<img src="watch1.png">
+<img src="watch1.png" alt="Watch 1">
 
 <div class="product-info">
 
-<h3>Watch 1</h3>
+<h3>Luxury Green Chronograph</h3>
 
 <div class="price">
 ৳2,487.90
@@ -553,10 +326,8 @@ Luxury Watch Collection
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Watch 1">
-
+href="https://wa.me/8801792453834?text=I want to order Luxury Green Chronograph">
 Buy Now
-
 </a>
 
 </div>
@@ -565,11 +336,11 @@ Buy Now
 
 <div class="product-card">
 
-<img src="watch2.png">
+<img src="watch2.png" alt="Watch 2">
 
 <div class="product-info">
 
-<h3>Watch 2</h3>
+<h3>Premium Steel Watch</h3>
 
 <div class="price">
 ৳2,421.10
@@ -577,22 +348,21 @@ Buy Now
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Watch 2">
-
+href="https://wa.me/8801792453834?text=I want to order Premium Steel Watch">
 Buy Now
-
 </a>
 
 </div>
 
 </div>
+
 <div class="product-card">
 
-<img src="watch3.png">
+<img src="watch3.png" alt="Watch 3">
 
 <div class="product-info">
 
-<h3>Watch 3</h3>
+<h3>Classic Luxury Edition</h3>
 
 <div class="price">
 ৳2,423.76
@@ -600,10 +370,8 @@ Buy Now
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Watch 3">
-
+href="https://wa.me/8801792453834?text=I want to order Classic Luxury Edition">
 Buy Now
-
 </a>
 
 </div>
@@ -612,11 +380,11 @@ Buy Now
 
 <div class="product-card">
 
-<img src="watch4.jpeg">
+<img src="watch4.jpeg" alt="Watch 4">
 
 <div class="product-info">
 
-<h3>Watch 4</h3>
+<h3>Royal Heritage Watch</h3>
 
 <div class="price">
 ৳2,426.56
@@ -624,10 +392,8 @@ Buy Now
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Watch 4">
-
+href="https://wa.me/8801792453834?text=I want to order Royal Heritage Watch">
 Buy Now
-
 </a>
 
 </div>
@@ -641,124 +407,121 @@ Buy Now
 <footer class="footer">
 
 <h3>
-
 Owner Information
-
 </h3>
 
-<p>
-Owner: Nurul Amin
-</p>
-
-<p>
-Phone: 01792453834
-</p>
-
-<p>
-WhatsApp: 01792453834
-</p>
-
-<p>
-bKash: 01736255527
-</p>
-
-<p>
-Email: ah4948591@gmail.com
-</p>
+<p>Owner: Nurul Amin</p>
+<p>Phone: 01792453834</p>
+<p>WhatsApp: 01792453834</p>
+<p>bKash: 01736255527</p>
+<p>Email: ah4948591@gmail.com</p>
 
 </footer>
+  <script>
 
-<script>
+/* =========================
+3D MOUSE FOLLOW EFFECT
+========================= */
 
-const watches = [
+const watch =
+document.getElementById("watch3d");
 
-"watch1.png",
-"watch2.png",
-"watch3.png",
-"watch4.jpeg"
+document.addEventListener("mousemove",(e)=>{
 
-];
+let x =
+(window.innerWidth/2 - e.clientX)/25;
 
-let current = 0;
+let y =
+(window.innerHeight/2 - e.clientY)/25;
+
+watch.style.transform =
+`rotateY(${-x}deg)
+ rotateX(${y}deg)
+ scale(1.05)`;
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+watch.style.transform =
+"rotateY(0deg) rotateX(0deg)";
+
+});
+
+/* =========================
+AUTO CINEMATIC ROTATION
+========================= */
+
+let angle = 0;
 
 setInterval(()=>{
 
-current++;
+angle += 15;
 
-if(current >= watches.length){
+watch.animate(
 
-current = 0;
+[
+{
+transform:
+`rotateY(${angle}deg)
+ scale(1)`
+},
 
+{
+transform:
+`rotateY(${angle+15}deg)
+ scale(1.04)`
+},
+
+{
+transform:
+`rotateY(${angle+30}deg)
+ scale(1)`
 }
 
-const watch =
-document.getElementById("watchAnim");
+],
 
-watch.style.opacity = "0";
+{
+duration:4000,
+fill:"forwards"
+}
 
-setTimeout(()=>{
-
-watch.src =
-watches[current];
-
-watch.style.opacity = "1";
-
-},500);
+);
 
 },4000);
 
-</script>
-<script>
-
 /* =========================
-4 SCENE CINEMATIC MODE
-Macro → 3/4 → Crown → Top
+LUXURY FLOATING EFFECT
 ========================= */
-
-const sceneText =
-document.querySelector(".scene-label");
-
-const watchAnim =
-document.getElementById("watchAnim");
-
-const sceneNames = [
-
-"MACRO VIEW",
-"3/4 VIEW",
-"CROWN CLOSE-UP",
-"TOP VIEW"
-
-];
-
-const transforms = [
-
-"scale(1.9) translateX(-80px) rotateZ(6deg)",
-
-"scale(1.1) rotateY(-25deg)",
-
-"scale(2.1) translateX(120px)",
-
-"scale(1) rotateY(0deg)"
-
-];
-
-let sceneIndex = 0;
 
 setInterval(()=>{
 
-sceneIndex++;
+watch.animate(
 
-if(sceneIndex >= sceneNames.length){
+[
+{
+transform:
+"translateY(0px)"
+},
 
-sceneIndex = 0;
+{
+transform:
+"translateY(-12px)"
+},
 
+{
+transform:
+"translateY(0px)"
 }
 
-sceneText.innerHTML =
-sceneNames[sceneIndex];
+],
 
-watchAnim.style.transform =
-transforms[sceneIndex];
+{
+duration:3000,
+iterations:1
+}
+
+);
 
 },3000);
 

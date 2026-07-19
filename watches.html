@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH Luxury Watches</title>
+<title>BAGASH Luxury Watches v2.0 Black Edition</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,138 +17,264 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 :root{
+--black:#050505;
+--card:#111111;
+--gold:#D4AF37;
 --green:#0B4D38;
---black:#000;
---white:#fff;
+--white:#ffffff;
+--gray:#a0a0a0;
 }
 
 body{
-background:#000;
-color:#fff;
+background:var(--black);
+color:var(--white);
 overflow-x:hidden;
 }
 
-/* TOP BAR */
+/* =========================
+TOPBAR
+========================= */
 
 .topbar{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:15px 25px;
-background:rgba(0,0,0,.85);
-backdrop-filter:blur(10px);
+padding:18px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:999;
-border-bottom:1px solid rgba(255,255,255,.08);
+
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(15px);
+
+z-index:9999;
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-font-size:24px;
+font-size:26px;
 font-weight:800;
-letter-spacing:3px;
+letter-spacing:4px;
+color:var(--white);
 }
 
 .back-btn{
-background:var(--green);
-color:#fff;
 text-decoration:none;
-padding:10px 20px;
+color:#fff;
+background:var(--green);
+padding:10px 22px;
+border-radius:40px;
 font-weight:700;
-border-radius:5px;
+transition:.4s;
 }
 
-/* HERO */
+.back-btn:hover{
+background:var(--gold);
+color:#000;
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 
 background:
-radial-gradient(circle at center,
-#151515 0%,
-#000 80%);
-}
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.65)
+),
+url("watches.jpeg");
 
-.hero-content h1{
-font-size:75px;
-font-weight:800;
-letter-spacing:8px;
-}
+background-size:cover;
+background-position:center;
 
-.hero-content p{
-margin-top:20px;
-font-size:20px;
-opacity:.8;
-}
-
-/* SECTION */
-
-.section-title{
-text-align:center;
-font-size:42px;
-font-weight:800;
-margin-bottom:60px;
-letter-spacing:3px;
-}
-
-/* 360 VIEWER */
-
-.viewer-section{
-padding:120px 20px;
-background:#050505;
-}
-
-.viewer-container{
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
+
+position:relative;
+overflow:hidden;
 }
 
-#watchViewer{
+.hero::after{
 
-width:450px;
-max-width:95%;
+content:"";
 
-cursor:grab;
+position:absolute;
 
-user-select:none;
--webkit-user-drag:none;
+width:700px;
+height:700px;
 
-touch-action:pan-y;
-
-filter:
-drop-shadow(
-0 40px 70px
-rgba(255,255,255,.15)
+background:
+radial-gradient(
+circle,
+rgba(212,175,55,.15),
+transparent 70%
 );
 
-transition:.1s;
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+animation:
+pulseGlow 4s infinite ease-in-out;
+
 }
 
-.viewer-text{
+@keyframes pulseGlow{
+
+0%{
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+50%{
+transform:
+translate(-50%,-50%)
+scale(1.15);
+}
+
+100%{
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+}
+
+.hero h1{
+
+font-size:90px;
+font-weight:800;
+
+letter-spacing:8px;
+
+text-transform:uppercase;
+
+}
+
+.hero h2{
+
+font-size:32px;
+
+font-weight:300;
+
+letter-spacing:10px;
+
+color:var(--gold);
+
+margin-top:15px;
+
+}
+
+.hero p{
+
+margin-top:25px;
+
+font-size:18px;
+
+color:#d0d0d0;
+
+letter-spacing:2px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:15px 35px;
+
+background:var(--gold);
+
+color:#000;
+
+font-weight:700;
+
+text-decoration:none;
+
+border-radius:50px;
+
+transition:.4s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 35px rgba(212,175,55,.5);
+
+}
+   /* =========================
+ SECTION TITLE
+ ========================= */
+
+.section-title{
+
 text-align:center;
-margin-top:30px;
-opacity:.8;
-font-size:15px;
-letter-spacing:1px;
+
+font-size:48px;
+
+font-weight:800;
+
+letter-spacing:4px;
+
+margin-bottom:70px;
+
+color:var(--white);
+
+text-transform:uppercase;
+
 }
-  .product-section{
+
+.section-title span{
+
+color:var(--gold);
+
+}
+
+/* =========================
+ COLLECTION SECTION
+ ========================= */
+
+.collection{
+
 padding:120px 20px;
-background:#000;
+
+background:#050505;
+
 }
+
+/* =========================
+ PREMIUM GRID
+ ========================= */
 
 .product-grid{
 
-max-width:1300px;
+max-width:1400px;
+
 margin:auto;
 
 display:grid;
@@ -156,80 +282,159 @@ display:grid;
 grid-template-columns:
 repeat(2,1fr);
 
-gap:30px;
+gap:35px;
 
 }
 
+/* =========================
+ LUXURY CARD
+ ========================= */
+
 .product-card{
 
-background:#111;
+background:var(--card);
 
-border:1px solid
-rgba(255,255,255,.08);
+border-radius:24px;
 
 overflow:hidden;
 
-transition:.4s;
+position:relative;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+transition:.5s;
 
 box-shadow:
-0 15px 40px rgba(0,0,0,.5);
+0 20px 60px rgba(0,0,0,.6);
 
 }
 
 .product-card:hover{
 
 transform:
-translateY(-10px);
+translateY(-12px);
 
 box-shadow:
-0 25px 60px
-rgba(255,255,255,.08);
+0 30px 90px rgba(212,175,55,.15);
 
 }
+
+/* SHINE EFFECT */
+
+.product-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-150%;
+
+width:70%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+z-index:2;
+
+}
+
+.product-card:hover::before{
+
+left:180%;
+
+}
+
+/* IMAGE */
 
 .product-card img{
 
 width:100%;
-height:350px;
+
+height:430px;
 
 object-fit:cover;
 
 display:block;
 
+transition:.8s;
+
 }
+
+.product-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* INFO */
 
 .product-info{
 
-padding:20px;
+padding:28px;
+
+text-align:center;
 
 }
 
 .product-info h3{
 
-font-size:22px;
+font-size:26px;
+
+font-weight:700;
 
 margin-bottom:10px;
 
+letter-spacing:1px;
+
 }
 
-.price{
+.product-info p{
 
-font-size:28px;
-font-weight:800;
+color:#bdbdbd;
+
+font-size:14px;
+
+line-height:1.8;
 
 margin-bottom:20px;
 
-color:#fff;
+}
+
+/* PRICE */
+
+.price{
+
+font-size:34px;
+
+font-weight:800;
+
+color:var(--gold);
+
+margin-bottom:25px;
 
 }
+
+/* BUTTON */
 
 .buy-btn{
 
 display:inline-block;
 
-padding:12px 25px;
+padding:14px 30px;
 
-background:#0B4D38;
+background:var(--green);
 
 color:#fff;
 
@@ -237,74 +442,97 @@ text-decoration:none;
 
 font-weight:700;
 
-border-radius:4px;
+border-radius:50px;
 
-transition:.3s;
+transition:.4s;
 
 }
 
 .buy-btn:hover{
 
+background:var(--gold);
+
+color:#000;
+
 transform:scale(1.05);
 
 }
 
-/* FOOTER */
+/* =========================
+ FEATURE STRIP
+ ========================= */
 
-.footer{
+.features{
 
-padding:60px 20px;
+padding:100px 20px;
 
-background:#050505;
+background:#090909;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
 
 text-align:center;
 
-border-top:1px solid
-rgba(255,255,255,.08);
+}
+
+.feature-box{
+
+padding:35px;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+background:#111;
 
 }
 
-.footer h3{
+.feature-box h3{
 
-font-size:28px;
+font-size:22px;
 
-margin-bottom:20px;
+margin-bottom:10px;
 
-}
-
-.footer p{
-
-line-height:2;
-
-opacity:.85;
+color:var(--gold);
 
 }
 
-/* MOBILE */
+.feature-box p{
+
+color:#bdbdbd;
+
+}
+
+/* =========================
+ MOBILE
+ ========================= */
 
 @media(max-width:768px){
 
-.hero-content h1{
+.hero h1{
 
-font-size:40px;
+font-size:48px;
+
+letter-spacing:3px;
 
 }
 
-.hero-content p{
+.hero h2{
 
-font-size:15px;
+font-size:18px;
+
+letter-spacing:4px;
 
 }
 
 .section-title{
 
-font-size:28px;
-
-}
-
-#watchViewer{
-
-width:280px;
+font-size:30px;
 
 }
 
@@ -312,25 +540,19 @@ width:280px;
 
 grid-template-columns:1fr;
 
+gap:25px;
+
 }
 
 .product-card img{
 
-height:250px;
+height:280px;
 
 }
 
-.price{
+.features{
 
-font-size:20px;
-
-}
-
-.buy-btn{
-
-padding:10px 18px;
-
-font-size:13px;
+grid-template-columns:1fr 1fr;
 
 }
 
@@ -360,67 +582,76 @@ Back
 
 <div class="hero-content">
 
-<h1>
+<h1>BAGASH</h1>
 
-LUXURY WATCHES
-
-</h1>
+<h2>LUXURY WATCHES</h2>
 
 <p>
-
-Premium Collection Inspired By Timeless Elegance
-
+TIMELESS ELEGANCE • PREMIUM CRAFTSMANSHIP
 </p>
 
-</div>
+<a href="#collection"
+class="hero-btn">
 
-</section>
+EXPLORE COLLECTION
 
-<section class="viewer-section">
-
-<h2 class="section-title">
-
-360° WATCH EXPERIENCE
-
-</h2>
-
-<div class="viewer-container">
-
-<img
-id="watchViewer"
-src="frame1.jpeg"
-alt="360 Watch Viewer">
-
-</div>
-
-<div class="viewer-text">
-
-Swipe or Drag to Rotate
+</a>
 
 </div>
 
 </section>
-<section class="product-section">
+
+<section class="features">
+
+<div class="feature-box">
+<h3>Premium Quality</h3>
+<p>Luxury materials & finishing</p>
+</div>
+
+<div class="feature-box">
+<h3>Fast Delivery</h3>
+<p>All over Bangladesh</p>
+</div>
+
+<div class="feature-box">
+<h3>Cash On Delivery</h3>
+<p>Safe & trusted purchase</p>
+</div>
+
+<div class="feature-box">
+<h3>24/7 Support</h3>
+<p>WhatsApp customer care</p>
+</div>
+
+</section>
+
+<section
+class="collection"
+id="collection">
 
 <h2 class="section-title">
 
-WATCH COLLECTION
+WATCH <span>COLLECTION</span>
 
 </h2>
 
 <div class="product-grid">
-
-<!-- WATCH 1 -->
+  <!-- WATCH 1 -->
 
 <div class="product-card">
 
-<img src="watch1.png" alt="Watch 1">
+<img src="watch1.png" alt="Luxury Green Chronograph">
 
 <div class="product-info">
 
 <h3>
 Luxury Green Chronograph
 </h3>
+
+<p>
+A premium chronograph watch featuring a luxury green dial,
+stainless steel case and timeless craftsmanship.
+</p>
 
 <div class="price">
 ৳2,487.90
@@ -430,7 +661,7 @@ Luxury Green Chronograph
 class="buy-btn"
 href="https://wa.me/8801792453834?text=I want to order Luxury Green Chronograph">
 
-Buy Now
+BUY NOW
 
 </a>
 
@@ -442,13 +673,18 @@ Buy Now
 
 <div class="product-card">
 
-<img src="watch2.png" alt="Watch 2">
+<img src="watch2.png" alt="Premium Steel Master">
 
 <div class="product-info">
 
 <h3>
-Premium Steel Watch
+Premium Steel Master
 </h3>
+
+<p>
+Designed for modern elegance with polished steel detailing
+and premium finishing.
+</p>
 
 <div class="price">
 ৳2,421.10
@@ -456,9 +692,9 @@ Premium Steel Watch
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Premium Steel Watch">
+href="https://wa.me/8801792453834?text=I want to order Premium Steel Master">
 
-Buy Now
+BUY NOW
 
 </a>
 
@@ -470,13 +706,18 @@ Buy Now
 
 <div class="product-card">
 
-<img src="watch3.png" alt="Watch 3">
+<img src="watch3.png" alt="Classic Heritage Edition">
 
 <div class="product-info">
 
 <h3>
-Classic Luxury Edition
+Classic Heritage Edition
 </h3>
+
+<p>
+Inspired by timeless luxury with sophisticated design
+and classic watchmaking aesthetics.
+</p>
 
 <div class="price">
 ৳2,423.76
@@ -484,9 +725,9 @@ Classic Luxury Edition
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Classic Luxury Edition">
+href="https://wa.me/8801792453834?text=I want to order Classic Heritage Edition">
 
-Buy Now
+BUY NOW
 
 </a>
 
@@ -498,13 +739,18 @@ Buy Now
 
 <div class="product-card">
 
-<img src="watch4.jpeg" alt="Watch 4">
+<img src="watch4.jpeg" alt="Royal Black Collection">
 
 <div class="product-info">
 
 <h3>
-Royal Heritage Watch
+Royal Black Collection
 </h3>
+
+<p>
+Bold black luxury styling with refined craftsmanship
+for everyday prestige.
+</p>
 
 <div class="price">
 ৳2,426.56
@@ -512,9 +758,9 @@ Royal Heritage Watch
 
 <a
 class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Royal Heritage Watch">
+href="https://wa.me/8801792453834?text=I want to order Royal Black Collection">
 
-Buy Now
+BUY NOW
 
 </a>
 
@@ -526,207 +772,203 @@ Buy Now
 
 </section>
 
+<!-- LUXURY BANNER -->
+
+<section style="padding:120px 20px;text-align:center;background:#090909;">
+
+<h2 style="
+font-size:54px;
+font-weight:800;
+letter-spacing:5px;
+margin-bottom:20px;
+">
+
+TIME IS LUXURY
+
+</h2>
+
+<p style="
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:2;
+color:#bdbdbd;
+">
+
+Every BAGASH watch is crafted to reflect prestige,
+confidence and timeless elegance.
+Luxury is not just what you wear —
+it's how you present yourself.
+
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer class="footer">
 
 <h3>
-Owner Information
+OWNER INFORMATION
 </h3>
 
-<p>Owner: Nurul Amin</p>
-<p>Phone: 01792453834</p>
-<p>WhatsApp: 01792453834</p>
-<p>bKash: 01736255527</p>
-<p>Email: ah4948591@gmail.com</p>
+<p>
+Owner: Nurul Amin
+</p>
+
+<p>
+Phone: 01792453834
+</p>
+
+<p>
+WhatsApp: 01792453834
+</p>
+
+<p>
+bKash: 01736255527
+</p>
+
+<p>
+Email: ah4948591@gmail.com
+</p>
 
 </footer>
-<script>
-
 /* =========================
-360° DRAG ROTATION
-frame1.jpeg → frame9.jpeg
+LUXURY SCROLL ANIMATION
 ========================= */
 
-const viewer =
-document.getElementById("watchViewer");
+const cards =
+document.querySelectorAll(".product-card");
 
-const frames = [
+const observer =
+new IntersectionObserver(
 
-"frame1.jpeg",
-"frame2.jpeg",
-"frame3.jpeg",
-"frame4.jpeg",
-"frame5.jpeg",
-"frame6.jpeg",
-"frame7.jpeg",
-"frame8.jpeg",
-"frame9.jpeg"
+(entries)=>{
 
-];
+entries.forEach(entry=>{
 
-let currentFrame = 0;
-let startX = 0;
-let dragging = false;
+if(entry.isIntersecting){
 
-function updateFrame(){
+entry.target.style.opacity="1";
 
-viewer.src =
-frames[currentFrame];
+entry.target.style.transform=
+"translateY(0px)";
 
 }
 
-/* MOBILE TOUCH */
+});
 
-viewer.addEventListener(
-"touchstart",
-(e)=>{
+},
 
-dragging = true;
+{
+threshold:0.15
+}
 
-startX =
-e.touches[0].clientX;
+);
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform=
+"translateY(80px)";
+
+card.style.transition=
+"all .8s ease";
+
+observer.observe(card);
 
 });
 
-viewer.addEventListener(
-"touchmove",
-(e)=>{
+/* =========================
+TOPBAR SHADOW ON SCROLL
+========================= */
 
-if(!dragging) return;
+const topbar =
+document.querySelector(".topbar");
 
-let moveX =
-e.touches[0].clientX - startX;
+window.addEventListener(
+"scroll",
+()=>{
 
-if(Math.abs(moveX) > 15){
+if(window.scrollY > 50){
 
-if(moveX > 0){
-
-currentFrame--;
+topbar.style.boxShadow =
+"0 10px 40px rgba(0,0,0,.6)";
 
 }else{
 
-currentFrame++;
+topbar.style.boxShadow =
+"none";
 
 }
 
-if(currentFrame < 0){
-
-currentFrame =
-frames.length - 1;
-
 }
+);
 
-if(currentFrame >= frames.length){
+/* =========================
+HERO BUTTON SMOOTH SCROLL
+========================= */
 
-currentFrame = 0;
+document
+.querySelector(".hero-btn")
+.addEventListener(
+"click",
+function(e){
 
-}
+e.preventDefault();
 
-updateFrame();
+document
+.querySelector("#collection")
+.scrollIntoView({
 
-startX =
-e.touches[0].clientX;
-
-}
+behavior:"smooth"
 
 });
 
-viewer.addEventListener(
-"touchend",
-()=>{
+}
+);
 
-dragging = false;
+/* =========================
+LUXURY IMAGE PARALLAX
+========================= */
 
-});
-
-/* DESKTOP MOUSE */
-
-viewer.addEventListener(
-"mousedown",
-(e)=>{
-
-dragging = true;
-
-startX =
-e.clientX;
-
-viewer.style.cursor =
-"grabbing";
-
-});
-
-document.addEventListener(
+window.addEventListener(
 "mousemove",
 (e)=>{
 
-if(!dragging) return;
+const hero =
+document.querySelector(".hero");
 
-let moveX =
-e.clientX - startX;
+let x =
+(e.clientX /
+window.innerWidth) * 20;
 
-if(Math.abs(moveX) > 15){
+let y =
+(e.clientY /
+window.innerHeight) * 20;
 
-if(moveX > 0){
-
-currentFrame--;
-
-}else{
-
-currentFrame++;
-
-}
-
-if(currentFrame < 0){
-
-currentFrame =
-frames.length - 1;
+hero.style.backgroundPosition =
+`${50+x/4}% ${50+y/4}%`;
 
 }
+);
 
-if(currentFrame >= frames.length){
+/* =========================
+PREMIUM ENTRANCE EFFECT
+========================= */
 
-currentFrame = 0;
-
-}
-
-updateFrame();
-
-startX =
-e.clientX;
-
-}
-
-});
-
-document.addEventListener(
-"mouseup",
+window.addEventListener(
+"load",
 ()=>{
 
-dragging = false;
-
-viewer.style.cursor =
-"grab";
-
-});
-
-/* AUTO SHOWCASE */
-
-setInterval(()=>{
-
-if(dragging) return;
-
-currentFrame++;
-
-if(currentFrame >= frames.length){
-
-currentFrame = 0;
+document.body.style.opacity="1";
 
 }
-
-updateFrame();
-
-},1800);
+);
 
 </script>
 
 </body>
+
 </html>

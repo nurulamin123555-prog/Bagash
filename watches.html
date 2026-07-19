@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH Luxury Watches v2.0 Black Edition</title>
+<title>BAGASH Luxury Watches v4.0 Ultra Black Gold</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -22,11 +22,11 @@ scroll-behavior:smooth;
 
 :root{
 --black:#050505;
---card:#111111;
+--black2:#0d0d0d;
 --gold:#D4AF37;
 --green:#0B4D38;
 --white:#ffffff;
---gray:#a0a0a0;
+--gray:#bdbdbd;
 }
 
 body{
@@ -44,34 +44,42 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 30px;
+padding:18px 35px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(15px);
-
-z-index:9999;
+background:rgba(0,0,0,.72);
+backdrop-filter:blur(18px);
 
 border-bottom:
 1px solid rgba(255,255,255,.08);
+
+z-index:9999;
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:800;
 letter-spacing:4px;
-color:var(--white);
+color:var(--gold);
+}
+
+.logo span{
+color:#fff;
 }
 
 .back-btn{
 text-decoration:none;
-color:#fff;
+padding:12px 24px;
+
 background:var(--green);
-padding:10px 22px;
-border-radius:40px;
+color:#fff;
+
+border-radius:50px;
 font-weight:700;
+
 transition:.4s;
 }
 
@@ -85,12 +93,13 @@ HERO
 ========================= */
 
 .hero{
+
 height:100vh;
 
 background:
 linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.65)
+rgba(0,0,0,.65),
+rgba(0,0,0,.88)
 ),
 url("watches.jpeg");
 
@@ -100,25 +109,28 @@ background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
+
 text-align:center;
 
 position:relative;
 overflow:hidden;
 }
 
-.hero::after{
+/* GOLD SPOTLIGHT */
+
+.hero::before{
 
 content:"";
 
 position:absolute;
 
-width:700px;
-height:700px;
+width:1200px;
+height:1200px;
 
 background:
 radial-gradient(
 circle,
-rgba(212,175,55,.15),
+rgba(212,175,55,.18),
 transparent 70%
 );
 
@@ -129,11 +141,11 @@ transform:
 translate(-50%,-50%);
 
 animation:
-pulseGlow 4s infinite ease-in-out;
+goldPulse 6s infinite ease-in-out;
 
 }
 
-@keyframes pulseGlow{
+@keyframes goldPulse{
 
 0%{
 transform:
@@ -155,14 +167,65 @@ scale(1);
 
 }
 
+/* HERO WATCH */
+
+.hero-watch{
+
+width:520px;
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%);
+
+z-index:2;
+
+filter:
+drop-shadow(
+0 0 60px
+rgba(212,175,55,.35)
+);
+
+animation:
+floatWatch 5s ease-in-out infinite;
+
+}
+
+@keyframes floatWatch{
+
+0%{
+transform:
+translate(-50%,-50%)
+translateY(0);
+}
+
+50%{
+transform:
+translate(-50%,-50%)
+translateY(-18px);
+}
+
+100%{
+transform:
+translate(-50%,-50%)
+translateY(0);
+}
+
+}
+
 .hero-content{
+
 position:relative;
 z-index:5;
+
 }
 
 .hero h1{
 
-font-size:90px;
+font-size:100px;
 font-weight:800;
 
 letter-spacing:8px;
@@ -173,15 +236,14 @@ text-transform:uppercase;
 
 .hero h2{
 
-font-size:32px;
+margin-top:15px;
 
+font-size:30px;
 font-weight:300;
 
-letter-spacing:10px;
+letter-spacing:8px;
 
 color:var(--gold);
-
-margin-top:15px;
 
 }
 
@@ -191,9 +253,9 @@ margin-top:25px;
 
 font-size:18px;
 
-color:#d0d0d0;
-
 letter-spacing:2px;
+
+color:#d8d8d8;
 
 }
 
@@ -203,7 +265,7 @@ display:inline-block;
 
 margin-top:35px;
 
-padding:15px 35px;
+padding:16px 40px;
 
 background:var(--gold);
 
@@ -221,55 +283,114 @@ transition:.4s;
 
 .hero-btn:hover{
 
-transform:translateY(-4px);
+transform:translateY(-5px);
 
 box-shadow:
-0 0 35px rgba(212,175,55,.5);
+0 0 40px rgba(212,175,55,.5);
 
 }
-   /* =========================
- SECTION TITLE
- ========================= */
+    /* =========================
+LUXURY STATS
+========================= */
+
+.luxury-stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+
+padding:80px 20px;
+
+background:#080808;
+
+}
+
+.stat-box{
+
+text-align:center;
+
+padding:30px 20px;
+
+background:#101010;
+
+border-radius:20px;
+
+border:
+1px solid rgba(255,255,255,.06);
+
+transition:.4s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-8px);
+
+border-color:
+rgba(212,175,55,.35);
+
+}
+
+.stat-box h2{
+
+font-size:42px;
+
+font-weight:800;
+
+color:var(--gold);
+
+}
+
+.stat-box p{
+
+margin-top:10px;
+
+color:var(--gray);
+
+}
+
+/* =========================
+SECTION TITLE
+========================= */
 
 .section-title{
 
 text-align:center;
 
-font-size:48px;
+font-size:56px;
 
 font-weight:800;
 
 letter-spacing:4px;
 
-margin-bottom:70px;
-
-color:var(--white);
+margin-bottom:80px;
 
 text-transform:uppercase;
 
 }
 
 .section-title span{
-
 color:var(--gold);
-
 }
 
 /* =========================
- COLLECTION SECTION
- ========================= */
+COLLECTION
+========================= */
 
 .collection{
 
 padding:120px 20px;
 
-background:#050505;
+background:var(--black);
 
 }
 
 /* =========================
- PREMIUM GRID
- ========================= */
+ROLEX STYLE GRID
+========================= */
 
 .product-grid{
 
@@ -287,26 +408,26 @@ gap:35px;
 }
 
 /* =========================
- LUXURY CARD
- ========================= */
+LUXURY PRODUCT CARD
+========================= */
 
 .product-card{
 
-background:var(--card);
+position:relative;
+
+background:#111;
 
 border-radius:24px;
 
 overflow:hidden;
 
-position:relative;
-
 border:
 1px solid rgba(255,255,255,.08);
 
-transition:.5s;
-
 box-shadow:
 0 20px 60px rgba(0,0,0,.6);
+
+transition:.5s;
 
 }
 
@@ -316,7 +437,7 @@ transform:
 translateY(-12px);
 
 box-shadow:
-0 30px 90px rgba(212,175,55,.15);
+0 25px 80px rgba(212,175,55,.18);
 
 }
 
@@ -329,22 +450,22 @@ content:"";
 position:absolute;
 
 top:0;
-left:-150%;
+left:-180%;
 
-width:70%;
+width:60%;
 height:100%;
 
 background:
 linear-gradient(
 90deg,
 transparent,
-rgba(255,255,255,.25),
+rgba(255,255,255,.22),
 transparent
 );
 
 transform:skewX(-25deg);
 
-transition:1s;
+transition:1.2s;
 
 z-index:2;
 
@@ -352,23 +473,23 @@ z-index:2;
 
 .product-card:hover::before{
 
-left:180%;
+left:220%;
 
 }
 
-/* IMAGE */
+/* PRODUCT IMAGE */
 
 .product-card img{
 
 width:100%;
 
-height:430px;
+height:460px;
 
 object-fit:cover;
 
 display:block;
 
-transition:.8s;
+transition:1s;
 
 }
 
@@ -378,11 +499,11 @@ transform:scale(1.08);
 
 }
 
-/* INFO */
+/* PRODUCT INFO */
 
 .product-info{
 
-padding:28px;
+padding:30px;
 
 text-align:center;
 
@@ -390,25 +511,23 @@ text-align:center;
 
 .product-info h3{
 
-font-size:26px;
+font-size:28px;
 
 font-weight:700;
 
-margin-bottom:10px;
-
-letter-spacing:1px;
+margin-bottom:12px;
 
 }
 
 .product-info p{
 
-color:#bdbdbd;
-
 font-size:14px;
 
-line-height:1.8;
+line-height:1.9;
 
-margin-bottom:20px;
+color:#bdbdbd;
+
+margin-bottom:25px;
 
 }
 
@@ -416,7 +535,7 @@ margin-bottom:20px;
 
 .price{
 
-font-size:34px;
+font-size:36px;
 
 font-weight:800;
 
@@ -426,13 +545,13 @@ margin-bottom:25px;
 
 }
 
-/* BUTTON */
+/* BUY BUTTON */
 
 .buy-btn{
 
 display:inline-block;
 
-padding:14px 30px;
+padding:15px 35px;
 
 background:var(--green);
 
@@ -458,102 +577,37 @@ transform:scale(1.05);
 
 }
 
-/* =========================
- FEATURE STRIP
- ========================= */
-
-.features{
-
-padding:100px 20px;
-
-background:#090909;
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:20px;
-
-text-align:center;
-
-}
-
-.feature-box{
-
-padding:35px;
-
-border:
-1px solid rgba(255,255,255,.08);
-
-border-radius:18px;
-
-background:#111;
-
-}
-
-.feature-box h3{
-
-font-size:22px;
-
-margin-bottom:10px;
-
-color:var(--gold);
-
-}
-
-.feature-box p{
-
-color:#bdbdbd;
-
-}
-
-/* =========================
- MOBILE
- ========================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
 .hero h1{
-
-font-size:48px;
-
-letter-spacing:3px;
-
+font-size:52px;
 }
 
 .hero h2{
-
 font-size:18px;
-
 letter-spacing:4px;
-
 }
 
-.section-title{
+.hero-watch{
+width:260px;
+}
 
-font-size:30px;
-
+.luxury-stats{
+grid-template-columns:1fr 1fr;
 }
 
 .product-grid{
-
 grid-template-columns:1fr;
-
-gap:25px;
-
 }
 
 .product-card img{
-
-height:280px;
-
+height:300px;
 }
 
-.features{
-
-grid-template-columns:1fr 1fr;
-
+.section-title{
+font-size:34px;
 }
 
 }
@@ -566,19 +620,20 @@ grid-template-columns:1fr 1fr;
 <div class="topbar">
 
 <div class="logo">
-BAGASH WATCHES
+BAGASH <span>WATCHES</span>
 </div>
 
-<a href="index.html"
-class="back-btn">
-
+<a href="index.html" class="back-btn">
 Back
-
 </a>
 
 </div>
 
 <section class="hero">
+
+<img src="watch1.png"
+class="hero-watch"
+alt="Luxury Watch">
 
 <div class="hero-content">
 
@@ -587,7 +642,7 @@ Back
 <h2>LUXURY WATCHES</h2>
 
 <p>
-TIMELESS ELEGANCE • PREMIUM CRAFTSMANSHIP
+TIMELESS ELEGANCE • ULTRA BLACK GOLD
 </p>
 
 <a href="#collection"
@@ -601,26 +656,26 @@ EXPLORE COLLECTION
 
 </section>
 
-<section class="features">
+<section class="luxury-stats">
 
-<div class="feature-box">
-<h3>Premium Quality</h3>
-<p>Luxury materials & finishing</p>
+<div class="stat-box">
+<h2>500+</h2>
+<p>Happy Clients</p>
 </div>
 
-<div class="feature-box">
-<h3>Fast Delivery</h3>
-<p>All over Bangladesh</p>
+<div class="stat-box">
+<h2>100%</h2>
+<p>Premium Quality</p>
 </div>
 
-<div class="feature-box">
-<h3>Cash On Delivery</h3>
-<p>Safe & trusted purchase</p>
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Support</p>
 </div>
 
-<div class="feature-box">
-<h3>24/7 Support</h3>
-<p>WhatsApp customer care</p>
+<div class="stat-box">
+<h2>Nationwide</h2>
+<p>Delivery</p>
 </div>
 
 </section>
@@ -636,7 +691,7 @@ WATCH <span>COLLECTION</span>
 </h2>
 
 <div class="product-grid">
-  <!-- WATCH 1 -->
+   <!-- WATCH 1 -->
 
 <div class="product-card">
 
@@ -649,8 +704,8 @@ Luxury Green Chronograph
 </h3>
 
 <p>
-A premium chronograph watch featuring a luxury green dial,
-stainless steel case and timeless craftsmanship.
+Premium green dial chronograph with luxury steel finishing,
+crafted for timeless elegance and prestige.
 </p>
 
 <div class="price">
@@ -682,8 +737,8 @@ Premium Steel Master
 </h3>
 
 <p>
-Designed for modern elegance with polished steel detailing
-and premium finishing.
+Designed for modern gentlemen who appreciate refined luxury,
+precision engineering and premium detailing.
 </p>
 
 <div class="price">
@@ -715,8 +770,8 @@ Classic Heritage Edition
 </h3>
 
 <p>
-Inspired by timeless luxury with sophisticated design
-and classic watchmaking aesthetics.
+Inspired by timeless Swiss-inspired aesthetics with a bold
+luxury appearance and classic craftsmanship.
 </p>
 
 <div class="price">
@@ -748,8 +803,8 @@ Royal Black Collection
 </h3>
 
 <p>
-Bold black luxury styling with refined craftsmanship
-for everyday prestige.
+Bold black luxury styling with premium finishing created
+for confidence, prestige and everyday excellence.
 </p>
 
 <div class="price">
@@ -774,12 +829,17 @@ BUY NOW
 
 <!-- LUXURY BANNER -->
 
-<section style="padding:120px 20px;text-align:center;background:#090909;">
+<section class="gold-banner" style="
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(180deg,#090909,#050505);
+">
 
 <h2 style="
-font-size:54px;
+font-size:60px;
 font-weight:800;
 letter-spacing:5px;
+color:#D4AF37;
 margin-bottom:20px;
 ">
 
@@ -788,126 +848,101 @@ TIME IS LUXURY
 </h2>
 
 <p style="
-max-width:800px;
+max-width:850px;
 margin:auto;
 font-size:18px;
 line-height:2;
 color:#bdbdbd;
 ">
 
-Every BAGASH watch is crafted to reflect prestige,
+Every BAGASH watch is designed to represent prestige,
 confidence and timeless elegance.
-Luxury is not just what you wear —
+
+Luxury is not what you own —
 it's how you present yourself.
 
 </p>
 
 </section>
 
-<!-- FOOTER -->
+<!-- OWNER SECTION -->
+
+<section style="
+padding:100px 20px;
+background:#080808;
+text-align:center;
+">
+
+<h2 style="
+font-size:42px;
+color:#D4AF37;
+margin-bottom:25px;
+">
+
+OWNER INFORMATION
+
+</h2>
+
+<p style="line-height:2;color:#bdbdbd;">
+Owner: Nurul Amin
+</p>
+
+<p style="line-height:2;color:#bdbdbd;">
+Phone: 01792453834
+</p>
+
+<p style="line-height:2;color:#bdbdbd;">
+WhatsApp: 01792453834
+</p>
+
+<p style="line-height:2;color:#bdbdbd;">
+bKash: 01736255527
+</p>
+
+<p style="line-height:2;color:#bdbdbd;">
+Email: ah4948591@gmail.com
+</p>
+
+</section>
 
 <footer class="footer">
 
 <h3>
-OWNER INFORMATION
+BAGASH LUXURY WATCHES
 </h3>
 
 <p>
-Owner: Nurul Amin
-</p>
-
-<p>
-Phone: 01792453834
-</p>
-
-<p>
-WhatsApp: 01792453834
-</p>
-
-<p>
-bKash: 01736255527
-</p>
-
-<p>
-Email: ah4948591@gmail.com
+Crafted For Those Who Value Time
 </p>
 
 </footer>
-/* =========================
-LUXURY SCROLL ANIMATION
-========================= */
+<style>
 
-const cards =
-document.querySelectorAll(".product-card");
-
-const observer =
-new IntersectionObserver(
-
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform=
-"translateY(0px)";
-
+.footer{
+padding:60px 20px;
+text-align:center;
+background:#000;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
-});
-
-},
-
-{
-threshold:0.15
+.footer h3{
+font-size:30px;
+color:#D4AF37;
+margin-bottom:15px;
+letter-spacing:3px;
 }
 
-);
+.footer p{
+color:#bdbdbd;
+font-size:15px;
+}
 
-cards.forEach(card=>{
+</style>
 
-card.style.opacity="0";
-
-card.style.transform=
-"translateY(80px)";
-
-card.style.transition=
-"all .8s ease";
-
-observer.observe(card);
-
-});
+<script>
 
 /* =========================
-TOPBAR SHADOW ON SCROLL
-========================= */
-
-const topbar =
-document.querySelector(".topbar");
-
-window.addEventListener(
-"scroll",
-()=>{
-
-if(window.scrollY > 50){
-
-topbar.style.boxShadow =
-"0 10px 40px rgba(0,0,0,.6)";
-
-}else{
-
-topbar.style.boxShadow =
-"none";
-
-}
-
-}
-);
-
-/* =========================
-HERO BUTTON SMOOTH SCROLL
+SMOOTH SCROLL
 ========================= */
 
 document
@@ -930,7 +965,81 @@ behavior:"smooth"
 );
 
 /* =========================
-LUXURY IMAGE PARALLAX
+TOPBAR SHADOW
+========================= */
+
+const topbar =
+document.querySelector(".topbar");
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(window.scrollY > 50){
+
+topbar.style.boxShadow =
+"0 10px 40px rgba(0,0,0,.75)";
+
+}else{
+
+topbar.style.boxShadow =
+"none";
+
+}
+
+}
+);
+
+/* =========================
+SCROLL REVEAL
+========================= */
+
+const cards =
+document.querySelectorAll(".product-card");
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform=
+"translateY(80px)";
+card.style.transition=
+"all .8s ease";
+
+});
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform=
+"translateY(0px)";
+
+}
+
+});
+
+},
+
+{
+threshold:0.15
+}
+
+);
+
+cards.forEach(card=>{
+
+observer.observe(card);
+
+});
+
+/* =========================
+HERO PARALLAX
 ========================= */
 
 window.addEventListener(
@@ -940,11 +1049,11 @@ window.addEventListener(
 const hero =
 document.querySelector(".hero");
 
-let x =
+const x =
 (e.clientX /
 window.innerWidth) * 20;
 
-let y =
+const y =
 (e.clientY /
 window.innerHeight) * 20;
 
@@ -955,8 +1064,77 @@ hero.style.backgroundPosition =
 );
 
 /* =========================
-PREMIUM ENTRANCE EFFECT
+FLOATING HERO WATCH
 ========================= */
+
+const heroWatch =
+document.querySelector(".hero-watch");
+
+window.addEventListener(
+"mousemove",
+(e)=>{
+
+const x =
+(window.innerWidth/2 - e.clientX)/40;
+
+const y =
+(window.innerHeight/2 - e.clientY)/40;
+
+heroWatch.style.transform =
+`translate(-50%,-50%)
+rotateY(${-x}deg)
+rotateX(${y}deg)`;
+
+}
+);
+
+/* =========================
+AUTO GOLD GLOW
+========================= */
+
+setInterval(()=>{
+
+document
+.querySelectorAll(".product-card")
+.forEach(card=>{
+
+card.animate(
+
+[
+{
+boxShadow:
+"0 20px 60px rgba(0,0,0,.6)"
+},
+
+{
+boxShadow:
+"0 25px 80px rgba(212,175,55,.18)"
+},
+
+{
+boxShadow:
+"0 20px 60px rgba(0,0,0,.6)"
+}
+
+],
+
+{
+duration:2500
+}
+
+);
+
+});
+
+},3500);
+
+/* =========================
+PAGE LOAD EFFECT
+========================= */
+
+document.body.style.opacity="0";
+document.body.style.transition=
+"opacity 1s ease";
 
 window.addEventListener(
 "load",
@@ -970,5 +1148,4 @@ document.body.style.opacity="1";
 </script>
 
 </body>
-
 </html>

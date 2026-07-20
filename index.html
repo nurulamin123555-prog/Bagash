@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BAGASH Premium v14.0</title>
+<title>BAGASH Premium V17.0 Ultra</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -21,67 +23,78 @@ html{
 scroll-behavior:smooth;
 }
 
+:root{
+
+--green:#0B4D38;
+--dark:#082f23;
+--white:#ffffff;
+--glass:rgba(255,255,255,.18);
+
+}
+
 body{
-background:#fff;
+
+background:#f8f8f6;
 overflow-x:hidden;
+
 }
 
 /* =========================
-LOADING SCREEN
+PREMIUM ENTRY
 ========================= */
 
-.loader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#0B4D38;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:999999;
+body{
+
+animation:
+pageReveal 1.4s ease;
+
 }
 
-.loader h1{
-font-size:60px;
-color:white;
-letter-spacing:8px;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
+@keyframes pageReveal{
 
 0%{
-transform:scale(1);
-opacity:.5;
-}
 
-50%{
-transform:scale(1.15);
-opacity:1;
+opacity:0;
+
+transform:
+translateY(40px);
+
+filter:
+blur(12px);
+
 }
 
 100%{
-transform:scale(1);
-opacity:.5;
+
+opacity:1;
+
+transform:
+translateY(0);
+
+filter:
+blur(0);
+
 }
 
 }
 
 /* =========================
-HEADER
+APPLE GLASS HEADER
 ========================= */
 
 .header{
 
-position:sticky;
-top:0;
-z-index:9999;
+position:fixed;
+top:15px;
+left:50%;
 
-height:80px;
+transform:
+translateX(-50%);
 
-background:white;
+width:95%;
+max-width:1450px;
+
+height:78px;
 
 display:flex;
 align-items:center;
@@ -89,26 +102,30 @@ justify-content:space-between;
 
 padding:0 25px;
 
+background:
+rgba(255,255,255,.55);
+
+backdrop-filter:
+blur(25px);
+
+-webkit-backdrop-filter:
+blur(25px);
+
+border:
+1px solid rgba(255,255,255,.4);
+
+border-radius:24px;
+
 box-shadow:
-0 2px 15px rgba(0,0,0,.06);
+0 8px 40px rgba(0,0,0,.08);
 
-animation:headerShow 1s;
-
-}
-
-@keyframes headerShow{
-
-from{
-opacity:0;
-transform:translateY(-30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
+z-index:99999;
 
 }
+
+/* =========================
+LEFT
+========================= */
 
 .left-header{
 
@@ -120,23 +137,55 @@ gap:18px;
 
 .menu-btn{
 
-font-size:32px;
+font-size:30px;
 cursor:pointer;
 font-weight:700;
-color:#0B4D38;
+
+color:var(--green);
+
+transition:.3s;
+
+}
+
+.menu-btn:hover{
+
+transform:scale(1.1);
 
 }
 
 .logo img{
 
-height:52px;
+height:54px;
+
+animation:
+floatLogo 5s ease-in-out infinite;
 
 }
+
+@keyframes floatLogo{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* =========================
+CENTER MENU
+========================= */
 
 .center-menu{
 
 display:flex;
-gap:35px;
+gap:32px;
 
 }
 
@@ -144,56 +193,77 @@ gap:35px;
 
 text-decoration:none;
 
-color:#222;
-
 font-size:14px;
 font-weight:700;
+
+color:#222;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+.center-menu a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-6px;
+
+width:0;
+height:2px;
+
+background:var(--green);
 
 transition:.3s;
 
 }
 
-.center-menu a:hover{
+.center-menu a:hover::after{
 
-color:#0B4D38;
+width:100%;
 
 }
+
+.center-menu a:hover{
+
+color:var(--green);
+
+}
+
+/* =========================
+RIGHT
+========================= */
 
 .right-header{
 
 display:flex;
 align-items:center;
-gap:18px;
+gap:20px;
 
 }
+
+/* Search Button */
 
 .search-btn{
 
 font-size:24px;
+
 cursor:pointer;
 
+color:var(--green);
+
 }
+
+/* Premium Cart Icon */
 
 .cart-btn{
 
-font-size:24px;
-cursor:pointer;
-position:relative;
-
-}
-
-.cart-count{
-
-position:absolute;
-
-top:-8px;
-right:-10px;
-
-background:#0B4D38;
-color:white;
-
-width:18px;
-height:18px;
+width:42px;
+height:42px;
 
 border-radius:50%;
 
@@ -201,135 +271,58 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:10px;
-
-}
-
-/* =========================
-MEGA MENU
-========================= */
-
-.overlay{
-
-position:fixed;
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,.5);
-
-opacity:0;
-visibility:hidden;
-
-transition:.4s;
-
-z-index:9998;
-
-}
-
-.overlay.active{
-
-opacity:1;
-visibility:visible;
-
-}
-
-.side-menu{
-
-position:fixed;
-
-top:0;
-left:-100%;
-
-width:360px;
-height:100vh;
-
 background:white;
 
-overflow-y:auto;
-
-transition:.4s;
-
-z-index:99999;
-
 box-shadow:
-0 0 25px rgba(0,0,0,.15);
-
-}
-
-.side-menu.active{
-
-left:0;
-
-}
-
-.menu-top{
-
-height:80px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 20px;
-
-border-bottom:1px solid #eee;
-
-}
-
-.menu-top h2{
-
-font-size:28px;
-color:#0B4D38;
-
-}
-
-.close-btn{
-
-font-size:34px;
-
-background:none;
-border:none;
+0 4px 15px rgba(0,0,0,.08);
 
 cursor:pointer;
 
-}
-
-.menu-link{
-
-display:block;
-
-padding:18px 25px;
-
-text-decoration:none;
-
-font-weight:700;
-color:#222;
-
-border-bottom:1px solid #eee;
+position:relative;
 
 transition:.3s;
 
 }
 
-.menu-link:hover{
+.cart-btn:hover{
 
-padding-left:35px;
-background:#f8f8f8;
+transform:translateY(-3px);
+
+}
+
+.cart-count{
+
+position:absolute;
+
+top:-4px;
+right:-4px;
+
+width:18px;
+height:18px;
+
+background:var(--green);
+
+color:white;
+
+font-size:10px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
 
 }
 
 /* =========================
-SEARCH BAR
+APPLE SEARCH BAR
 ========================= */
 
 .search-section{
 
-padding:25px;
+padding-top:120px;
 
-background:#fafafa;
+padding-bottom:35px;
 
 display:flex;
 justify-content:center;
@@ -338,119 +331,40 @@ justify-content:center;
 
 .search-box{
 
-width:600px;
-max-width:100%;
+width:700px;
+max-width:95%;
 
-padding:15px 20px;
+padding:18px 25px;
 
-border:2px solid #0B4D38;
-
-border-radius:40px;
+border:none;
 
 outline:none;
+
+font-size:15px;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:
+blur(20px);
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.search-box:focus{
+
+box-shadow:
+0 0 0 3px rgba(11,77,56,.15);
 
 }
 
 /* =========================
-HERO
+MOBILE
 ========================= */
-
-.hero{
-
-height:88vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(11,77,56,.65)
-),
-url("hero-banner.png");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-color:white;
-
-position:relative;
-
-}
-
-.hero-content{
-
-animation:fadeHero 1.5s;
-
-}
-
-@keyframes fadeHero{
-
-from{
-opacity:0;
-transform:translateY(50px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-.hero-logo{
-
-width:130px;
-
-margin-bottom:20px;
-
-}
-
-.hero h1{
-
-font-size:80px;
-font-weight:800;
-letter-spacing:8px;
-
-}
-
-.hero p{
-
-font-size:22px;
-
-margin-top:15px;
-
-}
-
-.hero-btn{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:15px 40px;
-
-background:white;
-
-color:#0B4D38;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-background:#0B4D38;
-color:white;
-
-}
 
 @media(max-width:900px){
 
@@ -460,28 +374,25 @@ display:none;
 
 }
 
-.hero h1{
+.header{
 
-font-size:42px;
+height:72px;
 
 }
 
-.hero p{
+.logo img{
 
-font-size:16px;
+height:45px;
 
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
-
-<div class="loader" id="loader">
-<h1>BAGASH</h1>
-</div>
 
 <header class="header">
 
@@ -504,30 +415,48 @@ onclick="openMenu()">
 
 <nav class="center-menu">
 
-<a href="women.html" target="_blank">Women</a>
+<a href="women.html">Women</a>
 
-<a href="men.html" target="_blank">Men</a>
+<a href="men.html">Men</a>
 
-<a href="jerseys.html" target="_blank">Jerseys</a>
+<a href="kids.html">Kids</a>
 
-<a href="kids.html" target="_blank">Kids</a>
+<a href="watches.html">Watches</a>
 
-<a href="watches.html" target="_blank">Watches</a>
+<a href="jewellery.html">Jewellery</a>
 
-<a href="Home.html" target="_blank">Home</a>
+<a href="home.html">Home</a>
 
 </nav>
 
 <div class="right-header">
 
-<div class="search-btn">⌕</div>
+<div class="search-btn">
+
+⌕
+
+</div>
 
 <div class="cart-btn">
 
-👜
+<svg
+width="22"
+height="22"
+viewBox="0 0 24 24"
+fill="none"
+stroke="#0B4D38"
+stroke-width="2">
+
+<path d="M6 8h12l-1 11H7L6 8z"/>
+
+<path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+
+</svg>
 
 <div class="cart-count">
+
 0
+
 </div>
 
 </div>
@@ -536,168 +465,211 @@ onclick="openMenu()">
 
 </header>
 
-<div class="overlay"
-id="overlay"
-onclick="closeMenu()">
-</div>
-
-<div class="side-menu"
-id="sideMenu">
-
-<div class="menu-top">
-
-<h2>BAGASH</h2>
-
-<button class="close-btn"
-onclick="closeMenu()">
-
-×
-
-</button>
-
-</div>
-
-<a href="women.html" target="_blank" class="menu-link">
-Women
-</a>
-
-<a href="men.html" target="_blank" class="menu-link">
-Men
-</a>
-
-<a href="kids.html" target="_blank" class="menu-link">
-Kids
-</a>
-
-<a href="wedding.html" target="_blank" class="menu-link">
-Wedding
-</a>
-
-<a href="Home.html" target="_blank" class="menu-link">
-Home
-</a>
-
-<a href="jewellery.html" target="_blank" class="menu-link">
-Jewellery
-</a>
-
-<a href="watches.html" target="_blank" class="menu-link">
-Watches
-</a>
-
-<a href="jerseys.html" target="_blank" class="menu-link">
-Jerseys
-</a>
-
-<a href="skinhair.html" target="_blank" class="menu-link">
-Skin & Hair
-</a>
-
-<a href="baga.html" target="_blank" class="menu-link">
-BAGA Collection
-</a>
-
-</div>
-
 <section class="search-section">
 
 <input
 type="text"
+id="searchInput"
 class="search-box"
-placeholder="Search BAGASH Products...">
+placeholder="Search BAGASH Collection...">
 
 </section>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<img
-src="bagash-logo.png"
-class="hero-logo">
-
-<h1>BAGASH</h1>
-
-<p>
-
-Premium Heritage Fashion & Lifestyle
-
-</p>
-
-<a href="#categories"
-class="hero-btn">
-
-Explore Collection
-
-</a>
-
-</div>
-
-</section>
-
-<script>
-
-window.onload=function(){
-
-setTimeout(()=>{
-
-document.getElementById(
-"loader"
-).style.display="none";
-
-},1800);
-
-}
-
-function openMenu(){
-
-document
-.getElementById("sideMenu")
-.classList.add("active");
-
-document
-.getElementById("overlay")
-.classList.add("active");
-
-}
-
-function closeMenu(){
-
-document
-.getElementById("sideMenu")
-.classList.remove("active");
-
-document
-.getElementById("overlay")
-.classList.remove("active");
-
-}
-
-</script>
 <!-- =========================
-PART 1B
-AARONG STYLE CATEGORY GRID
+PREMIUM HERO
 ========================= -->
 
 <style>
 
-.categories{
+.hero{
 
-padding:80px 20px;
-background:#fafaf8;
+height:85vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.25),
+rgba(11,77,56,.55)
+),
+url("hero-banner.png");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
 
 }
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.18),
+transparent 70%
+);
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+animation:
+glassGlow 6s infinite ease-in-out;
+
+}
+
+@keyframes glassGlow{
+
+0%{
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+50%{
+transform:
+translate(-50%,-50%)
+scale(1.15);
+}
+
+100%{
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+}
+
+.hero-content{
+
+position:relative;
+z-index:5;
+
+animation:
+heroLuxury 1.8s ease;
+
+}
+
+@keyframes heroLuxury{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+filter:
+blur(10px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+filter:
+blur(0);
+
+}
+
+}
+
+.hero-logo{
+
+width:140px;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:90px;
+
+font-weight:800;
+
+letter-spacing:10px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-top:15px;
+
+letter-spacing:2px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:16px 40px;
+
+background:white;
+
+color:#0B4D38;
+
+font-weight:700;
+
+text-decoration:none;
+
+border-radius:50px;
+
+transition:.4s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-5px);
+
+background:#0B4D38;
+
+color:white;
+
+}
+
+/* =========================
+SECTION TITLE
+========================= */
 
 .section-title{
 
 text-align:center;
 
-font-size:38px;
+font-size:42px;
+
 font-weight:800;
 
 color:#0B4D38;
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
@@ -705,11 +677,23 @@ margin-bottom:10px;
 
 text-align:center;
 
-font-size:15px;
-
 color:#666;
 
 margin-bottom:50px;
+
+font-size:15px;
+
+}
+
+/* =========================
+AARONG CATEGORY GRID
+========================= */
+
+.categories{
+
+padding:90px 20px;
+
+background:#fafaf8;
 
 }
 
@@ -724,7 +708,13 @@ display:grid;
 grid-template-columns:
 repeat(2,1fr);
 
-gap:25px;
+gap:28px;
+
+}
+
+.category-link{
+
+text-decoration:none;
 
 }
 
@@ -732,24 +722,28 @@ gap:25px;
 
 position:relative;
 
-height:280px;
+height:320px;
 
 overflow:hidden;
 
+border-radius:18px;
+
 cursor:pointer;
 
-border-radius:8px;
-
 box-shadow:
-0 8px 25px rgba(0,0,0,.08);
+0 10px 35px rgba(0,0,0,.08);
 
-transition:.4s;
+transition:.5s;
 
 }
 
 .category-card:hover{
 
-transform:translateY(-8px);
+transform:
+translateY(-10px);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.15);
 
 }
 
@@ -760,7 +754,7 @@ height:100%;
 
 object-fit:cover;
 
-transition:.6s;
+transition:1s;
 
 }
 
@@ -778,12 +772,12 @@ left:0;
 right:0;
 bottom:0;
 
-padding:25px;
+padding:28px;
 
 background:
 linear-gradient(
 transparent,
-rgba(0,0,0,.85)
+rgba(0,0,0,.9)
 );
 
 }
@@ -792,7 +786,7 @@ rgba(0,0,0,.85)
 
 color:white;
 
-font-size:24px;
+font-size:28px;
 
 font-weight:700;
 
@@ -802,25 +796,34 @@ font-weight:700;
 
 color:#ddd;
 
-font-size:13px;
-
 margin-top:5px;
 
-}
-
-.category-link{
-
-display:block;
-height:100%;
+font-size:14px;
 
 }
+
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:768px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
 
 .category-grid{
 
 grid-template-columns:
-repeat(2,1fr);
+1fr 1fr;
 
 gap:15px;
 
@@ -848,6 +851,42 @@ font-size:11px;
 
 </style>
 
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img
+src="bagash-logo.png"
+class="hero-logo">
+
+<h1>BAGASH</h1>
+
+<p>
+
+Premium Heritage Fashion & Lifestyle
+
+</p>
+
+<a
+href="#categories"
+class="hero-btn">
+
+Explore Collection
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================
+CATEGORY SECTION
+========================= -->
+
 <section
 class="categories"
 id="categories">
@@ -867,10 +906,9 @@ Fashion • Heritage • Lifestyle
 <div class="category-grid">
 
 <a href="women.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="women.jpeg">
 
@@ -887,10 +925,9 @@ class="category-link">
 </a>
 
 <a href="men.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="men.jpeg">
 
@@ -907,10 +944,9 @@ class="category-link">
 </a>
 
 <a href="kids.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="kids.jpeg">
 
@@ -926,39 +962,18 @@ class="category-link">
 
 </a>
 
-<a href="wedding.html"
-target="_blank"
+<a href="watches.html"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
-<img src="wedding.jpeg">
+<img src="watches.jpeg">
 
 <div class="category-overlay">
 
-<h3>Wedding</h3>
+<h3>Watches</h3>
 
-<p>Wedding Collection</p>
-
-</div>
-
-</div>
-
-</a>
-
-<a href="home.html"
-target="_blank"
-class="category-link">
-
-<div class="category-card">
-
-<img src="homedecor.jpeg">
-
-<div class="category-overlay">
-
-<h3>Home</h3>
-
-<p>Home & Living</p>
+<p>Luxury Timepieces</p>
 
 </div>
 
@@ -967,10 +982,9 @@ class="category-link">
 </a>
 
 <a href="jewellery.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="jewellery.jpeg">
 
@@ -986,19 +1000,18 @@ class="category-link">
 
 </a>
 
-<a href="watches.html"
-target="_blank"
+<a href="home.html"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
-<img src="watches.jpeg">
+<img src="homedecor.jpeg">
 
 <div class="category-overlay">
 
-<h3>Watches</h3>
+<h3>Home</h3>
 
-<p>Classic Watches</p>
+<p>Home & Living</p>
 
 </div>
 
@@ -1007,10 +1020,9 @@ class="category-link">
 </a>
 
 <a href="jerseys.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="jerseys.jpeg">
 
@@ -1026,31 +1038,10 @@ class="category-link">
 
 </a>
 
-<a href="skinhair.html"
-target="_blank"
-class="category-link">
-
-<div class="category-card">
-
-<img src="skinhair.jpeg">
-
-<div class="category-overlay">
-
-<h3>Skin & Hair</h3>
-
-<p>Beauty Collection</p>
-
-</div>
-
-</div>
-
-</a>
-
 <a href="baga.html"
-target="_blank"
 class="category-link">
 
-<div class="category-card">
+<div class="category-card searchable">
 
 <img src="hero-banner.png">
 
@@ -1070,20 +1061,20 @@ class="category-link">
 
 </section>
 <!-- =========================
-PART 1C
-EXPLORE COLLECTION + IMAGE SLIDER + OWNER INFO
+PREMIUM EXPLORE BANNER
 ========================= -->
 
 <style>
 
 /* =========================
-EXPLORE COLLECTION
+EXPLORE BANNER
 ========================= */
 
 .explore-section{
 
-padding:80px 20px;
-background:#fff;
+padding:100px 20px;
+
+background:#ffffff;
 
 }
 
@@ -1095,17 +1086,11 @@ margin:auto;
 
 height:550px;
 
-background:
-linear-gradient(
-rgba(0,0,0,.25),
-rgba(11,77,56,.45)
-),
-url("hero-banner.png");
+border-radius:30px;
 
-background-size:cover;
-background-position:center;
+overflow:hidden;
 
-border-radius:12px;
+position:relative;
 
 display:flex;
 align-items:center;
@@ -1113,17 +1098,72 @@ justify-content:center;
 
 text-align:center;
 
-color:white;
+background:
+linear-gradient(
+rgba(0,0,0,.20),
+rgba(11,77,56,.40)
+),
+url("hero-banner.png");
 
-overflow:hidden;
+background-size:cover;
+background-position:center;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.12);
+
+}
+
+.explore-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.18),
+transparent 70%
+);
+
+animation:
+bannerGlow 8s infinite ease-in-out;
+
+}
+
+@keyframes bannerGlow{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.explore-content{
+
+position:relative;
+z-index:2;
 
 }
 
 .explore-content h2{
 
-font-size:70px;
+font-size:72px;
 
 font-weight:800;
+
+color:white;
 
 letter-spacing:5px;
 
@@ -1135,73 +1175,9 @@ margin-bottom:15px;
 
 font-size:20px;
 
+color:white;
+
 letter-spacing:2px;
-
-}
-
-/* =========================
-AARONG STYLE IMAGE SLIDER
-========================= */
-
-.slider-section{
-
-padding:80px 0;
-
-background:#fafaf8;
-
-overflow:hidden;
-
-}
-
-.slider-title{
-
-text-align:center;
-
-font-size:40px;
-
-font-weight:800;
-
-color:#0B4D38;
-
-margin-bottom:40px;
-
-}
-
-.slider-track{
-
-display:flex;
-
-width:max-content;
-
-animation:slideImages 120s linear infinite;
-
-}
-
-.slider-track img{
-
-width:280px;
-height:380px;
-
-object-fit:cover;
-
-margin-right:20px;
-
-border-radius:8px;
-
-box-shadow:
-0 8px 25px rgba(0,0,0,.10);
-
-}
-
-@keyframes slideImages{
-
-0%{
-transform:translateX(0);
-}
-
-100%{
-transform:translateX(-50%);
-}
 
 }
 
@@ -1211,67 +1187,74 @@ OWNER SECTION
 
 .owner-section{
 
-padding:90px 20px;
+padding:120px 20px;
 
-background:#0B4D38;
-
-color:white;
-
-text-align:center;
+background:
+linear-gradient(
+180deg,
+#f7f7f5,
+#ecece8
+);
 
 }
 
 .owner-box{
 
-max-width:900px;
+max-width:950px;
 
 margin:auto;
 
-padding:50px;
+padding:60px;
 
-border:1px solid
-rgba(255,255,255,.15);
+text-align:center;
+
+border-radius:35px;
 
 background:
-rgba(255,255,255,.05);
+rgba(255,255,255,.45);
 
-backdrop-filter:blur(10px);
+backdrop-filter:
+blur(25px);
 
-border-radius:12px;
+-webkit-backdrop-filter:
+blur(25px);
 
-animation:ownerShow 1.5s ease;
+border:
+1px solid rgba(255,255,255,.65);
 
-}
+box-shadow:
+0 15px 60px rgba(0,0,0,.08);
 
-@keyframes ownerShow{
-
-from{
-
-opacity:0;
-
-transform:
-translateY(60px);
+animation:
+ownerFloat 6s ease-in-out infinite;
 
 }
 
-to{
+@keyframes ownerFloat{
 
-opacity:1;
+0%{
+transform:translateY(0);
+}
 
-transform:
-translateY(0);
+50%{
+transform:translateY(-10px);
+}
 
+100%{
+transform:translateY(0);
 }
 
 }
 
 .owner-box h2{
 
-font-size:42px;
-
-margin-bottom:25px;
+font-size:48px;
 
 font-weight:800;
+
+color:#0B4D38;
+
+margin-bottom:35px;
 
 }
 
@@ -1281,25 +1264,13 @@ font-size:18px;
 
 line-height:2.2;
 
+color:#333;
+
 }
 
 /* =========================
-FOOTER
+MOBILE
 ========================= */
-
-.footer{
-
-background:#06281d;
-
-color:white;
-
-padding:30px;
-
-text-align:center;
-
-font-size:14px;
-
-}
 
 @media(max-width:768px){
 
@@ -1311,32 +1282,31 @@ height:320px;
 
 .explore-content h2{
 
-font-size:38px;
+font-size:36px;
 
 }
 
 .explore-content p{
 
-font-size:15px;
-
-}
-
-.slider-track img{
-
-width:180px;
-height:250px;
+font-size:14px;
 
 }
 
 .owner-box{
 
-padding:30px;
+padding:35px 25px;
 
 }
 
 .owner-box h2{
 
-font-size:28px;
+font-size:30px;
+
+}
+
+.owner-box p{
+
+font-size:15px;
 
 }
 
@@ -1355,76 +1325,18 @@ EXPLORE COLLECTION
 <div class="explore-content">
 
 <h2>
+
 EXPLORE COLLECTION
+
 </h2>
 
 <p>
+
 Premium Heritage Fashion & Lifestyle
+
 </p>
 
 </div>
-
-</div>
-
-</section>
-
-<!-- =========================
-IMAGE SLIDER
-========================= -->
-
-<section class="slider-section">
-
-<h2 class="slider-title">
-
-Featured Collections
-
-</h2>
-
-<div class="slider-track">
-
-<img src="saree1.jpeg">
-<img src="salwar1.jpeg">
-<img src="kurta1.jpeg">
-<img src="tops1.jpeg">
-<img src="shirt1.jpeg">
-<img src="panjabi1.jpeg">
-<img src="tshirt1.jpeg">
-<img src="boys1.jpeg">
-<img src="girls1.jpeg">
-<img src="watch1.png">
-<img src="footwear1.jpeg">
-<img src="weddingwomen1.jpeg">
-<img src="weddingmen1.jpeg">
-<img src="necklace1.jpeg">
-<img src="earring1.jpeg">
-<img src="bracelet1.jpeg">
-<img src="ring1.jpeg">
-<img src="living1.jpeg">
-<img src="decor1.jpeg">
-<img src="dining1.jpeg">
-
-<!-- duplicate for infinite effect -->
-
-<img src="saree1.jpeg">
-<img src="salwar1.jpeg">
-<img src="kurta1.jpeg">
-<img src="tops1.jpeg">
-<img src="shirt1.jpeg">
-<img src="panjabi1.jpeg">
-<img src="tshirt1.jpeg">
-<img src="boys1.jpeg">
-<img src="girls1.jpeg">
-<img src="watch1.png">
-<img src="footwear1.jpeg">
-<img src="weddingwomen1.jpeg">
-<img src="weddingmen1.jpeg">
-<img src="necklace1.jpeg">
-<img src="earring1.jpeg">
-<img src="bracelet1.jpeg">
-<img src="ring1.jpeg">
-<img src="living1.jpeg">
-<img src="decor1.jpeg">
-<img src="dining1.jpeg">
 
 </div>
 
@@ -1439,48 +1351,176 @@ OWNER INFORMATION
 <div class="owner-box">
 
 <h2>
+
 Owner Information
+
 </h2>
 
 <p>
-
 Owner: Nurul Amin
-
 </p>
 
 <p>
-
 Phone: 01792453834
-
 </p>
 
 <p>
-
 WhatsApp: 01792453834
-
 </p>
 
 <p>
-
 bKash: 01736255527
-
 </p>
 
 <p>
-
 Email: ah4948591@gmail.com
-
 </p>
 
 <p>
-
 Bangladesh
-
 </p>
 
 </div>
 
 </section>
+<!-- =========================
+PREMIUM FOOTER
+========================= -->
+
+<style>
+
+.footer{
+
+background:
+linear-gradient(
+135deg,
+#082f23,
+#0B4D38
+);
+
+color:white;
+
+padding:70px 20px 30px;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.footer::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.08),
+transparent 70%
+);
+
+top:-250px;
+right:-150px;
+
+}
+
+.footer-logo{
+
+width:90px;
+
+margin-bottom:20px;
+
+animation:
+footerFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes footerFloat{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.footer h3{
+
+font-size:34px;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+letter-spacing:3px;
+
+}
+
+.footer p{
+
+font-size:15px;
+
+opacity:.9;
+
+line-height:2;
+
+}
+
+.footer-bottom{
+
+margin-top:35px;
+
+padding-top:25px;
+
+border-top:
+1px solid rgba(255,255,255,.15);
+
+font-size:13px;
+
+opacity:.8;
+
+}
+
+/* =========================
+SCROLL REVEAL
+========================= */
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(70px);
+
+transition:
+all 1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+</style>
 
 <!-- =========================
 FOOTER
@@ -1488,8 +1528,362 @@ FOOTER
 
 <footer class="footer">
 
-© 2026 BAGASH Premium
+<img
+src="bagash-logo.png"
+class="footer-logo">
 
-All Rights Reserved
+<h3>
+
+BAGASH
+
+</h3>
+
+<p>
+
+Premium Heritage Fashion & Lifestyle
+
+</p>
+
+<p>
+
+Crafted with Style • Designed with Elegance
+
+</p>
+
+<div class="footer-bottom">
+
+© 2026 BAGASH Premium. All Rights Reserved.
+
+</div>
 
 </footer>
+
+<!-- =========================
+WORKING SEARCH SYSTEM
+========================= -->
+
+<script>
+
+const searchInput =
+document.getElementById(
+"searchInput"
+);
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+let value =
+this.value.toLowerCase();
+
+const cards =
+document.querySelectorAll(
+".searchable"
+);
+
+cards.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+if(text.includes(value)){
+
+card.parentElement.style.display =
+"block";
+
+}else{
+
+card.parentElement.style.display =
+"none";
+
+}
+
+});
+
+});
+
+</script>
+
+<!-- =========================
+SCROLL REVEAL EFFECT
+========================= -->
+
+<script>
+
+const reveals =
+document.querySelectorAll(
+".category-card,.owner-box,.explore-banner"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+reveals.forEach(item=>{
+
+const top =
+item.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+
+item.classList.add(
+"active"
+);
+
+item.classList.add(
+"reveal"
+);
+
+}
+
+});
+
+});
+
+</script>
+<!-- =========================
+FINAL PREMIUM JS
+========================= -->
+
+<script>
+
+/* =========================
+LOADER REMOVE
+========================= */
+
+window.addEventListener(
+"load",
+()=>{
+
+document.body.style.opacity="1";
+
+});
+
+/* =========================
+SIDE MENU
+========================= */
+
+function openMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.add("active");
+
+document
+.getElementById("overlay")
+.classList.add("active");
+
+}
+
+function closeMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.remove("active");
+
+document
+.getElementById("overlay")
+.classList.remove("active");
+
+}
+
+/* =========================
+SMOOTH HERO BUTTON
+========================= */
+
+document
+.querySelector(".hero-btn")
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+document
+.querySelector("#categories")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+);
+
+/* =========================
+APPLE HEADER EFFECT
+========================= */
+
+window.addEventListener(
+"scroll",
+()=>{
+
+const header =
+document.querySelector(".header");
+
+if(window.scrollY > 50){
+
+header.style.background =
+"rgba(255,255,255,.72)";
+
+header.style.backdropFilter =
+"blur(30px)";
+
+header.style.boxShadow =
+"0 12px 40px rgba(0,0,0,.10)";
+
+}else{
+
+header.style.background =
+"rgba(255,255,255,.55)";
+
+header.style.boxShadow =
+"0 8px 32px rgba(0,0,0,.08)";
+
+}
+
+}
+);
+
+/* =========================
+LUXURY CARD HOVER GLOW
+========================= */
+
+const cards =
+document.querySelectorAll(
+".category-card"
+);
+
+cards.forEach(card=>{
+
+card.addEventListener(
+"mouseenter",
+()=>{
+
+card.style.boxShadow =
+"0 25px 60px rgba(11,77,56,.18)";
+
+});
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+card.style.boxShadow =
+"0 10px 35px rgba(0,0,0,.08)";
+
+});
+
+});
+
+/* =========================
+PARALLAX HERO
+========================= */
+
+window.addEventListener(
+"mousemove",
+(e)=>{
+
+const hero =
+document.querySelector(".hero");
+
+if(!hero) return;
+
+let x =
+(e.clientX /
+window.innerWidth) * 20;
+
+let y =
+(e.clientY /
+window.innerHeight) * 20;
+
+hero.style.backgroundPosition =
+`${50+x/4}% ${50+y/4}%`;
+
+});
+
+/* =========================
+PREMIUM IMAGE FLOAT
+========================= */
+
+document
+.querySelectorAll(
+".category-card img"
+)
+.forEach(img=>{
+
+img.animate(
+
+[
+{
+transform:
+"translateY(0px)"
+},
+
+{
+transform:
+"translateY(-6px)"
+},
+
+{
+transform:
+"translateY(0px)"
+}
+
+],
+
+{
+duration:5000,
+iterations:Infinity
+
+}
+
+);
+
+});
+
+/* =========================
+SEARCH BUTTON FOCUS
+========================= */
+
+const searchBtn =
+document.querySelector(
+".search-btn"
+);
+
+const searchInput =
+document.querySelector(
+"#searchInput"
+);
+
+if(searchBtn && searchInput){
+
+searchBtn.addEventListener(
+"click",
+()=>{
+
+searchInput.focus();
+
+searchInput.scrollIntoView({
+
+behavior:"smooth",
+block:"center"
+
+});
+
+});
+
+}
+
+/* =========================
+PREMIUM PAGE READY
+========================= */
+
+console.log(
+"BAGASH V17.0 ULTRA PREMIUM LOADED"
+);
+
+</script>
+
+</body>
+</html>

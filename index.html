@@ -12,6 +12,10 @@
 
 <style>
 
+/* =========================
+RESET
+========================= */
+
 *{
 margin:0;
 padding:0;
@@ -23,24 +27,25 @@ html{
 scroll-behavior:smooth;
 }
 
+/* =========================
+ROOT
+========================= */
+
 :root{
 
 --green:#0B4D38;
 --dark:#082F23;
 --gold:#D4AF37;
 --white:#ffffff;
---bg:#F8F8F6;
+--bg:#f8f8f6;
 
---glass:
-rgba(255,255,255,.60);
-
---glassBorder:
-rgba(255,255,255,.45);
-
---shadow:
-0 10px 40px rgba(0,0,0,.08);
+--radius:24px;
 
 }
+
+/* =========================
+BODY
+========================= */
 
 body{
 
@@ -48,20 +53,17 @@ background:var(--bg);
 
 overflow-x:hidden;
 
-color:#222;
-
 opacity:0;
 
 }
 
 body.loaded{
 
-animation:
-pageFade .8s ease forwards;
+animation:pageReveal 1s ease forwards;
 
 }
 
-@keyframes pageFade{
+@keyframes pageReveal{
 
 from{
 
@@ -79,9 +81,9 @@ transform:translateY(0);
 
 }
 
-/* ===========================
-APPLE GLASS HEADER
-=========================== */
+/* =========================
+APPLE PREMIUM HEADER
+========================= */
 
 .header{
 
@@ -90,8 +92,7 @@ position:fixed;
 top:15px;
 left:50%;
 
-transform:
-translateX(-50%);
+transform:translateX(-50%);
 
 width:95%;
 max-width:1450px;
@@ -104,45 +105,35 @@ justify-content:space-between;
 
 padding:0 25px;
 
-background:var(--glass);
+background:
+rgba(255,255,255,.65);
 
 backdrop-filter:
 blur(30px)
-saturate(180%);
+saturate(200%);
 
 -webkit-backdrop-filter:
 blur(30px)
-saturate(180%);
+saturate(200%);
 
 border:
-1px solid var(--glassBorder);
+1px solid rgba(255,255,255,.6);
 
-border-radius:24px;
+border-radius:28px;
 
-box-shadow:var(--shadow);
+box-shadow:
+0 15px 45px rgba(0,0,0,.08);
 
 z-index:99999;
 
-transition:.4s;
+transition:
+all .35s ease;
 
 }
 
-.header.scrolled{
-
-height:66px;
-
-background:
-rgba(255,255,255,.78);
-
-transform:
-translateX(-50%)
-scale(.98);
-
-}
-
-/* ===========================
-LEFT HEADER
-=========================== */
+/* =========================
+LEFT SIDE
+========================= */
 
 .left-header{
 
@@ -156,9 +147,9 @@ gap:18px;
 
 font-size:30px;
 
-cursor:pointer;
-
 font-weight:700;
+
+cursor:pointer;
 
 color:var(--green);
 
@@ -168,26 +159,25 @@ transition:.3s;
 
 .menu-btn:hover{
 
-transform:scale(1.08);
+transform:scale(1.1);
 
 }
 
 .logo img{
 
-height:52px;
+height:54px;
 
 display:block;
 
 }
 
-/* ===========================
+/* =========================
 CENTER MENU
-=========================== */
+========================= */
 
 .center-menu{
 
 display:flex;
-
 gap:32px;
 
 }
@@ -221,7 +211,7 @@ width:0;
 
 height:2px;
 
-background:var(--gold);
+background:var(--green);
 
 transition:.3s;
 
@@ -239,15 +229,15 @@ width:100%;
 
 }
 
-/* ===========================
-RIGHT HEADER
-=========================== */
+/* =========================
+RIGHT SIDE
+========================= */
 
 .right-header{
 
 display:flex;
 align-items:center;
-gap:18px;
+gap:20px;
 
 }
 
@@ -269,6 +259,10 @@ transform:scale(1.1);
 
 }
 
+/* =========================
+CART
+========================= */
+
 .cart-btn{
 
 width:42px;
@@ -281,7 +275,7 @@ align-items:center;
 justify-content:center;
 
 background:
-rgba(255,255,255,.8);
+rgba(255,255,255,.75);
 
 box-shadow:
 0 4px 15px rgba(0,0,0,.08);
@@ -296,8 +290,7 @@ transition:.3s;
 
 .cart-btn:hover{
 
-transform:
-translateY(-3px);
+transform:translateY(-3px);
 
 }
 
@@ -311,8 +304,6 @@ right:-4px;
 width:18px;
 height:18px;
 
-border-radius:50%;
-
 background:var(--green);
 
 color:white;
@@ -323,11 +314,13 @@ display:flex;
 align-items:center;
 justify-content:center;
 
+border-radius:50%;
+
 }
 
-/* ===========================
-PREMIUM SEARCH
-=========================== */
+/* =========================
+SEARCH SECTION
+========================= */
 
 .search-section{
 
@@ -336,29 +329,23 @@ padding-top:120px;
 padding-bottom:35px;
 
 display:flex;
-
 justify-content:center;
-
-flex-direction:column;
-
-align-items:center;
 
 }
 
 .search-box{
 
-width:750px;
+width:700px;
 max-width:95%;
 
 padding:18px 25px;
 
 border:none;
-
 outline:none;
 
 font-size:15px;
 
-border-radius:60px;
+border-radius:50px;
 
 background:
 rgba(255,255,255,.8);
@@ -366,8 +353,11 @@ rgba(255,255,255,.8);
 backdrop-filter:
 blur(20px);
 
+border:
+1px solid rgba(255,255,255,.5);
+
 box-shadow:
-0 10px 25px rgba(0,0,0,.06);
+0 8px 25px rgba(0,0,0,.08);
 
 transition:.3s;
 
@@ -380,31 +370,130 @@ box-shadow:
 
 }
 
+/* =========================
+NO RESULT
+========================= */
+
 #noResult{
 
 display:none;
 
-margin-top:20px;
+text-align:center;
 
-font-weight:600;
+padding:25px;
+
+font-weight:700;
 
 color:var(--green);
 
 }
 
-/* ===========================
-PREMIUM DIVIDER
-=========================== */
+/* =========================
+SIDE MENU
+========================= */
 
-.premium-divider{
+.side-menu{
+
+position:fixed;
+
+top:0;
+left:-320px;
+
+width:300px;
+height:100%;
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:
+blur(30px);
+
+padding:100px 30px;
+
+z-index:100001;
+
+transition:.4s;
+
+}
+
+.side-menu.active{
+
+left:0;
+
+}
+
+.side-menu a{
+
+display:block;
+
+padding:14px 0;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#222;
+
+border-bottom:
+1px solid rgba(0,0,0,.06);
+
+}
+
+.menu-close{
+
+position:absolute;
+
+top:25px;
+right:25px;
+
+font-size:26px;
+
+cursor:pointer;
+
+color:var(--green);
+
+}
+
+.overlay-bg{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+rgba(0,0,0,.25);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:100000;
+
+}
+
+.overlay-bg.active{
+
+opacity:1;
+visibility:visible;
+
+}
+
+/* =========================
+PREMIUM DIVIDER
+========================= */
+
+.divider{
 
 width:90px;
-
 height:4px;
 
-margin:18px auto 40px;
-
-border-radius:50px;
+margin:15px auto;
 
 background:
 linear-gradient(
@@ -414,11 +503,13 @@ var(--gold),
 transparent
 );
 
+border-radius:10px;
+
 }
 
-/* ===========================
+/* =========================
 MOBILE
-=========================== */
+========================= */
 
 @media(max-width:900px){
 
@@ -428,15 +519,15 @@ display:none;
 
 }
 
-.logo img{
-
-height:42px;
-
-}
-
 .header{
 
 height:72px;
+
+}
+
+.logo img{
+
+height:45px;
 
 }
 
@@ -445,6 +536,7 @@ height:72px;
 </style>
 
 </head>
+
 <body>
 
 <header class="header">
@@ -460,7 +552,7 @@ onclick="openMenu()">
 
 <div class="logo">
 
-<img src="bagash-logo.png" alt="BAGASH Logo">
+<img src="images/bagash-logo.png" alt="BAGASH Logo">
 
 </div>
 
@@ -488,19 +580,7 @@ id="searchIconBtn">
 
 <div class="cart-btn">
 
-<svg
-width="20"
-height="20"
-viewBox="0 0 24 24"
-fill="none"
-stroke="#0B4D38"
-stroke-width="1.8">
-
-<path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/>
-
-<path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>
-
-</svg>
+🛍️
 
 <div class="cart-count">
 
@@ -514,6 +594,29 @@ stroke-width="1.8">
 
 </header>
 
+<div class="overlay-bg"
+id="overlay"
+onclick="closeMenu()"></div>
+
+<div class="side-menu"
+id="sideMenu">
+
+<div class="menu-close"
+onclick="closeMenu()">
+
+✕
+
+</div>
+
+<a href="women.html">Women</a>
+<a href="men.html">Men</a>
+<a href="kids.html">Kids</a>
+<a href="watches.html">Watches</a>
+<a href="jewellery.html">Jewellery</a>
+<a href="home.html">Home</a>
+
+</div>
+
 <section class="search-section">
 
 <input
@@ -522,23 +625,20 @@ id="searchInput"
 class="search-box"
 placeholder="Search BAGASH Collection...">
 
-<div id="noResult">
-
-No Collection Found
-
-</div>
-
 </section>
 
+<div id="noResult">
+No Collection Found
+</div>
 <style>
 
-/* ==========================
+/* =========================
 PREMIUM HERO
-========================== */
+========================= */
 
 .hero{
 
-height:92vh;
+height:90vh;
 
 position:relative;
 
@@ -553,20 +653,21 @@ text-align:center;
 color:white;
 
 background:
-
 linear-gradient(
-rgba(0,0,0,.20),
-rgba(11,77,56,.50)
+rgba(0,0,0,.25),
+rgba(11,77,56,.55)
 ),
-
-url("hero-banner.webp");
+url("images/hero-banner.webp");
 
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 
 }
 
-/* Soft Glow */
+/* =========================
+SOFT PREMIUM GLOW
+========================= */
 
 .hero::before{
 
@@ -577,13 +678,10 @@ position:absolute;
 width:700px;
 height:700px;
 
-border-radius:50%;
-
 background:
-
 radial-gradient(
 circle,
-rgba(255,255,255,.20),
+rgba(255,255,255,.22),
 transparent 70%
 );
 
@@ -612,7 +710,7 @@ scale(1);
 
 transform:
 translate(-50%,-50%)
-scale(1.12);
+scale(1.15);
 
 }
 
@@ -626,9 +724,9 @@ scale(1);
 
 }
 
-/* ==========================
+/* =========================
 HERO CONTENT
-========================== */
+========================= */
 
 .hero-content{
 
@@ -636,16 +734,12 @@ position:relative;
 
 z-index:5;
 
-max-width:900px;
-
-padding:20px;
-
 animation:
-heroReveal 1s ease forwards;
+heroFade 1s ease forwards;
 
 }
 
-@keyframes heroReveal{
+@keyframes heroFade{
 
 from{
 
@@ -673,39 +767,12 @@ width:140px;
 
 margin-bottom:25px;
 
-animation:
-logoFloat 6s ease-in-out infinite;
+display:block;
+
+margin-left:auto;
+margin-right:auto;
 
 }
-
-@keyframes logoFloat{
-
-0%{
-
-transform:
-translateY(0);
-
-}
-
-50%{
-
-transform:
-translateY(-8px);
-
-}
-
-100%{
-
-transform:
-translateY(0);
-
-}
-
-}
-
-/* ==========================
-TITLE
-========================== */
 
 .hero h1{
 
@@ -719,12 +786,7 @@ font-weight:800;
 
 letter-spacing:8px;
 
-line-height:1;
-
-margin-bottom:20px;
-
-text-shadow:
-0 5px 25px rgba(0,0,0,.25);
+margin-bottom:10px;
 
 }
 
@@ -734,34 +796,34 @@ font-size:22px;
 
 letter-spacing:2px;
 
-margin-bottom:35px;
+opacity:.95;
 
 }
-
-/* ==========================
-BUTTON
-========================== */
 
 .hero-btn{
 
 display:inline-block;
 
-padding:16px 42px;
+margin-top:35px;
 
-border-radius:60px;
+padding:
+16px 42px;
 
 text-decoration:none;
 
 font-weight:700;
 
-background:white;
-
 color:var(--green);
 
-transition:.4s;
+background:
+rgba(255,255,255,.9);
+
+border-radius:50px;
+
+transition:.35s;
 
 box-shadow:
-0 10px 25px rgba(0,0,0,.15);
+0 12px 30px rgba(0,0,0,.12);
 
 }
 
@@ -770,80 +832,172 @@ box-shadow:
 transform:
 translateY(-4px);
 
-background:var(--green);
+background:
+var(--green);
 
 color:white;
 
 }
 
-/* ==========================
-SCROLL INDICATOR
-========================== */
+/* =========================
+SECTION TITLE
+========================= */
 
-.scroll-indicator{
+.section-title{
+
+text-align:center;
+
+font-size:42px;
+
+font-weight:800;
+
+color:var(--green);
+
+margin-bottom:10px;
+
+}
+
+.section-subtitle{
+
+text-align:center;
+
+font-size:15px;
+
+color:#666;
+
+margin-bottom:50px;
+
+}
+
+/* =========================
+EXPLORE BANNER
+========================= */
+
+.explore-section{
+
+padding:100px 20px;
+
+background:#fff;
+
+}
+
+.explore-banner{
+
+max-width:1400px;
+
+margin:auto;
+
+height:550px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+position:relative;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.20),
+rgba(11,77,56,.45)
+),
+url("images/explore-banner.webp");
+
+background-size:cover;
+background-position:center;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.12);
+
+}
+
+.explore-banner::before{
+
+content:"";
 
 position:absolute;
 
-bottom:35px;
-left:50%;
+width:700px;
+height:700px;
 
-transform:
-translateX(-50%);
-
-font-size:13px;
-
-letter-spacing:2px;
-
-opacity:.85;
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.18),
+transparent 70%
+);
 
 animation:
-scrollPulse 2s infinite;
+bannerGlow 8s infinite ease-in-out;
 
 }
 
-@keyframes scrollPulse{
+@keyframes bannerGlow{
 
 0%{
-
-transform:
-translateX(-50%)
-translateY(0);
-
+transform:scale(1);
 }
 
 50%{
-
-transform:
-translateX(-50%)
-translateY(8px);
-
+transform:scale(1.18);
 }
 
 100%{
-
-transform:
-translateX(-50%)
-translateY(0);
-
+transform:scale(1);
 }
 
 }
 
-/* ==========================
+.explore-content{
+
+position:relative;
+
+z-index:5;
+
+}
+
+.explore-content h2{
+
+font-family:
+'Playfair Display',
+serif;
+
+font-size:72px;
+
+font-weight:800;
+
+letter-spacing:4px;
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.explore-content p{
+
+font-size:20px;
+
+letter-spacing:2px;
+
+color:white;
+
+}
+
+/* =========================
 MOBILE
-========================== */
+========================= */
 
 @media(max-width:768px){
 
 .hero{
 
-height:85vh;
-
-}
-
-.hero-logo{
-
-width:100px;
+height:75vh;
 
 }
 
@@ -857,13 +1011,31 @@ letter-spacing:3px;
 
 .hero p{
 
-font-size:15px;
+font-size:16px;
 
 }
 
-.hero-btn{
+.hero-logo{
 
-padding:14px 30px;
+width:95px;
+
+}
+
+.explore-banner{
+
+height:320px;
+
+}
+
+.explore-content h2{
+
+font-size:34px;
+
+}
+
+.explore-content p{
+
+font-size:14px;
 
 }
 
@@ -871,15 +1043,24 @@ padding:14px 30px;
 
 </style>
 
+<!-- =========================
+HERO SECTION
+========================= -->
+
 <section class="hero">
 
 <div class="hero-content">
 
 <img
-src="bagash-logo.png"
-class="hero-logo">
+src="images/bagash-logo.png"
+class="hero-logo"
+alt="BAGASH">
 
-<h1>BAGASH</h1>
+<h1>
+
+BAGASH
+
+</h1>
 
 <p>
 
@@ -897,76 +1078,40 @@ Explore Collection
 
 </div>
 
-<div class="scroll-indicator">
+</section>
 
-SCROLL DOWN
+<!-- =========================
+EXPLORE COLLECTION
+========================= -->
+
+<section class="explore-section">
+
+<div class="explore-banner">
+
+<div class="explore-content">
+
+<h2>
+
+EXPLORE COLLECTION
+
+</h2>
+
+<p>
+
+Premium Heritage Fashion & Lifestyle
+
+</p>
+
+</div>
 
 </div>
 
 </section>
 <style>
 
-/* ==========================
-SECTION TITLE
-========================== */
-
-.section-title{
-
-text-align:center;
-
-font-size:48px;
-
-font-weight:800;
-
-color:var(--green);
-
-margin-bottom:10px;
-
-font-family:
-'Playfair Display',
-serif;
-
-}
-
-.section-subtitle{
-
-text-align:center;
-
-font-size:15px;
-
-color:#666;
-
-margin-bottom:25px;
-
-}
-
-/* ==========================
-PREMIUM DIVIDER
-========================== */
-
-.premium-divider{
-
-width:100px;
-
-height:4px;
-
-margin:0 auto 50px;
-
-border-radius:50px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-);
-
-}
-
-/* ==========================
+/* =========================
 CATEGORY SECTION
-========================== */
+========================= */
 
 .categories{
 
@@ -976,13 +1121,9 @@ background:#fafaf8;
 
 }
 
-/* ==========================
-AARONG GRID
-========================== */
-
 .category-grid{
 
-max-width:1350px;
+max-width:1300px;
 
 margin:auto;
 
@@ -991,7 +1132,7 @@ display:grid;
 grid-template-columns:
 repeat(2,1fr);
 
-gap:30px;
+gap:28px;
 
 }
 
@@ -1001,46 +1142,42 @@ text-decoration:none;
 
 }
 
-/* ==========================
+/* =========================
 PREMIUM CARD
-========================== */
+========================= */
 
 .category-card{
 
 position:relative;
 
-height:340px;
+height:320px;
 
 overflow:hidden;
 
 border-radius:24px;
 
-background:white;
+cursor:pointer;
+
+background:#fff;
 
 box-shadow:
 0 10px 35px rgba(0,0,0,.08);
 
 transition:
-transform .4s ease,
-box-shadow .4s ease;
+transform .35s ease,
+box-shadow .35s ease;
 
 }
-
-/* Hover Lift */
 
 .category-card:hover{
 
 transform:
-translateY(-10px);
+translateY(-8px);
 
 box-shadow:
-0 25px 60px rgba(0,0,0,.15);
+0 20px 55px rgba(11,77,56,.15);
 
 }
-
-/* ==========================
-IMAGE
-========================== */
 
 .category-card img{
 
@@ -1049,12 +1186,12 @@ height:100%;
 
 object-fit:cover;
 
+display:block;
+
 transition:
 transform .45s ease;
 
 }
-
-/* Premium Zoom */
 
 .category-card:hover img{
 
@@ -1063,9 +1200,9 @@ scale(1.06);
 
 }
 
-/* ==========================
+/* =========================
 OVERLAY
-========================== */
+========================= */
 
 .category-overlay{
 
@@ -1075,7 +1212,7 @@ left:0;
 right:0;
 bottom:0;
 
-padding:28px;
+padding:26px;
 
 background:
 linear-gradient(
@@ -1087,11 +1224,11 @@ rgba(0,0,0,.88)
 
 .category-overlay h3{
 
+color:white;
+
 font-size:28px;
 
 font-weight:700;
-
-color:white;
 
 margin-bottom:5px;
 
@@ -1099,29 +1236,29 @@ margin-bottom:5px;
 
 .category-overlay p{
 
-font-size:14px;
-
 color:#ddd;
+
+font-size:14px;
 
 }
 
-/* ==========================
-SEARCH MATCH EFFECT
-========================== */
+/* =========================
+SEARCH HIGHLIGHT
+========================= */
 
 .search-match{
 
 outline:
-4px solid var(--gold);
+3px solid var(--gold);
 
-transform:
-translateY(-8px);
+box-shadow:
+0 0 25px rgba(212,175,55,.35);
 
 }
 
-/* ==========================
-FADE ANIMATION
-========================== */
+/* =========================
+FADE UP
+========================= */
 
 .fade-up{
 
@@ -1144,9 +1281,9 @@ translateY(0);
 
 }
 
-/* ==========================
+/* =========================
 MOBILE
-========================== */
+========================= */
 
 @media(max-width:768px){
 
@@ -1162,8 +1299,6 @@ gap:15px;
 .category-card{
 
 height:180px;
-
-border-radius:18px;
 
 }
 
@@ -1189,9 +1324,9 @@ font-size:11px;
 
 </style>
 
-<!-- ==========================
+<!-- =========================
 CATEGORY SECTION
-========================== -->
+========================= -->
 
 <section
 class="categories"
@@ -1203,15 +1338,17 @@ Explore Collections
 
 </h2>
 
+<div class="divider"></div>
+
 <p class="section-subtitle">
 
 Fashion • Heritage • Lifestyle
 
 </p>
 
-<div class="premium-divider"></div>
-
 <div class="category-grid">
+
+<!-- WOMEN -->
 
 <a href="women.html"
 class="category-link">
@@ -1219,8 +1356,9 @@ class="category-link">
 <div class="category-card searchable fade-up">
 
 <img
-src="women.webp"
-loading="lazy">
+src="images/women.webp"
+loading="lazy"
+alt="Women">
 
 <div class="category-overlay">
 
@@ -1234,14 +1372,17 @@ loading="lazy">
 
 </a>
 
+<!-- MEN -->
+
 <a href="men.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="men.webp"
-loading="lazy">
+src="images/men.webp"
+loading="lazy"
+alt="Men">
 
 <div class="category-overlay">
 
@@ -1255,14 +1396,17 @@ loading="lazy">
 
 </a>
 
+<!-- KIDS -->
+
 <a href="kids.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="kids.webp"
-loading="lazy">
+src="images/kids.webp"
+loading="lazy"
+alt="Kids">
 
 <div class="category-overlay">
 
@@ -1276,14 +1420,17 @@ loading="lazy">
 
 </a>
 
+<!-- WATCHES -->
+
 <a href="watches.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="watches.webp"
-loading="lazy">
+src="images/watches.webp"
+loading="lazy"
+alt="Watches">
 
 <div class="category-overlay">
 
@@ -1297,14 +1444,17 @@ loading="lazy">
 
 </a>
 
+<!-- JEWELLERY -->
+
 <a href="jewellery.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="jewellery.webp"
-loading="lazy">
+src="images/jewellery.webp"
+loading="lazy"
+alt="Jewellery">
 
 <div class="category-overlay">
 
@@ -1318,14 +1468,17 @@ loading="lazy">
 
 </a>
 
+<!-- HOME -->
+
 <a href="home.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="home.webp"
-loading="lazy">
+src="images/home.webp"
+loading="lazy"
+alt="Home">
 
 <div class="category-overlay">
 
@@ -1339,14 +1492,17 @@ loading="lazy">
 
 </a>
 
+<!-- JERSEYS -->
+
 <a href="jerseys.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="jerseys.webp"
-loading="lazy">
+src="images/jerseys.webp"
+loading="lazy"
+alt="Jerseys">
 
 <div class="category-overlay">
 
@@ -1360,14 +1516,17 @@ loading="lazy">
 
 </a>
 
+<!-- BAGA -->
+
 <a href="baga.html"
 class="category-link">
 
 <div class="category-card searchable fade-up">
 
 <img
-src="hero-banner.webp"
-loading="lazy">
+src="images/baga.webp"
+loading="lazy"
+alt="BAGA Collection">
 
 <div class="category-overlay">
 
@@ -1386,142 +1545,19 @@ loading="lazy">
 </section>
 <style>
 
-/* ==========================
-EXPLORE COLLECTION
-========================== */
-
-.explore-section{
-
-padding:120px 20px;
-
-background:#ffffff;
-
-}
-
-.explore-banner{
-
-max-width:1450px;
-
-margin:auto;
-
-height:580px;
-
-border-radius:30px;
-
-overflow:hidden;
-
-position:relative;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,.18),
-rgba(11,77,56,.42)
-),
-
-url("hero-banner.webp");
-
-background-size:cover;
-background-position:center;
-
-box-shadow:
-0 25px 70px rgba(0,0,0,.12);
-
-}
-
-.explore-banner::before{
-
-content:"";
-
-position:absolute;
-
-width:750px;
-height:750px;
-
-border-radius:50%;
-
-background:
-radial-gradient(
-circle,
-rgba(255,255,255,.18),
-transparent 70%
-);
-
-animation:
-bannerGlow 8s ease-in-out infinite;
-
-}
-
-@keyframes bannerGlow{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.18);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-
-.explore-content{
-
-position:relative;
-z-index:5;
-
-}
-
-.explore-content h2{
-
-font-family:
-'Playfair Display',
-serif;
-
-font-size:80px;
-
-font-weight:800;
-
-letter-spacing:5px;
-
-color:white;
-
-margin-bottom:15px;
-
-}
-
-.explore-content p{
-
-font-size:20px;
-
-letter-spacing:2px;
-
-color:white;
-
-}
-
-/* ==========================
+/* =========================
 OWNER SECTION
-========================== */
+========================= */
 
 .owner-section{
 
-padding:130px 20px;
+padding:120px 20px;
 
 background:
 linear-gradient(
 180deg,
-#f9f9f7,
-#ecece7
+#f8f8f6,
+#eeeeea
 );
 
 }
@@ -1532,63 +1568,48 @@ max-width:950px;
 
 margin:auto;
 
-padding:65px;
-
-border-radius:30px;
+padding:60px;
 
 text-align:center;
 
+border-radius:30px;
+
 background:
-rgba(255,255,255,.55);
+rgba(255,255,255,.65);
 
 backdrop-filter:
-blur(24px);
+blur(25px)
+saturate(180%);
 
 -webkit-backdrop-filter:
-blur(24px);
+blur(25px)
+saturate(180%);
 
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.6);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,.08);
-
-animation:
-ownerFloat 6s ease-in-out infinite;
+0 15px 60px rgba(0,0,0,.08);
 
 }
 
-@keyframes ownerFloat{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-.owner-box h2{
+.owner-title{
 
 font-family:
 'Playfair Display',
 serif;
 
-font-size:48px;
+font-size:46px;
+
+font-weight:800;
 
 color:var(--green);
 
-margin-bottom:35px;
+margin-bottom:10px;
 
 }
 
-.owner-box p{
+.owner-info{
 
 font-size:18px;
 
@@ -1598,28 +1619,29 @@ color:#333;
 
 }
 
-/* ==========================
+/* =========================
 FOOTER
-========================== */
+========================= */
 
 .footer{
+
+position:relative;
+
+overflow:hidden;
 
 background:
 linear-gradient(
 135deg,
-#082f23,
+#082F23,
 #0B4D38
 );
 
 color:white;
 
-padding:80px 20px 35px;
+padding:
+90px 20px 40px;
 
 text-align:center;
-
-position:relative;
-
-overflow:hidden;
 
 }
 
@@ -1629,11 +1651,11 @@ content:"";
 
 position:absolute;
 
-width:500px;
-height:500px;
-
 top:-250px;
 right:-150px;
+
+width:500px;
+height:500px;
 
 background:
 radial-gradient(
@@ -1650,25 +1672,50 @@ width:90px;
 
 margin-bottom:20px;
 
+display:block;
+
+margin-left:auto;
+margin-right:auto;
+
 }
 
 .footer h3{
 
-font-size:34px;
+font-family:
+'Playfair Display',
+serif;
+
+font-size:36px;
 
 font-weight:800;
 
 letter-spacing:3px;
 
-margin-bottom:12px;
+margin-bottom:15px;
 
 }
 
-.footer p{
+.footer-text{
+
+font-size:15px;
 
 line-height:2;
 
-opacity:.92;
+opacity:.95;
+
+}
+
+.footer-tag{
+
+margin-top:15px;
+
+font-size:14px;
+
+color:#D4AF37;
+
+font-weight:700;
+
+letter-spacing:1px;
 
 }
 
@@ -1687,29 +1734,59 @@ opacity:.8;
 
 }
 
-/* ==========================
+/* =========================
+SOCIALS
+========================= */
+
+.footer-social{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.footer-social a{
+
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-decoration:none;
+
+color:white;
+
+background:
+rgba(255,255,255,.12);
+
+transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+transform:
+translateY(-4px);
+
+background:
+rgba(255,255,255,.22);
+
+}
+
+/* =========================
 MOBILE
-========================== */
+========================= */
 
 @media(max-width:768px){
-
-.explore-banner{
-
-height:320px;
-
-}
-
-.explore-content h2{
-
-font-size:38px;
-
-}
-
-.explore-content p{
-
-font-size:14px;
-
-}
 
 .owner-box{
 
@@ -1717,15 +1794,21 @@ padding:35px 25px;
 
 }
 
-.owner-box h2{
+.owner-title{
 
 font-size:30px;
 
 }
 
-.owner-box p{
+.owner-info{
 
 font-size:15px;
+
+}
+
+.footer h3{
+
+font-size:28px;
 
 }
 
@@ -1733,47 +1816,23 @@ font-size:15px;
 
 </style>
 
-<!-- ==========================
-EXPLORE COLLECTION
-========================== -->
-
-<section class="explore-section">
-
-<div class="explore-banner">
-
-<div class="explore-content">
-
-<h2>
-
-EXPLORE COLLECTION
-
-</h2>
-
-<p>
-
-Premium Heritage Fashion & Lifestyle
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================
+<!-- =========================
 OWNER SECTION
-========================== -->
+========================= -->
 
 <section class="owner-section">
 
-<div class="owner-box">
+<div class="owner-box fade-up">
 
-<h2>
+<h2 class="owner-title">
 
 Owner Information
 
 </h2>
+
+<div class="divider"></div>
+
+<div class="owner-info">
 
 <p>Owner: Nurul Amin</p>
 
@@ -1789,18 +1848,20 @@ Owner Information
 
 </div>
 
+</div>
+
 </section>
 
-<!-- ==========================
+<!-- =========================
 FOOTER
-========================== -->
+========================= -->
 
 <footer class="footer">
 
 <img
-src="bagash-logo.png"
+src="images/bagash-logo.png"
 class="footer-logo"
-alt="BAGASH Logo">
+alt="BAGASH">
 
 <h3>
 
@@ -1808,17 +1869,32 @@ BAGASH
 
 </h3>
 
-<p>
+<p class="footer-text">
 
 Premium Heritage Fashion & Lifestyle
 
 </p>
 
-<p>
+<p class="footer-text">
 
-Crafted in Bangladesh • Premium Heritage Fashion
+Crafted With Style • Designed With Elegance
 
 </p>
+
+<div class="footer-tag">
+
+CRAFTED IN BANGLADESH 🇧🇩
+
+</div>
+
+<div class="footer-social">
+
+<a href="#">f</a>
+<a href="#">in</a>
+<a href="#">ig</a>
+<a href="#">wa</a>
+
+</div>
 
 <div class="footer-bottom">
 
@@ -1829,9 +1905,9 @@ Crafted in Bangladesh • Premium Heritage Fashion
 </footer>
 <script>
 
-/* ==========================
+/* =========================
 PAGE LOAD
-========================== */
+========================= */
 
 window.addEventListener("load",()=>{
 
@@ -1839,9 +1915,9 @@ document.body.classList.add("loaded");
 
 });
 
-/* ==========================
+/* =========================
 SIDE MENU
-========================== */
+========================= */
 
 function openMenu(){
 
@@ -1867,42 +1943,9 @@ document
 
 }
 
-/* ==========================
-HEADER SHRINK
-========================== */
-
-window.addEventListener("scroll",()=>{
-
-const header =
-document.querySelector(".header");
-
-if(window.scrollY > 80){
-
-header.style.height="68px";
-
-header.style.background=
-"rgba(255,255,255,.82)";
-
-header.style.boxShadow=
-"0 12px 40px rgba(0,0,0,.12)";
-
-}else{
-
-header.style.height="78px";
-
-header.style.background=
-"rgba(255,255,255,.55)";
-
-header.style.boxShadow=
-"0 8px 35px rgba(0,0,0,.08)";
-
-}
-
-});
-
-/* ==========================
+/* =========================
 SEARCH SYSTEM
-========================== */
+========================= */
 
 const searchInput =
 document.getElementById("searchInput");
@@ -1915,28 +1958,23 @@ document.getElementById("noResult");
 
 if(searchInput){
 
-searchInput.addEventListener(
-"keyup",
-function(){
+searchInput.addEventListener("keyup",function(){
 
 let value =
-this.value.toLowerCase();
+this.value.toLowerCase().trim();
 
-let found = false;
+let found = 0;
 
 cards.forEach(card=>{
-
-card.classList.remove(
-"search-match"
-);
 
 const text =
 card.innerText.toLowerCase();
 
+card.classList.remove("search-match");
+
 if(text.includes(value)){
 
-card.parentElement.style.display=
-"block";
+card.parentElement.style.display="block";
 
 if(value !== ""){
 
@@ -1946,42 +1984,39 @@ card.classList.add(
 
 }
 
-found=true;
+found++;
 
 }else{
 
-card.parentElement.style.display=
-"none";
+card.parentElement.style.display="none";
 
 }
 
 });
+
+if(found===0){
+
+noResult.style.display="block";
+
+}else{
+
+noResult.style.display="none";
+
+}
 
 if(value===""){
 
 cards.forEach(card=>{
 
-card.parentElement.style.display=
-"block";
+card.parentElement.style.display="block";
+
+card.classList.remove(
+"search-match"
+);
 
 });
 
-noResult.style.display=
-"none";
-
-return;
-
-}
-
-if(found){
-
-noResult.style.display=
-"none";
-
-}else{
-
-noResult.style.display=
-"block";
+noResult.style.display="none";
 
 }
 
@@ -1989,9 +2024,9 @@ noResult.style.display=
 
 }
 
-/* ==========================
-SEARCH BUTTON FOCUS
-========================== */
+/* =========================
+SEARCH ICON FOCUS
+========================= */
 
 const searchBtn =
 document.getElementById(
@@ -2017,14 +2052,12 @@ block:"center"
 
 }
 
-/* ==========================
-SMOOTH SCROLL BUTTON
-========================== */
+/* =========================
+HERO BUTTON
+========================= */
 
 const heroBtn =
-document.querySelector(
-".hero-btn"
-);
+document.querySelector(".hero-btn");
 
 if(heroBtn){
 
@@ -2035,7 +2068,9 @@ function(e){
 e.preventDefault();
 
 document
-.querySelector("#categories")
+.getElementById(
+"categories"
+)
 .scrollIntoView({
 
 behavior:"smooth"
@@ -2046,78 +2081,112 @@ behavior:"smooth"
 
 }
 
-/* ==========================
+/* =========================
+HEADER SHRINK
+========================= */
+
+window.addEventListener(
+"scroll",
+()=>{
+
+const header =
+document.querySelector(
+".header"
+);
+
+if(window.scrollY>80){
+
+header.style.height="68px";
+
+header.style.top="10px";
+
+header.style.background=
+"rgba(255,255,255,.85)";
+
+header.style.boxShadow=
+"0 18px 45px rgba(0,0,0,.10)";
+
+}else{
+
+header.style.height="78px";
+
+header.style.top="15px";
+
+header.style.background=
+"rgba(255,255,255,.65)";
+
+header.style.boxShadow=
+"0 15px 45px rgba(0,0,0,.08)";
+
+}
+
+});
+
+/* =========================
 SCROLL REVEAL
-========================== */
+========================= */
 
 const revealItems =
 document.querySelectorAll(
-".fade-up,.owner-box,.explore-banner"
+".fade-up"
 );
 
-const revealOnScroll=()=>{
+function revealElements(){
 
 revealItems.forEach(item=>{
 
 const top =
 item.getBoundingClientRect().top;
 
-if(top <
-window.innerHeight-100){
+if(top < window.innerHeight-80){
 
-item.classList.add(
-"show"
-);
+item.classList.add("show");
 
 }
 
 });
 
-};
+}
 
 window.addEventListener(
 "scroll",
-revealOnScroll
+revealElements
 );
 
-revealOnScroll();
+revealElements();
 
-/* ==========================
-PREMIUM CARD SHADOW
-========================== */
+/* =========================
+KEYBOARD ESC MENU CLOSE
+========================= */
 
-document
-.querySelectorAll(
-".category-card"
-)
-.forEach(card=>{
+document.addEventListener(
+"keydown",
+(e)=>{
 
-card.addEventListener(
-"mouseenter",
-()=>{
+if(e.key==="Escape"){
 
-card.style.boxShadow=
-"0 25px 70px rgba(11,77,56,.18)";
+closeMenu();
+
+}
 
 });
 
-card.addEventListener(
-"mouseleave",
-()=>{
+/* =========================
+PRELOAD HERO IMAGE
+========================= */
 
-card.style.boxShadow=
-"0 10px 35px rgba(0,0,0,.08)";
+const preloadHero =
+new Image();
 
-});
+preloadHero.src =
+"images/hero-banner.webp";
 
-});
-
-/* ==========================
-PREMIUM READY
-========================== */
+/* =========================
+CONSOLE
+========================= */
 
 console.log(
-"BAGASH V18.0 ULTRA PREMIUM READY"
+"BAGASH V18.0 ULTRA PREMIUM LOADED"
 );
 
 </script>

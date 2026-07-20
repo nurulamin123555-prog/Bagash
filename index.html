@@ -318,6 +318,77 @@ a{color:inherit;}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
 
+/* ===== AMBIENT BACKGROUND BLOBS ===== */
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;pointer-events:none;animation:blobFloat 14s ease-in-out infinite;}
+.blob1{width:420px;height:420px;background:var(--green);top:-100px;left:-100px;}
+.blob2{width:380px;height:380px;background:var(--gold);bottom:-120px;right:-80px;animation-delay:3s;}
+.blob3{width:320px;height:320px;background:var(--green);top:45%;right:-140px;animation-delay:6s;}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-30px) scale(1.1);}}
+
+/* ===== HERO PARTICLES ===== */
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;}
+.particle{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;animation:particleFloat linear infinite;}
+@keyframes particleFloat{0%{transform:translateY(0) translateX(0);opacity:0;}10%{opacity:.8;}90%{opacity:.6;}100%{transform:translateY(-90vh) translateX(20px);opacity:0;}}
+
+/* ===== DARK MODE ===== */
+body.dark-mode{background:linear-gradient(180deg,#0a1f18,#08150f 60%,#061109);color:#eee;}
+body.dark-mode .glass{--glass-bg:rgba(20,35,28,.55);--glass-border:rgba(255,255,255,.12);box-shadow:0 8px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.08);}
+body.dark-mode .section-title,body.dark-mode .owner-box h2{color:#f0e4c8;}
+body.dark-mode .section-subtitle,body.dark-mode p{color:#c9d3cd;}
+body.dark-mode .category-overlay p{color:#ddd;}
+body.dark-mode .menu-item>a,body.dark-mode .side-menu a{color:#eee;}
+body.dark-mode .search-box{background:rgba(20,35,28,.55);color:#eee;}
+body.dark-mode .search-box::placeholder{color:#9fb0a8;}
+body.dark-mode .footer{background:linear-gradient(135deg,#051009,#0a2016);}
+
+/* ===== TOGGLE BUTTONS ===== */
+.toggle-btn{font-size:13px;font-weight:700;color:var(--green);}
+body.dark-mode .toggle-btn{color:#f0e4c8;}
+
+/* ===== QUICK VIEW MODAL ===== */
+.qv-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .35s ease, visibility .35s ease;z-index:100006;display:flex;align-items:center;justify-content:center;padding:20px;}
+.qv-overlay.active{opacity:1;visibility:visible;}
+.qv-modal{max-width:640px;width:100%;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;transform:scale(.92);transition:transform .35s ease;}
+.qv-overlay.active .qv-modal{transform:scale(1);}
+.qv-modal img{width:100%;height:100%;object-fit:cover;border-radius:16px;max-height:280px;}
+.qv-close{position:absolute;top:16px;right:18px;font-size:20px;cursor:pointer;color:var(--green);}
+.qv-info h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:10px;}
+.qv-info p{font-size:13.5px;color:#555;margin-bottom:18px;line-height:1.7;}
+.qv-actions{display:flex;gap:10px;}
+.qv-actions button{flex:1;padding:12px;border:none;border-radius:16px;font-weight:700;cursor:pointer;transition:transform .35s ease;}
+.qv-actions .qv-cart{background:var(--green);color:white;}
+.qv-actions .qv-wish{background:rgba(198,162,83,.18);color:var(--green);}
+.qv-actions button:hover{transform:translateY(-2px);}
+@media(max-width:600px){.qv-modal{grid-template-columns:1fr;}}
+
+/* ===== STYLE GALLERY ===== */
+.gallery-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 20px;}
+.gallery-grid a{display:block;aspect-ratio:1;overflow:hidden;border-radius:16px;}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.gallery-grid a:hover img{transform:scale(1.08);}
+@media(max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ===== MEMBERSHIP ===== */
+.membership-card{max-width:800px;margin:auto;padding:50px;text-align:center;}
+.membership-card h3{font-family:'Playfair Display',serif;font-size:30px;color:var(--green);margin-bottom:10px;}
+.membership-card p{font-size:14.5px;color:#555;margin-bottom:22px;}
+.membership-perks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px;}
+.membership-perks span{background:rgba(198,162,83,.15);color:var(--green);padding:8px 16px;border-radius:16px;font-size:13px;font-weight:600;}
+.membership-card .hero-btn{position:static;}
+
+/* ===== AI ASSISTANT WIDGET ===== */
+.ai-widget{position:fixed;bottom:26px;left:22px;z-index:100003;}
+.ai-panel{width:300px;max-width:88vw;padding:20px;position:absolute;bottom:66px;left:0;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .35s ease, transform .35s ease, visibility .35s ease;}
+.ai-panel.active{opacity:1;visibility:visible;transform:translateY(0);}
+.ai-panel h5{font-size:13px;color:var(--gold);margin-bottom:6px;}
+.ai-panel p{font-size:12.5px;color:#666;margin-bottom:12px;}
+.ai-reply{font-size:13px;color:var(--green);min-height:20px;margin-bottom:10px;}
+.ai-input-row{display:flex;gap:6px;}
+.ai-input-row input{flex:1;padding:9px 12px;border:none;border-radius:12px;background:rgba(255,255,255,.6);outline:none;font-size:12.5px;}
+.ai-input-row button{padding:9px 14px;border:none;border-radius:12px;background:var(--green);color:white;cursor:pointer;}
+.ai-main{width:52px;height:52px;border-radius:50%;background:var(--gold);color:white;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;box-shadow:0 8px 24px rgba(198,162,83,.4);transition:transform .4s ease;}
+.ai-main:hover{transform:scale(1.08);}
+
 /* toast */
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);--glass-bg:rgba(255,255,255,.9);padding:14px 26px;font-size:13.5px;font-weight:600;color:var(--green);opacity:0;visibility:hidden;transition:opacity .35s ease, transform .35s ease, visibility .35s ease;z-index:100005;}
 .toast.active{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
@@ -337,6 +408,9 @@ a{color:inherit;}
 </style>
 </head>
 <body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
 
 <!-- HEADER -->
 <header class="header glass" id="siteHeader">
@@ -347,7 +421,7 @@ a{color:inherit;}
 
   <nav class="center-menu">
     <div class="menu-item">
-      <a href="women.html">Women</a>
+      <a href="women.html" data-en="Women" data-bn="মহিলা">Women</a>
       <div class="mega-panel glass">
         <a href="#">Saree</a><a href="#">Three Piece</a><a href="#">Salwar Kameez</a>
         <a href="#">Kurti</a><a href="#">Shawl</a><a href="#">Bags</a>
@@ -355,14 +429,14 @@ a{color:inherit;}
       </div>
     </div>
     <div class="menu-item">
-      <a href="men.html">Men</a>
+      <a href="men.html" data-en="Men" data-bn="পুরুষ">Men</a>
       <div class="mega-panel glass">
         <a href="#">Panjabi</a><a href="#">Shirt</a><a href="#">Polo</a>
         <a href="#">T-Shirt</a><a href="#">Jacket</a><a href="#">Footwear</a><a href="#">Wallet</a>
       </div>
     </div>
     <div class="menu-item">
-      <a href="kids.html">Kids</a>
+      <a href="kids.html" data-en="Kids" data-bn="বাচ্চাদের">Kids</a>
       <div class="mega-panel glass">
         <a href="#">Boys</a><a href="#">Girls</a><a href="#">Newborn</a><a href="#">Accessories</a>
       </div>
@@ -389,6 +463,8 @@ a{color:inherit;}
   </nav>
 
   <div class="right-header">
+    <div class="icon-btn toggle-btn" id="langToggle" title="Language">EN</div>
+    <div class="icon-btn" id="darkToggle" title="Dark Mode">🌙</div>
     <div class="icon-btn" id="searchIconBtn" title="Search">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     </div>
@@ -451,11 +527,15 @@ a{color:inherit;}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-particles" id="heroParticles"></div>
   <div class="hero-content">
     <img src="bagash-logo.png" class="hero-logo" alt="BAGASH">
     <h1>BAGASH</h1>
-    <p class="tagline">Premium Heritage Fashion & Lifestyle</p>
-    <a href="#categories" class="hero-btn liquid-btn">Explore Collection</a>
+    <p class="tagline" data-en="Premium Heritage Fashion & Lifestyle" data-bn="প্রিমিয়াম হেরিটেজ ফ্যাশন ও লাইফস্টাইল">Premium Heritage Fashion & Lifestyle</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+      <a href="#categories" class="hero-btn liquid-btn magnetic" data-en="Explore Collection" data-bn="কালেকশন দেখুন" style="margin-top:0;">Explore Collection</a>
+      <a href="#heritage" class="hero-btn liquid-btn magnetic" data-en="Watch Story" data-bn="গল্প দেখুন" style="margin-top:0;background:rgba(255,255,255,.15);color:white;border:1px solid rgba(255,255,255,.5);">Watch Story</a>
+    </div>
   </div>
 </section>
 
@@ -469,7 +549,7 @@ a{color:inherit;}
     <a href="women.html" class="category-link"><div class="category-card searchable" data-name="Women">
       <div class="card-actions">
         <button class="wish-toggle" data-id="women" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="women" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="women" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="women" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="women.jpeg" alt="Women" loading="lazy">
       <div class="category-overlay"><h3>Women</h3><p>Premium Fashion Collection</p></div>
@@ -478,7 +558,7 @@ a{color:inherit;}
     <a href="men.html" class="category-link"><div class="category-card searchable" data-name="Men">
       <div class="card-actions">
         <button class="wish-toggle" data-id="men" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="men" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="men" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="men" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="men.jpeg" alt="Men" loading="lazy">
       <div class="category-overlay"><h3>Men</h3><p>Traditional & Modern Wear</p></div>
@@ -487,7 +567,7 @@ a{color:inherit;}
     <a href="kids.html" class="category-link"><div class="category-card searchable" data-name="Kids">
       <div class="card-actions">
         <button class="wish-toggle" data-id="kids" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="kids" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="kids" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="kids" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="kids.jpeg" alt="Kids" loading="lazy">
       <div class="category-overlay"><h3>Kids</h3><p>Kids Collection</p></div>
@@ -496,7 +576,7 @@ a{color:inherit;}
     <a href="watches.html" class="category-link"><div class="category-card searchable" data-name="Watches">
       <div class="card-actions">
         <button class="wish-toggle" data-id="watches" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="watches" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="watches" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="watches" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="watches.jpeg" alt="Watches" loading="lazy">
       <div class="category-overlay"><h3>Watches</h3><p>Luxury Timepieces</p></div>
@@ -505,7 +585,7 @@ a{color:inherit;}
     <a href="jewellery.html" class="category-link"><div class="category-card searchable" data-name="Jewellery">
       <div class="card-actions">
         <button class="wish-toggle" data-id="jewellery" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="jewellery" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="jewellery" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="jewellery" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="jewellery.jpeg" alt="Jewellery" loading="lazy">
       <div class="category-overlay"><h3>Jewellery</h3><p>Premium Jewellery</p></div>
@@ -514,7 +594,7 @@ a{color:inherit;}
     <a href="home.html" class="category-link"><div class="category-card searchable" data-name="Home">
       <div class="card-actions">
         <button class="wish-toggle" data-id="home" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="home" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="home" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="home" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="homedecor.jpeg" alt="Home" loading="lazy">
       <div class="category-overlay"><h3>Home</h3><p>Home & Living</p></div>
@@ -523,7 +603,7 @@ a{color:inherit;}
     <a href="jerseys.html" class="category-link"><div class="category-card searchable" data-name="Jerseys">
       <div class="card-actions">
         <button class="wish-toggle" data-id="jerseys" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="jerseys" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="jerseys" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="jerseys" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="jerseys.jpeg" alt="Jerseys" loading="lazy">
       <div class="category-overlay"><h3>Jerseys</h3><p>Sports Collection</p></div>
@@ -532,7 +612,7 @@ a{color:inherit;}
     <a href="baga.html" class="category-link"><div class="category-card searchable" data-name="BAGA Collection">
       <div class="card-actions">
         <button class="wish-toggle" data-id="baga" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
-        <button class="cart-toggle" data-id="baga" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button>
+        <button class="cart-toggle" data-id="baga" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="baga" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="hero-banner.png" alt="BAGA Collection" loading="lazy">
       <div class="category-overlay"><h3>BAGA Collection</h3><p>Signature Collection</p></div>
@@ -551,7 +631,7 @@ a{color:inherit;}
 </section>
 
 <!-- HERITAGE / FOUNDER -->
-<section class="split-section">
+<section class="split-section" id="heritage">
   <div class="split-card glass fade-left">
     <h3>Heritage Story</h3>
     <p>বাংলাদেশের ঐতিহ্যবাহী কারুশিল্প ও ফ্যাশনকে সম্মান জানিয়ে BAGASH যাত্রা শুরু করে — যেখানে দেশীয় সংস্কৃতি মিশেছে আধুনিক, প্রিমিয়াম ডিজাইনের সাথে। প্রতিটি সংগ্রহে থাকে যত্ন, মান এবং আভিজাত্যের ছোঁয়া।</p>
@@ -655,6 +735,53 @@ a{color:inherit;}
   </div>
 </section>
 
+<!-- QUICK VIEW MODAL -->
+<div class="qv-overlay" id="qvOverlay">
+  <div class="qv-modal glass">
+    <div class="qv-close" onclick="closeQuickView()">✕</div>
+    <img id="qvImg" src="" alt="">
+    <div class="qv-info">
+      <h3 id="qvName"></h3>
+      <p>BAGASH-এর কিউরেটেড কালেকশন — মান, আভিজাত্য ও ঐতিহ্যের সমন্বয়ে তৈরি।</p>
+      <div class="qv-actions">
+        <button class="qv-cart liquid-btn" id="qvCartBtn">Add to Cart</button>
+        <button class="qv-wish liquid-btn" id="qvWishBtn">Wishlist</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STYLE GALLERY -->
+<section class="premium-section">
+  <h2 class="section-title fade-up">Style Gallery</h2>
+  <p class="section-subtitle fade-up">BAGASH ফলো করুন আরও ইন্সপিরেশনের জন্য</p>
+  <span class="title-divider"></span>
+  <div class="gallery-grid">
+    <a href="#" class="fade-up"><img src="women.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="men.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="jewellery.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="watches.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="kids.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="homedecor.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="jerseys.jpeg" alt="Style" loading="lazy"></a>
+    <a href="#" class="fade-up"><img src="hero-banner.png" alt="Style" loading="lazy"></a>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="premium-section">
+  <div class="membership-card glass fade-up">
+    <h3>BAGASH Premium Membership</h3>
+    <p>এক্সক্লুসিভ অফার, আগাম নতুন কালেকশন অ্যাক্সেস এবং বিশেষ ডিসকাউন্ট পেতে যোগ দিন।</p>
+    <div class="membership-perks">
+      <span>🎁 Early Access</span>
+      <span>💚 Member Discount</span>
+      <span>🚚 Priority Delivery</span>
+    </div>
+    <a href="https://wa.me/8801792453834" target="_blank" class="hero-btn liquid-btn" style="background:var(--green);color:white;">WhatsApp-এ যোগাযোগ করুন</a>
+  </div>
+</section>
+
 <!-- FLOATING SUPPORT -->
 <div class="support-fab">
   <div class="support-options" id="supportOptions">
@@ -664,6 +791,20 @@ a{color:inherit;}
     <a href="#" title="Messenger">📩</a>
   </div>
   <div class="support-main liquid-btn" id="supportMain">?</div>
+</div>
+
+<!-- AI HELPER WIDGET (rule-based, not real AI) -->
+<div class="ai-widget">
+  <div class="ai-panel glass" id="aiPanel">
+    <h5>BAGASH Helper</h5>
+    <p>কি খুঁজছেন? category-র নাম লিখুন — যেমন "শাড়ি" বা "ঘড়ি"।</p>
+    <div class="ai-reply" id="aiReply"></div>
+    <div class="ai-input-row">
+      <input type="text" id="aiInput" placeholder="যেমন: watches...">
+      <button id="aiSend">➤</button>
+    </div>
+  </div>
+  <div class="ai-main liquid-btn" id="aiMain">💬</div>
 </div>
 
 <!-- FOOTER -->
@@ -952,6 +1093,145 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
   showToast("ধন্যবাদ! শীঘ্রই নতুন আপডেট পাবেন 🌿");
   this.reset();
 });
+
+/* ---------- DARK MODE ---------- */
+const darkToggle = document.getElementById("darkToggle");
+function applyDarkMode(on){
+  document.body.classList.toggle("dark-mode", on);
+  darkToggle.textContent = on ? "☀️" : "🌙";
+  localStorage.setItem("bagash_dark", on ? "1" : "0");
+}
+applyDarkMode(localStorage.getItem("bagash_dark") === "1");
+darkToggle.addEventListener("click", ()=> applyDarkMode(!document.body.classList.contains("dark-mode")));
+
+/* ---------- LANGUAGE SWITCH (partial: nav / hero / key labels) ---------- */
+const langToggle = document.getElementById("langToggle");
+function applyLang(lang){
+  document.querySelectorAll("[data-en][data-bn]").forEach(el=>{
+    el.textContent = lang === "bn" ? el.dataset.bn : el.dataset.en;
+  });
+  langToggle.textContent = lang === "bn" ? "EN" : "বাং";
+  localStorage.setItem("bagash_lang", lang);
+}
+applyLang(localStorage.getItem("bagash_lang") || "en");
+langToggle.addEventListener("click", ()=>{
+  const next = localStorage.getItem("bagash_lang") === "bn" ? "en" : "bn";
+  applyLang(next);
+});
+
+/* ---------- HERO PARTICLES ---------- */
+const particleHost = document.getElementById("heroParticles");
+for(let i=0;i<22;i++){
+  const p = document.createElement("span");
+  p.className = "particle";
+  const size = 2 + Math.random()*3;
+  p.style.width = p.style.height = size + "px";
+  p.style.left = Math.random()*100 + "%";
+  p.style.bottom = "-10px";
+  p.style.animationDuration = (8 + Math.random()*10) + "s";
+  p.style.animationDelay = (Math.random()*10) + "s";
+  particleHost.appendChild(p);
+}
+
+/* ---------- MAGNETIC BUTTONS (desktop only) ---------- */
+if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+  document.querySelectorAll(".magnetic").forEach(btn=>{
+    btn.addEventListener("mousemove", e=>{
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2) * .25;
+      const y = (e.clientY - r.top - r.height/2) * .35;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener("mouseleave", ()=> btn.style.transform = "translate(0,0)");
+  });
+}
+
+/* ---------- QUICK VIEW ---------- */
+const qvOverlay = document.getElementById("qvOverlay");
+let qvCurrentId = null;
+document.querySelectorAll(".qv-toggle").forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault(); e.stopPropagation();
+    const id = btn.dataset.id;
+    const d = CARD_DATA[id];
+    if(!d) return;
+    qvCurrentId = id;
+    document.getElementById("qvImg").src = d.img;
+    document.getElementById("qvImg").alt = d.name;
+    document.getElementById("qvName").textContent = d.name;
+    qvOverlay.classList.add("active");
+  });
+});
+function closeQuickView(){ qvOverlay.classList.remove("active"); }
+qvOverlay.addEventListener("click", e=>{ if(e.target === qvOverlay) closeQuickView(); });
+document.getElementById("qvCartBtn").addEventListener("click", ()=>{
+  if(!qvCurrentId) return;
+  let arr = loadArr("bagash_cart");
+  if(!arr.includes(qvCurrentId)){arr.push(qvCurrentId); saveArr("bagash_cart", arr); refreshUI(); showToast("Cart-এ যোগ হয়েছে 🛍️");}
+  closeQuickView();
+});
+document.getElementById("qvWishBtn").addEventListener("click", ()=>{
+  if(!qvCurrentId) return;
+  let arr = loadArr("bagash_wishlist");
+  if(!arr.includes(qvCurrentId)){arr.push(qvCurrentId); saveArr("bagash_wishlist", arr); refreshUI(); showToast("Wishlist-এ যোগ হয়েছে ❤️");}
+  closeQuickView();
+});
+
+/* ---------- AI HELPER (rule-based keyword matcher, not real AI) ---------- */
+const aiMain = document.getElementById("aiMain");
+const aiPanel = document.getElementById("aiPanel");
+const aiInput = document.getElementById("aiInput");
+const aiReply = document.getElementById("aiReply");
+aiMain.addEventListener("click", ()=> aiPanel.classList.toggle("active"));
+const AI_KEYWORDS = {
+  "শাড়ি":"women", saree:"women", woman:"women", women:"women", মহিলা:"women",
+  panjabi:"men", পাঞ্জাবি:"men", shirt:"men", men:"men", পুরুষ:"men",
+  kids:"kids", baby:"kids", বাচ্চা:"kids", child:"kids",
+  watch:"watches", ঘড়ি:"watches", watches:"watches",
+  jewellery:"jewellery", gold:"jewellery", গহনা:"jewellery",
+  home:"home", decor:"home", ঘর:"home",
+  jersey:"jerseys", sports:"jerseys", জার্সি:"jerseys",
+  baga:"baga", signature:"baga"
+};
+function aiRespond(){
+  const q = aiInput.value.toLowerCase().trim();
+  if(!q){ aiReply.textContent = "একটু লিখুন, যেমন শাড়ি বা ঘড়ি।"; return; }
+  let found = null;
+  for(const key in AI_KEYWORDS){
+    if(q.includes(key.toLowerCase())){ found = AI_KEYWORDS[key]; break; }
+  }
+  if(found){
+    const d = CARD_DATA[found];
+    aiReply.innerHTML = `${d.name} কালেকশন দেখুন 👉 <a href="#categories" style="color:var(--gold);font-weight:700;" onclick="document.getElementById('aiPanel').classList.remove('active')">এখানে ক্লিক করুন</a>`;
+    searchInput.value = d.name;
+    runSearch(d.name);
+  }else{
+    aiReply.textContent = "সরাসরি না পেলে WhatsApp-এ যোগাযোগ করুন, আমরা সাহায্য করব।";
+  }
+}
+document.getElementById("aiSend").addEventListener("click", aiRespond);
+aiInput.addEventListener("keyup", e=>{ if(e.key === "Enter") aiRespond(); });
+
+/* ---------- VOICE SEARCH (progressive enhancement) ---------- */
+const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+if(SpeechRecognitionAPI){
+  const micBtn = document.createElement("div");
+  micBtn.className = "icon-btn";
+  micBtn.title = "Voice Search";
+  micBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>';
+  document.getElementById("searchIconBtn").insertAdjacentElement("afterend", micBtn);
+  micBtn.addEventListener("click", ()=>{
+    const rec = new SpeechRecognitionAPI();
+    rec.lang = "bn-BD";
+    rec.onresult = e=>{
+      const text = e.results[0][0].transcript;
+      searchInput.value = text;
+      runSearch(text);
+      searchInput.scrollIntoView({behavior:"smooth", block:"center"});
+    };
+    rec.start();
+  });
+}
 
 /* ---------- LIQUID RIPPLE ---------- */
 document.querySelectorAll(".liquid-btn").forEach(btn=>{

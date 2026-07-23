@@ -78,6 +78,9 @@ p{color:#c9d3cd;}
 .menu-item:hover .mega-panel{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
 .mega-panel a{display:block;text-decoration:none;color:#ddd;font-size:13px;padding:6px 0;transition:color .3s ease, padding-left .3s ease;}
 .mega-panel a:hover{color:var(--gold);padding-left:5px;}
+.mega-preview{display:flex;gap:18px;min-width:300px;padding:18px;}
+.mega-links{min-width:130px;}
+.mega-preview img{width:130px;height:150px;object-fit:cover;border-radius:14px;}
 
 .right-header{display:flex;align-items:center;gap:12px;}
 .icon-btn{
@@ -200,8 +203,9 @@ p{color:#c9d3cd;}
 .category-link{text-decoration:none;}
 .category-card{
   position:relative;height:320px;overflow:hidden;border-radius:var(--radius);cursor:pointer;
-  box-shadow:0 10px 35px rgba(0,0,0,.08);transition:transform .4s ease, box-shadow .4s ease;
+  box-shadow:0 10px 35px rgba(0,0,0,.25);transition:transform .4s ease, box-shadow .4s ease;
   opacity:0;transform:translateY(30px);animation:fadeSlideUp .7s ease forwards;
+  display:flex;flex-direction:column;will-change:transform;
 }
 .category-grid .category-link:nth-child(1) .category-card{animation-delay:.1s;}
 .category-grid .category-link:nth-child(2) .category-card{animation-delay:.18s;}
@@ -212,15 +216,20 @@ p{color:#c9d3cd;}
 .category-grid .category-link:nth-child(7) .category-card{animation-delay:.58s;}
 .category-grid .category-link:nth-child(8) .category-card{animation-delay:.66s;}
 
-.category-card.match{box-shadow:0 0 0 3px var(--gold), 0 20px 50px rgba(0,0,0,.15);}
-.category-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-.category-overlay{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(transparent, rgba(0,0,0,.88));backdrop-filter:blur(4px) saturate(160%);-webkit-backdrop-filter:blur(4px) saturate(160%);}
-.category-overlay h3{color:white;font-size:26px;font-weight:700;}
-.category-overlay p{color:#ddd;margin-top:4px;font-size:13px;}
+.category-card.match{box-shadow:0 0 0 3px var(--gold), 0 20px 50px rgba(0,0,0,.35);}
+.category-card .img-wrap{position:relative;flex:1;overflow:hidden;}
+.category-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;}
+.category-card .spotlight{
+  position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s ease;
+  background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%), rgba(198,162,83,.28), transparent 70%);
+}
+.category-overlay{position:relative;padding:14px 18px;background:linear-gradient(135deg,#082f23,#0B4D38);flex-shrink:0;}
+.category-overlay h3{color:white;font-size:18px;font-weight:700;}
+.category-overlay p{color:#a9c2b4;margin-top:2px;font-size:11.5px;}
 .card-actions{position:absolute;top:14px;right:14px;display:flex;flex-direction:column;gap:8px;z-index:6;}
 .card-actions button{
   width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;
-  background:rgba(255,255,255,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.85);
   display:flex;align-items:center;justify-content:center;transition:transform .35s ease, background .35s ease;
 }
 .card-actions button:hover{transform:scale(1.1);}
@@ -235,6 +244,7 @@ p{color:#c9d3cd;}
   .category-card{height:170px;}
   .category-overlay h3{font-size:15px;}
   .category-overlay p{font-size:10.5px;}
+  .category-overlay{padding:10px 14px;}
   .card-actions button{width:30px;height:30px;}
   .card-actions svg{width:14px;height:14px;}
   .explore-banner{height:240px;}
@@ -446,22 +456,31 @@ p{color:#c9d3cd;}
   <nav class="center-menu">
     <div class="menu-item">
       <a href="women.html" data-en="Women" data-bn="মহিলা">Women</a>
-      <div class="mega-panel glass glass-shine">
-        <a href="#">Saree</a><a href="#">Three Piece</a><a href="#">Kurti</a>
-        <a href="#">Hijab</a><a href="#">Bags</a>
+      <div class="mega-panel glass glass-shine mega-preview">
+        <div class="mega-links">
+          <a href="#">Saree</a><a href="#">Three Piece</a><a href="#">Kurti</a>
+          <a href="#">Hijab</a><a href="#">Bags</a>
+        </div>
+        <img src="women.jpeg" alt="Women preview" loading="lazy">
       </div>
     </div>
     <div class="menu-item">
       <a href="men.html" data-en="Men" data-bn="পুরুষ">Men</a>
-      <div class="mega-panel glass glass-shine">
-        <a href="#">Panjabi</a><a href="#">Shirt</a><a href="#">Polo</a>
-        <a href="#">T-Shirt</a><a href="#">Shoes</a>
+      <div class="mega-panel glass glass-shine mega-preview">
+        <div class="mega-links">
+          <a href="#">Panjabi</a><a href="#">Shirt</a><a href="#">Polo</a>
+          <a href="#">T-Shirt</a><a href="#">Shoes</a>
+        </div>
+        <img src="men.jpeg" alt="Men preview" loading="lazy">
       </div>
     </div>
     <div class="menu-item">
       <a href="kids.html" data-en="Kids" data-bn="বাচ্চাদের">Kids</a>
-      <div class="mega-panel glass glass-shine">
-        <a href="#">Boys</a><a href="#">Girls</a><a href="#">Baby</a>
+      <div class="mega-panel glass glass-shine mega-preview">
+        <div class="mega-links">
+          <a href="#">Boys</a><a href="#">Girls</a><a href="#">Baby</a>
+        </div>
+        <img src="kids.jpeg" alt="Kids preview" loading="lazy">
       </div>
     </div>
     <div class="menu-item"><a href="watches.html">Watches</a></div>
@@ -561,74 +580,90 @@ p{color:#c9d3cd;}
 
   <div class="category-grid" id="categoryGrid">
     <a href="women.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Women">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="women" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="women" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="women" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="women.jpeg" alt="Women" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Women</h3><p>Premium Fashion Collection</p></div>
     </div></a>
 
     <a href="men.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Men">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="men" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="men" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="men" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="men.jpeg" alt="Men" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Men</h3><p>Traditional & Modern Wear</p></div>
     </div></a>
 
     <a href="kids.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Kids">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="kids" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="kids" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="kids" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="kids.jpeg" alt="Kids" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Kids</h3><p>Kids Collection</p></div>
     </div></a>
 
     <a href="watches.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Watches">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="watches" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="watches" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="watches" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="watches.jpeg" alt="Watches" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Watches</h3><p>Luxury Timepieces</p></div>
     </div></a>
 
     <a href="jewellery.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Jewellery">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="jewellery" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="jewellery" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="jewellery" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="jewellery.jpeg" alt="Jewellery" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Jewellery</h3><p>Premium Jewellery</p></div>
     </div></a>
 
     <a href="home.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Home">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="home" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="home" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="home" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="homedecor.jpeg" alt="Home" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Home</h3><p>Home & Living</p></div>
     </div></a>
 
     <a href="jerseys.html" class="category-link"><div class="category-card searchable glass-shine" data-name="Jerseys">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="jerseys" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="jerseys" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="jerseys" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="jerseys.jpeg" alt="Jerseys" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>Jerseys</h3><p>Sports Collection</p></div>
     </div></a>
 
     <a href="baga.html" class="category-link"><div class="category-card searchable glass-shine" data-name="BAGA Collection">
-      <div class="card-actions">
+      <div class="img-wrap"><div class="card-actions">
         <button class="wish-toggle" data-id="baga" title="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.6 4.1 8 3.8 10 5 12 7c2-2 4-3.2 6.4-2.9C22 4.5 23.6 8 22 11.7 19.5 16.4 12 21 12 21z"/></svg></button>
         <button class="cart-toggle" data-id="baga" title="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.6"><path d="M6.5 8h11l-.9 11.2a1.5 1.5 0 0 1-1.5 1.3H8.9a1.5 1.5 0 0 1-1.5-1.3L6.5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></button><button class="qv-toggle" data-id="baga" title="Quick View"><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D38" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <img src="hero-banner.png" alt="BAGA Collection" loading="lazy">
+      <div class="spotlight"></div>
+      </div>
       <div class="category-overlay"><h3>BAGA Collection</h3><p>Signature Collection</p></div>
     </div></a>
   </div>
@@ -1167,6 +1202,17 @@ if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
       btn.style.transform = `translate(${x}px, ${y}px)`;
     });
     btn.addEventListener("mouseleave", ()=> btn.style.transform = "translate(0,0)");
+  });
+
+  /* mouse-follow spotlight glow on category cards */
+  document.querySelectorAll(".category-card .img-wrap").forEach(wrap=>{
+    const spot = wrap.querySelector(".spotlight");
+    if(!spot) return;
+    wrap.addEventListener("mousemove", e=>{
+      const r = wrap.getBoundingClientRect();
+      spot.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+      spot.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
+    });
   });
 }
 

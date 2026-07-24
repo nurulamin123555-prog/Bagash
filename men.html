@@ -2,524 +2,318 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAGASH | Men Collection</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#fff;
-color:#222;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
 :root{
---green:#0B4D38;
+  --green:#0B4D38;--dark:#082f23;--white:#ffffff;--gold:#C6A253;--heading-gold:#f0e4c8;
+  --radius:24px;--blur:14px;
 }
+body{background:linear-gradient(180deg,#0a1f18 0%,#082f23 45%,#061b13 100%);color:#dce7e0;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+p{color:#c9d3cd;}
 
-/* HERO */
-
-.hero{
-height:420px;
-background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-url("men.jpeg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-}
-
-.hero h1{
-font-size:55px;
-font-weight:800;
-letter-spacing:4px;
+.glass{
+  background:rgba(20,35,28,.5);backdrop-filter:blur(var(--blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08);
 }
 
 /* TOP BAR */
-
 .topbar{
-padding:15px 20px;
-background:#fff;
-border-bottom:1px solid #eee;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:999;
+  position:sticky;top:12px;margin:0 auto;width:95%;max-width:1300px;
+  padding:14px 22px;display:flex;justify-content:space-between;align-items:center;
+  z-index:999;--blur:26px;
 }
-
 .back-btn{
-text-decoration:none;
-background:var(--green);
-color:#fff;
-padding:10px 20px;
-font-weight:700;
+  text-decoration:none;background:rgba(255,255,255,.85);color:var(--dark);
+  padding:9px 20px;font-weight:700;font-size:13.5px;border-radius:16px;
+  transition:transform .35s ease, background .35s ease;
 }
+.back-btn:hover{transform:translateY(-2px);background:var(--gold);}
+.topbar h3{font-family:'Playfair Display',serif;letter-spacing:2px;font-size:16px;color:var(--heading-gold);}
+
+/* HERO */
+.hero{
+  height:340px;margin-top:14px;position:relative;overflow:hidden;
+  background:linear-gradient(rgba(6,40,29,.4),rgba(11,77,56,.7)), url("men.jpeg");
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+}
+.hero h1{font-family:'Playfair Display',serif;font-size:50px;font-weight:800;letter-spacing:6px;}
+.hero p{color:#e6ede9;margin-top:10px;letter-spacing:2px;font-size:14px;}
 
 /* SECTION */
-
-.section{
-padding:70px 20px;
-}
-
-.section-title{
-text-align:center;
-font-size:38px;
-font-weight:800;
-color:var(--green);
-margin-bottom:40px;
-}
+.section{padding:46px 20px;}
+.section-title{text-align:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--heading-gold);margin-bottom:6px;}
+.title-divider{display:block;width:52px;height:3px;margin:0 auto 32px;background:var(--gold);border-radius:2px;}
 
 /* PRODUCT GRID */
-
-.product-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
-
-.product-card{
-background:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-overflow:hidden;
-transition:.4s;
-}
-
-.product-card:hover{
-transform:translateY(-8px);
-}
-
-.product-card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.product-info{
-padding:20px;
-}
-
-.product-info h3{
-color:var(--green);
-margin-bottom:10px;
-}
-
-.price{
-font-size:24px;
-font-weight:800;
-margin-bottom:15px;
-}
-
+.product-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.product-card{overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;}
+.product-card img{width:100%;height:300px;object-fit:cover;display:block;}
+.product-info{padding:18px 20px;}
+.product-info h3{color:var(--heading-gold);margin-bottom:8px;font-family:'Playfair Display',serif;font-size:18px;}
+.price{font-size:21px;font-weight:800;margin-bottom:14px;color:#fff;}
 .buy-btn{
-display:inline-block;
-background:var(--green);
-color:#fff;
-text-decoration:none;
-padding:12px 25px;
-font-weight:700;
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:11px 22px;font-weight:700;font-size:13px;border-radius:14px;
+  transition:transform .35s ease, background .35s ease;
+}
+.buy-btn:hover{transform:translateY(-2px);background:var(--dark);}
+
+@media (hover:hover) and (pointer:fine){
+  .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,.35);}
 }
 
+/* FOOTER */
 .footer{
-background:var(--green);
-color:#fff;
-padding:40px 20px;
-text-align:center;
-margin-top:80px;
+  background:linear-gradient(135deg,#051911,#082f23);color:#fff;
+  padding:44px 20px;text-align:center;margin-top:50px;
 }
-
-.footer h3{
-margin-bottom:15px;
-}
-
-.footer p{
-line-height:2;
-}
+.footer h3{font-family:'Playfair Display',serif;color:var(--heading-gold);margin-bottom:16px;font-size:22px;}
+.footer p{line-height:2;color:#c9d3cd;font-size:13.5px;}
 
 @media(max-width:768px){
-
-.hero h1{
-font-size:36px;
+  .hero{height:240px;}
+  .hero h1{font-size:32px;letter-spacing:3px;}
+  .section-title{font-size:24px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .product-card img{height:170px;}
+  .product-info{padding:12px 14px;}
+  .product-info h3{font-size:14px;}
+  .price{font-size:16px;}
+  .buy-btn{padding:9px 16px;font-size:12px;}
 }
-
-.product-grid{
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-
-.product-card img{
-height:180px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-
-<a href="index.html" class="back-btn">
-← Back
-</a>
-
-<h3>BAGASH MEN</h3>
-
+<div class="topbar glass">
+  <a href="index.html" class="back-btn">← Back</a>
+  <h3>BAGASH MEN</h3>
 </div>
 
 <section class="hero">
-<h1>MEN COLLECTION</h1>
+  <div>
+    <h1>MEN COLLECTION</h1>
+    <p>Traditional & Modern Wear</p>
+  </div>
 </section>
 
 <!-- PANJABI -->
-
 <section class="section">
-
-<h2 class="section-title">
-Panjabi Collection
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="panjabi1.jpeg">
-<div class="product-info">
-<h3>Panjabi 1</h3>
-<div class="price">৳1,962.57</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Panjabi 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="panjabi2.jpeg">
-<div class="product-info">
-<h3>Panjabi 2</h3>
-<div class="price">৳2,152.56</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Panjabi 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="panjabi3.jpeg">
-<div class="product-info">
-<h3>Panjabi 3</h3>
-<div class="price">৳2,162.65</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Panjabi 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="panjabi4.jpeg">
-<div class="product-info">
-<h3>Panjabi 4</h3>
-<div class="price">৳1,725.97</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Panjabi 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-
+  <h2 class="section-title">Panjabi Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="panjabi1.jpeg" alt="Panjabi 1" loading="lazy">
+      <div class="product-info">
+        <h3>Panjabi 1</h3>
+        <div class="price">৳1,962.57</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Panjabi 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="panjabi2.jpeg" alt="Panjabi 2" loading="lazy">
+      <div class="product-info">
+        <h3>Panjabi 2</h3>
+        <div class="price">৳2,152.56</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Panjabi 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="panjabi3.jpeg" alt="Panjabi 3" loading="lazy">
+      <div class="product-info">
+        <h3>Panjabi 3</h3>
+        <div class="price">৳2,162.65</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Panjabi 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="panjabi4.jpeg" alt="Panjabi 4" loading="lazy">
+      <div class="product-info">
+        <h3>Panjabi 4</h3>
+        <div class="price">৳1,725.97</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Panjabi 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SHIRT -->
-
 <section class="section">
-
-<h2 class="section-title">
-Shirt Collection
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="shirt1.jpeg">
-<div class="product-info">
-<h3>Shirt 1</h3>
-<div class="price">৳2,142.75</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Shirt 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="shirt2.jpeg">
-<div class="product-info">
-<h3>Shirt 2</h3>
-<div class="price">৳1,673.52</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Shirt 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="shirt3.jpeg">
-<div class="product-info">
-<h3>Shirt 3</h3>
-<div class="price">৳2,132.65</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Shirt 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="shirt4.jpeg">
-<div class="product-info">
-<h3>Shirt 4</h3>
-<div class="price">৳1,525.97</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Shirt 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-
+  <h2 class="section-title">Shirt Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="shirt1.jpeg" alt="Shirt 1" loading="lazy">
+      <div class="product-info">
+        <h3>Shirt 1</h3>
+        <div class="price">৳2,142.75</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Shirt 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="shirt2.jpeg" alt="Shirt 2" loading="lazy">
+      <div class="product-info">
+        <h3>Shirt 2</h3>
+        <div class="price">৳1,673.52</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Shirt 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="shirt3.jpeg" alt="Shirt 3" loading="lazy">
+      <div class="product-info">
+        <h3>Shirt 3</h3>
+        <div class="price">৳2,132.65</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Shirt 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="shirt4.jpeg" alt="Shirt 4" loading="lazy">
+      <div class="product-info">
+        <h3>Shirt 4</h3>
+        <div class="price">৳1,525.97</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Shirt 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- TSHIRT -->
-
 <section class="section">
-<h2 class="section-title">T-Shirt Collection</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="tshirt1.jpeg">
-<div class="product-info">
-<h3>T-Shirt 1</h3>
-<div class="price">৳852.72</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order T-Shirt 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="tshirt2.jpeg">
-<div class="product-info">
-<h3>T-Shirt 2</h3>
-<div class="price">৳825.57</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order T-Shirt 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="tshirt3.jpeg">
-<div class="product-info">
-<h3>T-Shirt 3</h3>
-<div class="price">৳862.92</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order T-Shirt 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="tshirt4.jpeg">
-<div class="product-info">
-<h3>T-Shirt 4</h3>
-<div class="price">৳827.57</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order T-Shirt 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-</section>
-<!-- PANTS COLLECTION -->
-
-<section class="section">
-
-<h2 class="section-title">
-Pants Collection
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="pant1.jpeg">
-<div class="product-info">
-<h3>Pants 1</h3>
-<div class="price">৳2,009.19</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Pants 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="pant2.jpeg">
-<div class="product-info">
-<h3>Pants 2</h3>
-<div class="price">৳1,983.79</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Pants 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="pant3.jpeg">
-<div class="product-info">
-<h3>Pants 3</h3>
-<div class="price">৳1,266.07</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Pants 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="pant4.jpeg">
-<div class="product-info">
-<h3>Pants 4</h3>
-<div class="price">৳1,853.87</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Pants 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-
+  <h2 class="section-title">T-Shirt Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="tshirt1.jpeg" alt="T-Shirt 1" loading="lazy">
+      <div class="product-info">
+        <h3>T-Shirt 1</h3>
+        <div class="price">৳852.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order T-Shirt 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="tshirt2.jpeg" alt="T-Shirt 2" loading="lazy">
+      <div class="product-info">
+        <h3>T-Shirt 2</h3>
+        <div class="price">৳825.57</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order T-Shirt 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="tshirt3.jpeg" alt="T-Shirt 3" loading="lazy">
+      <div class="product-info">
+        <h3>T-Shirt 3</h3>
+        <div class="price">৳862.92</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order T-Shirt 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="tshirt4.jpeg" alt="T-Shirt 4" loading="lazy">
+      <div class="product-info">
+        <h3>T-Shirt 4</h3>
+        <div class="price">৳827.57</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order T-Shirt 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- FOOTWEAR COLLECTION -->
-
+<!-- PANTS -->
 <section class="section">
-
-<h2 class="section-title">
-Footwear Collection
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="footwear1.jpeg">
-<div class="product-info">
-<h3>Footwear 1</h3>
-<div class="price">৳3,262.86</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Footwear 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="footwear2.jpeg">
-<div class="product-info">
-<h3>Footwear 2</h3>
-<div class="price">৳2,538.97</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Footwear 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="footwear3.jpeg">
-<div class="product-info">
-<h3>Footwear 3</h3>
-<div class="price">৳2,216.67</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Footwear 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="footwear4.jpeg">
-<div class="product-info">
-<h3>Footwear 4</h3>
-<div class="price">৳1,989.97</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Footwear 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-
+  <h2 class="section-title">Pants Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="pant1.jpeg" alt="Pants 1" loading="lazy">
+      <div class="product-info">
+        <h3>Pants 1</h3>
+        <div class="price">৳2,009.19</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Pants 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="pant2.jpeg" alt="Pants 2" loading="lazy">
+      <div class="product-info">
+        <h3>Pants 2</h3>
+        <div class="price">৳1,983.79</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Pants 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="pant3.jpeg" alt="Pants 3" loading="lazy">
+      <div class="product-info">
+        <h3>Pants 3</h3>
+        <div class="price">৳1,266.07</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Pants 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="pant4.jpeg" alt="Pants 4" loading="lazy">
+      <div class="product-info">
+        <h3>Pants 4</h3>
+        <div class="price">৳1,853.87</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Pants 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
-</div>
 
+<!-- FOOTWEAR -->
+<section class="section">
+  <h2 class="section-title">Footwear Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="footwear1.jpeg" alt="Footwear 1" loading="lazy">
+      <div class="product-info">
+        <h3>Footwear 1</h3>
+        <div class="price">৳3,262.86</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Footwear 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="footwear2.jpeg" alt="Footwear 2" loading="lazy">
+      <div class="product-info">
+        <h3>Footwear 2</h3>
+        <div class="price">৳2,538.97</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Footwear 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="footwear3.jpeg" alt="Footwear 3" loading="lazy">
+      <div class="product-info">
+        <h3>Footwear 3</h3>
+        <div class="price">৳2,216.67</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Footwear 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="footwear4.jpeg" alt="Footwear 4" loading="lazy">
+      <div class="product-info">
+        <h3>Footwear 4</h3>
+        <div class="price">৳1,989.97</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Footwear 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
-
-<h3>Owner Information</h3>
-
-<p>
-Owner: Nurul Amin
-</p>
-
-<p>
-Phone: 01792453834
-</p>
-
-<p>
-WhatsApp: 01792453834
-</p>
-
-<p>
-bKash: 01736255527
-</p>
-
-<p>
-Email: ah4948591@gmail.com
-</p>
-
+  <h3>Owner Information</h3>
+  <p>Owner: Nurul Amin</p>
+  <p>Phone: 01792453834</p>
+  <p>WhatsApp: 01792453834</p>
+  <p>bKash: 01736255527</p>
+  <p>Email: ah4948591@gmail.com</p>
 </footer>
 
 </body>

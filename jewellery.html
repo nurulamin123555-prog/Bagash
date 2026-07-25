@@ -1,627 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAGASH | Jewellery Collection</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
 :root{
---green:#0B4D38;
+  --green:#0B4D38;--dark:#082f23;--white:#ffffff;--gold:#C6A253;--heading-gold:#f0e4c8;
+  --radius:24px;--blur:14px;
 }
+body{background:linear-gradient(180deg,#0a1f18 0%,#082f23 45%,#061b13 100%);color:#dce7e0;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+p{color:#c9d3cd;}
 
-
-body{
-background:#fff;
-color:#222;
+.glass{
+  background:rgba(20,35,28,.5);backdrop-filter:blur(var(--blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08);
 }
-
 
 /* TOP BAR */
-
 .topbar{
-
-padding:15px 20px;
-
-background:white;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-border-bottom:1px solid #eee;
-
-position:sticky;
-
-top:0;
-
-z-index:999;
-
+  position:sticky;top:12px;margin:0 auto;width:95%;max-width:1300px;
+  padding:14px 22px;display:flex;justify-content:space-between;align-items:center;
+  z-index:999;--blur:26px;
 }
-
-
 .back-btn{
-
-background:var(--green);
-
-color:white;
-
-padding:10px 20px;
-
-text-decoration:none;
-
-font-weight:700;
-
+  text-decoration:none;background:rgba(255,255,255,.85);color:var(--dark);
+  padding:9px 20px;font-weight:700;font-size:13.5px;border-radius:16px;
+  transition:transform .35s ease, background .35s ease;
 }
-
-
+.back-btn:hover{transform:translateY(-2px);background:var(--gold);}
+.topbar h3{font-family:'Playfair Display',serif;letter-spacing:2px;font-size:16px;color:var(--heading-gold);}
 
 /* HERO */
-
-
 .hero{
-
-height:420px;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,.4),
-rgba(0,0,0,.5)
-),
-
-url("jewellery.jpeg");
-
-
-background-size:cover;
-
-background-position:center;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-text-align:center;
-
+  height:340px;margin-top:14px;position:relative;overflow:hidden;
+  background:linear-gradient(rgba(6,40,29,.4),rgba(11,77,56,.7)), url("jewellery.jpeg");
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
 }
-
-
-.hero h1{
-
-font-size:55px;
-
-font-weight:800;
-
-letter-spacing:5px;
-
-}
-
-
+.hero h1{font-family:'Playfair Display',serif;font-size:50px;font-weight:800;letter-spacing:6px;}
+.hero p{color:#e6ede9;margin-top:10px;letter-spacing:2px;font-size:14px;}
 
 /* SECTION */
-
-
-.section{
-
-padding:70px 20px;
-
-}
-
-
-
-.section-title{
-
-text-align:center;
-
-font-size:38px;
-
-font-weight:800;
-
-color:var(--green);
-
-margin-bottom:40px;
-
-}
-
-
-
-/* GRID */
-
-
-.product-grid{
-
-max-width:1200px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:25px;
-
-}
-
-
-
-.product-card{
-
-background:white;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.08);
-
-overflow:hidden;
-
-transition:.4s;
-
-}
-
-
-
-.product-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-
-
-.product-card img{
-
-width:100%;
-
-height:320px;
-
-object-fit:cover;
-
-}
-
-
-
-.product-info{
-
-padding:20px;
-
-}
-
-
-
-.product-info h3{
-
-color:var(--green);
-
-margin-bottom:10px;
-
-}
-
-
-
-.price{
-
-font-size:22px;
-
-font-weight:800;
-
-margin-bottom:15px;
-
-}
-
-
-
+.section{padding:46px 20px;}
+.section-title{text-align:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--heading-gold);margin-bottom:6px;}
+.title-divider{display:block;width:52px;height:3px;margin:0 auto 32px;background:var(--gold);border-radius:2px;}
+
+/* PRODUCT GRID */
+.product-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.product-card{overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;}
+.product-card img{width:100%;height:300px;object-fit:cover;display:block;}
+.product-info{padding:18px 20px;}
+.product-info h3{color:var(--heading-gold);margin-bottom:8px;font-family:'Playfair Display',serif;font-size:18px;}
+.price{font-size:21px;font-weight:800;margin-bottom:14px;color:#fff;}
 .buy-btn{
-
-background:var(--green);
-
-color:white;
-
-text-decoration:none;
-
-padding:12px 25px;
-
-font-weight:700;
-
-display:inline-block;
-
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:11px 22px;font-weight:700;font-size:13px;border-radius:14px;
+  transition:transform .35s ease, background .35s ease;
 }
+.buy-btn:hover{transform:translateY(-2px);background:var(--dark);}
 
-
-
+@media (hover:hover) and (pointer:fine){
+  .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,.35);}
+}
 
 /* FOOTER */
-
-
 .footer{
-
-background:var(--green);
-
-color:white;
-
-padding:40px 20px;
-
-text-align:center;
-
-margin-top:80px;
-
+  background:linear-gradient(135deg,#051911,#082f23);color:#fff;
+  padding:44px 20px;text-align:center;margin-top:50px;
 }
-
-
-
-.footer p{
-
-line-height:2;
-
-}
-
-
+.footer h3{font-family:'Playfair Display',serif;color:var(--heading-gold);margin-bottom:16px;font-size:22px;}
+.footer p{line-height:2;color:#c9d3cd;font-size:13.5px;}
 
 @media(max-width:768px){
-
-.hero h1{
-
-font-size:35px;
-
+  .hero{height:240px;}
+  .hero h1{font-size:32px;letter-spacing:3px;}
+  .section-title{font-size:24px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .product-card img{height:170px;}
+  .product-info{padding:12px 14px;}
+  .product-info h3{font-size:14px;}
+  .price{font-size:16px;}
+  .buy-btn{padding:9px 16px;font-size:12px;}
 }
-
-
-.product-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:12px;
-
-}
-
-
-.product-card img{
-
-height:180px;
-
-}
-
-
-.price{
-
-font-size:15px;
-
-}
-
-
-.buy-btn{
-
-padding:8px 12px;
-
-font-size:12px;
-
-}
-
-}
-
-
 </style>
-
-
 </head>
-
 
 <body>
 
-
-
-<div class="topbar">
-
-
-<a href="index.html" class="back-btn">
-← Back
-</a>
-
-
-<h3>
-BAGASH JEWELLERY
-</h3>
-
-
+<div class="topbar glass">
+  <a href="index.html" class="back-btn">← Back</a>
+  <h3>BAGASH JEWELLERY</h3>
 </div>
-
-
-
 
 <section class="hero">
-
-<h1>
-JEWELLERY COLLECTION
-</h1>
-
+  <div>
+    <h1>JEWELLERY COLLECTION</h1>
+    <p>Premium Jewellery</p>
+  </div>
 </section>
-
-
-
-
 
 <!-- NECKLACE -->
-
-
 <section class="section">
-
-
-<h2 class="section-title">
-Necklace Collection
-</h2>
-
-
-
-<div class="product-grid">
-
-
-
-<div class="product-card">
-<img src="necklace1.jpeg">
-<div class="product-info">
-<h3>Necklace 1</h3>
-<div class="price">৳2,950</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Necklace 1">
-Buy Now
-</a>
-</div>
-</div>
-
-
-
-<div class="product-card">
-<img src="necklace2.jpeg">
-<div class="product-info">
-<h3>Necklace 2</h3>
-<div class="price">৳3,250</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Necklace 2">
-Buy Now
-</a>
-</div>
-</div>
-
-
-
-
-<div class="product-card">
-<img src="necklace3.jpeg">
-<div class="product-info">
-<h3>Necklace 3</h3>
-<div class="price">৳2,850</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Necklace 3">
-Buy Now
-</a>
-</div>
-</div>
-
-
-
-
-<div class="product-card">
-<img src="necklace4.jpeg">
-<div class="product-info">
-<h3>Necklace 4</h3>
-<div class="price">৳3,500</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Necklace 4">
-Buy Now
-</a>
-</div>
-</div>
-
-
-
-</div>
-
+  <h2 class="section-title">Necklace Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="necklace1.jpeg" alt="Necklace 1" loading="lazy">
+      <div class="product-info">
+        <h3>Necklace 1</h3>
+        <div class="price">৳2,950</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Necklace 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="necklace2.jpeg" alt="Necklace 2" loading="lazy">
+      <div class="product-info">
+        <h3>Necklace 2</h3>
+        <div class="price">৳3,250</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Necklace 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="necklace3.jpeg" alt="Necklace 3" loading="lazy">
+      <div class="product-info">
+        <h3>Necklace 3</h3>
+        <div class="price">৳2,850</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Necklace 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="necklace4.jpeg" alt="Necklace 4" loading="lazy">
+      <div class="product-info">
+        <h3>Necklace 4</h3>
+        <div class="price">৳3,500</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Necklace 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
 
 <!-- EARRING -->
-
-
 <section class="section">
-
-<h2 class="section-title">
-Earring Collection
-</h2>
-
-
-<div class="product-grid">
-
-
-<div class="product-card">
-<img src="earring1.jpeg">
-<div class="product-info">
-<h3>Earring 1</h3>
-<div class="price">৳950</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 1">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="earring2.jpeg">
-<div class="product-info">
-<h3>Earring 2</h3>
-<div class="price">৳1,250</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 2">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="earring3.jpeg">
-<div class="product-info">
-<h3>Earring 3</h3>
-<div class="price">৳1,450</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 3">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="earring4.jpeg">
-<div class="product-info">
-<h3>Earring 4</h3>
-<div class="price">৳1,650</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 4">
-Buy Now
-</a>
-</div>
-</div>
-
-
-</div>
-
+  <h2 class="section-title">Earring Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="earring1.jpeg" alt="Earring 1" loading="lazy">
+      <div class="product-info">
+        <h3>Earring 1</h3>
+        <div class="price">৳950</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="earring2.jpeg" alt="Earring 2" loading="lazy">
+      <div class="product-info">
+        <h3>Earring 2</h3>
+        <div class="price">৳1,250</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="earring3.jpeg" alt="Earring 3" loading="lazy">
+      <div class="product-info">
+        <h3>Earring 3</h3>
+        <div class="price">৳1,450</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="earring4.jpeg" alt="Earring 4" loading="lazy">
+      <div class="product-info">
+        <h3>Earring 4</h3>
+        <div class="price">৳1,650</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Earring 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
-
 
 <!-- BRACELET -->
-
-
 <section class="section">
-
-<h2 class="section-title">
-Bracelet Collection
-</h2>
-
-
-<div class="product-grid">
-
-
-<div class="product-card">
-<img src="bracelet1.jpeg">
-<div class="product-info">
-<h3>Bracelet 1</h3>
-<div class="price">৳850</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 1">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="bracelet2.jpeg">
-<div class="product-info">
-<h3>Bracelet 2</h3>
-<div class="price">৳950</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 2">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="bracelet3.jpeg">
-<div class="product-info">
-<h3>Bracelet 3</h3>
-<div class="price">৳1,150</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 3">
-Buy Now
-</a>
-</div>
-</div>
-
-
-<div class="product-card">
-<img src="bracelet4.jpeg">
-<div class="product-info">
-<h3>Bracelet 4</h3>
-<div class="price">৳1,350</div>
-<a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 4">
-Buy Now
-</a>
-</div>
-</div>
-
-
-</div>
-
+  <h2 class="section-title">Bracelet Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="bracelet1.jpeg" alt="Bracelet 1" loading="lazy">
+      <div class="product-info">
+        <h3>Bracelet 1</h3>
+        <div class="price">৳850</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="bracelet2.jpeg" alt="Bracelet 2" loading="lazy">
+      <div class="product-info">
+        <h3>Bracelet 2</h3>
+        <div class="price">৳950</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="bracelet3.jpeg" alt="Bracelet 3" loading="lazy">
+      <div class="product-info">
+        <h3>Bracelet 3</h3>
+        <div class="price">৳1,150</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="bracelet4.jpeg" alt="Bracelet 4" loading="lazy">
+      <div class="product-info">
+        <h3>Bracelet 4</h3>
+        <div class="price">৳1,350</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want Bracelet 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-
-
-<!-- OWNER -->
-
-
 <footer class="footer">
-
-
-<h3>
-Owner Information
-</h3>
-
-
-<p>
-Owner: Nurul Amin
-</p>
-
-
-<p>
-Phone: 01792453834
-</p>
-
-
-<p>
-WhatsApp: 01792453834
-</p>
-
-
-<p>
-bKash: 01736255527
-</p>
-
-
-<p>
-Email: ah4948591@gmail.com
-</p>
-
-
-
+  <h3>Owner Information</h3>
+  <p>Owner: Nurul Amin</p>
+  <p>Phone: 01792453834</p>
+  <p>WhatsApp: 01792453834</p>
+  <p>bKash: 01736255527</p>
+  <p>Email: ah4948591@gmail.com</p>
 </footer>
 
-
-
-
 </body>
-
 </html>

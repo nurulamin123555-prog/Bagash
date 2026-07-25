@@ -1,382 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BAGASH | Kids Collection</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+:root{
+  --green:#0B4D38;--dark:#082f23;--white:#ffffff;--gold:#C6A253;--heading-gold:#f0e4c8;
+  --radius:24px;--blur:14px;
+}
+body{background:linear-gradient(180deg,#0a1f18 0%,#082f23 45%,#061b13 100%);color:#dce7e0;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+p{color:#c9d3cd;}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+.glass{
+  background:rgba(20,35,28,.5);backdrop-filter:blur(var(--blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08);
 }
 
-body{
-background:#fff;
-color:#222;
+/* TOP BAR */
+.topbar{
+  position:sticky;top:12px;margin:0 auto;width:95%;max-width:1300px;
+  padding:14px 22px;display:flex;justify-content:space-between;align-items:center;
+  z-index:999;--blur:26px;
 }
-
-.header{
-position:sticky;
-top:0;
-background:white;
-padding:15px 20px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-z-index:100;
-}
-
 .back-btn{
-text-decoration:none;
-color:#0d4f3c;
-font-weight:600;
-font-size:15px;
+  text-decoration:none;background:rgba(255,255,255,.85);color:var(--dark);
+  padding:9px 20px;font-weight:700;font-size:13.5px;border-radius:16px;
+  transition:transform .35s ease, background .35s ease;
 }
+.back-btn:hover{transform:translateY(-2px);background:var(--gold);}
+.topbar h3{font-family:'Playfair Display',serif;letter-spacing:2px;font-size:16px;color:var(--heading-gold);}
 
+/* HERO */
 .hero{
-height:320px;
-background:url('kids.jpeg') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
+  height:340px;margin-top:14px;position:relative;overflow:hidden;
+  background:linear-gradient(rgba(6,40,29,.4),rgba(11,77,56,.7)), url("kids.jpeg");
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
 }
+.hero h1{font-family:'Playfair Display',serif;font-size:50px;font-weight:800;letter-spacing:6px;}
+.hero p{color:#e6ede9;margin-top:10px;letter-spacing:2px;font-size:14px;}
 
-.hero h1{
-background:rgba(255,255,255,.85);
-padding:15px 30px;
-font-size:32px;
-color:#0d4f3c;
-font-weight:700;
-}
+/* SECTION */
+.section{padding:46px 20px;}
+.section-title{text-align:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--heading-gold);margin-bottom:6px;}
+.title-divider{display:block;width:52px;height:3px;margin:0 auto 32px;background:var(--gold);border-radius:2px;}
 
-.section{
-padding:25px;
-}
-
-.section-title{
-text-align:center;
-font-size:28px;
-margin-bottom:25px;
-color:#0d4f3c;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-}
-
-.product-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-5px);
-}
-
-.product-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.product-info{
-padding:15px;
-text-align:center;
-}
-
-.product-info h3{
-font-size:16px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:18px;
-font-weight:700;
-color:#0d4f3c;
-margin-bottom:12px;
-}
-
+/* PRODUCT GRID */
+.product-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.product-card{overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;}
+.product-card img{width:100%;height:300px;object-fit:cover;display:block;}
+.product-info{padding:18px 20px;text-align:center;}
+.product-info h3{color:var(--heading-gold);margin-bottom:8px;font-family:'Playfair Display',serif;font-size:17px;}
+.price{font-size:21px;font-weight:800;margin-bottom:14px;color:#fff;}
 .buy-btn{
-display:inline-block;
-padding:10px 20px;
-background:#0d4f3c;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-size:14px;
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:11px 22px;font-weight:700;font-size:13px;border-radius:14px;
+  transition:transform .35s ease, background .35s ease;
+}
+.buy-btn:hover{transform:translateY(-2px);background:var(--dark);}
+
+@media (hover:hover) and (pointer:fine){
+  .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,.35);}
 }
 
-.owner{
-margin-top:50px;
-background:#0d4f3c;
-color:white;
-padding:35px;
-text-align:center;
+/* FOOTER */
+.footer{
+  background:linear-gradient(135deg,#051911,#082f23);color:#fff;
+  padding:44px 20px;text-align:center;margin-top:50px;
 }
+.footer h3{font-family:'Playfair Display',serif;color:var(--heading-gold);margin-bottom:16px;font-size:22px;}
+.footer p{line-height:2;color:#c9d3cd;font-size:13.5px;}
 
-.owner h3{
-margin-bottom:15px;
+@media(max-width:768px){
+  .hero{height:240px;}
+  .hero h1{font-size:32px;letter-spacing:3px;}
+  .section-title{font-size:24px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .product-card img{height:170px;}
+  .product-info{padding:12px 14px;}
+  .product-info h3{font-size:13px;}
+  .price{font-size:15px;}
+  .buy-btn{padding:8px 14px;font-size:11.5px;}
 }
-
-.owner p{
-margin:6px 0;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header class="header">
-<a href="index.html" class="back-btn">
-← Back To Home
-</a>
-</header>
+<div class="topbar glass">
+  <a href="index.html" class="back-btn">← Back To Home</a>
+  <h3>BAGASH KIDS</h3>
+</div>
 
 <section class="hero">
-<h1>Kids Collection</h1>
+  <div>
+    <h1>KIDS COLLECTION</h1>
+    <p>Kids Fashion Collection</p>
+  </div>
 </section>
 
+<!-- BOYS -->
 <section class="section">
-
-<h2 class="section-title">
-Kids Fashion Collection
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="boys1.jpeg">
-<div class="product-info">
-<h3>Boys Collection 1</h3>
-<div class="price">৳2,462.62</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Boys Collection 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="boys2.jpeg">
-<div class="product-info">
-<h3>Boys Collection 2</h3>
-<div class="price">৳2,163.72</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Boys Collection 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="boys3.jpeg">
-<div class="product-info">
-<h3>Boys Collection 3</h3>
-<div class="price">৳1,925.62</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Boys Collection 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="boys4.jpeg">
-<div class="product-info">
-<h3>Boys Collection 4</h3>
-<div class="price">৳1,725.62</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Boys Collection 4">
-Buy Now
-</a>
-</div>
-</div>
-  
-<!-- GIRLS COLLECTION -->
-
-<div class="product-card">
-<img src="girls1.jpeg">
-<div class="product-info">
-<h3>Girls Collection 1</h3>
-<div class="price">৳1,937.92</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Girls Collection 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="girls2.jpeg">
-<div class="product-info">
-<h3>Girls Collection 2</h3>
-<div class="price">৳2,036.80</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Girls Collection 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="girls3.jpeg">
-<div class="product-info">
-<h3>Girls Collection 3</h3>
-<div class="price">৳1,825.08</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Girls Collection 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="girls4.jpeg">
-<div class="product-info">
-<h3>Girls Collection 4</h3>
-<div class="price">৳1,762.62</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Girls Collection 4">
-Buy Now
-</a>
-</div>
-</div>
-
-<!-- NEWBORN COLLECTION -->
-
-<div class="product-card">
-<img src="newborn1.jpeg">
-<div class="product-info">
-<h3>Newborn Collection 1</h3>
-<div class="price">৳305.67</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Newborn Collection 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="newborn2.jpeg">
-<div class="product-info">
-<h3>Newborn Collection 2</h3>
-<div class="price">৳348.62</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Newborn Collection 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="newborn3.jpeg">
-<div class="product-info">
-<h3>Newborn Collection 3</h3>
-<div class="price">৳350.57</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Newborn Collection 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="newborn4.jpeg">
-<div class="product-info">
-<h3>Newborn Collection 4</h3>
-<div class="price">৳350.46</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Newborn Collection 4">
-Buy Now
-</a>
-</div>
-</div>
-
-<!-- KIDS PARTY COLLECTION -->
-
-<div class="product-card">
-<img src="kidsparty1.jpeg">
-<div class="product-info">
-<h3>Kids Party 1</h3>
-<div class="price">৳1,962.91</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Kids Party 1">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="kidsparty2.jpeg">
-<div class="product-info">
-<h3>Kids Party 2</h3>
-<div class="price">৳1,725.61</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Kids Party 2">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="kidsparty3.jpeg">
-<div class="product-info">
-<h3>Kids Party 3</h3>
-<div class="price">৳1,626.71</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Kids Party 3">
-Buy Now
-</a>
-</div>
-</div>
-
-<div class="product-card">
-<img src="kidsparty4.jpeg">
-<div class="product-info">
-<h3>Kids Party 4</h3>
-<div class="price">৳2,217.72</div>
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Kids Party 4">
-Buy Now
-</a>
-</div>
-</div>
-
-</div>
-
+  <h2 class="section-title">Boys Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="boys1.jpeg" alt="Boys Collection 1" loading="lazy">
+      <div class="product-info">
+        <h3>Boys Collection 1</h3>
+        <div class="price">৳2,462.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Boys Collection 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="boys2.jpeg" alt="Boys Collection 2" loading="lazy">
+      <div class="product-info">
+        <h3>Boys Collection 2</h3>
+        <div class="price">৳2,163.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Boys Collection 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="boys3.jpeg" alt="Boys Collection 3" loading="lazy">
+      <div class="product-info">
+        <h3>Boys Collection 3</h3>
+        <div class="price">৳1,925.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Boys Collection 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="boys4.jpeg" alt="Boys Collection 4" loading="lazy">
+      <div class="product-info">
+        <h3>Boys Collection 4</h3>
+        <div class="price">৳1,725.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Boys Collection 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- OWNER INFORMATION -->
-
-<section class="owner">
-
-<h3>Owner Information</h3>
-
-<p><strong>Owner:</strong> Nurul Amin</p>
-
-<p><strong>Phone:</strong> 01792453834</p>
-
-<p><strong>bKash:</strong> 01736255527</p>
-
-<p><strong>WhatsApp:</strong> 01792453834</p>
-
-<p><strong>Email:</strong> ah4948591@gmail.com</p>
-
+<!-- GIRLS -->
+<section class="section">
+  <h2 class="section-title">Girls Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="girls1.jpeg" alt="Girls Collection 1" loading="lazy">
+      <div class="product-info">
+        <h3>Girls Collection 1</h3>
+        <div class="price">৳1,937.92</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Girls Collection 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="girls2.jpeg" alt="Girls Collection 2" loading="lazy">
+      <div class="product-info">
+        <h3>Girls Collection 2</h3>
+        <div class="price">৳2,036.80</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Girls Collection 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="girls3.jpeg" alt="Girls Collection 3" loading="lazy">
+      <div class="product-info">
+        <h3>Girls Collection 3</h3>
+        <div class="price">৳1,825.08</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Girls Collection 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="girls4.jpeg" alt="Girls Collection 4" loading="lazy">
+      <div class="product-info">
+        <h3>Girls Collection 4</h3>
+        <div class="price">৳1,762.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Girls Collection 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- NEWBORN -->
+<section class="section">
+  <h2 class="section-title">Newborn Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="newborn1.jpeg" alt="Newborn Collection 1" loading="lazy">
+      <div class="product-info">
+        <h3>Newborn Collection 1</h3>
+        <div class="price">৳305.67</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Newborn Collection 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="newborn2.jpeg" alt="Newborn Collection 2" loading="lazy">
+      <div class="product-info">
+        <h3>Newborn Collection 2</h3>
+        <div class="price">৳348.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Newborn Collection 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="newborn3.jpeg" alt="Newborn Collection 3" loading="lazy">
+      <div class="product-info">
+        <h3>Newborn Collection 3</h3>
+        <div class="price">৳350.57</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Newborn Collection 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="newborn4.jpeg" alt="Newborn Collection 4" loading="lazy">
+      <div class="product-info">
+        <h3>Newborn Collection 4</h3>
+        <div class="price">৳350.46</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Newborn Collection 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIDS PARTY -->
+<section class="section">
+  <h2 class="section-title">Kids Party Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="kidsparty1.jpeg" alt="Kids Party 1" loading="lazy">
+      <div class="product-info">
+        <h3>Kids Party 1</h3>
+        <div class="price">৳1,962.91</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Kids Party 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="kidsparty2.jpeg" alt="Kids Party 2" loading="lazy">
+      <div class="product-info">
+        <h3>Kids Party 2</h3>
+        <div class="price">৳1,725.61</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Kids Party 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="kidsparty3.jpeg" alt="Kids Party 3" loading="lazy">
+      <div class="product-info">
+        <h3>Kids Party 3</h3>
+        <div class="price">৳1,626.71</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Kids Party 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="kidsparty4.jpeg" alt="Kids Party 4" loading="lazy">
+      <div class="product-info">
+        <h3>Kids Party 4</h3>
+        <div class="price">৳2,217.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Kids Party 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <h3>Owner Information</h3>
+  <p>Owner: Nurul Amin</p>
+  <p>Phone: 01792453834</p>
+  <p>bKash: 01736255527</p>
+  <p>WhatsApp: 01792453834</p>
+  <p>Email: ah4948591@gmail.com</p>
+</footer>
 
 </body>
 </html>

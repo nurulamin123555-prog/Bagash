@@ -1,874 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAGASH | Skin & Hair Collection</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
 :root{
---green:#0B4D38;
+  --green:#0B4D38;--dark:#082f23;--white:#ffffff;--gold:#C6A253;--heading-gold:#f0e4c8;
+  --radius:24px;--blur:14px;
 }
+body{background:linear-gradient(180deg,#0a1f18 0%,#082f23 45%,#061b13 100%);color:#dce7e0;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+p{color:#c9d3cd;}
 
-
-body{
-background:#fff;
-color:#222;
+.glass{
+  background:rgba(20,35,28,.5);backdrop-filter:blur(var(--blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08);
 }
-
 
 /* TOP BAR */
-
 .topbar{
-
-padding:15px 20px;
-
-background:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-border-bottom:1px solid #eee;
-
-position:sticky;
-
-top:0;
-
-z-index:999;
-
+  position:sticky;top:12px;margin:0 auto;width:95%;max-width:1300px;
+  padding:14px 22px;display:flex;justify-content:space-between;align-items:center;
+  z-index:999;--blur:26px;
 }
-
-
 .back-btn{
-
-background:var(--green);
-
-color:white;
-
-text-decoration:none;
-
-padding:10px 20px;
-
-font-weight:700;
-
+  text-decoration:none;background:rgba(255,255,255,.85);color:var(--dark);
+  padding:9px 20px;font-weight:700;font-size:13.5px;border-radius:16px;
+  transition:transform .35s ease, background .35s ease;
 }
-
-
+.back-btn:hover{transform:translateY(-2px);background:var(--gold);}
+.topbar h3{font-family:'Playfair Display',serif;letter-spacing:2px;font-size:16px;color:var(--heading-gold);}
 
 /* HERO */
-
 .hero{
-
-height:420px;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(11,77,56,.55)
-),
-
-url("skinhair.jpeg");
-
-
-background-size:cover;
-
-background-position:center;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-color:white;
-
-text-align:center;
-
+  height:340px;margin-top:14px;position:relative;overflow:hidden;
+  background:linear-gradient(rgba(6,40,29,.4),rgba(11,77,56,.7)), url("skinhair.jpeg");
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
 }
-
-
-.hero h1{
-
-font-size:55px;
-
-font-weight:800;
-
-letter-spacing:5px;
-
-}
-
-
+.hero h1{font-family:'Playfair Display',serif;font-size:50px;font-weight:800;letter-spacing:6px;}
+.hero p{color:#e6ede9;margin-top:10px;letter-spacing:2px;font-size:14px;}
 
 /* SECTION */
-
-.section{
-
-padding:70px 20px;
-
-}
-
-
-
-.section-title{
-
-text-align:center;
-
-font-size:38px;
-
-font-weight:800;
-
-color:var(--green);
-
-margin-bottom:40px;
-
-}
-
-
+.section{padding:46px 20px;}
+.section-title{text-align:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--heading-gold);margin-bottom:6px;}
+.title-divider{display:block;width:52px;height:3px;margin:0 auto 32px;background:var(--gold);border-radius:2px;}
 
 /* PRODUCT GRID */
-
-.product-grid{
-
-max-width:1200px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:25px;
-
-}
-
-
-
-.product-card{
-
-background:white;
-
-box-shadow:
-
-0 10px 25px rgba(0,0,0,.08);
-
-overflow:hidden;
-
-transition:.4s;
-
-}
-
-
-.product-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-
-
-.product-card img{
-
-width:100%;
-
-height:320px;
-
-object-fit:cover;
-
-}
-
-
-
-.product-info{
-
-padding:20px;
-
-}
-
-
-
-.product-info h3{
-
-color:var(--green);
-
-margin-bottom:10px;
-
-}
-
-
-
-.price{
-
-font-size:22px;
-
-font-weight:800;
-
-margin-bottom:15px;
-
-}
-
-
-
+.product-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.product-card{overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;}
+.product-card img{width:100%;height:300px;object-fit:cover;display:block;}
+.product-info{padding:18px 20px;}
+.product-info h3{color:var(--heading-gold);margin-bottom:8px;font-family:'Playfair Display',serif;font-size:18px;}
+.price{font-size:21px;font-weight:800;margin-bottom:14px;color:#fff;}
 .buy-btn{
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:11px 22px;font-weight:700;font-size:13px;border-radius:14px;
+  transition:transform .35s ease, background .35s ease;
+}
+.buy-btn:hover{transform:translateY(-2px);background:var(--dark);}
 
-background:var(--green);
-
-color:white;
-
-padding:12px 25px;
-
-text-decoration:none;
-
-font-weight:700;
-
-display:inline-block;
-
+@media (hover:hover) and (pointer:fine){
+  .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,.35);}
 }
 
-
-
+/* OWNER INFO (was missing entirely in the original — rendered unstyled) */
+.owner-section{padding:0 20px 46px;}
+.owner-box{max-width:640px;margin:auto;padding:26px 34px;text-align:center;}
+.owner-box h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--heading-gold);margin-bottom:16px;}
+.owner-box p{margin:6px 0;font-size:13.5px;}
 
 /* FOOTER */
-
 .footer{
-
-background:var(--green);
-
-color:white;
-
-padding:40px 20px;
-
-text-align:center;
-
-margin-top:80px;
-
+  background:linear-gradient(135deg,#051911,#082f23);color:#fff;
+  padding:30px 20px;text-align:center;
 }
-
-
-.footer p{
-
-line-height:2;
-
-}
-
-
+.footer p{line-height:1.9;color:#c9d3cd;font-size:12.5px;}
 
 @media(max-width:768px){
-
-.hero h1{
-
-font-size:35px;
-
+  .hero{height:240px;}
+  .hero h1{font-size:32px;letter-spacing:3px;}
+  .section-title{font-size:24px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .product-card img{height:170px;}
+  .product-info{padding:12px 14px;}
+  .product-info h3{font-size:14px;}
+  .price{font-size:16px;}
+  .buy-btn{padding:9px 16px;font-size:12px;}
 }
-
-
-.product-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:12px;
-
-}
-
-
-.product-card img{
-
-height:180px;
-
-}
-
-
-.price{
-
-font-size:15px;
-
-}
-
-
-.buy-btn{
-
-font-size:12px;
-
-padding:8px 12px;
-
-}
-
-}
-
-
 </style>
-
-
 </head>
-
 
 <body>
 
-
-
-<div class="topbar">
-
-
-<a href="index.html" class="back-btn">
-← Back
-</a>
-
-
-<h3>
-BAGASH SKIN & HAIR
-</h3>
-
-
+<div class="topbar glass">
+  <a href="index.html" class="back-btn">← Back</a>
+  <h3>BAGASH SKIN & HAIR</h3>
 </div>
-
-
-
-
 
 <section class="hero">
-
-<h1>
-SKIN & HAIR COLLECTION
-</h1>
-
+  <div>
+    <h1>SKIN & HAIR COLLECTION</h1>
+    <p>Care & Beauty Essentials</p>
+  </div>
 </section>
 
-
-
-
-
-
-<!-- FACE COLLECTION -->
-
-
+<!-- FACE CARE -->
 <section class="section">
-
-
-<h2 class="section-title">
-Face Care Collection
-</h2>
-
-
-
-<div class="product-grid">
-
-
-
-<div class="product-card">
-
-<img src="face1.jpeg">
-
-<div class="product-info">
-
-<h3>
-Face Care 1
-</h3>
-
-<div class="price">
-৳251.01
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Face Care 1">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="face2.jpeg">
-
-<div class="product-info">
-
-<h3>
-Face Care 2
-</h3>
-
-<div class="price">
-৳250.59
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Face Care 2">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="face3.jpeg">
-
-<div class="product-info">
-
-<h3>
-Face Care 3
-</h3>
-
-<div class="price">
-৳250.60
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Face Care 3">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="face4.jpeg">
-
-<div class="product-info">
-
-<h3>
-Face Care 4
-</h3>
-
-<div class="price">
-৳250.52
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Face Care 4">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-</div>
-
+  <h2 class="section-title">Face Care Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="face1.jpeg" alt="Face Care 1" loading="lazy">
+      <div class="product-info">
+        <h3>Face Care 1</h3>
+        <div class="price">৳251.01</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Face Care 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="face2.jpeg" alt="Face Care 2" loading="lazy">
+      <div class="product-info">
+        <h3>Face Care 2</h3>
+        <div class="price">৳250.59</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Face Care 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="face3.jpeg" alt="Face Care 3" loading="lazy">
+      <div class="product-info">
+        <h3>Face Care 3</h3>
+        <div class="price">৳250.60</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Face Care 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="face4.jpeg" alt="Face Care 4" loading="lazy">
+      <div class="product-info">
+        <h3>Face Care 4</h3>
+        <div class="price">৳250.52</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Face Care 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- =========================
-HAIR COLLECTION
-========================= -->
 
-
+<!-- HAIR CARE -->
 <section class="section">
-
-
-<h2 class="section-title">
-Hair Care Collection
-</h2>
-
-
-<div class="product-grid">
-
-
-
-<div class="product-card">
-
-<img src="hair1.png">
-
-<div class="product-info">
-
-<h3>
-Hair Care 1
-</h3>
-
-<div class="price">
-৳267.62
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Hair Care 1">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="hair2.png">
-
-<div class="product-info">
-
-<h3>
-Hair Care 2
-</h3>
-
-<div class="price">
-৳252.62
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Hair Care 2">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="hair3.png">
-
-<div class="product-info">
-
-<h3>
-Hair Care 3
-</h3>
-
-<div class="price">
-৳253.46
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Hair Care 3">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="hair4.png">
-
-<div class="product-info">
-
-<h3>
-Hair Care 4
-</h3>
-
-<div class="price">
-৳237.72
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Hair Care 4">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-</div>
-
+  <h2 class="section-title">Hair Care Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="hair1.png" alt="Hair Care 1" loading="lazy">
+      <div class="product-info">
+        <h3>Hair Care 1</h3>
+        <div class="price">৳267.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Hair Care 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="hair2.png" alt="Hair Care 2" loading="lazy">
+      <div class="product-info">
+        <h3>Hair Care 2</h3>
+        <div class="price">৳252.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Hair Care 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="hair3.png" alt="Hair Care 3" loading="lazy">
+      <div class="product-info">
+        <h3>Hair Care 3</h3>
+        <div class="price">৳253.46</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Hair Care 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="hair4.png" alt="Hair Care 4" loading="lazy">
+      <div class="product-info">
+        <h3>Hair Care 4</h3>
+        <div class="price">৳237.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Hair Care 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-
-
-
-<!-- =========================
-BODY CARE COLLECTION
-========================= -->
-
-
+<!-- BODY CARE -->
 <section class="section">
-
-
-<h2 class="section-title">
-Body Care Collection
-</h2>
-
-
-
-<div class="product-grid">
-
-
-
-<div class="product-card">
-
-<img src="body1.png">
-
-<div class="product-info">
-
-<h3>
-Body Care 1
-</h3>
-
-<div class="price">
-৳333.72
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Body Care 1">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="body2.png">
-
-<div class="product-info">
-
-<h3>
-Body Care 2
-</h3>
-
-<div class="price">
-৳336.62
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Body Care 2">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="body3.png">
-
-<div class="product-info">
-
-<h3>
-Body Care 3
-</h3>
-
-<div class="price">
-৳333.73
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Body Care 3">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-<img src="body4.png">
-
-<div class="product-info">
-
-<h3>
-Body Care 4
-</h3>
-
-<div class="price">
-৳330.72
-</div>
-
-
-<a class="buy-btn"
-href="https://wa.me/8801792453834?text=I want to order Body Care 4">
-
-Buy Now
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-</div>
-
+  <h2 class="section-title">Body Care Collection</h2>
+  <span class="title-divider"></span>
+  <div class="product-grid">
+    <div class="product-card glass">
+      <img src="body1.png" alt="Body Care 1" loading="lazy">
+      <div class="product-info">
+        <h3>Body Care 1</h3>
+        <div class="price">৳333.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Body Care 1">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="body2.png" alt="Body Care 2" loading="lazy">
+      <div class="product-info">
+        <h3>Body Care 2</h3>
+        <div class="price">৳336.62</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Body Care 2">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="body3.png" alt="Body Care 3" loading="lazy">
+      <div class="product-info">
+        <h3>Body Care 3</h3>
+        <div class="price">৳333.73</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Body Care 3">Buy Now</a>
+      </div>
+    </div>
+    <div class="product-card glass">
+      <img src="body4.png" alt="Body Care 4" loading="lazy">
+      <div class="product-info">
+        <h3>Body Care 4</h3>
+        <div class="price">৳330.72</div>
+        <a class="buy-btn" href="https://wa.me/8801792453834?text=I want to order Body Care 4">Buy Now</a>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- =========================
-OWNER INFORMATION
-========================= -->
 
-
+<!-- OWNER INFORMATION -->
 <section class="owner-section">
-
-
-<div class="owner-box">
-
-
-<h2>
-Owner Information
-</h2>
-
-
-<p>
-Owner: Nurul Amin
-</p>
-
-
-<p>
-Phone: 01792453834
-</p>
-
-
-<p>
-WhatsApp: 01792453834
-</p>
-
-
-<p>
-bKash: 01736255527
-</p>
-
-
-<p>
-Email: ah4948591@gmail.com
-</p>
-
-
-<p>
-BAGASH Premium Fashion & Lifestyle
-</p>
-
-
-</div>
-
-
+  <div class="owner-box glass">
+    <h2>Owner Information</h2>
+    <p>Owner: Nurul Amin</p>
+    <p>Phone: 01792453834</p>
+    <p>WhatsApp: 01792453834</p>
+    <p>bKash: 01736255527</p>
+    <p>Email: ah4948591@gmail.com</p>
+    <p>BAGASH Premium Fashion & Lifestyle</p>
+  </div>
 </section>
-
-
-
-
-
-
-<!-- =========================
-FOOTER
-========================= -->
-
 
 <footer class="footer">
-
-
-<p>
-© 2026 BAGASH Premium
-</p>
-
-
-<p>
-All Rights Reserved
-</p>
-
-
+  <p>© 2026 BAGASH Premium</p>
+  <p>All Rights Reserved</p>
 </footer>
-
-
-
-
-
 
 </body>
 </html>
